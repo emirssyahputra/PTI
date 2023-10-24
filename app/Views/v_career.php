@@ -63,7 +63,7 @@
                     <ul class="nav navbar-nav ml-auto align-items-center">
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('/');?>">Home</a></li>
               
-                      <li class="nav-item"><a class="nav-link" href="career.html">Career</a></li>
+                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Career');?>">Career</a></li>
                                     
                       <li class="nav-item"><a class="nav-link" href=#>About</a></li>
 

@@ -32,7 +32,7 @@
   <link rel="stylesheet" href="<?= base_url('plugins/colorbox/colorbox.css'); ?>">
   <!-- Template styles-->
   <link rel="stylesheet" href="<?= base_url('css/style.css'); ?>">
-  
+
 </head>
 <body>
   <div class="body-inner">
@@ -63,7 +63,7 @@
                     <ul class="nav navbar-nav ml-auto align-items-center">
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('/');?>">Home</a></li>
               
-                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Login');?>">Career</a></li>
+                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Career');?>">Career</a></li>
                                     
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Login');?>">About</a></li>
 
