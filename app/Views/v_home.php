@@ -20,19 +20,19 @@
   <!-- CSS
 ================================================== -->
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="<?= base_url('plugins/bootstrap/bootstrap.min.css'); ?>">
+   <!-- FontAwesome -->
+   <link rel="stylesheet"href="<?= base_url('plugins/fontawesome/css/all.min.css'); ?>">
   <!-- Animation -->
-  <link rel="stylesheet" href="plugins/animate-css/animate.css">
+  <link rel="stylesheet" href="<?= base_url('plugins/animate-css/animate.css'); ?>">
   <!-- slick Carousel -->
-  <link rel="stylesheet" href="plugins/slick/slick.css">
-  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+  <link rel="stylesheet" href="<?= base_url('plugins/slick/slick.css'); ?>">
+  <link rel="stylesheet" href="<?= base_url('plugins/slick/slick-theme.css'); ?>">
   <!-- Colorbox -->
-  <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
+  <link rel="stylesheet" href="<?= base_url('plugins/colorbox/colorbox.css'); ?>">
   <!-- Template styles-->
-  <link rel="stylesheet" href="css/style.css">
-
+  <link rel="stylesheet" href="<?= base_url('css/style.css'); ?>">
+  
 </head>
 <body>
   <div class="body-inner">

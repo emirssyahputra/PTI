@@ -26,7 +26,6 @@
   <!-- Animation -->
   <link rel="stylesheet" href="<?= base_url('plugins/animate-css/animate.css'); ?>">
   <!-- slick Carousel -->
-  
   <link rel="stylesheet" href="<?= base_url('plugins/slick/slick.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('plugins/slick/slick-theme.css'); ?>">
   <!-- Colorbox -->
