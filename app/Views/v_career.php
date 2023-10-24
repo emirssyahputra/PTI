@@ -61,7 +61,7 @@
                 
                 <div id="navbar-collapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav ml-auto align-items-center">
-                      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('/');?>">Home</a></li>
               
                       <li class="nav-item"><a class="nav-link" href="career.html">Career</a></li>
                                     
