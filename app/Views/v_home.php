@@ -65,9 +65,9 @@
               
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Career');?>">Career</a></li>
                                     
-                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Login');?>">About</a></li>
+                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('');?>">About</a></li>
 
-                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Login');?>">Contact</a></li>
+                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('');?>">Contact</a></li>
 
                       <li class="header-get-a-quote">
                           <a class="btn btn-primary" href="<?php echo site_url('Login');?>">LOGIN</a>

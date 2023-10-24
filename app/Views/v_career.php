@@ -50,7 +50,7 @@
               <nav class="navbar navbar-expand-lg navbar-light p-0">
                 
                 <div class="logo">
-                    <a class="d-block" href="index.html">
+                    <a class="d-block" href="<?php echo site_url('/');?>">
                       <img loading="lazy" src="images/logo.png" alt="Loer Group">
                     </a>
                 </div><!-- logo end -->
@@ -70,7 +70,7 @@
                       <li class="nav-item"><a class="nav-link" href=#>Contact</a></li>
 
                       <li class="header-get-a-quote">
-                          <a class="btn btn-primary" href="login.html">LOGIN</a>
+                          <a class="btn btn-primary" href="<?php echo site_url('Login');?>">LOGIN</a>
                       </li>
                     </ul>
                 </div>
