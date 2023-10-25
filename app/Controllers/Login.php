@@ -30,10 +30,10 @@ class Login extends BaseController
 
         $cadmin = $this->M_Login->cekadmin($u, $p);
 
-        if ($cadmin->getNumRows() > 0) {
+        if ($cadmin) {
             session()->set('masuk', true);
             session()->set('user', $u);
-            $xcadmin = $cadmin->getRowArray();
+            $xcadmin = $cadmin;
 
             if ($xcadmin['pengguna_level'] == '1') {
                 session()->set('akses', '1');
