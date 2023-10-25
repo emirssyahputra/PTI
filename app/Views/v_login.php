@@ -18,8 +18,8 @@
                 <img src="<?= base_url('images/logo.png'); ?>" alt="RedX Logo" class="centered-logo">
                 <h3>Login</h3>
                 <?php
-                if (session()->has('error')) {
-                echo '<div class="alert alert-danger" role="alert">' . session('error') . '</div>';
+                    if (session()->has('error')) {
+                        echo '<div class="alert alert-danger" role="alert" style="color: red;">' . session('error') . '</div>';
                     }
                 ?>
                 <form class='login-items' method="post" action="<?php echo site_url().'login/auth'?>">
