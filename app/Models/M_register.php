@@ -9,6 +9,5 @@ class M_Register extends Model
     protected $table = 'pengguna';
     protected $primaryKey = 'id_pengguna';
     protected $useAutoIncrement = true;
-
     protected $allowedFields = ['email', 'password', 'nama', 'no_telp', 'id_role'];
 }

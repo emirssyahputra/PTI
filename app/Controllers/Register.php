@@ -25,9 +25,9 @@ class Register extends BaseController
         ];
 
         if ($model->insert($data)) { // Menggunakan insert() untuk menyimpan data
-            return redirect()->to('/login')->with('success', 'Registrasi berhasil! Silakan masuk.');
+            return redirect()->to('/Login')->with('success', 'Registrasi berhasil! Silakan masuk.');
         } else {
-            return redirect()->to('/register')->with('error', 'Registrasi gagal. Silakan coba lagi.');
+            return redirect()->to('/Register')->with('error', 'Registrasi gagal. Silakan coba lagi.');
         }
     }
 }
