@@ -15,21 +15,33 @@
     <div class='login-outer-container'>
         <div class='login-container'>
             <div class='login-area'>
-                <img src="images/logo.png" alt="RedX Logo" class="centered-logo">
+                <img src="<?= base_url('images/logo.png'); ?>" alt="RedX Logo" class="centered-logo">
                 <h3>Register</h3>
-                <form class='login-items'>
-                    <label htmlFor="name">Nama</label>
-                    <input type="text" class='login' name="name" placeholder='Nama lengkap' required />
-                    <label htmlFor="email">Email</label>
+                <form class='login-items' action="<?= site_url('register/register'); ?>" method="post">
+                    <label for="nama">Nama</label>
+                    <input type="text" class='login' name="nama" placeholder='Nama lengkap' required />
+                    <label for="email">Email</label>
                     <input type="email" class='login' name="email" placeholder="email@gmail.com" required />
-                    <label htmlFor="password">Password</label>
-                    <input type="password" class='login' name="password" id="" placeholder='Password' required />
+                    <label for="no_telp">Nomor HP</label>
+                    <input type="text" class='login' name="no_telp" placeholder="08123456789" required />
+                    <label for="password">Password</label>
+                    <input type="password" class='login' name="password" placeholder='Password' required />
                     <input type="submit" class='login-btn' value="Register" />
                 </form>
+                <?php if (session()->getFlashdata('success')): ?>
+                    <div class="alert alert-success">
+                        <?= session()->getFlashdata('success') ?>
+                    </div>
+                <?php endif; ?>
+                <?php if (session()->getFlashdata('error')): ?>
+                    <div class="alert alert-danger">
+                        <?= session()->getFlashdata('error') ?>
+                    </div>
+                <?php endif; ?>
                 <p class='p'>Sudah punya akun?
-                    <a class='a' href="<?php echo site_url('Login');?>">Login</a>
+                    <a class='a' href="<?= site_url('login'); ?>">Login</a>
                 </p>
-                <p class='p'><a class='a' href="<?php echo site_url('/');?>">Kembali ke Home</a></p>
+                <p class='p'><a class='a' href="<?= site_url('/'); ?>">Kembali ke Home</a></p>
             </div>
         </div>
     </div>
