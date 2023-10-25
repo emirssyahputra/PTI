@@ -67,8 +67,6 @@
                                     
                       <li class="nav-item"><a class="nav-link" href=#>About</a></li>
 
-                      <li class="nav-item"><a class="nav-link" href=#>Contact</a></li>
-
                       <li class="header-get-a-quote">
                           <a class="btn btn-primary" href="<?php echo site_url('Login');?>">LOGIN</a>
                       </li>
@@ -243,65 +241,66 @@
 </section><!-- Feature area end -->
 
 <footer id="footer" class="footer bg-overlay">
-  <div class="footer-main">
-    <div class="container">
-      <div class="row justify-content-between">
-        <div class="col-lg-4 col-md-6 footer-widget footer-about">
-          <h3 class="widget-title">About Us</h3>
-          <a href="index.html">
-            <img loading="lazy" class="footer-logo" src="images/footer-logo.png" alt="Constra">
-          </a>          
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci done idunt ut
-            labore et dolore magna aliqua.</p>
-          <div class="footer-social">
-            <ul>
-              <li><a href="https://instagram.com/loergroup" aria-label="Instagram"><i
-                    class="fab fa-instagram"></i></a></li>
-              <li><a href="https://id.linkedin.com/company/kopi-loer-group" aria-label="Linkedin"><i class="fab fa-linkedin"></i></a></li>
+    <div class="footer-main">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-lg-4 col-md-6 footer-widget footer-about">
+            <h3 class="widget-title">About Us</h3>
+            <a href="index.html">
+              <img loading="lazy" class="footer-logo" src="images/footer-logo.png" alt="Constra">
+            </a>          
+            <p>𝑺𝑬𝑫𝑶𝑳𝑶𝑬𝑹 (P) - 𝑳𝑶𝑬𝑹 (S) - (/lur) sapaan hangat khas wong kito galo, berasal dari kata 'dulur' yang artinya saudara, sapaan dekat yang mencairkan suasana…</p>
+          </div><!-- Col end -->
+
+          <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+            <h3 class="widget-title">Hubungi Kami</h3>
+            <div class="working-hours">
+              <p>Headquarter Office Jl. Brigjen Hasan Kasim, Ruko 30A Kecamatan Kalidoni, Kota Palembang Sumatera Selatan 30114.</p>
+              <p>Email: kopiloergroup@gmail.com</p>
+              <p>Phone: +628 131 799 3414</p>
+            </div>
+            <div class="footer-social">
+              <ul>
+                <li><a href="https://instagram.com/loergroup" aria-label="Instagram"><i
+                      class="fab fa-instagram"></i></a></li>
+                <li><a href="https://id.linkedin.com/company/kopi-loer-group" aria-label="Linkedin"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </div><!-- Footer social end -->
+          </div><!-- Col end -->
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+            <h3 class="widget-title">Brands</h3>
+            <ul class="list-arrow">
+              <p>Kopi Loer</p>
+              <p>Kora</p>
+              <p>Rumah Loer</p>
             </ul>
-          </div><!-- Footer social end -->
-        </div><!-- Col end -->
+          </div><!-- Col end -->
+        </div><!-- Row end -->
+      </div><!-- Container end -->
+    </div><!-- Footer main end -->
 
-        <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
-          <h3 class="widget-title">Lorem</h3>
-          <div class="working-hours">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci done idunt ut labore et dolore magna aliqua.
+    <div class="copyright">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <div class="copyright-info text-center">
+              <span>&copy; <script>
+                  document.write(new Date().getFullYear())
+                </script> PT. Loer Group Jaya. All rights reserved.</span>
+            </div>
           </div>
-        </div><!-- Col end -->
+        </div><!-- Row end -->
 
-        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
-          <h3 class="widget-title">Brands</h3>
-          <ul class="list-arrow">
-            <li><a href=#>Kopi Loer</a></li>
-            <li><a href=#>Kora</a></li>
-            <li><a href=#>Rumah Loer</a></li>
-          </ul>
-        </div><!-- Col end -->
-      </div><!-- Row end -->
-    </div><!-- Container end -->
-  </div><!-- Footer main end -->
-
-  <div class="copyright">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-12">
-          <div class="copyright-info text-center">
-            <span>&copy; <script>
-                document.write(new Date().getFullYear())
-              </script> Loer Group. All rights reserved.</a></span>
-          </div>
+        <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
+          <button class="btn btn-primary" title="Back to Top">
+            <i class="fa fa-angle-double-up"></i>
+          </button>
         </div>
-      </div><!-- Row end -->
 
-      <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
-        <button class="btn btn-primary" title="Back to Top">
-          <i class="fa fa-angle-double-up"></i>
-        </button>
-      </div>
-
-    </div><!-- Container end -->
-  </div><!-- Copyright end -->
-</footer><!-- Footer end -->
+      </div><!-- Container end -->
+    </div><!-- Copyright end -->
+  </footer><!-- Footer end -->
 
 
   <!-- Javascript Files

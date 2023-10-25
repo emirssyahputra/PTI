@@ -67,8 +67,6 @@
                                     
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('');?>">About</a></li>
 
-                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('');?>">Contact</a></li>
-
                       <li class="header-get-a-quote">
                           <a class="btn btn-primary" href="<?php echo site_url('Login');?>">LOGIN</a>
                       </li>
@@ -132,7 +130,7 @@
   <div class="container">
     <div class="row text-center">
       <div class="col-12">
-        <h3 class="section-sub-title">Tentang Kami</h3>
+        <h3 class="section-sub-title">About Us</h3>
       </div>
     </div>
     <div class="row">
@@ -363,7 +361,7 @@
   <!--/ Container end -->
 </section><!-- Facts end -->
 
-  <footer id="footer" class="footer bg-overlay">
+<footer id="footer" class="footer bg-overlay">
     <div class="footer-main">
       <div class="container">
         <div class="row justify-content-between">
@@ -372,8 +370,16 @@
             <a href="index.html">
               <img loading="lazy" class="footer-logo" src="images/footer-logo.png" alt="Constra">
             </a>          
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci done idunt ut
-              labore et dolore magna aliqua.</p>
+            <p>𝑺𝑬𝑫𝑶𝑳𝑶𝑬𝑹 (P) - 𝑳𝑶𝑬𝑹 (S) - (/lur) sapaan hangat khas wong kito galo, berasal dari kata 'dulur' yang artinya saudara, sapaan dekat yang mencairkan suasana…</p>
+          </div><!-- Col end -->
+
+          <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+            <h3 class="widget-title">Hubungi Kami</h3>
+            <div class="working-hours">
+              <p>Headquarter Office Jl. Brigjen Hasan Kasim, Ruko 30A Kecamatan Kalidoni, Kota Palembang Sumatera Selatan 30114.</p>
+              <p>Email: kopiloergroup@gmail.com</p>
+              <p>Phone: +628 131 799 3414</p>
+            </div>
             <div class="footer-social">
               <ul>
                 <li><a href="https://instagram.com/loergroup" aria-label="Instagram"><i
@@ -383,19 +389,12 @@
             </div><!-- Footer social end -->
           </div><!-- Col end -->
 
-          <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
-            <h3 class="widget-title">Lorem</h3>
-            <div class="working-hours">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci done idunt ut labore et dolore magna aliqua.
-            </div>
-          </div><!-- Col end -->
-
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
             <h3 class="widget-title">Brands</h3>
             <ul class="list-arrow">
-              <li><a href=#>Kopi Loer</a></li>
-              <li><a href=#>Kora</a></li>
-              <li><a href=#>Rumah Loer</a></li>
+              <p>Kopi Loer</p>
+              <p>Kora</p>
+              <p>Rumah Loer</p>
             </ul>
           </div><!-- Col end -->
         </div><!-- Row end -->
@@ -409,7 +408,7 @@
             <div class="copyright-info text-center">
               <span>&copy; <script>
                   document.write(new Date().getFullYear())
-                </script> Loer Group. All rights reserved.</a></span>
+                </script> PT. Loer Group Jaya. All rights reserved.</span>
             </div>
           </div>
         </div><!-- Row end -->
