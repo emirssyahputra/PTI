@@ -20,45 +20,45 @@ class Login extends Controller
     }
 
     public function cek()
-{
-    $username = $this->request->getVar('email');
-    $password = $this->request->getVar('password');
+    {
+        $username = $this->request->getVar('email');
+        $password = $this->request->getVar('password');
 
-    $u = strip_tags(str_replace("'", "", $username));
-$p = strip_tags(str_replace("'", "", $password));
+        $u = strip_tags(str_replace("'", "", $username));
+        $p = strip_tags(str_replace("'", "", $password));
 
-$cadmin = $this->m_login->cekadmin($u, $p);
+        $cadmin = $this->m_login->cekadmin($u, $p);
 
-if ($cadmin) {
-    session()->set('masuk', true);
-    session()->set('user', $u);
+        if ($cadmin) {
+            session()->set('masuk', true);
+            session()->set('user', $u);
 
-    if ($cadmin->id_role == '1') {
-        session()->set('akses', '1');
-        $idadmin = $cadmin->id_pengguna;
-        $user_nama = $cadmin->nama;
-        session()->set('idadmin', $idadmin);
-        session()->set('namaa', $user_nama);
-        return redirect()->to(base_url('/'));
-    } else {
-        session()->set('akses', '2');
-        $idadmin = $cadmin->id_pengguna;
-        $user_nama = $cadmin->nama;
-        session()->set('idadmin', $idadmin);
-        session()->set('namaa', $user_nama);
-        return redirect()->to(base_url('career'));
+            if ($cadmin->id_role == '1') {
+                session()->set('akses', '1');
+                $idadmin = $cadmin->id_pengguna;
+                $user_nama = $cadmin->nama;
+                session()->set('idadmin', $idadmin);
+                session()->set('namaa', $user_nama);
+                return redirect()->to(base_url('/'));
+            } else {
+                session()->set('akses', '2');
+                $idadmin = $cadmin->id_pengguna;
+                $user_nama = $cadmin->nama;
+                session()->set('idadmin', $idadmin);
+                session()->set('namaa', $user_nama);
+                return redirect()->to(base_url('career'));
+            }
+        } else {
+            $error_message = 'Email atau Password Salah. Silakan coba lagi.';
+            session()->setFlashdata('error', $error_message);
+            return redirect()->to('login');
+        }
+
     }
-} else {
-    $error_message = 'Email atau Password Salah. Silakan coba lagi.';
-    session()->setFlashdata('error', $error_message);
-    return redirect()->to('login');
-}
-
-}
 
     public function logout()
     {
         session()->destroy();
-        return redirect()->to(base_url('login')); // ganti 'Login' dengan 'login'
+        return redirect()->to(base_url('login'));
     }
 }
