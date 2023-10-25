@@ -22,6 +22,11 @@
                         echo '<div class="alert alert-danger" role="alert" style="color: red;">' . session('error') . '</div>';
                     }
                 ?>
+                <?php if (session()->getFlashdata('success')): ?>
+                    <div class="alert alert-success">
+                        <?= session()->getFlashdata('success') ?>
+                    </div>
+                <?php endif; ?>
                 <form class='login-items' method="post" action="<?php echo site_url().'login/auth'?>">
                     <label for="email">Email</label>
                     <input type="email" class='login' name="email" placeholder='email@gmail.com' required />
