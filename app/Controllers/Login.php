@@ -2,16 +2,16 @@
 
 namespace App\Controllers;
 
+use App\Models\M_login;
 use CodeIgniter\Controller;
-use App\Models\M_Login;
 
-class Login extends BaseController
+class Login extends Controller
 {
-    protected $M_Login; // Gunakan properti yang dideklarasikan dengan benar
+    protected $m_login;
 
     public function __construct()
     {
-        $this->M_Login = new M_Login();
+        $this->m_login = new M_login();
     }
 
     public function index()
@@ -19,51 +19,46 @@ class Login extends BaseController
         return view('v_login');
     }
 
-    public function auth()
-    {
-        $request = service('request');
-        $email = strip_tags(str_replace("'", "", $request->getPost('email')));
-        $password = strip_tags(str_replace("'", "", $request->getPost('password')));
+    public function cek()
+{
+    $username = $this->request->getVar('email');
+    $password = $this->request->getVar('password');
 
-        $u = $email;
-        $p = $password;
+    $u = strip_tags(str_replace("'", "", $username));
+$p = strip_tags(str_replace("'", "", $password));
 
-        $cadmin = $this->M_Login->cekadmin($u, $p);
+$cadmin = $this->m_login->cekadmin($u, $p);
 
-        if ($cadmin) {
-            session()->set('masuk', true);
-            session()->set('user', $u);
-            $xcadmin = $cadmin;
+if ($cadmin) {
+    session()->set('masuk', true);
+    session()->set('user', $u);
 
-            if ($xcadmin['pengguna_level'] == '1') {
-                session()->set('akses', '1');
-                $idadmin = $xcadmin['pengguna_id'];
-                $user_nama = $xcadmin['nama'];
-                session()->set('idadmin', $idadmin);
-                session()->set('nama', $user_nama);
-                setcookie("user", $u, time() + 3600, "/");
-                setcookie("idadmin", $idadmin, time() + 3600, "/");
-                return redirect()->to('admin/dashboard');
-            } else {
-                session()->set('akses', '2');
-                $idadmin = $xcadmin['pengguna_id'];
-                $user_nama = $xcadmin['nama'];
-                session()->set('idadmin', $idadmin);
-                session()->set('nama', $user_nama);
-                setcookie("user", $u, time() + 3600, "/");
-                setcookie("idadmin", $idadmin, time() + 3600, "/");
-                return redirect()->to('admin/jadwal'); 
-            }
-        } else {
-            $error_message = 'Username atau Password Salah. Silakan coba lagi.';
-            session()->setFlashdata('error', $error_message);
-            return redirect()->to('Login');
-        }
+    if ($cadmin->id_role == '1') {
+        session()->set('akses', '1');
+        $idadmin = $cadmin->id_pengguna;
+        $user_nama = $cadmin->nama;
+        session()->set('idadmin', $idadmin);
+        session()->set('namaa', $user_nama);
+        return redirect()->to(base_url('/'));
+    } else {
+        session()->set('akses', '2');
+        $idadmin = $cadmin->id_pengguna;
+        $user_nama = $cadmin->nama;
+        session()->set('idadmin', $idadmin);
+        session()->set('namaa', $user_nama);
+        return redirect()->to(base_url('career'));
     }
+} else {
+    $error_message = 'Email atau Password Salah. Silakan coba lagi.';
+    session()->setFlashdata('error', $error_message);
+    return redirect()->to('login');
+}
+
+}
 
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('Login');
+        return redirect()->to(base_url('login')); // ganti 'Login' dengan 'login'
     }
 }

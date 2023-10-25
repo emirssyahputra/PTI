@@ -27,7 +27,7 @@
                         <?= session()->getFlashdata('success') ?>
                     </div>
                 <?php endif; ?>
-                <form class='login-items' method="post" action="<?php echo site_url().'login/auth'?>">
+                <form class='login-items' action="<?= site_url('login/cek'); ?>" method="post">
                     <label for="email">Email</label>
                     <input type="email" class='login' name="email" placeholder='email@gmail.com' required />
                     <label for="password">Password</label>

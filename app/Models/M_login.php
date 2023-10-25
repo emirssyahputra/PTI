@@ -4,20 +4,21 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class M_Login extends Model
+class M_login extends Model
 {
     protected $table = 'pengguna';
-    protected $primaryKey = 'id_pengguna';
-    protected $allowedFields = ['email', 'password'];
 
     public function cekadmin($u, $p)
     {
-    $user = $this->where('email', $u)->get()->getRow();
+        $query = $this->db->table($this->table)
+            ->where('email', $u)
+            ->get()
+            ->getRow();
 
-    if ($user && password_verify($p, $user->password)) {
-        return $user;
-    }
+        if ($query && password_verify($p, $query->password)) {
+            return $query;
+        }
 
-    return null;
+        return null;
     }
 }
