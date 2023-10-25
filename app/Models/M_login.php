@@ -6,14 +6,14 @@ use CodeIgniter\Model;
 
 class M_Login extends Model
 {
-    protected $table = 'tbl_pengguna';
-    protected $primaryKey = 'pengguna_id';
-    protected $allowedFields = ['pengguna_username', 'pengguna_password'];
+    protected $table = 'pengguna';
+    protected $primaryKey = 'id_pengguna';
+    protected $allowedFields = ['email', 'password'];
 
     public function cekadmin($u, $p)
     {
-        return $this->where('pengguna_username', $u)
-                    ->where('pengguna_password', md5($p))
+        return $this->where('email', $u)
+                    ->where('password', md5($p))
                     ->get();
     }
 }
