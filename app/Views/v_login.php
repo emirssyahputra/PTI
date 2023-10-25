@@ -17,10 +17,10 @@
             <div class='login-area'>
                 <img src="<?= base_url('images/logo.png'); ?>" alt="RedX Logo" class="centered-logo">
                 <h3>Login</h3>
-                <form class='login-items'>
-                    <label htmlFor="username">Email</label>
+                <form class='login-items' method="post" action="<?php echo site_url().'login/auth'?>">
+                    <label for="email">Email</label>
                     <input type="email" class='login' name="email" placeholder='email@gmail.com' required />
-                    <label htmlFor="password">Password</label>
+                    <label for="password">Password</label>
                     <input type="password" class='login' name="password" placeholder="Password" required />
                     <input type="submit" class='login-btn' value="Login" />
                 </form>

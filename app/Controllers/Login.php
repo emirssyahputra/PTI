@@ -5,9 +5,10 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\M_Login;
 
-
 class Login extends BaseController
 {
+    protected $M_Login; // Gunakan properti yang dideklarasikan dengan benar
+
     public function __construct()
     {
         $this->M_Login = new M_Login();
@@ -15,7 +16,7 @@ class Login extends BaseController
 
     public function index()
     {
-        return view('admin/v_login');
+        return view('v_login');
     }
 
     public function auth()
@@ -40,24 +41,24 @@ class Login extends BaseController
                 $user_nama = $xcadmin['pengguna_nama'];
                 session()->set('idadmin', $idadmin);
                 session()->set('nama', $user_nama);
-                return redirect()->to('admin/dashboard');
+                return redirect()->to('admin/dashboard'); // Ganti URL yang sesuai
             } else {
                 session()->set('akses', '2');
                 $idadmin = $xcadmin['pengguna_id'];
                 $user_nama = $xcadmin['pengguna_nama'];
                 session()->set('idadmin', $idadmin);
                 session()->set('nama', $user_nama);
-                return redirect()->to('admin/jadwal');
+                return redirect()->to('admin/jadwal'); // Ganti URL yang sesuai
             }
         } else {
             session()->setFlashdata('msg', '<div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert"><span class="fa fa-close"></span></button> Username Atau Password Salah</div>');
-            return redirect()->to('admin/login');
+            return redirect()->to('v_login');
         }
     }
 
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('admin/login');
+        return redirect()->to('v_login');
     }
 }
