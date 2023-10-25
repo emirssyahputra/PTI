@@ -12,8 +12,12 @@ class M_Login extends Model
 
     public function cekadmin($u, $p)
     {
-        return $this->where('email', $u)
-                    ->where('password', md5($p))
-                    ->get();
+    $user = $this->where('email', $u)->get()->getRow();
+
+    if ($user && password_verify($p, $user->password)) {
+        return $user;
+    }
+
+    return null;
     }
 }
