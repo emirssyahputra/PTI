@@ -23,7 +23,7 @@
                     }
                 ?>
                 <?php if (session()->getFlashdata('success')): ?>
-                    <div class="alert-success" style="color: green;">
+                    <div class="alert-success">
                         <?= session()->getFlashdata('success') ?>
                     </div>
                 <?php endif; ?>

@@ -175,7 +175,7 @@ h5 {
 }
 
 .alert-success {
-    color: #00ff00;
+    color: green;
     background-color: #ccffcc;
     border: 1px solid #00ff00;
 }
