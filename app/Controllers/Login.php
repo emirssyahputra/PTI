@@ -30,10 +30,10 @@ class Login extends BaseController
 
         $cadmin = $this->M_Login->cekadmin($u, $p);
 
-        if ($cadmin->getNumRows() > 0) {
+        if ($cadmin) {
             session()->set('masuk', true);
             session()->set('user', $u);
-            $xcadmin = $cadmin->getRowArray();
+            $xcadmin = $cadmin;
 
             if ($xcadmin['pengguna_level'] == '1') {
                 session()->set('akses', '1');
@@ -41,14 +41,18 @@ class Login extends BaseController
                 $user_nama = $xcadmin['nama'];
                 session()->set('idadmin', $idadmin);
                 session()->set('nama', $user_nama);
-                return redirect()->to('admin/dashboard'); // Ganti URL yang sesuai
+                setcookie("user", $u, time() + 3600, "/");
+                setcookie("idadmin", $idadmin, time() + 3600, "/");
+                return redirect()->to('admin/dashboard');
             } else {
                 session()->set('akses', '2');
                 $idadmin = $xcadmin['pengguna_id'];
                 $user_nama = $xcadmin['nama'];
                 session()->set('idadmin', $idadmin);
                 session()->set('nama', $user_nama);
-                return redirect()->to('admin/jadwal'); // Ganti URL yang sesuai
+                setcookie("user", $u, time() + 3600, "/");
+                setcookie("idadmin", $idadmin, time() + 3600, "/");
+                return redirect()->to('admin/jadwal'); 
             }
         } else {
             $error_message = 'Username atau Password Salah. Silakan coba lagi.';
