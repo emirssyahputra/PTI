@@ -19,11 +19,11 @@
                 <h3>Login</h3>
                 <?php
                     if (session()->has('error')) {
-                        echo '<div class="alert alert-danger" role="alert" style="color: red;">' . session('error') . '</div>';
+                        echo '<div class="alert-danger" role="alert" >' . session('error') . '</div>';
                     }
                 ?>
                 <?php if (session()->getFlashdata('success')): ?>
-                    <div class="alert alert-success">
+                    <div class="alert-success">
                         <?= session()->getFlashdata('success') ?>
                     </div>
                 <?php endif; ?>
