@@ -168,6 +168,18 @@ h5 {
   margin-right: 15px;
 }
 
+.alert-danger {
+    color: red;
+    background-color: #ffcccc;
+    border: 1px solid #ff0000;
+}
+
+.alert-success {
+    background-color: #ccffcc;
+    border: 1px solid #00ff00;
+}
+
+
 /* Global styles
 ================================================== */
 html {
