@@ -22,8 +22,6 @@
                     <input type="text" class='login' name="nama" placeholder='Nama lengkap' required />
                     <label for="email">Email</label>
                     <input type="email" class='login' name="email" placeholder="email@gmail.com" required />
-                    <label for="no_telp">Nomor HP</label>
-                    <input type="text" class='login' name="no_telp" placeholder="08123456789" required />
                     <label for="password">Password</label>
                     <input type="password" class='login' name="password" placeholder='Password' required />
                     <input type="submit" class='login-btn' value="Register" />

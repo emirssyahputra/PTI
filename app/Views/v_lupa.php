@@ -17,12 +17,12 @@
             <div class='login-area'>
                 <img src="<?= base_url('images/logo.png'); ?>" alt="RedX Logo" class="centered-logo">
                 <h3>Lupa Password</h3>
-                <form class='login-items'>
+                <form class='login-items' action="<?= site_url('Verif') ?>" method="post">
                     <label htmlFor="email">Email</label>
                     <input type="email" class='login' name="email" placeholder='email@gmail.com' required />
                     <input type="submit" class='login-btn' value="Reset Password" />
                 </form>
-                <p class='p'><a class='a' href="<?php echo site_url('Login');?>">Kembali ke Login</a></p>
+                <p class='p'><a class='a' href="<?php echo site_url('Login'); ?>">Kembali ke Login</a></p>
             </div>
         </div>
     </div>
