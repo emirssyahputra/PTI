@@ -20,7 +20,6 @@ class Register extends BaseController
             'email' => $this->request->getVar('email'),
             'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
             'nama' => $this->request->getVar('nama'),
-            'no_telp' => $this->request->getVar('no_telp'),
             'id_role' => 2,
         ];
 
