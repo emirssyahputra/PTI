@@ -17,7 +17,15 @@
             <div class='login-area'>
                 <img src="<?= base_url('images/logo.png'); ?>" alt="RedX Logo" class="centered-logo">
                 <h3>Lupa Password</h3>
-                <form class='login-items' action="<?= site_url('Verif') ?>" method="post">
+                <?php if (!empty($errors)): ?>
+                    <div class="alert alert-danger text-center">
+                        <?php foreach ($errors as $error): ?>
+                            <?= esc($error) ?><br> <!-- Menggunakan esc() untuk mencegah XSS -->
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+
+                <form class='login-items' action="<?= site_url('lupa/resetPassword') ?>" method="post">
                     <label htmlFor="email">Email</label>
                     <input type="email" class='login' name="email" placeholder='email@gmail.com' required />
                     <input type="submit" class='login-btn' value="Reset Password" />
