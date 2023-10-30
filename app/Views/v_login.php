@@ -18,9 +18,9 @@
                 <img src="<?= base_url('images/logo.png'); ?>" alt="RedX Logo" class="centered-logo">
                 <h3>Login</h3>
                 <?php
-                    if (session()->has('error')) {
-                        echo '<div class="alert-danger" role="alert" >' . session('error') . '</div>';
-                    }
+                if (session()->has('error')) {
+                    echo '<div class="alert-danger" role="alert" >' . session('error') . '</div>';
+                }
                 ?>
                 <?php if (session()->getFlashdata('success')): ?>
                     <div class="alert-success">
@@ -34,9 +34,9 @@
                     <input type="password" class='login' name="password" placeholder="Password" required />
                     <input type="submit" class='login-btn' value="Login" />
                 </form>
-                <p class='p'>Belum punya akun? <a class='a' href="<?php echo site_url('Register');?>">Register</a></p>
-                <p class='p'>Lupa password? <a class='a' href="<?php echo site_url('Lupa');?>">Reset Password</a></p>
-                <p class='p'><a class='a' href="<?php echo site_url('/');?>">Kembali ke Home</a></p>
+                <p class='p'>Belum punya akun? <a class='a' href="<?php echo site_url('Register'); ?>">Register</a></p>
+                <p class='p'>Lupa password? <a class='a' href="<?php echo site_url('Lupa'); ?>">Reset Password</a></p>
+                <p class='p'><a class='a' href="<?php echo site_url('/'); ?>">Kembali ke Home</a></p>
             </div>
         </div>
     </div>
