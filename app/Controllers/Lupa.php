@@ -34,14 +34,13 @@ class Lupa extends BaseController
         $email->setMessage($message);
 
         if ($email->send()) {
-            session()->setFlashdata('info', "We've sent a password reset OTP to your email - $userEmail"); // Ganti variabel ke user's email
             session()->set('email', $userEmail);
             return redirect()->to('Verif');
         } else {
-            $data['errors']['otp-error'] = "Failed while sending code!";
+            $data['errors']['otp-error'] = "Gagal mengirim kode OTP!";
         }
     } else {
-        $data['errors']['email'] = "This email address does not exist!";
+        $data['errors']['email'] = "Email tidak valid!";
     }
 
     return view('v_lupa', $data);
