@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+$email = session()->getFlashdata('email');
+?>
+
 
 <head>
     <meta charset="UTF-8">
@@ -8,15 +12,15 @@
     <link rel="stylesheet" href="<?= base_url('css/style.css'); ?>">
     <link rel="icon" type="image/png" href="<?= base_url('images/favicon.png'); ?>">
     <script src="https://kit.fontawesome.com/c0e27fec68.js" crossorigin="anonymous"></script>
-    <title>Lupa Password</title>
+    <title>Reset Password</title>
 </head>
 
 <body>
     <div class='login-outer-container'>
         <div class='login-container'>
             <div class='login-area'>
-                <img src="<?= base_url('images/logo.png'); ?>" alt="RedX Logo" class="centered-logo">
-                <h3>Lupa Password</h3>
+            <img src="<?= base_url('images/logo.png'); ?>" alt="RedX Logo" class="centered-logo">
+                <h3>Reset Password</h3>
                 <?php if (!empty($errors)): ?>
                     <div class="alert alert-danger text-center">
                         <?php foreach ($errors as $error): ?>
@@ -24,13 +28,14 @@
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
-
-                <form class='login-items' action="<?= site_url('lupa/resetPassword') ?>" method="post">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" class='login' name="email" placeholder='email@gmail.com' required />
+                <form class='login-items'action="<?= site_url('passwordbaru/changePassword') ?>" method="post">
+                    <label htmlFor="username">Email</label>
+                    <input type="email" class='login' name="email" placeholder='email@gmail.com' value="<?= isset($email) ? $email : ''; ?>" required />
+                    <label htmlFor="password">Password Baru</label>
+                    <input type="password" class='login' name="password" placeholder="Password" required />
                     <input type="submit" class='login-btn' value="Reset Password" />
                 </form>
-                <p class='p'><a class='a' href="<?php echo site_url('Login'); ?>">Kembali ke Login</a></p>
+                <p class='p'><a class='a' href="<?php echo site_url('/'); ?>">Kembali ke Home</a></p>
             </div>
         </div>
     </div>

@@ -19,19 +19,24 @@
                 <h3>Login</h3>
                 <?php
                 if (session()->has('error')) {
-                echo '<div class="alert alert-danger" role="alert">' . session('error') . '</div>';
-                    }
+                    echo '<div class="alert-danger" role="alert" >' . session('error') . '</div>';
+                }
                 ?>
-                <form class='login-items' method="post" action="<?php echo site_url().'login/auth'?>">
+                <?php if (session()->getFlashdata('success')): ?>
+                    <div class="alert-success">
+                        <?= session()->getFlashdata('success') ?>
+                    </div>
+                <?php endif; ?>
+                <form class='login-items' action="<?php echo site_url('login/cek'); ?>" method="post">
                     <label for="email">Email</label>
                     <input type="email" class='login' name="email" placeholder='email@gmail.com' required />
                     <label for="password">Password</label>
                     <input type="password" class='login' name="password" placeholder="Password" required />
                     <input type="submit" class='login-btn' value="Login" />
                 </form>
-                <p class='p'>Belum punya akun? <a class='a' href="<?php echo site_url('Register');?>">Register</a></p>
-                <p class='p'>Lupa password? <a class='a' href="<?php echo site_url('Lupa');?>">Reset Password</a></p>
-                <p class='p'><a class='a' href="<?php echo site_url('/');?>">Kembali ke Home</a></p>
+                <p class='p'>Belum punya akun? <a class='a' href="<?php echo site_url('Register'); ?>">Register</a></p>
+                <p class='p'>Lupa password? <a class='a' href="<?php echo site_url('Lupa'); ?>">Reset Password</a></p>
+                <p class='p'><a class='a' href="<?php echo site_url('/'); ?>">Kembali ke Home</a></p>
             </div>
         </div>
     </div>
