@@ -1413,8 +1413,9 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
 
 /* Footer about us */
 .footer-logo {
+  margin-top: 25px;
   margin-bottom: 25px;
-  max-height: 35px;
+  max-height: 135px;
 }
 
 /* Footer social */
