@@ -64,10 +64,7 @@
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('/');?>">Home</a></li>
               
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Career');?>">Career</a></li>
-                                    
-                      <li class="nav-item"><a class="nav-link" href=#>About</a></li>
 
-                      <li class="nav-item"><a class="nav-link" href=#>Contact</a></li>
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('About');?>">About</a></li>
 
                       <li class="header-get-a-quote">
