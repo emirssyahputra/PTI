@@ -24,8 +24,6 @@ class Verif extends BaseController
             if ($user) {
                 $email = $user['email'];
                 $session->set('email', $email);
-                $info = "Please create a new password that you don't use on any other site.";
-                $session->set('info', $info);
                 return redirect()->to('Passwordbaru')->with('email', $email);
             } else {
                 $data['errors']['otp-error'] = "Anda memasukkan OTP yang salah!";
