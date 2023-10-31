@@ -32,6 +32,13 @@ class Login extends Controller
         if ($cadmin) {
             session()->set('masuk', true);
             session()->set('user', $u);
+            $session = \Config\Services::session();
+            $userdata = [
+                'id_pengguna' => $cadmin->id_pengguna,
+                'nama' => $cadmin->nama,
+                'email' => $cadmin->email,
+            ];
+            $session->set($userdata);
 
             if ($cadmin->id_role == '1') {
                 session()->set('akses', '1');

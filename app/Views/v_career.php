@@ -65,6 +65,9 @@
               
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Career');?>">Career</a></li>
                                     
+                      <li class="nav-item"><a class="nav-link" href=#>About</a></li>
+
+                      <li class="nav-item"><a class="nav-link" href=#>Contact</a></li>
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('About');?>">About</a></li>
 
                       <li class="header-get-a-quote">
@@ -126,7 +129,7 @@
               </div>
               <!-- Tombol "Apply Now" -->
               <div class="header-get-a-quote text-center my-2">
-                <a class="btn btn-primary apply-button" href=#>Apply Now</a>
+                <a class="btn btn-primary apply-button" href="<?php echo site_url('Apply');?>">Apply Now</a>
               </div>              
             </div>
           </div>
