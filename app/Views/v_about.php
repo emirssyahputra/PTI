@@ -187,8 +187,6 @@
             </div>
           </div>
         <?php endforeach; ?>
-
-
         <!--/ Accordion end -->
       </div><!-- Col end -->
     </section><!-- Feature area end -->
