@@ -52,7 +52,7 @@
                             <nav class="navbar navbar-expand-lg navbar-light p-0">
 
                                 <div class="logo">
-                                    <a class="d-block" href="index.html">
+                                    <a class="d-block" href="<?php echo site_url('pHome');?>">
                                         <img loading="lazy" src="<?= base_url('images/logo.png'); ?>" alt="Loer Group">
                                     </a>
                                 </div><!-- logo end -->
@@ -65,13 +65,13 @@
 
                                 <div id="navbar-collapse" class="collapse navbar-collapse">
                                     <ul class="nav navbar-nav ml-auto align-items-center">
-                                        <li class="nav-item"><a class="nav-link" href="<?php echo site_url('/');?>">Home</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="<?php echo site_url('pHome');?>">Home</a></li>
                 
-                                        <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Career');?>">Career</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="<?php echo site_url('pCareer');?>">Career</a></li>
                                                         
                                         <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Selection');?>">Selection</a></li>
 
-                                        <li class="nav-item"><a class="nav-link" href="<?php echo site_url('About');?>">About</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="<?php echo site_url('pAbout');?>">About</a></li>
 
                                         <li class="header-get-a-quote">
                                             <a class="btn btn-primary" href="<?php echo site_url('Login/logout');?>">LOG OUT</a>
@@ -111,6 +111,10 @@
                     <div class="col-md-8 offset-md-2">
                         <div class="registration-form">
                             <form action="<?= site_url('apply/apply'); ?>" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <input type="hidden" class="form-control" name="id_loker"value="<?php echo $id_loker; ?>">
+                                </div>
+                                
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
                                     <input type="text" class="form-control" value="<?php echo $nama; ?>" readonly>

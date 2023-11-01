@@ -50,24 +50,23 @@
               <nav class="navbar navbar-expand-lg navbar-light p-0">
                 
                 <div class="logo">
-                    <a class="d-block" href="<?php echo site_url('/');?>">
+                    <a class="d-block" href="<?php echo site_url('pHome');?>">
                       <img loading="lazy" src="<?= base_url('images/logo.png'); ?>" alt="Loer Group">
                     </a>
                 </div><!-- logo end -->
-
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 
                 <div id="navbar-collapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav ml-auto align-items-center">
-                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('/');?>">Home</a></li>
+                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('pHome');?>">Home</a></li>
                 
-                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Career');?>">Career</a></li>
+                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('pCareer');?>">Career</a></li>
                                     
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Selection');?>">Selection</a></li>
 
-                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('About');?>">About</a></li>
+                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('pAbout');?>">About</a></li>
 
                       <li class="header-get-a-quote">
                           <a class="btn btn-primary" href="<?php echo site_url('Login/logout');?>">LOG OUT</a>

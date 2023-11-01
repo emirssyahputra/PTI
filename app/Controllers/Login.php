@@ -53,7 +53,7 @@ class Login extends Controller
                 $user_nama = $cadmin->nama;
                 session()->set('idadmin', $idadmin);
                 session()->set('namaa', $user_nama);
-                return redirect()->to(base_url('career'));
+                return redirect()->to(base_url('pCareer'));
             }
         } else {
             $error_message = 'Email atau Password Salah. Silakan coba lagi.';
