@@ -50,7 +50,7 @@
               <nav class="navbar navbar-expand-lg navbar-light p-0">
                 
                 <div class="logo">
-                    <a class="d-block" href="index.html">
+                    <a class="d-block" href="<?php echo site_url('pHome');?>">
                       <img loading="lazy" src="<?= base_url('images/logo.png'); ?>" alt="Loer Group">
                     </a>
                 </div><!-- logo end -->
@@ -61,13 +61,13 @@
                 
                 <div id="navbar-collapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav ml-auto align-items-center">
-                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('/');?>">Home</a></li>
+                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('pHome');?>">Home</a></li>
                 
-                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Career');?>">Career</a></li>
+                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('pCareer');?>">Career</a></li>
                                     
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Selection');?>">Selection</a></li>
 
-                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('About');?>">About</a></li>
+                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('pAbout');?>">About</a></li>
 
                       <li class="header-get-a-quote">
                           <a class="btn btn-primary" href="<?php echo site_url('Login/logout');?>">LOG OUT</a>
@@ -153,75 +153,34 @@
   <div class="container">
         <h2 class="column-title text-center">Temukan Outlet Kami</h2>
 
-        <div class="accordion accordion-group" id="our-values-accordion">
-          <div class="card">
-            <div class="card-header p-0 bg-transparent" id="headingOne">
-              <h2 class="mb-0">
-                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  Kopi Loer Sudirman
-                </button>
-              </h2>
-            </div>
-            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#our-values-accordion">
-              <div class="card-body">
-                <h2 class="section-title">Alamat</h2>
-                <p>20 Ilir D. IV, Kec. Ilir Tim. I, Kota Palembang, Sumatera Selatan</p>
-                <p>Buka: Senin-Minggu 09.30-23.00</p>
-                <p><a href="https://maps.app.goo.gl/4NnJLekm3jfXvkmEA" target="_blank">Lihat di Google Maps</a></p>           
-              </div>            
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header p-0 bg-transparent" id="headingTwo">
-              <h2 class="mb-0">
-                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Kopi Loer Celentang
-                </button>
-              </h2>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#our-values-accordion">
-              <div class="card-body">
-                <h2 class="section-title">Alamat</h2>
-                <p>Jalan Brigjen Hasan K, 30A, Bukit Sangkal, Kec. Kalidoni, Kota Palembang, Sumatera Selatan 30114</p>
-                <p>Buka: Senin-Minggu 07.00-22.00</p>
-                <p><a href="https://maps.app.goo.gl/iJyWz7niWQm8nUUP8" target="_blank">Lihat di Google Maps</a></p>           
-              </div>            
+        <?php foreach ($cabang as $index => $outlet): ?>
+          <div class="accordion accordion-group" id="our-values-accordion">
+            <div class="card">
+              <div class="card-header p-0 bg-transparent" id="heading<?= $index ?>">
+                <h2 class="mb-0">
+                  <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                    data-target="#collapse<?= $index ?>" aria-expanded="false" aria-controls="collapse<?= $index ?>">
+                    <?= $outlet['nama']; ?>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapse<?= $index ?>" class="collapse" aria-labelledby="heading<?= $index ?>"
+                data-parent="#our-values-accordion">
+                <div class="card-body">
+                  <h2 class="section-title">Alamat</h2>
+                  <p>
+                    <?= $outlet['alamat']; ?>
+                  </p>
+                  <p>
+                    <?= $outlet['jam']; ?>
+                  </p>
+                  <p><a href="<?= $outlet['map']; ?>" target="_blank">Lihat di Google Maps</a></p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-header p-0 bg-transparent" id="headingThree">
-              <h2 class="mb-0">
-                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Rumah Loer Merdeka
-                </button>
-              </h2>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#our-values-accordion">
-              <div class="card-body">
-                <h2 class="section-title">Alamat</h2>
-                <p>Jl. Merdeka No.349, Talang Semut, Kec. Bukit Kecil, Kota Palembang, Sumatera Selatan 30135</p>
-                <p>Buka: Senin-Minggu 07.00-23.00</p>
-                <p><a href="https://maps.app.goo.gl/z3AYZNyoXkS1BwDS6" target="_blank">Lihat di Google Maps</a></p>           
-              </div>            
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header p-0 bg-transparent" id="headingFour">
-              <h2 class="mb-0">
-                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  Kora Coffee The Hub Sudirman
-                </button>
-              </h2>
-            </div>
-            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#our-values-accordion">
-              <div class="card-body">
-                <h2 class="section-title">Alamat</h2>
-                <p>Jl. Jend Sudirman No.3264 & 3265, Kota Palembang, Sumatera Selatan 30129</p>
-                <p>Buka: Senin-Sabtu 10.00-22.00</p>
-                <p><a href="https://maps.app.goo.gl/J8jWenguH5z2FHRZ8" target="_blank">Lihat di Google Maps</a></p>           
-              </div>            
-            </div>
-          </div>
+        <?php endforeach; ?>
+          
         </div>
         <!--/ Accordion end -->
   </div><!-- Col end -->

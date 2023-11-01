@@ -251,7 +251,7 @@
                 <img loading="lazy" src="images/icon-image/outlet.png" alt="facts-img">
               </div>
               <div class="ts-facts-content">
-                <h2 class="ts-facts-num"><span class="counterUp" data-count="5">0</span></h2>
+                <h2 class="ts-facts-num"><span class="counterUp" data-count="<?php echo $tot_outlet; ?>">0</span></h2>
                 <h3 class="ts-facts-title">OUTLETS</h3>
               </div>
           </div><!-- Col end -->
