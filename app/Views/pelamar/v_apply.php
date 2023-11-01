@@ -74,7 +74,7 @@
                                         <li class="nav-item"><a class="nav-link" href="<?php echo site_url('About');?>">About</a></li>
 
                                         <li class="header-get-a-quote">
-                                            <a class="btn btn-primary" href="<?php echo site_url('#');?>">LOG OUT</a>
+                                            <a class="btn btn-primary" href="<?php echo site_url('Login/logout');?>">LOG OUT</a>
                                         </li>
                                     </ul>
                                 </div>
