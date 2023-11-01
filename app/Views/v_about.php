@@ -53,7 +53,7 @@
 
                 <div class="logo">
                   <a class="d-block" href="index.html">
-                    <img loading="lazy" src="images/logo.png" alt="Loer Group">
+                    <img loading="lazy" src="<?= base_url('images/logo.png'); ?>" alt="Loer Group">
                   </a>
                 </div><!-- logo end -->
 
