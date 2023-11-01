@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Okt 2023 pada 17.38
+-- Waktu pembuatan: 01 Nov 2023 pada 08.05
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- Database: `loergroup`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `cabang`
+--
+
+CREATE TABLE `cabang` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `alamat` varchar(100) NOT NULL,
+  `jam` varchar(100) NOT NULL,
+  `map` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -68,10 +82,19 @@ CREATE TABLE `kontrak_kerja` (
 
 CREATE TABLE `lowongan_pekerjaan` (
   `id_loker` int(11) NOT NULL,
+  `Nama` varchar(100) NOT NULL,
   `jangka_waktu` datetime NOT NULL,
-  `deskripsi` varchar(255) NOT NULL,
-  `peran` varchar(255) NOT NULL
+  `kualifikasi` varchar(255) NOT NULL,
+  `jobdesk` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `lowongan_pekerjaan`
+--
+
+INSERT INTO `lowongan_pekerjaan` (`id_loker`, `Nama`, `jangka_waktu`, `kualifikasi`, `jobdesk`) VALUES
+(1, 'Cashier', '2023-11-01 07:34:47', 'asdadadad', 'fwqeqsdafz'),
+(2, 'Chef', '2023-11-01 07:36:38', 'dasdadw', 'wqeqrqwasdada');
 
 -- --------------------------------------------------------
 
@@ -94,8 +117,8 @@ CREATE TABLE `pengguna` (
 
 INSERT INTO `pengguna` (`id_pengguna`, `email`, `password`, `nama`, `id_role`, `code`) VALUES
 (5, 'emir@gmail.com', '$2y$10$KeqCRykP8CA4uEyeR5QeNe2BS1qpdbDQZHfVJ86OUbaFSOwXw56cC', 'EMIRSSYAH PUTRA', 2, 242194),
-(13, 'emirssyah13@gmail.com', '$2y$10$Vy/Fyi.mqNDmA4kXyty6suWKmqdlldPUbe8O7SBcSvezelLko7S4q', 'Emirssyah Putra', 2, 0),
-(14, 'emirssyah14@gmail.com', '$2y$10$CNJkjF3F4eAvbQTXKn0p/.GpBg0.8dusSkJEdatpJXhibqh69OOV6', 'Emir', 2, 179616);
+(14, 'emirssyah14@gmail.com', '$2y$10$CNJkjF3F4eAvbQTXKn0p/.GpBg0.8dusSkJEdatpJXhibqh69OOV6', 'Emir', 2, 179616),
+(15, 'emirssyah13@gmail.com', '$2y$10$oJ6.v6y3HluNpYMSwSssWuZNGgzVEi.W9hoAOYCMFy4oKfG3BGaWe', 'Emirssyah Putra', 2, 187689);
 
 -- --------------------------------------------------------
 
@@ -110,21 +133,15 @@ CREATE TABLE `riwayat_pendaftaran` (
   `id_form` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `verif`
---
-
-CREATE TABLE `verif` (
-  `id_otp` int(11) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `otp` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `cabang`
+--
+ALTER TABLE `cabang`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `form_pendaftaran`
@@ -163,12 +180,6 @@ ALTER TABLE `riwayat_pendaftaran`
   ADD KEY `id_form` (`id_form`);
 
 --
--- Indeks untuk tabel `verif`
---
-ALTER TABLE `verif`
-  ADD PRIMARY KEY (`id_otp`);
-
---
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -188,25 +199,19 @@ ALTER TABLE `kontrak_kerja`
 -- AUTO_INCREMENT untuk tabel `lowongan_pekerjaan`
 --
 ALTER TABLE `lowongan_pekerjaan`
-  MODIFY `id_loker` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_loker` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `riwayat_pendaftaran`
 --
 ALTER TABLE `riwayat_pendaftaran`
   MODIFY `id_pendaftaran` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `verif`
---
-ALTER TABLE `verif`
-  MODIFY `id_otp` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

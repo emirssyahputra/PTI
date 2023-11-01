@@ -52,7 +52,7 @@
                             <nav class="navbar navbar-expand-lg navbar-light p-0">
 
                                 <div class="logo">
-                                    <a class="d-block" href="index.html">
+                                    <a class="d-block" href="<?php echo site_url('/'); ?>">
                                         <img loading="lazy" src="images/logo.png" alt="Loer Group">
                                     </a>
                                 </div><!-- logo end -->
@@ -65,11 +65,14 @@
 
                                 <div id="navbar-collapse" class="collapse navbar-collapse">
                                     <ul class="nav navbar-nav ml-auto align-items-center">
-                                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                                        <li class="nav-item"><a class="nav-link"
+                                                href="<?php echo site_url('/'); ?>">Home</a></li>
 
-                                        <li class="nav-item"><a class="nav-link" href="career.html">Career</a></li>
+                                        <li class="nav-item"><a class="nav-link"
+                                                href="<?php echo site_url('Career'); ?>">Career</a></li>
 
-                                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                                        <li class="nav-item"><a class="nav-link"
+                                                href="<?php echo site_url('About'); ?>">About</a></li>
 
                                         <li class="header-get-a-quote">
                                             <a class="btn btn-primary" href="login.html">LOGIN</a>
@@ -227,8 +230,6 @@
                             <a href="index.html">
                                 <img loading="lazy" class="footer-logo" src="images/footer-logo.png" alt="Constra">
                             </a>
-                            <p>𝑺𝑬𝑫𝑶𝑳𝑶𝑬𝑹 (P) - 𝑳𝑶𝑬𝑹 (S) - (/lur) sapaan hangat khas wong kito galo, berasal
-                                dari kata 'dulur' yang artinya saudara, sapaan dekat yang mencairkan suasana…</p>
                         </div><!-- Col end -->
 
                         <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
