@@ -188,63 +188,59 @@
           </div>
         <?php endforeach; ?>
         <!--/ Accordion end -->
-      </div><!-- Col end -->
-    </section><!-- Feature area end -->
+        </div><!-- Col end -->
+</section><!-- Feature area end -->
 
-    <footer id="footer" class="footer bg-overlay">
-      <div class="footer-main">
-        <div class="container">
-          <div class="row justify-content-between">
-            <div class="col-lg-4 col-md-6 footer-widget footer-about">
-              <h3 class="widget-title">About Us</h3>
-              <a href="index.html">
-                <img loading="lazy" class="footer-logo" src="images/footer-logo.png" alt="Constra">
-              </a>
-            </div><!-- Col end -->
+<footer id="footer" class="footer bg-overlay">
+  <div class="footer-main">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-lg-4 col-md-6 footer-widget footer-about">
+          <h3 class="widget-title">About Us</h3>
+          <a href="index.html">
+            <img loading="lazy" class="footer-logo" src="images/footer-logo.png" alt="Constra">
+          </a>          
+        </div><!-- Col end -->
 
-            <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
-              <h3 class="widget-title">Hubungi Kami</h3>
-              <div class="working-hours">
-                <p>Headquarter Office Jl. Brigjen Hasan Kasim, Ruko 30A Kecamatan Kalidoni, Kota Palembang Sumatera
-                  Selatan 30114.</p>
-                <p>Email: kopiloergroup@gmail.com</p>
-                <p>Phone: +628 131 799 3414</p>
-              </div>
-              <div class="footer-social">
-                <ul>
-                  <li><a href="https://instagram.com/loergroup" aria-label="Instagram"><i
-                        class="fab fa-instagram"></i></a></li>
-                  <li><a href="https://id.linkedin.com/company/kopi-loer-group" aria-label="Linkedin"><i
-                        class="fab fa-linkedin"></i></a></li>
-                </ul>
-              </div><!-- Footer social end -->
-            </div><!-- Col end -->
+        <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+          <h3 class="widget-title">Hubungi Kami</h3>
+          <div class="working-hours">
+            <p>Headquarter Office Jl. Brigjen Hasan Kasim, Ruko 30A Kecamatan Kalidoni, Kota Palembang Sumatera Selatan 30114.</p>
+            <p>Email: kopiloergroup@gmail.com</p>
+            <p>Phone: +628 131 799 3414</p>
+          </div>
+          <div class="footer-social">
+            <ul>
+              <li><a href="https://instagram.com/loergroup" aria-label="Instagram"><i
+                    class="fab fa-instagram"></i></a></li>
+              <li><a href="https://id.linkedin.com/company/kopi-loer-group" aria-label="Linkedin"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+          </div><!-- Footer social end -->
+        </div><!-- Col end -->
 
-            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
-              <h3 class="widget-title">Brands</h3>
-              <ul class="list-arrow">
-                <p>Kopi Loer</p>
-                <p>Kora</p>
-                <p>Rumah Loer</p>
-              </ul>
-            </div><!-- Col end -->
-          </div><!-- Row end -->
-        </div><!-- Container end -->
-      </div><!-- Footer main end -->
+        <div class="col-lg-2 col-md-6 mt-5 mt-lg-0 footer-widget">
+          <h3 class="widget-title">Brands</h3>
+          <ul class="list-arrow">
+            <p>Kopi Loer</p>
+            <p>Kora</p>
+            <p>Rumah Loer</p>
+          </ul>
+        </div><!-- Col end -->
+      </div><!-- Row end -->
+    </div><!-- Container end -->
+  </div><!-- Footer main end -->
 
-      <div class="copyright">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-12">
-              <div class="copyright-info text-center">
-                <span>&copy;
-                  <script>
-                    document.write(new Date().getFullYear())
-                  </script> PT. Loer Group Jaya. All rights reserved.
-                </span>
-              </div>
-            </div>
-          </div><!-- Row end -->
+  <div class="copyright">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-12">
+          <div class="copyright-info text-center">
+            <span>&copy; <script>
+                document.write(new Date().getFullYear())
+              </script> PT. Loer Group Jaya. All rights reserved.</span>
+          </div>
+        </div>
+      </div><!-- Row end -->
 
           <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
             <button class="btn btn-primary" title="Back to Top">
