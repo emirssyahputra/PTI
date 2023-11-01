@@ -186,7 +186,6 @@
           <a href="index.html">
             <img loading="lazy" class="footer-logo" src="images/footer-logo.png" alt="Constra">
           </a>          
-          <p>𝑺𝑬𝑫𝑶𝑳𝑶𝑬𝑹 (P) - 𝑳𝑶𝑬𝑹 (S) - (/lur) sapaan hangat khas wong kito galo, berasal dari kata 'dulur' yang artinya saudara, sapaan dekat yang mencairkan suasana…</p>
         </div><!-- Col end -->
 
         <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
