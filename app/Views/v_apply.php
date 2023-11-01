@@ -250,7 +250,7 @@
                             </div><!-- Footer social end -->
                         </div><!-- Col end -->
 
-                        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+                        <div class="col-lg-2 col-md-6 mt-5 mt-lg-0 footer-widget">
                             <h3 class="widget-title">Brands</h3>
                             <ul class="list-arrow">
                                 <p>Kopi Loer</p>
