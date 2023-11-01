@@ -5,7 +5,7 @@
   <!-- Basic Page Needs
 ================================================== -->
   <meta charset="utf-8">
-  <title>Lowongan Pekerjaan</title>
+  <title>Loer Group</title>
 
   <!-- Mobile Specific Metas
 ================================================== -->
@@ -15,14 +15,14 @@
 
   <!-- Favicon
 ================================================== -->
-<link rel="icon" type="image/png" href="<?= base_url('images/favicon.png'); ?>">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 
   <!-- CSS
 ================================================== -->
   <!-- Bootstrap -->
   <link rel="stylesheet" href="<?= base_url('plugins/bootstrap/bootstrap.min.css'); ?>">
-  <!-- FontAwesome -->
-  <link rel="stylesheet"href="<?= base_url('plugins/fontawesome/css/all.min.css'); ?>">
+   <!-- FontAwesome -->
+   <link rel="stylesheet"href="<?= base_url('plugins/fontawesome/css/all.min.css'); ?>">
   <!-- Animation -->
   <link rel="stylesheet" href="<?= base_url('plugins/animate-css/animate.css'); ?>">
   <!-- slick Carousel -->
@@ -64,11 +64,13 @@
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('/');?>">Home</a></li>
               
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Career');?>">Career</a></li>
+                                    
+                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Selection');?>">Selection</a></li>
 
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('About');?>">About</a></li>
 
                       <li class="header-get-a-quote">
-                          <a class="btn btn-primary" href="<?php echo site_url('Login');?>">LOGIN</a>
+                          <a class="btn btn-primary" href="<?php echo site_url('#');?>">LOG OUT</a>
                       </li>
                     </ul>
                 </div>
@@ -85,28 +87,107 @@
 </header>
 <!--/ Header end -->
 
-<div id="banner-area" class="banner-area" style="background-image:url(images/banner/banner1.jpg)">
-  <div class="banner-text">
-    <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-              <div class="banner-heading">
-                <h1 class="banner-title">Career</h1>
+<div class="banner-carousel banner-carousel-1 mb-0">
+  <div class="banner-carousel-item" style="background-image:url(images/slider-main/KOPI-LOER.jpg)">
+    <div class="slider-content">
+        <div class="container h-100">
+          <div class="row align-items-center h-100">
+              <div class="col-md-12 text-center">
+                <h3 class="slide-sub-title" data-animation-in="slideInRight">Loer Group</h3>
               </div>
-          </div><!-- Col end -->
-        </div><!-- Row end -->
-    </div><!-- Container end -->
-  </div><!-- Banner text end -->
-</div><!-- Banner area end --> 
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="banner-carousel-item" style="background-image:url(images/slider-main/KORA.jpg)">
+    <div class="slider-content text-left">
+        <div class="container h-100">
+          <div class="row align-items-center h-100">
+              <div class="col-md-12">
+                <h3 class="slide-title" data-animation-in="fadeIn">Lorem Ipsum</h3>
+                <h3 class="slide-sub-title" data-animation-in="slideInLeft">Loer Group</h3>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="banner-carousel-item" style="background-image:url(images/slider-main/RUMAH-LOER.jpg)">
+    <div class="slider-content text-right">
+        <div class="container h-100">
+          <div class="row align-items-center h-100">
+              <div class="col-md-12">
+                <h2 class="slide-title" data-animation-in="slideInDown">Palembang</h2>
+                <h3 class="slide-sub-title" data-animation-in="fadeIn">Loer Group</h3>
+                <p class="slider-description lead" data-animation-in="slideInRight">Lorem Ipsum</p>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<section id="main-container" class="main-container">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-12">
+        <h3 class="section-sub-title">About Us</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-5 mt-5 mt-lg-0">
+        <div id="page-slider" class="page-slider small-bg">
+    
+          <div class="item" style="background-image:url(images/slider-pages/KOPI-LOER-TIM.jpg)">
+            <div class="container">
+              <div class="box-slider-content">
+                <div class="box-slider-text">
+                  <h2 class="box-slide-title">Kopi Loer</h2>
+                </div>    
+              </div>
+            </div>
+          </div><!-- Item 1 end -->
+    
+          <div class="item" style="background-image:url(images/slider-pages/KORA-TIM.jpg)">
+            <div class="container">
+              <div class="box-slider-content">
+                <div class="box-slider-text">
+                  <h2 class="box-slide-title">Kora</h2>
+                </div>    
+              </div>
+            </div>
+          </div><!-- Item 2 end -->
+    
+          <div class="item" style="background-image:url(images/slider-pages/RUMAH-LOER-TIM.jpg)">
+            <div class="container">
+              <div class="box-slider-content">
+                <div class="box-slider-text">
+                  <h2 class="box-slide-title">Rumah Loer</h2>
+                </div>    
+              </div>
+            </div>
+          </div><!-- Item 3 end -->
+        </div><!-- Page slider end-->
+      </div><!-- Col end -->
+    
+      <div class="col-lg-7">
+        <p>𝑺𝑬𝑫𝑶𝑳𝑶𝑬𝑹 (P) - 𝑳𝑶𝑬𝑹 (S) - (/lur) sapaan hangat khas wong kito galo, berasal dari kata 'dulur' yang artinya saudara, sapaan dekat yang mencairkan suasana…</p>
+        <p>Berangkat dari antusiasme dan rasa cinta akan dunia kuliner, Kopi Loer hadir di pertengahan tahun 2019 dengan konsep kedai kopi kekinian yang sederhana di tengah-tengah Kota Palembang.</p>
+        <p>Satu tahun setelah Kopi Loer hadir ditengah semaraknya perkembangan dunia kuliner di Kota Palembang, Kopi Loer menerima pendanaan melalui Equity Crowd Funding (ECF) dan melakukan pengembangan dengan penambahan kedai-kedai Kopi Loer, diantaranya Kopi Loer Sudirman dan KL Celentang. Pada penghujung tahun 2021, Rumah Loer hadir dan menjadi resto dengan konsep satu-kesatuan seluruh kedai Kopi Loer yang ada, menyajikan pengalaman menikmati seduhan kopi dan hidangan makanan yang lebih berkesan.</p>
+      </div><!-- Col end -->
+    </div><!-- Content row end -->    
+
+  </div><!-- Container end -->
+</section><!-- Main container end -->
 
 <section id="ts-features" class="ts-features">
   <div class="container">
         <div class="row text-center">
           <div class="col-12">
-            <p>Bergabunglah menjadi bagian dari #TimLoer! Tumbuh dan berkembang bersama Loer Group dan temukan passion-mu dalam cakupan dunia jasa dan pelayanan</p>
+            <h3 class="section-sub-title">Carrer</h3>
           </div>
         </div>
-        <h2 class="column-title mrt-0">Lowongan Tersedia</h2>
 
         <div class="accordion accordion-group" id="our-values-accordion">
           <div class="card">
@@ -126,7 +207,7 @@
               </div>
               <!-- Tombol "Apply Now" -->
               <div class="header-get-a-quote text-center my-2">
-                <a class="btn btn-primary apply-button" href="<?php echo site_url('Apply');?>">Apply Now</a>
+                <a class="btn btn-primary apply-button" href=#>Apply Now</a>
               </div>              
             </div>
           </div>
@@ -240,6 +321,48 @@
       </div><!-- Col end -->
 </section><!-- Feature area end -->
 
+
+<section id="facts" class="facts-area dark-bg">
+  <div class="container">
+    <div class="facts-wrapper">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 ts-facts">
+              <div class="ts-facts-img">
+                <img loading="lazy" src="images/icon-image/brand.png" alt="facts-img">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num"><span class="counterUp" data-count="3">0</span></h2>
+                <h3 class="ts-facts-title">BRANDS</h3>
+              </div>
+          </div><!-- Col end -->
+
+          <div class="col-md-4 col-sm-6 ts-facts mt-5 mt-sm-0">
+              <div class="ts-facts-img">
+                <img loading="lazy" src="images/icon-image/outlet.png" alt="facts-img">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num"><span class="counterUp" data-count="5">0</span></h2>
+                <h3 class="ts-facts-title">OUTLETS</h3>
+              </div>
+          </div><!-- Col end -->
+
+          <div class="col-md-4 col-sm-6 ts-facts mt-5 mt-md-0">
+              <div class="ts-facts-img">
+                <img loading="lazy" src="images/icon-image/produk.png" alt="facts-img">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num"><span class="counterUp" data-count="125">0</span></h2>
+                <h3 class="ts-facts-title">PRODUCTS</h3>
+              </div>
+          </div><!-- Col end -->
+
+        </div> <!-- Facts end -->
+    </div>
+    <!--/ Content row end -->
+  </div>
+  <!--/ Container end -->
+</section><!-- Facts end -->
+
 <footer id="footer" class="footer bg-overlay">
     <div class="footer-main">
       <div class="container">
@@ -249,7 +372,6 @@
             <a href="index.html">
               <img loading="lazy" class="footer-logo" src="images/footer-logo.png" alt="Constra">
             </a>          
-            <p>𝑺𝑬𝑫𝑶𝑳𝑶𝑬𝑹 (P) - 𝑳𝑶𝑬𝑹 (S) - (/lur) sapaan hangat khas wong kito galo, berasal dari kata 'dulur' yang artinya saudara, sapaan dekat yang mencairkan suasana…</p>
           </div><!-- Col end -->
 
           <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
@@ -268,7 +390,7 @@
             </div><!-- Footer social end -->
           </div><!-- Col end -->
 
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+          <div class="col-lg-2 col-md-6 mt-5 mt-lg-0 footer-widget">
             <h3 class="widget-title">Brands</h3>
             <ul class="list-arrow">
               <p>Kopi Loer</p>
@@ -305,7 +427,6 @@
 
   <!-- Javascript Files
   ================================================== -->
-
   <!-- initialize jQuery Library -->
   <script src="<?php echo base_url().'plugins/jQuery/jquery.min.js'?>"></script>
   <!-- Bootstrap jQuery -->

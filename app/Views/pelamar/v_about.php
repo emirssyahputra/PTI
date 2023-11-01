@@ -62,13 +62,15 @@
                 <div id="navbar-collapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav ml-auto align-items-center">
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('/');?>">Home</a></li>
-              
+                
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Career');?>">Career</a></li>
                                     
+                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Selection');?>">Selection</a></li>
+
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('About');?>">About</a></li>
 
                       <li class="header-get-a-quote">
-                          <a class="btn btn-primary" href="<?php echo site_url('Login');?>">LOGIN</a>
+                          <a class="btn btn-primary" href="<?php echo site_url('#');?>">LOG OUT</a>
                       </li>
                     </ul>
                 </div>
@@ -233,8 +235,7 @@
           <h3 class="widget-title">About Us</h3>
           <a href="index.html">
             <img loading="lazy" class="footer-logo" src="images/footer-logo.png" alt="Constra">
-          </a>          
-          <p>𝑺𝑬𝑫𝑶𝑳𝑶𝑬𝑹 (P) - 𝑳𝑶𝑬𝑹 (S) - (/lur) sapaan hangat khas wong kito galo, berasal dari kata 'dulur' yang artinya saudara, sapaan dekat yang mencairkan suasana…</p>
+          </a>
         </div><!-- Col end -->
 
         <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
@@ -253,7 +254,7 @@
           </div><!-- Footer social end -->
         </div><!-- Col end -->
 
-        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+        <div class="col-lg-2 col-md-6 mt-5 mt-lg-0 footer-widget">
           <h3 class="widget-title">Brands</h3>
           <ul class="list-arrow">
             <p>Kopi Loer</p>
