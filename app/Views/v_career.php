@@ -132,13 +132,13 @@
             <div class="card">
               <div class="card-header p-0 bg-transparent" id="heading<?= $index ?>">
                 <h2 class="mb-0">
-                  <button class="btn btn-block text-left accordion-button collapsed" type="button" data-toggle="collapse"
-                    data-bs-target="#collapse<?= $index ?>" aria-expanded="false" aria-controls="collapse<?= $index ?>">
+                  <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                    data-target="#collapse<?= $index ?>" aria-expanded="false" aria-controls="collapse<?= $index ?>">
                     <?= $job['Nama']; ?>
                   </button>
                 </h2>
               </div>
-              <div id="collapse<?= $index ?>" class="collapse" aria-labelledby="heading<?= $index ?>" data-parent="#our-values-accordion">
+              <div id="collapse<?= $index ?>" class="collapse" aria-labelledby="heading<?= $index ?>" >
                 <div class="card-body">
                   <h2 class="section-title">Kualifikasi</h2>
                   <p><?= $job['kualifikasi']; ?></p>
