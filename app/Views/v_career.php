@@ -68,7 +68,7 @@
 
                 <div class="logo">
                   <a class="d-block" href="<?php echo site_url('/'); ?>">
-                    <img loading="lazy" src="images/logo.png" alt="Loer Group">
+                    <img loading="lazy" src="<?= base_url('images/logo.png'); ?>" alt="Loer Group">
                   </a>
                 </div><!-- logo end -->
 
@@ -132,8 +132,8 @@
             <div class="card">
               <div class="card-header p-0 bg-transparent" id="heading<?= $index ?>">
                 <h2 class="mb-0">
-                  <button class="btn btn-block text-left accordion-button collapsed" type="button" data-toggle="collapse"
-                    data-bs-target="#collapse<?= $index ?>" aria-expanded="false" aria-controls="collapse<?= $index ?>">
+                  <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                    data-target="#collapse<?= $index ?>" aria-expanded="false" aria-controls="collapse<?= $index ?>">
                     <?= $job['Nama']; ?>
                   </button>
                 </h2>

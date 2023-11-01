@@ -21,18 +21,18 @@
     <!-- CSS
 ================================================== -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
-    <!-- Animation -->
-    <link rel="stylesheet" href="plugins/animate-css/animate.css">
-    <!-- slick Carousel -->
-    <link rel="stylesheet" href="plugins/slick/slick.css">
-    <link rel="stylesheet" href="plugins/slick/slick-theme.css">
-    <!-- Colorbox -->
-    <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
-    <!-- Template styles-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<?= base_url('plugins/bootstrap/bootstrap.min.css'); ?>">
+   <!-- FontAwesome -->
+   <link rel="stylesheet"href="<?= base_url('plugins/fontawesome/css/all.min.css'); ?>">
+  <!-- Animation -->
+  <link rel="stylesheet" href="<?= base_url('plugins/animate-css/animate.css'); ?>">
+  <!-- slick Carousel -->
+  <link rel="stylesheet" href="<?= base_url('plugins/slick/slick.css'); ?>">
+  <link rel="stylesheet" href="<?= base_url('plugins/slick/slick-theme.css'); ?>">
+  <!-- Colorbox -->
+  <link rel="stylesheet" href="<?= base_url('plugins/colorbox/colorbox.css'); ?>">
+  <!-- Template styles-->
+  <link rel="stylesheet" href="<?= base_url('css/style.css'); ?>">
 
 </head>
 
@@ -53,7 +53,7 @@
 
                                 <div class="logo">
                                     <a class="d-block" href="index.html">
-                                        <img loading="lazy" src="images/logo.png" alt="Loer Group">
+                                        <img loading="lazy" src="<?= base_url('images/logo.png'); ?>" alt="Loer Group">
                                     </a>
                                 </div><!-- logo end -->
 
@@ -290,26 +290,25 @@
   ================================================== -->
 
         <!-- initialize jQuery Library -->
-        <script src="plugins/jQuery/jquery.min.js"></script>
-        <!-- Bootstrap jQuery -->
-        <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
-        <!-- Slick Carousel -->
-        <script src="plugins/slick/slick.min.js"></script>
-        <script src="plugins/slick/slick-animation.min.js"></script>
-        <!-- Color box -->
-        <script src="plugins/colorbox/jquery.colorbox.js"></script>
-        <!-- shuffle -->
-        <script src="plugins/shuffle/shuffle.min.js" defer></script>
+        <script src="<?php echo base_url().'plugins/jQuery/jquery.min.js'?>"></script>
+  <!-- Bootstrap jQuery -->
+  <script src="<?php echo base_url().'plugins/bootstrap/bootstrap.min.js'?>"></script>
+  <!-- Slick Carousel -->
+  <script src="<?php echo base_url().'plugins/slick/slick.min.js'?>"></script>
+  <script src="<?php echo base_url().'plugins/slick/slick-animation.min.js'?>"></script>
+  <!-- Color box -->
+  <script src="<?php echo base_url().'plugins/colorbox/jquery.colorbox.js'?>"></script>
+  <!-- shuffle -->
+  <script src="<?php echo base_url().'plugins/shuffle/shuffle.min.js'?>"></script>
 
 
-        <!-- Google Map API Key-->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"
-            defer></script>
-        <!-- Google Map Plugin-->
-        <script src="plugins/google-map/map.js" defer></script>
+  <!-- Google Map API Key-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
+  <!-- Google Map Plugin-->
+  <script src="<?= base_url('plugins/google-map/map.js'); ?>" defer></script>
 
-        <!-- Template custom -->
-        <script src="js/script.js"></script>
+  <!-- Template custom -->
+  <script src="<?php echo base_url().'js/script.js'?>"></script>
 
     </div><!-- Body inner end -->
 </body>

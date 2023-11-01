@@ -66,7 +66,7 @@
                 
                 <div class="logo">
                     <a class="d-block" href="<?php echo site_url('/');?>">
-                      <img loading="lazy" src="images/logo.png" alt="Loer Group">
+                      <img loading="lazy" src="<?= base_url('images/logo.png'); ?>" alt="Loer Group">
                     </a>
                 </div><!-- logo end -->
 
@@ -198,22 +198,22 @@
   <div class="container">
         <div class="row text-center">
           <div class="col-12">
-            <h3 class="section-sub-title">Carrer</h3>
+            <h3 class="section-sub-title">Career</h3>
           </div>
         </div>
 
-        <?php foreach ($lowongan as $index => $job): ?>
+        <?php foreach ($loker as $index => $job): ?>
           <div class="accordion accordion-group" id="our-values-accordion">
             <div class="card">
               <div class="card-header p-0 bg-transparent" id="heading<?= $index ?>">
                 <h2 class="mb-0">
-                  <button class="btn btn-block text-left accordion-button collapsed" type="button" data-toggle="collapse"
-                    data-bs-target="#collapse<?= $index ?>" aria-expanded="false" aria-controls="collapse<?= $index ?>">
+                  <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                    data-target="#collapse<?= $index ?>" aria-expanded="false" aria-controls="collapse<?= $index ?>">
                     <?= $job['Nama']; ?>
                   </button>
                 </h2>
               </div>
-              <div id="collapse<?= $index ?>" class="collapse" aria-labelledby="heading<?= $index ?>" data-parent="#our-values-accordion">
+              <div id="collapse<?= $index ?>" class="collapse" aria-labelledby="heading<?= $index ?>" >
                 <div class="card-body">
                   <h2 class="section-title">Kualifikasi</h2>
                   <p><?= $job['kualifikasi']; ?></p>
