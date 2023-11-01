@@ -7,19 +7,25 @@ use App\Models\M_Apply;
 
 class Apply extends BaseController
 {
-    public function index(): string
+    public function index()
     {
         $session = \Config\Services::session();
         $id_pengguna = $session->get('id_pengguna');
         $nama = $session->get('nama');
         $email = $session->get('email');
+        $id_loker = $this->request->getPost('id_loker');
+
+        if ($id_pengguna === null) {
+            return redirect()->to('login'); // Mengarahkan pengguna ke halaman login jika belum masuk.
+        }
 
         $data = [
             'nama' => $nama,
             'email' => $email,
+            'id_loker' => $id_loker,
         ];
 
-        return view('v_apply', $data);
+        return view('v_apply', $data); // Menampilkan halaman apply jika pengguna sudah masuk.
     }
 
 
@@ -38,6 +44,7 @@ class Apply extends BaseController
         $nama = $session->get('nama');
         $email = $session->get('email');
 
+        // Mengambil nilai id_loker dari POST data
 
         // Loop melalui setiap field file
         foreach ($fileFields as $field) {
@@ -60,6 +67,8 @@ class Apply extends BaseController
             'no_telp' => $this->request->getVar('no_telp'),
             'alamat' => $this->request->getVar('alamat'),
             'linkedin' => $this->request->getVar('linkedin'),
+            'id_loker' => $this->request->getVar('id_loker'),
+            // Memasukkan id_loker ke dalam data
         ];
 
         // Menambahkan nama file yang diunggah ke dalam data
@@ -75,4 +84,5 @@ class Apply extends BaseController
             return redirect()->to('/apply')->with('error', 'Gagal mengirim lamaran. Silakan coba lagi.');
         }
     }
+
 }

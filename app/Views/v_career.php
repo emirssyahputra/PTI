@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="<?= base_url('css/style.css'); ?>">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
-    $(document).ready(function() {
-      $('.accordion-button').click(function() {
+    $(document).ready(function () {
+      $('.accordion-button').click(function () {
         var thisButton = $(this);
         var targetCollapse = $(this).attr('data-bs-target');
 
@@ -86,7 +86,7 @@
                     <li class="nav-item"><a class="nav-link" href="<?php echo site_url('About'); ?>">About</a></li>
 
                     <li class="header-get-a-quote">
-                      <a class="btn btn-primary" href="<?php echo site_url('Login'); ?>">LOGIN</a>
+                      <a class="btn btn-primary" href="<?php echo site_url('Login/logout'); ?>">LOG OUT</a>
                     </li>
                   </ul>
                 </div>
@@ -138,15 +138,23 @@
                   </button>
                 </h2>
               </div>
-              <div id="collapse<?= $index ?>" class="collapse" aria-labelledby="heading<?= $index ?>" >
+              <div id="collapse<?= $index ?>" class="collapse" aria-labelledby="heading<?= $index ?>"
+                data-parent="#our-values-accordion">
                 <div class="card-body">
                   <h2 class="section-title">Kualifikasi</h2>
-                  <p><?= $job['kualifikasi']; ?></p>
+                  <p>
+                    <?= $job['kualifikasi']; ?>
+                  </p>
                   <h2 class="section-title">Job Desk</h2>
-                  <p><?= $job['jobdesk']; ?></p>
+                  <p>
+                    <?= $job['jobdesk']; ?>
+                  </p>
                 </div>
                 <div class="header-get-a-quote text-center my-2">
-                  <a class="btn btn-primary apply-button" href="<?php echo site_url('Apply'); ?>">Apply Now</a>
+                  <form method="post" action="<?php echo site_url('Apply'); ?>">
+                    <input type="hidden" name="id_loker" value="<?php echo $job['id_loker']; ?>">
+                    <button class="btn btn-primary apply-button" type="submit">Apply Now</button>
+                  </form>
                 </div>
               </div>
             </div>
