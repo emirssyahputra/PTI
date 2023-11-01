@@ -1,11 +1,15 @@
-<?php
+<?php namespace App\Controllers;
 
-namespace App\Controllers;
+use App\Models\M_career;
+use CodeIgniter\Controller;
 
-class Career extends BaseController
+class Career extends Controller
 {
-    public function index(): string
+    public function index()
     {
-        return view('v_career');
+        $lowongan = new M_career();
+        $data['loker'] = $lowongan->findAll(); // Mengambil semua data lowongan pekerjaan
+
+        return view('v_career', $data); // Menampilkan data ke view
     }
 }
