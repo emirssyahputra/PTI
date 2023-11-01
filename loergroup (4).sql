@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Okt 2023 pada 17.38
+-- Waktu pembuatan: 01 Nov 2023 pada 07.45
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -68,10 +68,19 @@ CREATE TABLE `kontrak_kerja` (
 
 CREATE TABLE `lowongan_pekerjaan` (
   `id_loker` int(11) NOT NULL,
+  `Nama` varchar(100) NOT NULL,
   `jangka_waktu` datetime NOT NULL,
-  `deskripsi` varchar(255) NOT NULL,
-  `peran` varchar(255) NOT NULL
+  `kualifikasi` varchar(255) NOT NULL,
+  `jobdesk` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `lowongan_pekerjaan`
+--
+
+INSERT INTO `lowongan_pekerjaan` (`id_loker`, `Nama`, `jangka_waktu`, `kualifikasi`, `jobdesk`) VALUES
+(1, 'Cashier', '2023-11-01 07:34:47', 'asdadadad', 'fwqeqsdafz'),
+(2, 'Chef', '2023-11-01 07:36:38', 'dasdadw', 'wqeqrqwasdada');
 
 -- --------------------------------------------------------
 
@@ -94,8 +103,8 @@ CREATE TABLE `pengguna` (
 
 INSERT INTO `pengguna` (`id_pengguna`, `email`, `password`, `nama`, `id_role`, `code`) VALUES
 (5, 'emir@gmail.com', '$2y$10$KeqCRykP8CA4uEyeR5QeNe2BS1qpdbDQZHfVJ86OUbaFSOwXw56cC', 'EMIRSSYAH PUTRA', 2, 242194),
-(13, 'emirssyah13@gmail.com', '$2y$10$Vy/Fyi.mqNDmA4kXyty6suWKmqdlldPUbe8O7SBcSvezelLko7S4q', 'Emirssyah Putra', 2, 0),
-(14, 'emirssyah14@gmail.com', '$2y$10$CNJkjF3F4eAvbQTXKn0p/.GpBg0.8dusSkJEdatpJXhibqh69OOV6', 'Emir', 2, 179616);
+(14, 'emirssyah14@gmail.com', '$2y$10$CNJkjF3F4eAvbQTXKn0p/.GpBg0.8dusSkJEdatpJXhibqh69OOV6', 'Emir', 2, 179616),
+(15, 'emirssyah13@gmail.com', '$2y$10$oJ6.v6y3HluNpYMSwSssWuZNGgzVEi.W9hoAOYCMFy4oKfG3BGaWe', 'Emirssyah Putra', 2, 187689);
 
 -- --------------------------------------------------------
 
@@ -188,13 +197,13 @@ ALTER TABLE `kontrak_kerja`
 -- AUTO_INCREMENT untuk tabel `lowongan_pekerjaan`
 --
 ALTER TABLE `lowongan_pekerjaan`
-  MODIFY `id_loker` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_loker` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `riwayat_pendaftaran`
