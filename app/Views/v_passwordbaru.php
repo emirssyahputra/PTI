@@ -30,7 +30,7 @@ $email = session()->getFlashdata('email');
                 <?php endif; ?>
                 <form class='login-items'action="<?= site_url('passwordbaru/changePassword') ?>" method="post">
                     <label htmlFor="username">Email</label>
-                    <input type="email" class='login' name="email" placeholder='email@gmail.com' value="<?= isset($email) ? $email : ''; ?>" required />
+                    <input type="email" class='login' name="email" placeholder='email@gmail.com' value="<?= isset($email) ? $email : ''; ?>" readonly required />
                     <label htmlFor="password">Password Baru</label>
                     <input type="password" class='login' name="password" placeholder="Password" required />
                     <input type="submit" class='login-btn' value="Reset Password" />
