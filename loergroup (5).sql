@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Nov 2023 pada 07.45
+-- Waktu pembuatan: 01 Nov 2023 pada 08.05
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- Database: `loergroup`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `cabang`
+--
+
+CREATE TABLE `cabang` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `alamat` varchar(100) NOT NULL,
+  `jam` varchar(100) NOT NULL,
+  `map` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -119,21 +133,15 @@ CREATE TABLE `riwayat_pendaftaran` (
   `id_form` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `verif`
---
-
-CREATE TABLE `verif` (
-  `id_otp` int(11) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `otp` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `cabang`
+--
+ALTER TABLE `cabang`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `form_pendaftaran`
@@ -172,12 +180,6 @@ ALTER TABLE `riwayat_pendaftaran`
   ADD KEY `id_form` (`id_form`);
 
 --
--- Indeks untuk tabel `verif`
---
-ALTER TABLE `verif`
-  ADD PRIMARY KEY (`id_otp`);
-
---
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -210,12 +212,6 @@ ALTER TABLE `pengguna`
 --
 ALTER TABLE `riwayat_pendaftaran`
   MODIFY `id_pendaftaran` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `verif`
---
-ALTER TABLE `verif`
-  MODIFY `id_otp` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
