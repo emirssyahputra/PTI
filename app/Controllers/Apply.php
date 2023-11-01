@@ -7,12 +7,17 @@ use App\Models\M_Apply;
 
 class Apply extends BaseController
 {
-    public function index(): string
+    public function index()
     {
         $session = \Config\Services::session();
+        $id_pengguna = $session->get('id_pengguna');
         $nama = $session->get('nama');
         $email = $session->get('email');
         $id_loker = $this->request->getPost('id_loker');
+
+        if ($id_pengguna === null) {
+            return redirect()->to('login'); // Mengarahkan pengguna ke halaman login jika belum masuk.
+        }
 
         $data = [
             'nama' => $nama,
@@ -20,7 +25,7 @@ class Apply extends BaseController
             'id_loker' => $id_loker,
         ];
 
-        return view('v_apply', $data);
+        return view('v_apply', $data); // Menampilkan halaman apply jika pengguna sudah masuk.
     }
 
 
