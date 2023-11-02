@@ -116,12 +116,12 @@
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label for="nama">Nama</label>
+                                    <label for="nama" class="required-label">Nama</label>
                                     <input type="text" class="form-control" value="<?php echo $nama; ?>" readonly>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="jenis-kelamin">Jenis Kelamin</label>
+                                    <label for="jenis-kelamin" class="required-label">Jenis Kelamin</label>
                                     <select class="form-control" id="jenis-kelamin" name="jenkel" required>
                                         <option value="laki-laki">Laki-laki</option>
                                         <option value="perempuan">Perempuan</option>
@@ -129,7 +129,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="pendidikan-terakhir">Pendidikan Terakhir</label>
+                                    <label for="pendidikan-terakhir" class="required-label">Pendidikan Terakhir</label>
                                     <select class="form-control" id="pendidikan-terakhir" name="pend" required>
                                         <option value="SLTA Sederajat">SLTA Sederajat</option>
                                         <option value="D1">D1</option>
@@ -143,60 +143,60 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="email">Email</label>
+                                    <label for="email" class="required-label">Email</label>
                                     <input type="email" class="form-control" id="email" value="<?php echo $email; ?>"
                                         readonly>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="telepon">Nomor Telepon</label>
+                                    <label for="telepon" class="required-label">Nomor Telepon</label>
                                     <input type="tel" class="form-control" id="telepon" name="no_telp" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="alamat">Alamat</label>
+                                    <label for="alamat" class="required-label">Alamat</label>
                                     <textarea class="form-control" id="alamat" name="alamat" rows="2"
                                         required></textarea>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="linkedin">URL LinkedIn</label>
+                                    <label for="linkedin" class="required-label">URL LinkedIn</label>
                                     <input type="url" class="form-control" id="linkedin" name="linkedin"
                                         value="https://" placeholder="mis: http://linkedin.com/in/username" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="cv">KTP</label>
+                                    <label for="cv" class="required-label">KTP</label>
                                     <input type="file" class="form-control-file" id="ktp" name="ktp" accept=".pdf"
                                         required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="cv">Upload Curriculum Vitae (CV)</label>
+                                    <label for="cv" class="required-label">Upload Curriculum Vitae (CV)</label>
                                     <input type="file" class="form-control-file" id="cv" name="cv" accept=".pdf"
                                         required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="surat-lamaran">Upload Surat Lamaran</label>
+                                    <label for="surat-lamaran" class="required-label">Upload Surat Lamaran</label>
                                     <input type="file" class="form-control-file" id="surat-lamaran" name="surat_lamaran"
                                         accept=".pdf" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ijazah">Upload File Ijazah</label>
+                                    <label for="ijazah" class="required-label">Upload File Ijazah</label>
                                     <input type="file" class="form-control-file" id="ijazah" name="ijazah" accept=".pdf"
                                         required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ijazah">SKCK</label>
+                                    <label for="ijazah" class="required-label">SKCK</label>
                                     <input type="file" class="form-control-file" id="skck" name="skck" accept=".pdf"
                                         required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ijazah">Packlaring</label>
+                                    <label for="ijazah" class="required-label">Packlaring</label>
                                     <input type="file" class="form-control-file" id="packlaring" name="packlaring"
                                         accept=".pdf" required>
                                 </div>
