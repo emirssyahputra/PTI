@@ -1,4 +1,4 @@
-# CodeIgniter 4 Framework
+# CodeIgniter 4 Frameworkk
 
 ## What is CodeIgniter?
 
