@@ -46,7 +46,7 @@ class Login extends Controller
                 $user_nama = $cadmin->nama;
                 session()->set('idadmin', $idadmin);
                 session()->set('namaa', $user_nama);
-                return redirect()->to(base_url('/'));
+                return redirect()->to(base_url('Dashboard'));
             } else {
                 session()->set('akses', '2');
                 $idadmin = $cadmin->id_pengguna;
