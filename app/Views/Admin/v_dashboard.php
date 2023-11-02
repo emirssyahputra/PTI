@@ -55,7 +55,7 @@ function topFunction() {
         
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
-            <a href="#" class="dropdown-item" onclick="return confirm('Yakin ingin logout?')">
+            <a href="<?php echo site_url('Login/logout');?>" class="dropdown-item" onclick="return confirm('Yakin ingin logout?')">
                 <i class="fa fa-power-off text-primary"></i>Logout
             </a>
           </li>
@@ -113,7 +113,7 @@ function topFunction() {
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="font-weight-bold">Selamat Datang, Admin.</h3>
+                  <h3 class="font-weight-bold">Selamat Datang, <?php echo $nama; ?></h3>
                 </div>
               </div>
             </div>
@@ -125,7 +125,7 @@ function topFunction() {
                 <div class="card-body text-center">
                   <a href="#" style="color: #555555; text-decoration: none;">
                     <p class="fs-20 mb-4">DATA LOWONGAN</p>
-                    <p class="fs-30 mb-2">6</p>
+                    <p class="fs-30 mb-2"><?php echo $lowongan; ?></p>
                     <p class="fs-15 mb-6">Posisi Pekerjaan</p>
                   </a>
                 </div>
