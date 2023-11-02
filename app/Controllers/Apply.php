@@ -79,7 +79,7 @@ class Apply extends BaseController
         }
 
         if ($model->insert($data)) {
-            return redirect()->to('pelamar/apply')->with('success', 'Lamaran berhasil dikirim.');
+            return redirect()->to('pelamar/selection')->with('success', 'Lamaran berhasil dikirim.');
         } else {
             return redirect()->to('pelamar/apply')->with('error', 'Gagal mengirim lamaran. Silakan coba lagi.');
         }
