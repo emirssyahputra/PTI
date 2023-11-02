@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Nov 2023 pada 08.05
+-- Waktu pembuatan: 02 Nov 2023 pada 22.20
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -34,6 +34,16 @@ CREATE TABLE `cabang` (
   `jam` varchar(100) NOT NULL,
   `map` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `cabang`
+--
+
+INSERT INTO `cabang` (`id`, `nama`, `alamat`, `jam`, `map`) VALUES
+(1, 'Kopi Loer Sudirman', '20 Ilir D. IV, Kec. Ilir Tim. I, Kota Palembang, Sumatera Selatan', 'Buka: Senin-Minggu 09.30-23.00', 'https://maps.app.goo.gl/4NnJLekm3jfXvkmEA'),
+(2, 'Kopi Loer Celentang', 'Jalan Brigjen Hasan K, 30A, Bukit Sangkal, Kec. Kalidoni, Kota Palembang, Sumatera Selatan 30114', 'Buka: Senin-Minggu 07.00-22.00', 'https://maps.app.goo.gl/iJyWz7niWQm8nUUP8'),
+(3, 'Rumah Loer Merdeka', 'Jl. Merdeka No. 349, Kecamatan Bukit Kecil, Kota Palembang, Sumatera Selatan 30135', 'Buka: Senin-Minggu 09.30-23.00', 'https://maps.app.goo.gl/9bgPN9EVKK66RgbUA'),
+(4, 'Kora Coffee The Hub Sudirman', 'Jl. Jend Sudirman No.3264 & 3265, Kota Palembang, Sumatera Selatan 30129', 'Buka: Senin-Minggu 09.30-21.00', 'https://maps.app.goo.gl/zYpdg2dEyLX3WDbB9');
 
 -- --------------------------------------------------------
 
@@ -93,8 +103,10 @@ CREATE TABLE `lowongan_pekerjaan` (
 --
 
 INSERT INTO `lowongan_pekerjaan` (`id_loker`, `Nama`, `jangka_waktu`, `kualifikasi`, `jobdesk`) VALUES
-(1, 'Cashier', '2023-11-01 07:34:47', 'asdadadad', 'fwqeqsdafz'),
-(2, 'Chef', '2023-11-01 07:36:38', 'dasdadw', 'wqeqrqwasdada');
+(1, 'Cashier', '2023-11-01 07:34:47', 'Bertanggung jawab untuk menerima dan mencatat setiap transaksi penjualan baik cash, credit & debit serta pembayaran dana elektronik. Memahami sistem billing dan pengoperasian sistem pembayaran EDC dan lainnya. Memiliki pengetahuan dasar tentang hospitalit', 'Berpenampilan menarik. Berkomunikasi dengan baik dan cakap. Berkepribadian baik, jujur, amanah dan Tangguh. Mampu dan teliti dalam hitung-menghitung . Bekerja secara team dan sanggup bekerja shift  \r\n. Mempunyai minat tinggi di posisi pengkasiran\r\n'),
+(2, 'COOK & COOK HELPER', '2023-11-01 07:36:38', 'Bertanggung jawab untuk membantu Head Cook dalam pengelolaan dapur, menjaga standarisasi menu produksi baik cita rasa maupun penyajiannya, turut membantu Head Cook dalam menyeimbangkan biaya produksi dan strategi penjualan produk makanan', 'Berkomunikasi dengan baik dan cakap. Paham akan bahan baku dan harga pasar dengan baik. Menguasai standar kebersihan bahan makan, alat masak dan ruang dapur, paham akan cooking method\r\nMengerti dan mempunyai referensi jenis masakan nusantara dan western. '),
+(3, 'BARISTA', '2023-11-02 07:44:35', 'Bertanggung jawab untuk memberikan pelayanan terbaik dan menyajikan produk sesuai dengan standar kualitas yang diterapkan kepada pelanggan dengan sigap dan cekatan. Barista menguasai pengetahuan mendasar akan kopi dan industrinya, serta pengetahuan dasar ', 'Berpenampilan menarik. Berkomunikasi dengan baik dan cakap. Modis, mempunyai ketertarikan dengan bidang pelayanan. Berkepribadian ramah, kreatif dan berinisiatif tinggi. Bekerja secara team dan sanggup bekerja shift. Mengerti tentang minuman kopi dan pros'),
+(4, 'MANAGER', '2023-11-02 07:46:19', 'Bertanggung jawab terhadap fungsi pengarahan dan supervisi, rancangan organisasi dan pekerjaan, proses rekrutmen seperti seleksi, pelatihan dan penilaian serta fungsi controlling (pengendalian), reward & punishment. Memiliki kemampuan untuk memimpin, memp', 'Memiliki pengalaman di bidang F&B Min. 2 Tahun. Mampu mengoperasikan Ms. Office (Excel & Word)\r\nBerpenampilan menarik. Berkomunikasi dengan baik dan cakap. Berkepribadian baik, jujur dan tangguh. Berjiwa kepemimpinan, kreatif & inisiatif. Sanggup bekerja ');
 
 -- --------------------------------------------------------
 
@@ -118,7 +130,12 @@ CREATE TABLE `pengguna` (
 INSERT INTO `pengguna` (`id_pengguna`, `email`, `password`, `nama`, `id_role`, `code`) VALUES
 (5, 'emir@gmail.com', '$2y$10$KeqCRykP8CA4uEyeR5QeNe2BS1qpdbDQZHfVJ86OUbaFSOwXw56cC', 'EMIRSSYAH PUTRA', 2, 242194),
 (14, 'emirssyah14@gmail.com', '$2y$10$CNJkjF3F4eAvbQTXKn0p/.GpBg0.8dusSkJEdatpJXhibqh69OOV6', 'Emir', 2, 179616),
-(15, 'emirssyah13@gmail.com', '$2y$10$oJ6.v6y3HluNpYMSwSssWuZNGgzVEi.W9hoAOYCMFy4oKfG3BGaWe', 'Emirssyah Putra', 2, 187689);
+(15, 'emirssyah13@gmail.com', '$2y$10$IfjMxuVrf6HSavBj5IRHoeQ4urGxVCURy2ceDEo4Yf.U7de1GOTVq', 'Emirssyah Putra', 2, 0),
+(16, 'syafirawulandrr@gmail.com', '$2y$10$hMDhq3DvcDwP.0ydSzhfGOW3GBu2U6w91GBCIgtGV1//VBRIdCD9m', 'Syafira Wulandari', 2, NULL),
+(17, 'Mega@gmail.com', '$2y$10$kvcsXbBO.e1iqNfrNMLO4eJVUhTdGXE8/ItQXC7K5dEy.300HTd/2', 'Mery', 2, NULL),
+(18, 'emirssyah11@gmail.com', '$2y$10$WjmEWjTK.QCWTpsOFeuf8uAGQeq6.GwndH9QC18Yif9THA710k1Yq', 'Emirssyah Putra', 2, NULL),
+(19, 'emirssyahputra@gmail.com', '$2y$10$IfjMxuVrf6HSavBj5IRHoeQ4urGxVCURy2ceDEo4Yf.U7de1GOTVq', 'Emirssyah ', 1, NULL),
+(20, 'merysah@gmail.com', '$2y$10$IfjMxuVrf6HSavBj5IRHoeQ4urGxVCURy2ceDEo4Yf.U7de1GOTVq', 'Merysah', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -184,6 +201,12 @@ ALTER TABLE `riwayat_pendaftaran`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `cabang`
+--
+ALTER TABLE `cabang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT untuk tabel `form_pendaftaran`
 --
 ALTER TABLE `form_pendaftaran`
@@ -199,13 +222,13 @@ ALTER TABLE `kontrak_kerja`
 -- AUTO_INCREMENT untuk tabel `lowongan_pekerjaan`
 --
 ALTER TABLE `lowongan_pekerjaan`
-  MODIFY `id_loker` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_loker` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `riwayat_pendaftaran`
