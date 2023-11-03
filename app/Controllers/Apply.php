@@ -25,7 +25,7 @@ class Apply extends BaseController
             'id_loker' => $id_loker,
         ];
 
-        return view('v_apply', $data); // Menampilkan halaman apply jika pengguna sudah masuk.
+        return view('pelamar/v_apply', $data); // Menampilkan halaman apply jika pengguna sudah masuk.
     }
 
 
@@ -79,9 +79,9 @@ class Apply extends BaseController
         }
 
         if ($model->insert($data)) {
-            return redirect()->to('/apply')->with('success', 'Lamaran berhasil dikirim.');
+            return redirect()->to('pelamar/selection')->with('success', 'Lamaran berhasil dikirim.');
         } else {
-            return redirect()->to('/apply')->with('error', 'Gagal mengirim lamaran. Silakan coba lagi.');
+            return redirect()->to('pelamar/apply')->with('error', 'Gagal mengirim lamaran. Silakan coba lagi.');
         }
     }
 
