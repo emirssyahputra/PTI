@@ -126,8 +126,8 @@
                                     <label for="jenis-kelamin">Jenis Kelamin</label>
                                     <select class="form-control" id="jenis-kelamin" name="jenkel" required>
                                         <option value="">Pilih Jenis Kelamin</option>
-                                        <option value="laki-laki">Laki-laki</option>
-                                        <option value="perempuan">Perempuan</option>
+                                        <option value="Laki-laki">Laki-laki</option>
+                                        <option value="Perempuan">Perempuan</option>
                                     </select>
                                 </div>
 
