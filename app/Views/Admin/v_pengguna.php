@@ -131,7 +131,6 @@
                           <th>Nama <i class="fa fa-sort" onclick="sortTable(1)"></i></th>
                           <th>Jabatan <i class="fa fa-sort" onclick="sortTable(2)"></i></th>
                           <th>Email <i class="fa fa-sort" onclick="sortTable(3)"></i></th>
-                          <th>Password</th>
                           <th>Aksi</th>
                         </tr>
                       </thead>
@@ -140,7 +139,6 @@
                           $nama = $admin['nama'];
                           $jabatan = $admin['id_role'];
                           $email = $admin['email'];
-                          $pw = $admin['password'];
                           ?>
                           <tr>
                             <td>
@@ -155,7 +153,6 @@
                               <td>Pelamar</td>
                             <?php endif; ?>
                             <td><?= $email; ?></td>
-                            <td class="text-danger"><?= $pw; ?></td>
                             <td align="left">
                               <a href="#" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
                                 <i class="fa fa-pencil btn-icon-append"></i> Ubah
