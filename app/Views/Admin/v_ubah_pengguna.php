@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Data Pengguna</title>
+  <title>Ubah Data Pengguna</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?= base_url('vendors/font-awesome/css/font-awesome.min.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('vendors/feather/feather.css'); ?>">
@@ -41,9 +42,7 @@
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
   }
-   
-</script>  
-
+  </script>
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -108,105 +107,44 @@
       </nav>
     <!-- PANEL MENU KIRI [END] -->
 
-      <!-- partial -->   
+      <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          <div class="row-cols">
-            
-            <div class="col-xl-13 grid-margin stretch-card">
+          <div class="row">
+                       
+            <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
 
-                  <h4 class="card-title nav-item" id="teksDouble">DATA PENGGUNA</h4>
-                  <a class="btn btn-info btn-rounded btn-fw float-left" href="<?php echo site_url('TambahPengguna'); ?>"><i class="fa fa-plus btn-icon-prepend">
-                  </i> Tambah </a> 
+                  <h4 class="card-title">Ubah Data Pengguna</h4>
+                  
+                  <form class="forms-sample" method="post" action="<?php echo site_url('UbahPengguna/update/' . $id); ?>">
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Nama</label>
+                      <input type="text" class="form-control" id="exampleInputUsername1" name="nama" placeholder="Nama" value="<?= $pengguna['nama']; ?>" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail">Email</label>
+                      <input type="email" class="form-control" id="exampleInputEmail" name="email" placeholder="Email" value="<?= $pengguna['email']; ?>" required />
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword" name="password" placeholder="Password" value="" required />
+                    </div>                    
 
-                  <form action="<?= site_url('Pengguna/search'); ?>" method="post">
-                    <ul class="navbar-nav">
-                      <li class="nav-item nav-search">
-                        <div class="input-group">
-                          <div class="input-group-prepend" id="navbar-search-icon">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span class="input-group-text" id="search">
-                              <i class="icon-search"></i>
-                            </span>
-                          </div>
-                          <input type="text" class="form-control" placeholder="Cari Pengguna" name="pencarian">
-                        </div>
-                      </li>
-                    </ul>
+                    <button type="submit" class="btn btn-warning btn-icon-text">Simpan</button>
+                    <a class="btn btn-danger btn-icon-text" href="<?php echo site_url('Pengguna'); ?>">Batal</a>
                   </form>
-                  <div class="table-responsive">
-                    <br><br>
-                    <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>No <i class="fa fa-sort" onclick="sortTable(0)"></i></th>
-                          <th>Nama <i class="fa fa-sort" onclick="sortTable(1)"></i></th>
-                          <th>Jabatan <i class="fa fa-sort" onclick="sortTable(2)"></i></th>
-                          <th>Email <i class="fa fa-sort" onclick="sortTable(3)"></i></th>
-                          <th>Aksi</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php foreach ($pengguna as $index => $admin):
-                          $nama = $admin['nama'];
-                          $jabatan = $admin['id_role'];
-                          $email = $admin['email'];
-                          $id = $admin['id_pengguna'];
-                          ?>
-                          <tr>
-                            <td>
-                              <?= $index + 1 ?>
-                            </td>
-                            <td>
-                              <?= $nama; ?>
-                            </td>
-                            <?php if ($jabatan == '1'): ?>
-                              <td>HRD</td>
-                            <?php else: ?>
-                              <td>Pelamar</td>
-                            <?php endif; ?>
-                            <td><?= $email; ?></td>
-                            <td align="left">
-                              <a href="<?php echo site_url('UbahPengguna/' . $id); ?>" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
-                                <i class="fa fa-pencil btn-icon-append"></i> Ubah
-                              </a>
-                              &nbsp;&nbsp;&nbsp;
-                              <a href="<?php echo site_url('pengguna/hapus/' . $id); ?>" type="button" data-id="<?= $id ?>" title="Hapus Data" class="btn btn-danger btn-icon-text">
-                                <i class="fa fa-trash btn-icon-prepend"></i> Hapus
-                              </a>
-                            </td>
-                          </tr>
-                        <?php endforeach; ?>
-                      </tbody>
-                    </table>
-                  </div>
+
                 </div>
               </div>
             </div>
+            
+            
+          
           </div>
         </div>
         <!-- content-wrapper ends -->
-
-        <!-- Pop-up konfirmasi -->
-        <div class="popup" id="deletePopup">
-          <div class="popup-content">
-            <div class="popup-header">
-              <span class="popup-close" id="closeDeletePopup">
-                <iconify-icon icon="heroicons:x-mark-solid"></iconify-icon>
-              </span>
-            </div>
-            <div class="popup-body">
-              <p>Apakah Anda yakin ingin menghapus pengguna?</p>
-            </div>
-            <div class="popup-footer">
-              <button class="btn btn-accept" id="confirmDelete" data-id="<?= $id ?>">Ya</button>
-              <button class="btn btn-danger" id="cancelDelete" data-id="<?= $id ?>">Tidak</button>
-            </div>
-          </div>
-        </div>
-
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
           <div class="d-flex justify-content-center">
@@ -214,7 +152,7 @@
               &copy; <script> document.write(new Date().getFullYear()) </script> PT. Loer Group Jaya. All rights reserved.
             </span>
           </div>
-        </footer>        
+        </footer> 
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -233,42 +171,6 @@
   <script src="<?php echo base_url() . 'js/jsa/template.js' ?>"></script>
   <script src="<?php echo base_url() . 'js/jsa/settings.js' ?>"></script>
   <script src="<?php echo base_url() . 'js/jsa/todolist.js' ?>"></script>
-  <script src="<?php echo base_url() . 'js/jsa/sort.js' ?>"></script>
-  <script src="<?php echo base_url() . 'js/jsa/popout.js' ?>"></script>
-  <script>
-    // Fungsi untuk menampilkan pop-up konfirmasi
-    function showDeleteConfirmation(id) {
-        document.getElementById("confirmDelete").setAttribute("data-id", id);
-        document.getElementById("deletePopup").style.display = "block";
-    }
-
-    // Event listener untuk tombol "Hapus"
-    const deleteButtons = document.querySelectorAll(".btn.btn-danger");
-    deleteButtons.forEach((button) => {
-        button.addEventListener("click", function (e) {
-            e.preventDefault(); // Untuk mencegah tindakan default pada tautan
-            const id = this.getAttribute("data-id");
-            showDeleteConfirmation(id);
-        });
-    });
-
-    // Event listener untuk tombol "Ya" pada pop-up konfirmasi
-    document.getElementById("confirmDelete").addEventListener("click", function () {
-        const id = this.getAttribute("data-id");
-        window.location.href = "<?= site_url('pengguna/hapus/'); ?>" + id; // Ganti dengan URL atau rute yang sesuai
-    });
-
-    // Event listener untuk tombol "Tidak" pada pop-up konfirmasi
-    document.getElementById("cancelDelete").addEventListener("click", function () {
-        document.getElementById("deletePopup").style.display = "none";
-    });
-
-    // Event listener untuk tombol "Tutup" pada pop-up konfirmasi
-    document.getElementById("closeDeletePopup").addEventListener("click", function () {
-        document.getElementById("deletePopup").style.display = "none";
-    });
-</script>
-
   <!-- endinject -->
   <!-- Custom js for this page-->
   <!-- End custom js for this page-->

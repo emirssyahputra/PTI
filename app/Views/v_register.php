@@ -17,7 +17,7 @@
             <div class='login-area'>
                 <img src="<?= base_url('images/logo.png'); ?>" alt="RedX Logo" class="centered-logo">
                 <h3>Register</h3>
-                <form class='login-items' action="<?= site_url('register/register'); ?>" method="post">
+                <form class='login-items' action="<?= site_url('register/daftar'); ?>" method="post">
                     <label for="nama">Nama</label>
                     <input type="text" class='login' name="nama" placeholder='Nama lengkap' required />
                     <label for="email">Email</label>

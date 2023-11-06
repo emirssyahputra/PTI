@@ -34,6 +34,8 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->add('login/cek', 'Login::cek');
 $routes->add('Apply/(:num)', 'Apply::index/$1');
+$routes->add('UbahPengguna/(:num)', 'UbahPengguna::index/$1');
+
 
 
 

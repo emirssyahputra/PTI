@@ -29,7 +29,7 @@ class Apply extends BaseController
     }
 
 
-    public function apply()
+    public function daftar()
     {
         $model = new M_Apply();
 
