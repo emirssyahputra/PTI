@@ -52,7 +52,7 @@
                             <nav class="navbar navbar-expand-lg navbar-light p-0">
 
                                 <div class="logo">
-                                    <a class="d-block" href="<?php echo site_url('pHome'); ?>">
+                                    <a class="d-block" href="<?php echo site_url('/'); ?>">
                                         <img loading="lazy" src="<?= base_url('images/logo.png'); ?>" alt="Loer Group">
                                     </a>
                                 </div><!-- logo end -->
@@ -66,20 +66,16 @@
                                 <div id="navbar-collapse" class="collapse navbar-collapse">
                                     <ul class="nav navbar-nav ml-auto align-items-center">
                                         <li class="nav-item"><a class="nav-link"
-                                                href="<?php echo site_url('pHome'); ?>">Home</a></li>
+                                                href="<?php echo site_url('/'); ?>">Home</a></li>
 
                                         <li class="nav-item"><a class="nav-link"
-                                                href="<?php echo site_url('pCareer'); ?>">Career</a></li>
+                                                href="<?php echo site_url('Career'); ?>">Career</a></li>
 
                                         <li class="nav-item"><a class="nav-link"
-                                                href="<?php echo site_url('Selection'); ?>">Selection</a></li>
-
-                                        <li class="nav-item"><a class="nav-link"
-                                                href="<?php echo site_url('pAbout'); ?>">About</a></li>
+                                                href="<?php echo site_url('About'); ?>">About</a></li>
 
                                         <li class="header-get-a-quote">
-                                            <a class="btn btn-primary" href="<?php echo site_url('Login/logout'); ?>">LOG
-                                                OUT</a>
+                                            <a class="btn btn-primary" href="login.html">LOGIN</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -122,12 +118,12 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="nama" class="required-label">Nama</label>
+                                    <label for="nama">Nama</label>
                                     <input type="text" class="form-control" value="<?php echo $nama; ?>" readonly>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="jenis-kelamin" class="required-label">Jenis Kelamin</label>
+                                    <label for="jenis-kelamin">Jenis Kelamin</label>
                                     <select class="form-control" id="jenis-kelamin" name="jenkel" required>
                                         <option value="">Pilih Jenis Kelamin</option>
                                         <option value="Laki-laki">Laki-laki</option>
@@ -136,7 +132,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="pendidikan-terakhir" class="required-label">Pendidikan Terakhir</label>
+                                    <label for="pendidikan-terakhir">Pendidikan Terakhir</label>
                                     <select class="form-control" id="pendidikan-terakhir" name="pend" required>
                                         <option value="">Pilih Pendidikan Terakhir</option>
                                         <option value="SLTA Sederajat">SLTA Sederajat</option>
@@ -151,60 +147,60 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="email" class="required-label">Email</label>
+                                    <label for="email">Email</label>
                                     <input type="email" class="form-control" id="email" value="<?php echo $email; ?>"
                                         readonly>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="telepon" class="required-label">Nomor Telepon</label>
+                                    <label for="telepon">Nomor Telepon</label>
                                     <input type="tel" class="form-control" id="telepon" name="no_telp" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="alamat" class="required-label">Alamat</label>
+                                    <label for="alamat">Alamat</label>
                                     <textarea class="form-control" id="alamat" name="alamat" rows="2"
                                         required></textarea>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="linkedin" class="required-label">URL LinkedIn</label>
+                                    <label for="linkedin">URL LinkedIn</label>
                                     <input type="url" class="form-control" id="linkedin" name="linkedin"
                                         value="https://" placeholder="mis: http://linkedin.com/in/username" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="cv" class="required-label">KTP</label>
+                                    <label for="cv">KTP</label>
                                     <input type="file" class="form-control-file" id="ktp" name="ktp" accept=".pdf"
                                         required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="cv" class="required-label">Upload Curriculum Vitae (CV)</label>
+                                    <label for="cv">Upload Curriculum Vitae (CV)</label>
                                     <input type="file" class="form-control-file" id="cv" name="cv" accept=".pdf"
                                         required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="surat-lamaran" class="required-label">Upload Surat Lamaran</label>
+                                    <label for="surat-lamaran">Upload Surat Lamaran</label>
                                     <input type="file" class="form-control-file" id="surat-lamaran" name="surat_lamaran"
                                         accept=".pdf" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ijazah" class="required-label">Upload File Ijazah</label>
+                                    <label for="ijazah">Upload File Ijazah</label>
                                     <input type="file" class="form-control-file" id="ijazah" name="ijazah" accept=".pdf"
                                         required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ijazah" class="required-label">SKCK</label>
+                                    <label for="ijazah">SKCK</label>
                                     <input type="file" class="form-control-file" id="skck" name="skck" accept=".pdf"
                                         required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ijazah" class="required-label">Packlaring</label>
+                                    <label for="ijazah">Packlaring</label>
                                     <input type="file" class="form-control-file" id="packlaring" name="packlaring"
                                         accept=".pdf" required>
                                 </div>
@@ -322,6 +318,7 @@
 
         <!-- Template custom -->
         <script src="<?php echo base_url() . 'js/script.js' ?>"></script>
+
 
     </div><!-- Body inner end -->
 </body>
