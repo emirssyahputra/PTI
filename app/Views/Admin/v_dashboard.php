@@ -17,8 +17,9 @@
   <!-- inject:css -->
   <link rel="stylesheet"href="<?= base_url('css/stylea.css'); ?>">
   <!-- endinject -->
-<!--   <link rel="shortcut icon" href="images/logo-mini.svg" /> -->
+  <!--   <link rel="shortcut icon" href="images/logo-mini.svg" /> -->
   <link rel="shortcut icon" href="<?= base_url('images/logo aku-nobg-notext.png'); ?>">
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
 </head>
 
@@ -41,6 +42,7 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
 </script>
+
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -73,30 +75,32 @@ function topFunction() {
       <nav class="sidebar sidebar-offcanvas" id="sidebar" >
         <ul class="nav">
     
-          <li class="nav-item ">
-            <a class="nav-link" href="<?php echo site_url('Dashboard');?>">>
-              <i class="fa fa-desktop menu-icon"></i>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo site_url('Dashboard');?>">
+              <iconify-icon icon="heroicons:window" class="menu-icon"></iconify-icon>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
+                   
           
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <i class="fa fa-list-alt menu-icon"></i>
+              <iconify-icon icon="heroicons:list-bullet" style="font-size: 18px; border: 2px solid; border-radius: 5px; padding: 0.5px;" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Lowongan</span>
             </a>
           </li>
-
+          
+          
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <i class="fa fa-users menu-icon"></i>
+              <iconify-icon icon="fluent:people-team-24-filled" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Pendaftar</span>
             </a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link" href="<?php echo site_url('Pengguna');?>">
-              <i class="fa fa-user menu-icon"></i>
+              <iconify-icon icon="fluent:people-edit-24-filled" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Pengguna</span>
             </a>
           </li>
