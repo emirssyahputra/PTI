@@ -7,19 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Tambah Pengguna</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="../../vendors/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../../vendors/feather/feather.css">
-  <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css"> <!-- INI WAJIB BUAT BISA MAKE ICON -->
+  <link rel="stylesheet" href="<?= base_url('vendors/font-awesome/css/font-awesome.min.css'); ?>">
+  <link rel="stylesheet" href="<?= base_url('vendors/feather/feather.css'); ?>">
+  <link rel="stylesheet" href="<?= base_url('vendors/ti-icons/css/themify-icons.css'); ?>">
+  <link rel="stylesheet" href="<?= base_url('vendors/css/vendor.bundle.base.css'); ?>">
+  <link rel="stylesheet" href="<?= base_url('vendors/mdi/css/materialdesignicons.min.css'); ?>">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="<?= base_url('css/stylea.css'); ?>">
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
   <!-- endinject -->
-  <link rel="shortcut icon" href="../../images/logo aku-nobg-notext.png" />
+  <link rel="shortcut icon" href="<?= base_url('images/logo aku-nobg-notext.png'); ?>">
   <!-- <link rel="shortcut icon" href="../../images/logo-mini.svg" /> -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
@@ -47,8 +47,8 @@
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="../../index.html"><img src="../../images/logo aku-nobg-tex.png" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/logo aku-nobg-notext.png" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="<?php echo site_url('Pengguna'); ?>"><img src="<?= base_url('images/logo aku-nobg-tex.png'); ?>" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="<?php echo site_url('Pengguna'); ?>"><img src="<?= base_url('images/logo aku-nobg-notext.png'); ?>" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -57,7 +57,7 @@
         
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
-            <a href="#" class="dropdown-item" onclick="return confirm('Yakin ingin logout?')">
+            <a href="<?php echo site_url('Login/logout'); ?>" class="dropdown-item" onclick="return confirm('Yakin ingin logout?')">
                 <i class="fa fa-power-off text-primary"></i>Logout
             </a>
           </li>
@@ -76,7 +76,7 @@
         <ul class="nav">
     
           <li class="nav-item ">
-            <a class="nav-link" href="../../index.html">
+            <a class="nav-link" href="<?php echo site_url('Dashboard'); ?>">
               <iconify-icon icon="heroicons:window" class="menu-icon"></iconify-icon>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -97,7 +97,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="admin.html">
+            <a class="nav-link" href="<?php echo site_url('Pengguna'); ?>">
               <iconify-icon icon="fluent:people-edit-24-filled" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Pengguna</span>
             </a>
@@ -115,14 +115,10 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Tambah Pengguna</h4>
-                  <form class="forms-sample" method="POST" action="#">
+                  <form class="forms-sample" method="POST" action="<?= site_url('TambahPengguna/tambah'); ?>">
                     <div class="form-group">
                       <label for="exampleInputUsername1">Nama</label>
                       <input type="text" class="form-control" id="exampleInputUsername1" name="nama" placeholder="Nama" required />
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputUsername2">Jabatan</label>
-                      <input type="text" class="form-control" id="exampleInputUsername2" name="jabatan" placeholder="Jabatan" required />
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail">Email</label>
@@ -134,7 +130,7 @@
                     </div>                    
 
                     <button type="submit" class="btn btn-warning btn-icon-text">Simpan</button>
-                    <a class="btn btn-danger btn-icon-text" href="admin.html">Batal</a>
+                    <a class="btn btn-danger btn-icon-text" href="<?php echo site_url('Pengguna'); ?>">Batal</a>
                   </form>
                 </div>
               </div>
@@ -160,16 +156,16 @@
 
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="../../vendors/js/vendor.bundle.base.js"></script>
+  <script src="<?php echo base_url() . 'vendors/js/vendor.bundle.base.js' ?>"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
   <!-- End plugin js for this page -->
   <!-- inject:js -->
-  <script src="../../js/off-canvas.js"></script>
-  <script src="../../js/hoverable-collapse.js"></script>
-  <script src="../../js/template.js"></script>
-  <script src="../../js/settings.js"></script>
-  <script src="../../js/todolist.js"></script>
+  <script src="<?php echo base_url() . 'js/jsa/off-canvas.js' ?>"></script>
+  <script src="<?php echo base_url() . 'js/jsa/hoverable-collapse.js' ?>"></script>
+  <script src="<?php echo base_url() . 'js/jsa/template.js' ?>"></script>
+  <script src="<?php echo base_url() . 'js/jsa/settings.js' ?>"></script>
+  <script src="<?php echo base_url() . 'js/jsa/todolist.js' ?>"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
   <!-- End custom js for this page-->

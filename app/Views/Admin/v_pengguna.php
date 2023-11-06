@@ -4,7 +4,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>User Account</title>
+  <title>Data Pengguna</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?= base_url('vendors/font-awesome/css/font-awesome.min.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('vendors/feather/feather.css'); ?>">
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="<?= base_url('css/stylea.css'); ?>">
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
   <!-- endinject -->
-  <link rel="shortcut icon" href="../../images/logo aku-nobg-notext.png" />
+  <link rel="shortcut icon" href="<?= base_url('images/logo aku-nobg-notext.png'); ?>">
   <!-- <link rel="shortcut icon" href="../../images/logo-mini.svg" /> -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
@@ -41,7 +41,8 @@
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
   }
-  </script>
+   
+</script>  
 
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
@@ -117,10 +118,10 @@
                 <div class="card-body">
 
                   <h4 class="card-title nav-item" id="teksDouble">DATA PENGGUNA</h4>
-                  <a class="btn btn-info btn-rounded btn-fw float-left" href="tambah_admin.html"><i class="fa fa-plus btn-icon-prepend">
+                  <a class="btn btn-info btn-rounded btn-fw float-left" href="<?php echo site_url('TambahPengguna'); ?>"><i class="fa fa-plus btn-icon-prepend">
                   </i> Tambah </a> 
 
-                  <form action="<?= site_url('apply/apply'); ?>" method="post">
+                  <form action="<?= site_url('Pengguna/search'); ?>" method="post">
                     <ul class="navbar-nav">
                       <li class="nav-item nav-search">
                         <div class="input-group">
@@ -152,6 +153,7 @@
                           $nama = $admin['nama'];
                           $jabatan = $admin['id_role'];
                           $email = $admin['email'];
+                          $id = $admin['id_pengguna'];
                           ?>
                           <tr>
                             <td>
@@ -167,11 +169,11 @@
                             <?php endif; ?>
                             <td><?= $email; ?></td>
                             <td align="left">
-                              <a href="#" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
+                              <a href="<?php echo site_url('UbahPengguna/' . $id); ?>" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
                                 <i class="fa fa-pencil btn-icon-append"></i> Ubah
                               </a>
                               &nbsp;&nbsp;&nbsp;
-                              <a href="#" type="button" title="Hapus Data" class="btn btn-danger btn-icon-text">
+                              <a href="<?php echo site_url('pengguna/hapus/' . $id); ?>" type="button" data-id="<?= $id ?>" title="Hapus Data" class="btn btn-danger btn-icon-text">
                                 <i class="fa fa-trash btn-icon-prepend"></i> Hapus
                               </a>
                             </td>
@@ -199,8 +201,8 @@
               <p>Apakah Anda yakin ingin menghapus pengguna?</p>
             </div>
             <div class="popup-footer">
-              <button class="btn btn-accept" id="confirmDelete">Ya</button>
-              <button class="btn btn-danger" id="cancelDelete">Tidak</button>
+              <button class="btn btn-accept" id="confirmDelete" data-id="<?= $id ?>">Ya</button>
+              <button class="btn btn-danger" id="cancelDelete" data-id="<?= $id ?>">Tidak</button>
             </div>
           </div>
         </div>
@@ -233,6 +235,39 @@
   <script src="<?php echo base_url() . 'js/jsa/todolist.js' ?>"></script>
   <script src="<?php echo base_url() . 'js/jsa/sort.js' ?>"></script>
   <script src="<?php echo base_url() . 'js/jsa/popout.js' ?>"></script>
+  <script>
+    // Fungsi untuk menampilkan pop-up konfirmasi
+    function showDeleteConfirmation(id) {
+        document.getElementById("confirmDelete").setAttribute("data-id", id);
+        document.getElementById("deletePopup").style.display = "block";
+    }
+
+    // Event listener untuk tombol "Hapus"
+    const deleteButtons = document.querySelectorAll(".btn.btn-danger");
+    deleteButtons.forEach((button) => {
+        button.addEventListener("click", function (e) {
+            e.preventDefault(); // Untuk mencegah tindakan default pada tautan
+            const id = this.getAttribute("data-id");
+            showDeleteConfirmation(id);
+        });
+    });
+
+    // Event listener untuk tombol "Ya" pada pop-up konfirmasi
+    document.getElementById("confirmDelete").addEventListener("click", function () {
+        const id = this.getAttribute("data-id");
+        window.location.href = "<?= site_url('pengguna/hapus/'); ?>" + id; // Ganti dengan URL atau rute yang sesuai
+    });
+
+    // Event listener untuk tombol "Tidak" pada pop-up konfirmasi
+    document.getElementById("cancelDelete").addEventListener("click", function () {
+        document.getElementById("deletePopup").style.display = "none";
+    });
+
+    // Event listener untuk tombol "Tutup" pada pop-up konfirmasi
+    document.getElementById("closeDeletePopup").addEventListener("click", function () {
+        document.getElementById("deletePopup").style.display = "none";
+    });
+</script>
 
   <!-- endinject -->
   <!-- Custom js for this page-->

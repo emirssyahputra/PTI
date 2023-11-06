@@ -115,7 +115,7 @@
                 <div class="row">
                     <div class="col-md-8 offset-md-2">
                         <div class="registration-form">
-                            <form action="<?= site_url('apply/apply'); ?>" method="post" enctype="multipart/form-data">
+                            <form action="<?= site_url('apply/daftar'); ?>" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <input type="hidden" class="form-control" name="id_loker"
                                         value="<?php echo $id_loker; ?>">
