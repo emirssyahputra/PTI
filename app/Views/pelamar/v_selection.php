@@ -106,6 +106,12 @@
 
     <section id="ts-features" class="ts-features">
       <div class="container">
+        <div class="row text-center">
+          <div class="col-12">
+            <p>Selamat datang di halaman seleksi <strong>#LoerGroup</strong>, di sini kami akan membagikan informasi terkait proses seleksi untuk bergabung dengan Loer Group.</p>
+          </div>
+        </div>
+        <h2 class="column-title mrt-0">Proses Seleksi</h2>
         <div class="accordion accordion-group" id="our-values-accordion">
           <div class="card">
             <div class="card-header p-0 bg-transparent" id="headingOne">
@@ -117,17 +123,15 @@
               </h2>
             </div>
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#our-values-accordion">
-              <div class="card-body">
-                <?php if ($Nama !== null): ?>
-                  <p>Anda berhasil mendaftar sebagai
-                    <?= $Nama; ?> pada tanggal
-                    <?= $waktu_apply; ?>
-                  </p>
-                <?php else: ?>
-                  <p>Anda belum mendaftar</p>
-                <?php endif; ?>
+            <div class="card-body">
+              <?php if ($Nama !== null): ?>
+                <p>Anda berhasil mendaftar sebagai
+                  <strong><?= $Nama; ?></strong> pada tanggal
+                  <strong><?= $waktu_apply; ?></strong>
                 </p>
-              </div>
+              <?php else: ?>
+                <p>Anda belum mendaftar</p>
+              <?php endif; ?>
             </div>
           </div>
           <div class="card">
@@ -144,9 +148,9 @@
                 <?php if ($status_adm === null): ?>
                   <p>Belum ada informasi</p>
                 <?php elseif ($status_adm === '1'): ?>
-                  <p>Anda dinyatakan Lolos Seleksi Administrasi</p>
+                  <p>Anda dinyatakan <strong>Lolos Seleksi Administrasi</strong></p>
                 <?php elseif ($status_adm === '2'): ?>
-                  <p>Maaf, anda dinyatakan Tidak Lolos Seleksi Administrasi</p>
+                  <p>Maaf, anda dinyatakan <strong>Tidak Lolos Seleksi Administrasi</strong></p>
                 <?php endif; ?>
                 <?php if ($komentar_adm): ?>
                   <p>
@@ -170,9 +174,9 @@
                 <?php if ($status_wwc === null): ?>
                   <p>Belum ada informasi</p>
                 <?php elseif ($status_wwc === '1'): ?>
-                  <p>Anda dinyatakan Lolos Seleksi Wawancara</p>
+                  <p>Anda dinyatakan <strong>Lolos Seleksi Wawancara</strong></p>
                 <?php elseif ($status_wwc === '2'): ?>
-                  <p>Maaf, anda dinyatakan Tidak Lolos Seleksi Wawancara</p>
+                  <p>Maaf, anda dinyatakan <strong>Tidak Lolos Seleksi Wawancara</strong></p>
                 <?php endif; ?>
                 <?php if ($komentar_wwc): ?>
                   <p>
@@ -196,9 +200,9 @@
                 <?php if ($status_uji === null): ?>
                   <p>Belum ada informasi</p>
                 <?php elseif ($status_uji === '1'): ?>
-                  <p>Anda dinyatakan Lolos Seleksi Uji Kemampuan</p>
+                  <p>Anda dinyatakan <strong>Lolos Seleksi Uji Kemampuan</strong></p>
                 <?php elseif ($status_uji === '2'): ?>
-                  <p>Maaf, anda dinyatakan Tidak Lolos Seleksi Uji Kemampuan</p>
+                  <p>Maaf, anda dinyatakan <strong>Tidak Lolos Seleksi Uji Kemampuan</strong></p>
                 <?php endif; ?>
                 <?php if ($komentar_uji): ?>
                   <p>
@@ -222,12 +226,12 @@
                 <?php if ($status_akhir === null): ?>
                   <p>Belum ada informasi</p>
                 <?php elseif ($status_akhir === '1'): ?>
-                  <p>Anda dinyatakan Lolos Seleksi Penerimaan Pegawai Loer Group Pada Jabatan
-                    <?= $Nama; ?>
+                  <p>Anda dinyatakan <strong>Lolos Seleksi Penerimaan Pegawai Loer Group Pada Jabatan
+                    <?= $Nama; ?></strong>
                   </p>
                 <?php elseif ($status_akhir === '2'): ?>
-                  <p>Maaf, anda dinyatakan Tidak Lolos Seleksi Penerimaan Pegawai Loer Group Pada Jabatan
-                    <?= $Nama; ?>
+                  <p>Maaf, anda dinyatakan <strong>Tidak Lolos Seleksi Penerimaan Pegawai Loer Group Pada Jabatan
+                    <?= $Nama; ?></strong>
                   </p>
                 <?php endif; ?>
                 <?php if ($komentar_akhir): ?>
