@@ -151,40 +151,41 @@
 
 <section id="ts-features" class="ts-features">
   <div class="container">
-        <h2 class="column-title text-center">Temukan Outlet Kami</h2>
+    <h2 class="column-title text-center">Temukan Outlet Kami</h2>
 
-        <?php foreach ($cabang as $index => $outlet): ?>
-          <div class="accordion accordion-group" id="our-values-accordion">
-            <div class="card">
-              <div class="card-header p-0 bg-transparent" id="heading<?= $index ?>">
-                <h2 class="mb-0">
-                  <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
-                    data-target="#collapse<?= $index ?>" aria-expanded="false" aria-controls="collapse<?= $index ?>">
-                    <?= $outlet['nama']; ?>
-                  </button>
-                </h2>
-              </div>
-              <div id="collapse<?= $index ?>" class="collapse" aria-labelledby="heading<?= $index ?>"
-                data-parent="#our-values-accordion">
-                <div class="card-body">
-                  <h2 class="section-title">Alamat</h2>
-                  <p>
-                    <?= $outlet['alamat']; ?>
-                  </p>
-                  <p>
-                    <?= $outlet['jam']; ?>
-                  </p>
-                  <p><a href="<?= $outlet['map']; ?>" target="_blank">Lihat di Google Maps</a></p>
-                </div>
-              </div>
+    <div class="accordion accordion-group" id="our-values-accordion">
+      <?php foreach ($cabang as $index => $outlet): ?>
+        <div class="card">
+          <div class="card-header p-0 bg-transparent" id="heading<?= $index ?>">
+            <h2 class="mb-0">
+              <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                data-target="#collapse<?= $index ?>" aria-expanded="false" aria-controls="collapse<?= $index ?>">
+                <?= $outlet['nama']; ?>
+              </button>
+            </h2>
+          </div>
+          <div id="collapse<?= $index ?>" class="collapse" aria-labelledby="heading<?= $index ?>"
+            data-parent="#our-values-accordion">
+            <div class="card-body">
+              <h2 class="section-title">Alamat</h2>
+              <p>
+                <?= $outlet['alamat']; ?>
+              </p>
+              <p>
+                <?= $outlet['jam']; ?>
+              </p>
+              <p><a href="<?= $outlet['map']; ?>" target="_blank">Lihat di Google Maps</a></p>
             </div>
           </div>
-        <?php endforeach; ?>
-          
         </div>
-        <!--/ Accordion end -->
+      <?php endforeach; ?>
+    </div>
+
+  </div>
+  <!--/ Accordion end -->
   </div><!-- Col end -->
 </section><!-- Feature area end -->
+
 
 <footer id="footer" class="footer bg-overlay">
   <div class="footer-main">

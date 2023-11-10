@@ -196,41 +196,42 @@
 
 <section id="ts-features" class="ts-features">
   <div class="container">
-        <div class="row text-center">
-          <div class="col-12">
-            <h3 class="section-sub-title">Career</h3>
-          </div>
-        </div>
+    <div class="row text-center">
+      <div class="col-12">
+        <h3 class="section-sub-title">Career</h3>
+      </div>
+    </div>
 
-        <?php foreach ($loker as $index => $job): ?>
-          <div class="accordion accordion-group" id="our-values-accordion">
-            <div class="card">
-              <div class="card-header p-0 bg-transparent" id="heading<?= $index ?>">
-                <h2 class="mb-0">
-                  <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
-                    data-target="#collapse<?= $index ?>" aria-expanded="false" aria-controls="collapse<?= $index ?>">
-                    <?= $job['Nama']; ?>
-                  </button>
-                </h2>
-              </div>
-              <div id="collapse<?= $index ?>" class="collapse" aria-labelledby="heading<?= $index ?>" >
-                <div class="card-body">
-                  <h2 class="section-title">Kualifikasi</h2>
-                  <p><?= $job['kualifikasi']; ?></p>
-                  <h2 class="section-title">Job Desk</h2>
-                  <p><?= $job['jobdesk']; ?></p>
-                </div>
-                <div class="header-get-a-quote text-center my-2">
-                  <a class="btn btn-primary apply-button" href="<?php echo site_url('Apply'); ?>">Apply Now</a>
-                </div>
-              </div>
+    <div class="accordion accordion-group" id="career-accordion">
+      <?php foreach ($loker as $index => $job): ?>
+        <div class="card">
+          <div class="card-header p-0 bg-transparent" id="career-heading<?= $index ?>">
+            <h2 class="mb-0">
+              <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                data-target="#career-collapse<?= $index ?>" aria-expanded="false" aria-controls="career-collapse<?= $index ?>">
+                <?= $job['Nama']; ?>
+              </button>
+            </h2>
+          </div>
+          <div id="career-collapse<?= $index ?>" class="collapse" aria-labelledby="career-heading<?= $index ?>" data-parent="#career-accordion">
+            <div class="card-body">
+              <h2 class="section-title">Kualifikasi</h2>
+              <p><?= $job['kualifikasi']; ?></p>
+              <h2 class="section-title">Job Desk</h2>
+              <p><?= $job['jobdesk']; ?></p>
+            </div>
+            <div class="header-get-a-quote text-center my-2">
+              <a class="btn btn-primary apply-button" href="<?php echo site_url('Apply'); ?>">Apply Now</a>
             </div>
           </div>
-        <?php endforeach; ?>
-        <!--/ Accordion end -->
-      </div><!-- Col end -->
-</section><!-- Feature area end -->
+        </div>
+      <?php endforeach; ?>
+    </div>
 
+  </div>
+  <!--/ Accordion end -->
+  </div><!-- Col end -->
+</section><!-- Feature area end -->
 
 <section id="facts" class="facts-area dark-bg">
   <div class="container">
