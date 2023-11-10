@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Ubah Data Pengguna</title>
+  <title>Ubah Data Admin</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?= base_url('vendors/font-awesome/css/font-awesome.min.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('vendors/feather/feather.css'); ?>">
@@ -99,7 +99,7 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo site_url('Pengguna'); ?>">
               <iconify-icon icon="fluent:people-edit-24-filled" class="menu-icon"></iconify-icon>
-              <span class="menu-title">Data Pengguna</span>
+              <span class="menu-title">Data Admin</span>
             </a>
           </li>
           
@@ -116,7 +116,7 @@
               <div class="card">
                 <div class="card-body">
 
-                  <h4 class="card-title">Ubah Data Pengguna</h4>
+                  <h4 class="card-title">Ubah Data Admin</h4>
                   
                   <form class="forms-sample" method="post" action="<?php echo site_url('UbahPengguna/update/' . $id); ?>">
                     <div class="form-group">

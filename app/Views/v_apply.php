@@ -164,9 +164,9 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="linkedin">URL LinkedIn</label>
+                                    <label for="linkedin">URL LinkedIn (Opsional)</label>
                                     <input type="url" class="form-control" id="linkedin" name="linkedin"
-                                        value="https://" placeholder="mis: http://linkedin.com/in/username" required>
+                                        value="https://" placeholder="mis: http://linkedin.com/in/username">
                                 </div>
 
                                 <div class="form-group">

@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Tambah Pengguna</title>
+  <title>Tambah Admin</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?= base_url('vendors/font-awesome/css/font-awesome.min.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('vendors/feather/feather.css'); ?>">
@@ -99,7 +99,7 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo site_url('Pengguna'); ?>">
               <iconify-icon icon="fluent:people-edit-24-filled" class="menu-icon"></iconify-icon>
-              <span class="menu-title">Data Pengguna</span>
+              <span class="menu-title">Data Admin</span>
             </a>
           </li>
           
@@ -114,7 +114,7 @@
             <div class="col-lg-12 stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Tambah Pengguna</h4>
+                  <h4 class="card-title">Tambah Admin</h4>
                   <form class="forms-sample" method="POST" action="<?= site_url('TambahPengguna/tambah'); ?>">
                     <div class="form-group">
                       <label for="exampleInputUsername1">Nama</label>
