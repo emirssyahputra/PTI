@@ -120,6 +120,10 @@
                                     <input type="hidden" class="form-control" name="id_loker"
                                         value="<?php echo $id_loker; ?>">
                                 </div>
+                                <div class="form-group">
+                                    <input type="hidden" class="form-control" name="waktu_apply"
+                                        value="<?php echo $waktuApply; ?>">
+                                </div>
 
                                 <div class="form-group">
                                     <label for="nama" class="required-label">Nama</label>

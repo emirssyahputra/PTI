@@ -9,11 +9,13 @@ class Apply extends BaseController
 {
     public function index()
     {
+        date_default_timezone_set('Asia/Jakarta');
         $session = \Config\Services::session();
         $id_pengguna = $session->get('id_pengguna');
         $nama = $session->get('nama');
         $email = $session->get('email');
         $id_loker = $this->request->getPost('id_loker');
+        $waktuApply = date('Y-m-d H:i:s');
 
         if ($id_pengguna === null) {
             return redirect()->to('login'); // Mengarahkan pengguna ke halaman login jika belum masuk.
@@ -23,6 +25,7 @@ class Apply extends BaseController
             'nama' => $nama,
             'email' => $email,
             'id_loker' => $id_loker,
+            'waktuApply' => $waktuApply,
         ];
 
         return view('pelamar/v_apply', $data); // Menampilkan halaman apply jika pengguna sudah masuk.
@@ -44,7 +47,8 @@ class Apply extends BaseController
         $nama = $session->get('nama');
         $email = $session->get('email');
 
-        // Mengambil nilai id_loker dari POST data
+        date_default_timezone_set('Asia/Jakarta');
+        $waktuApply = date('Y-m-d H:i:s');
 
         // Loop melalui setiap field file
         foreach ($fileFields as $field) {
@@ -68,7 +72,7 @@ class Apply extends BaseController
             'alamat' => $this->request->getVar('alamat'),
             'linkedin' => $this->request->getVar('linkedin'),
             'id_loker' => $this->request->getVar('id_loker'),
-            // Memasukkan id_loker ke dalam data
+            'waktu_apply' => $waktuApply,
         ];
 
         // Menambahkan nama file yang diunggah ke dalam data
@@ -79,9 +83,9 @@ class Apply extends BaseController
         }
 
         if ($model->insert($data)) {
-            return redirect()->to('pelamar/selection')->with('success', 'Lamaran berhasil dikirim.');
+            return redirect()->to('Selection')->with('success', 'Lamaran berhasil dikirim.');
         } else {
-            return redirect()->to('pelamar/apply')->with('error', 'Gagal mengirim lamaran. Silakan coba lagi.');
+            return redirect()->to('Apply')->with('error', 'Gagal mengirim lamaran. Silakan coba lagi.');
         }
     }
 
