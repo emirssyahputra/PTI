@@ -123,15 +123,16 @@
               </h2>
             </div>
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#our-values-accordion">
-            <div class="card-body">
-              <?php if ($Nama !== null): ?>
-                <p>Anda berhasil mendaftar sebagai
-                  <strong><?= $Nama; ?></strong> pada tanggal
-                  <strong><?= $waktu_apply; ?></strong>
-                </p>
-              <?php else: ?>
-                <p>Anda belum mendaftar</p>
-              <?php endif; ?>
+              <div class="card-body">
+                <?php if ($Nama !== null): ?>
+                  <p>Anda berhasil mendaftar sebagai
+                    <strong><?= $Nama; ?></strong> pada tanggal
+                    <strong><?= $waktu_apply; ?></strong>
+                  </p>
+                <?php else: ?>
+                  <p>Anda belum mendaftar</p>
+                <?php endif; ?>
+              </div>
             </div>
           </div>
           <div class="card">

@@ -4,7 +4,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Data Pengguna</title>
+  <title>Data Admin</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?= base_url('vendors/font-awesome/css/font-awesome.min.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('vendors/feather/feather.css'); ?>">
@@ -100,7 +100,7 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo site_url('Pengguna'); ?>">
               <iconify-icon icon="fluent:people-edit-24-filled" class="menu-icon"></iconify-icon>
-              <span class="menu-title">Data Pengguna</span>
+              <span class="menu-title">Data Admin</span>
             </a>
           </li>
           
@@ -117,7 +117,7 @@
               <div class="card">
                 <div class="card-body">
 
-                  <h4 class="card-title nav-item" id="teksDouble">DATA PENGGUNA</h4>
+                  <h4 class="card-title nav-item" id="teksDouble">DATA ADMIN</h4>
                   <a class="btn btn-info btn-rounded btn-fw float-left" href="<?php echo site_url('TambahPengguna'); ?>"><i class="fa fa-plus btn-icon-prepend">
                   </i> Tambah </a> 
 
@@ -198,7 +198,7 @@
               </span>
             </div>
             <div class="popup-body">
-              <p>Apakah Anda yakin ingin menghapus pengguna?</p>
+              <p>Apakah Anda yakin ingin menghapus data admin?</p>
             </div>
             <div class="popup-footer">
               <button class="btn btn-accept" id="confirmDelete" data-id="<?= $id ?>">Ya</button>

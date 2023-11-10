@@ -101,7 +101,7 @@ function topFunction() {
           <li class="nav-item">
             <a class="nav-link" href="<?php echo site_url('Pengguna');?>">
               <iconify-icon icon="fluent:people-edit-24-filled" class="menu-icon"></iconify-icon>
-              <span class="menu-title">Data Pengguna</span>
+              <span class="menu-title">Data Admin</span>
             </a>
           </li>
           
@@ -152,7 +152,7 @@ function topFunction() {
               <div class="card card-tale">                   
                 <div class="card-body text-center">
                   <a href="<?php echo site_url('Pengguna');?>" style="color: #555555; text-decoration: none;">
-                    <p class="fs-20 mb-4">DATA PENGGUNA</p>
+                    <p class="fs-20 mb-4">DATA ADMIN</p>
                     <p class="fs-30 mb-2"><?php echo $admin; ?></p>
                     <p class="fs-15 mb-6">Admin</p>
                   </a>

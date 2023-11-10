@@ -117,52 +117,48 @@
       </div><!-- Banner text end -->
     </div><!-- Banner area end -->
 
-    <section id="ts-features" class="ts-features">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-12">
-            <p>Bergabunglah menjadi bagian dari #TimLoer! Tumbuh dan berkembang bersama Loer Group dan temukan
-              passion-mu dalam cakupan dunia jasa dan pelayanan</p>
-          </div>
-        </div>
-        <h2 class="column-title mrt-0">Lowongan Tersedia</h2>
+<section id="ts-features" class="ts-features">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-12">
+        <p>Bergabunglah menjadi bagian dari #TimLoer! Tumbuh dan berkembang bersama Loer Group dan temukan
+          passion-mu dalam cakupan dunia jasa dan pelayanan</p>
+      </div>
+    </div>
+    <h2 class="column-title mrt-0">Lowongan Tersedia</h2>
 
-        <?php foreach ($loker as $index => $job): ?>
-          <div class="accordion accordion-group" id="our-values-accordion">
-            <div class="card">
-              <div class="card-header p-0 bg-transparent" id="heading<?= $index ?>">
-                <h2 class="mb-0">
-                  <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
-                    data-target="#collapse<?= $index ?>" aria-expanded="false" aria-controls="collapse<?= $index ?>">
-                    <?= $job['Nama']; ?>
-                  </button>
-                </h2>
-              </div>
-              <div id="collapse<?= $index ?>" class="collapse" aria-labelledby="heading<?= $index ?>"
-                data-parent="#our-values-accordion">
-                <div class="card-body">
-                  <h2 class="section-title">Kualifikasi</h2>
-                  <p>
-                    <?= $job['kualifikasi']; ?>
-                  </p>
-                  <h2 class="section-title">Job Desk</h2>
-                  <p>
-                    <?= $job['jobdesk']; ?>
-                  </p>
-                </div>
-                <div class="header-get-a-quote text-center my-2">
-                  <form method="post" action="<?php echo site_url('Apply'); ?>">
-                    <input type="hidden" name="id_loker" value="<?php echo $job['id_loker']; ?>">
-                    <button class="btn btn-primary apply-button" type="submit">Apply Now</button>
-                  </form>
-                </div>
-              </div>
+    <div class="accordion accordion-group" id="job-accordion">
+      <?php foreach ($loker as $index => $job): ?>
+        <div class="card">
+          <div class="card-header p-0 bg-transparent" id="job-heading<?= $index ?>">
+            <h2 class="mb-0">
+              <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                data-target="#job-collapse<?= $index ?>" aria-expanded="false" aria-controls="job-collapse<?= $index ?>">
+                <?= $job['Nama']; ?>
+              </button>
+            </h2>
+          </div>
+          <div id="job-collapse<?= $index ?>" class="collapse" aria-labelledby="job-heading<?= $index ?>"
+            data-parent="#job-accordion">
+            <div class="card-body">
+              <h2 class="section-title">Kualifikasi</h2>
+              <p><?= $job['kualifikasi']; ?></p>
+              <h2 class="section-title">Job Desk</h2>
+              <p><?= $job['jobdesk']; ?></p>
+            </div>
+            <div class="header-get-a-quote text-center my-2">
+              <form method="post" action="<?php echo site_url('Apply'); ?>">
+                <input type="hidden" name="id_loker" value="<?php echo $job['id_loker']; ?>">
+                <button class="btn btn-primary apply-button" type="submit">Apply Now</button>
+              </form>
             </div>
           </div>
-        <?php endforeach; ?>
-        <!--/ Accordion end -->
-      </div><!-- Col end -->
-    </section><!-- Feature area end -->
+        </div>
+      <?php endforeach; ?>
+    </div>
+    <!--/ Accordion end -->
+  </div><!-- Col end -->
+</section><!-- Feature area end -->
 
     <footer id="footer" class="footer bg-overlay">
       <div class="footer-main">
