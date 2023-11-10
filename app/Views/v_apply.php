@@ -169,6 +169,7 @@
                                         value="https://" placeholder="mis: http://linkedin.com/in/username">
                                 </div>
 
+                                <p>Silahkan upload file dengan format PDF untuk semua lampiran dokumen di bawah.</p>
                                 <div class="form-group">
                                     <label for="cv">KTP</label>
                                     <input type="file" class="form-control-file" id="ktp" name="ktp" accept=".pdf"
