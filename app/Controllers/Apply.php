@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\M_Apply;
+use App\Models\M_selection;
+
 
 class Apply extends BaseController
 {
@@ -83,6 +85,19 @@ class Apply extends BaseController
         }
 
         if ($model->insert($data)) {
+            $model = new M_selection();
+            $id_loker = $data['id_loker'];
+            $waktu = $data['waktu_apply'];
+            $loker = $model->getNamaPekerjaan($id_loker);
+            $subject = "Status Tahapan Seleksi";
+            $message = "Selamat anda berhasil mendaftar untuk posisi $loker pada $waktu ";
+
+            $email = service('email');
+            $email->setTo($data['email']); 
+            $email->setFrom('emirssyah2@gmail.com', 'Loer Group'); 
+            $email->setSubject($subject);
+            $email->setMessage($message);
+            $email->send();
             return redirect()->to('Selection')->with('success', 'Lamaran berhasil dikirim.');
         } else {
             return redirect()->to('Apply')->with('error', 'Gagal mengirim lamaran. Silakan coba lagi.');
