@@ -34,7 +34,7 @@ class Apply extends BaseController
                 $status_akhir = $data_status['status_akhir'];
 
                 if ($status_adm !== '2' && $status_wwc !== '2' && $status_uji !== '2' && $status_akhir !== '2') {
-                    return redirect()->to('pCareer')->with('error', 'Anda sebelumnya telah mendaftar, silahkan periksa ke halaman Selection. Anda dapat mendaftar lagi ketika status seleksi anda tidak lolos');
+                    return redirect()->to('pCareer')->with('error', 'Anda sebelumnya telah mendaftar, silahkan periksa ke halaman Selection. Anda dapat mendaftar lagi ketika status seleksi anda Tidak Lolos');
                 }
             }
         }
