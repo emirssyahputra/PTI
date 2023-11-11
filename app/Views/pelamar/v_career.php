@@ -111,12 +111,12 @@
           <div class="col-12">
             <p>Bergabunglah menjadi bagian dari #TimLoer! Tumbuh dan berkembang bersama Loer Group dan temukan
               passion-mu dalam cakupan dunia jasa dan pelayanan</p>
+            <?php if (session()->has('error')): ?>
+            <div class="alert alert-danger">
+              <?php echo session('error'); ?>
+            </div>
+            <?php endif; ?>
           </div>
-          <?php if (session()->has('error')): ?>
-          <div class="alert alert-danger">
-            <?php echo session('error'); ?>
-          </div>
-        <?php endif; ?>
         </div>
         <h2 class="column-title mrt-0">Lowongan Tersedia</h2>
 
