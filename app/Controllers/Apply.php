@@ -19,18 +19,34 @@ class Apply extends BaseController
         $id_loker = $this->request->getPost('id_loker');
         $waktuApply = date('Y-m-d H:i:s');
 
+        $model = new M_selection();
+
+        $data_status = $model->orderBy('waktu_apply', 'desc')
+            ->getFormByUserId($id_pengguna);
+
         if ($id_pengguna === null) {
             return redirect()->to('login'); // Mengarahkan pengguna ke halaman login jika belum masuk.
+        } else {
+            if (!empty($data_status)) {
+                $status_adm = $data_status['status_adm'];
+                $status_wwc = $data_status['status_wwc'];
+                $status_uji = $data_status['status_uji'];
+                $status_akhir = $data_status['status_akhir'];
+
+                if ($status_adm !== '2' && $status_wwc !== '2' && $status_uji !== '2' && $status_akhir !== '2') {
+                    return redirect()->to('pCareer')->with('error', 'Anda sebelumnya telah mendaftar, silahkan periksa ke halaman selection. Anda dapat mendaftar lagi ketika status seleksi Anda tidak lolos');
+                }
+            }
         }
 
-        $data = [
+        $data_pelamar = [
             'nama' => $nama,
             'email' => $email,
             'id_loker' => $id_loker,
             'waktuApply' => $waktuApply,
         ];
 
-        return view('pelamar/v_apply', $data); // Menampilkan halaman apply jika pengguna sudah masuk.
+        return view('pelamar/v_apply', $data_pelamar); // Menampilkan halaman apply jika pengguna sudah masuk.
     }
 
 
@@ -93,8 +109,8 @@ class Apply extends BaseController
             $message = "Selamat anda berhasil mendaftar untuk posisi $loker pada $waktu ";
 
             $email = service('email');
-            $email->setTo($data['email']); 
-            $email->setFrom('emirssyah2@gmail.com', 'Loer Group'); 
+            $email->setTo($data['email']);
+            $email->setFrom('emirssyah2@gmail.com', 'Loer Group');
             $email->setSubject($subject);
             $email->setMessage($message);
             $email->send();

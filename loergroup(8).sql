@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 02 Nov 2023 pada 22.20
--- Versi server: 10.4.28-MariaDB
--- Versi PHP: 8.2.4
+-- Generation Time: Nov 11, 2023 at 09:06 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `cabang`
+-- Table structure for table `cabang`
 --
 
 CREATE TABLE `cabang` (
@@ -36,7 +36,7 @@ CREATE TABLE `cabang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `cabang`
+-- Dumping data for table `cabang`
 --
 
 INSERT INTO `cabang` (`id`, `nama`, `alamat`, `jam`, `map`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `cabang` (`id`, `nama`, `alamat`, `jam`, `map`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `form_pendaftaran`
+-- Table structure for table `form_pendaftaran`
 --
 
 CREATE TABLE `form_pendaftaran` (
@@ -59,7 +59,7 @@ CREATE TABLE `form_pendaftaran` (
   `email` varchar(100) NOT NULL,
   `no_telp` varchar(100) NOT NULL,
   `alamat` varchar(100) NOT NULL,
-  `linkedin` varchar(100) NOT NULL,
+  `linkedin` varchar(100) DEFAULT NULL,
   `surat_lamaran` varchar(255) NOT NULL,
   `cv` varchar(255) NOT NULL,
   `ktp` varchar(255) NOT NULL,
@@ -67,14 +67,31 @@ CREATE TABLE `form_pendaftaran` (
   `skck` varchar(255) NOT NULL,
   `packlaring` varchar(255) NOT NULL,
   `sertifikat_kompetensi` varchar(255) NOT NULL,
+  `waktu_apply` datetime NOT NULL,
+  `status_adm` int(11) DEFAULT NULL,
+  `komentar_adm` longtext DEFAULT NULL,
+  `status_wwc` int(11) DEFAULT NULL,
+  `komentar_wwc` longtext DEFAULT NULL,
+  `status_uji` int(11) DEFAULT NULL,
+  `komentar_uji` longtext DEFAULT NULL,
+  `status_akhir` int(11) DEFAULT NULL,
+  `komentar_akhir` longtext DEFAULT NULL,
   `id_loker` int(11) NOT NULL,
   `id_pengguna` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `form_pendaftaran`
+--
+
+INSERT INTO `form_pendaftaran` (`id_form`, `nama`, `jenkel`, `pend`, `email`, `no_telp`, `alamat`, `linkedin`, `surat_lamaran`, `cv`, `ktp`, `ijazah`, `skck`, `packlaring`, `sertifikat_kompetensi`, `waktu_apply`, `status_adm`, `komentar_adm`, `status_wwc`, `komentar_wwc`, `status_uji`, `komentar_uji`, `status_akhir`, `komentar_akhir`, `id_loker`, `id_pengguna`) VALUES
+(7, 'Pengguna', 'Laki-laki', 'SLTA Sederajat', 'pengguna@mail.com', '08123456789', 'ITERA', 'https://itera.com', '1699521093_ceb27cfca67a60a62ed8.pdf', '1699521093_abcd0f6486b058ee4181.pdf', '1699521093_29d44607cdf4dc70ce63.pdf', '1699521093_8339a9861f000ee52afd.pdf', '1699521093_e1a0457722b8a7af5af2.pdf', '1699521093_9bfb0210e4f6e150093e.pdf', '', '2023-11-09 16:11:33', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 21),
+(8, 'Pengguna', 'Laki-laki', 'SLTA Sederajat', 'pengguna@mail.com', '08123456789', 'WarJo', 'https://itera.com', '1699685281_73d08a1d8feb6668ee2e.pdf', '1699685281_ffb31b2714a56ba72807.pdf', '1699685281_cb6545e8789d4eb1d2eb.pdf', '1699685281_1ddcc0f3492e549f3a86.pdf', '1699685281_ed0dd7c6aa0cc807d9cb.pdf', '1699685281_392adec70dc0a75454d9.pdf', '', '2023-11-11 13:48:01', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 21);
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kontrak_kerja`
+-- Table structure for table `kontrak_kerja`
 --
 
 CREATE TABLE `kontrak_kerja` (
@@ -87,7 +104,7 @@ CREATE TABLE `kontrak_kerja` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `lowongan_pekerjaan`
+-- Table structure for table `lowongan_pekerjaan`
 --
 
 CREATE TABLE `lowongan_pekerjaan` (
@@ -99,7 +116,7 @@ CREATE TABLE `lowongan_pekerjaan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `lowongan_pekerjaan`
+-- Dumping data for table `lowongan_pekerjaan`
 --
 
 INSERT INTO `lowongan_pekerjaan` (`id_loker`, `Nama`, `jangka_waktu`, `kualifikasi`, `jobdesk`) VALUES
@@ -111,7 +128,7 @@ INSERT INTO `lowongan_pekerjaan` (`id_loker`, `Nama`, `jangka_waktu`, `kualifika
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengguna`
+-- Table structure for table `pengguna`
 --
 
 CREATE TABLE `pengguna` (
@@ -124,7 +141,7 @@ CREATE TABLE `pengguna` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `pengguna`
+-- Dumping data for table `pengguna`
 --
 
 INSERT INTO `pengguna` (`id_pengguna`, `email`, `password`, `nama`, `id_role`, `code`) VALUES
@@ -135,12 +152,16 @@ INSERT INTO `pengguna` (`id_pengguna`, `email`, `password`, `nama`, `id_role`, `
 (17, 'Mega@gmail.com', '$2y$10$kvcsXbBO.e1iqNfrNMLO4eJVUhTdGXE8/ItQXC7K5dEy.300HTd/2', 'Mery', 2, NULL),
 (18, 'emirssyah11@gmail.com', '$2y$10$WjmEWjTK.QCWTpsOFeuf8uAGQeq6.GwndH9QC18Yif9THA710k1Yq', 'Emirssyah Putra', 2, NULL),
 (19, 'emirssyahputra@gmail.com', '$2y$10$IfjMxuVrf6HSavBj5IRHoeQ4urGxVCURy2ceDEo4Yf.U7de1GOTVq', 'Emirssyah ', 1, NULL),
-(20, 'merysah@gmail.com', '$2y$10$IfjMxuVrf6HSavBj5IRHoeQ4urGxVCURy2ceDEo4Yf.U7de1GOTVq', 'Merysah', 1, NULL);
+(20, 'merysah@gmail.com', '$2y$10$IfjMxuVrf6HSavBj5IRHoeQ4urGxVCURy2ceDEo4Yf.U7de1GOTVq', 'Merysah', 1, NULL),
+(21, 'pengguna@mail.com', '$2y$10$MM.3otB/vt9BElGdZTSlX.a0Mq7eYocwzocLRNBzvU9b.pMUiNV7a', 'Pengguna', 2, NULL),
+(22, 'admin@gmail.com', '$2y$10$eg8REd856.lfsj7KNhUsG./i.1NRbgTn2MtWwu9cOP.xRIn30hNEu', 'Admin', 1, NULL),
+(23, 'penggunaa@mail.com', '$2y$10$Qsp1kWeIwM3T3LE3V38v1OeexgHpEljd.APXpfnFe53coPTdDtA1e', 'Pengguna', 2, NULL),
+(24, 'rio123@gmail.com', '$2y$10$XLSuf38guV24hFoG8/9BTu15irTEWd/p433tI3wREngqXBBOdxaSS', 'Rio', 1, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `riwayat_pendaftaran`
+-- Table structure for table `riwayat_pendaftaran`
 --
 
 CREATE TABLE `riwayat_pendaftaran` (
@@ -155,13 +176,13 @@ CREATE TABLE `riwayat_pendaftaran` (
 --
 
 --
--- Indeks untuk tabel `cabang`
+-- Indexes for table `cabang`
 --
 ALTER TABLE `cabang`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `form_pendaftaran`
+-- Indexes for table `form_pendaftaran`
 --
 ALTER TABLE `form_pendaftaran`
   ADD PRIMARY KEY (`id_form`),
@@ -171,90 +192,90 @@ ALTER TABLE `form_pendaftaran`
   ADD KEY `email` (`email`);
 
 --
--- Indeks untuk tabel `kontrak_kerja`
+-- Indexes for table `kontrak_kerja`
 --
 ALTER TABLE `kontrak_kerja`
   ADD PRIMARY KEY (`id_kontrak`),
   ADD KEY `id_pendaftaran` (`id_pendaftaran`);
 
 --
--- Indeks untuk tabel `lowongan_pekerjaan`
+-- Indexes for table `lowongan_pekerjaan`
 --
 ALTER TABLE `lowongan_pekerjaan`
   ADD PRIMARY KEY (`id_loker`);
 
 --
--- Indeks untuk tabel `pengguna`
+-- Indexes for table `pengguna`
 --
 ALTER TABLE `pengguna`
   ADD PRIMARY KEY (`id_pengguna`);
 
 --
--- Indeks untuk tabel `riwayat_pendaftaran`
+-- Indexes for table `riwayat_pendaftaran`
 --
 ALTER TABLE `riwayat_pendaftaran`
   ADD PRIMARY KEY (`id_pendaftaran`),
   ADD KEY `id_form` (`id_form`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `cabang`
+-- AUTO_INCREMENT for table `cabang`
 --
 ALTER TABLE `cabang`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `form_pendaftaran`
+-- AUTO_INCREMENT for table `form_pendaftaran`
 --
 ALTER TABLE `form_pendaftaran`
-  MODIFY `id_form` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_form` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `kontrak_kerja`
+-- AUTO_INCREMENT for table `kontrak_kerja`
 --
 ALTER TABLE `kontrak_kerja`
   MODIFY `id_kontrak` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `lowongan_pekerjaan`
+-- AUTO_INCREMENT for table `lowongan_pekerjaan`
 --
 ALTER TABLE `lowongan_pekerjaan`
   MODIFY `id_loker` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `pengguna`
+-- AUTO_INCREMENT for table `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT untuk tabel `riwayat_pendaftaran`
+-- AUTO_INCREMENT for table `riwayat_pendaftaran`
 --
 ALTER TABLE `riwayat_pendaftaran`
   MODIFY `id_pendaftaran` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `form_pendaftaran`
+-- Constraints for table `form_pendaftaran`
 --
 ALTER TABLE `form_pendaftaran`
   ADD CONSTRAINT `form_pendaftaran_ibfk_1` FOREIGN KEY (`id_loker`) REFERENCES `lowongan_pekerjaan` (`id_loker`),
   ADD CONSTRAINT `form_pendaftaran_ibfk_2` FOREIGN KEY (`id_pengguna`) REFERENCES `pengguna` (`id_pengguna`);
 
 --
--- Ketidakleluasaan untuk tabel `kontrak_kerja`
+-- Constraints for table `kontrak_kerja`
 --
 ALTER TABLE `kontrak_kerja`
   ADD CONSTRAINT `kontrak_kerja_ibfk_1` FOREIGN KEY (`id_pendaftaran`) REFERENCES `riwayat_pendaftaran` (`id_pendaftaran`);
 
 --
--- Ketidakleluasaan untuk tabel `riwayat_pendaftaran`
+-- Constraints for table `riwayat_pendaftaran`
 --
 ALTER TABLE `riwayat_pendaftaran`
   ADD CONSTRAINT `riwayat_pendaftaran_ibfk_1` FOREIGN KEY (`id_form`) REFERENCES `form_pendaftaran` (`id_form`);
