@@ -621,6 +621,84 @@ a[href^=tel] {
   background-color: #111 !important;
 }
 
+/* Tombol Accept */
+.btn-accept {
+  border: 0;
+  border-radius: 3px;
+  padding: 12px 20px 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  transition: 350ms;
+  font-size: 14px;
+  background: #0CB357; /* Warna hijau untuk tombol Accept */
+}
+
+@media (max-width: 767px) {
+  .btn-accept {
+    font-size: 13px;
+  }
+}
+
+.btn-white.btn-accept {
+  background: #fff;
+  color: #0CB357;
+}
+
+.btn-accept:hover,
+.btn-white.btn-accept:hover {
+  background: rgb(61, 145, 61); /* Warna hijau yang lebih gelap saat hover */
+  color: #fff;
+}
+
+.btn-accept:hover:active,
+.btn-accept:hover:focus,
+.btn-white.btn-accept:hover:active,
+.btn-white.btn-accept:hover:focus {
+  color: #fff;
+  background-color: rgb(61, 145, 61) !important; /* Warna hijau yang lebih gelap saat active atau focus */
+}
+
+/* Tombol Cancel */
+.btn-cancel {
+  border: 0;
+  border-radius: 3px;
+  padding: 12px 20px 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  transition: 350ms;
+  font-size: 14px;
+  background: #DA0F0F; /* Warna merah untuk tombol Cancel */
+}
+
+@media (max-width: 767px) {
+  .btn-cancel {
+    font-size: 13px;
+  }
+}
+
+.btn-white.btn-cancel {
+  background: #fff;
+  color: #DA0F0F;
+}
+
+.btn-cancel:hover,
+.btn-white.btn-cancel:hover {
+  background: #c40d0d; /* Warna merah yang lebih gelap saat hover */
+  color: #fff;
+}
+
+.btn-cancel:hover:active,
+.btn-cancel:hover:focus,
+.btn-white.btn-cancel:hover:active,
+.btn-white.btn-cancel:hover:focus {
+  color: #fff;
+  background-color: #c40d0d !important; /* Warna merah yang lebih gelap saat active atau focus */
+}
+
 .general-btn {
   margin-top: 50px;
 }
@@ -719,7 +797,7 @@ ul.top-info li p.info-text {
 }
 
 .navbar-fixed {
-  z-index: 9999;
+  z-index: 999;
   position: fixed;
   width: 100%;
   top: 0;
