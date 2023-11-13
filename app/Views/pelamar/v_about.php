@@ -172,7 +172,7 @@
                 <?= $outlet['alamat']; ?>
               </p>
               <p>
-                <?= $outlet['jam']; ?>
+                Buka : <?= $outlet['jam']; ?>
               </p>
               <p><a href="<?= $outlet['map']; ?>" target="_blank">Lihat di Google Maps</a></p>
             </div>

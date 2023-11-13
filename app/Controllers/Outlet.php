@@ -8,6 +8,8 @@ class Outlet extends BaseController
 {
     public function index()
     {
-        return view('admin/v_outlet.php');
+        $model = new \App\Models\M_outlet();
+        $data['outlet'] = $model->findAll();
+        return view('admin/v_outlet', $data);
     }
 }

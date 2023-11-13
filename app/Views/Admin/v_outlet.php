@@ -158,13 +158,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Data Dummy 1 -->
-                                <tr>
-                                    <td>1</td>
-                                    <td>Kopi Loer Sudirman</td>
-                                    <td>20 Ilir D. IV, Kec. Ilir Tim. I, Kota Palembang, Sumatera Selatan</td>
-                                    <td>Senin-Minggu 09.30-23.00</td>
-                                    <td><a href="https://maps.example.com" target="_blank">Lihat Map</a></td>
+                            <?php foreach ($outlet as $index => $cabang):
+                            $nama = $cabang['nama'];
+                            $alamat = $cabang['alamat'];
+                            $jam = $cabang['jam'];
+                            $map = $cabang['map'];
+                            $id = $cabang['id'];
+                            ?>                               
+                             <tr>
+                                    <td><?= $index + 1 ?></td>
+                                    <td><?= $nama; ?></td>
+                                    <td><?= $alamat; ?></td>
+                                    <td><?= $jam; ?></td>
+                                    <td><a href="<?= $map; ?>" target="_blank">Lihat Map</a></td>
                                     <td align="left">
                                         <a href="<?php echo site_url('UbahOutlet'); ?>" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
                                           <i class="fa fa-pencil btn-icon-append"></i> Ubah
@@ -176,25 +182,7 @@
                                         </a>
                                     </td>
                                 </tr>
-                    
-                                <!-- Data Dummy 2 -->
-                                <tr>
-                                    <td>2</td>
-                                    <td>Rumah Loer Merdeka</td>
-                                    <td>Jl. Merdeka No. 349, Kecamatan Bukit Kecil, Kota Palembang, Sumatera Selatan 30135</td>
-                                    <td>Senin-Minggu 09.30-23.00</td>
-                                    <td><a href="https://maps.example.com" target="_blank">Lihat Map</a></td>
-                                    <td align="left">
-                                        <a href="<?php echo site_url('UbahOutlet'); ?>" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
-                                          <i class="fa fa-pencil btn-icon-append"></i> Ubah
-                                        </a>
-                                        &nbsp;&nbsp;&nbsp;
-                                        <!-- Button untuk membuka pop-up -->
-                                        <a href="#" type="button" title="Hapus Data" class="btn btn-danger btn-icon-text" id="openDeletePopup2">
-                                          <i class="fa fa-trash btn-icon-prepend"></i> Hapus
-                                        </a>
-                                    </td>
-                                </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>

@@ -124,7 +124,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Tambah Outlet</h4>
-                  <form class="forms-sample" method="POST" action="#">
+                  <form class="forms-sample" method="POST" action="<?= site_url('Tambahoutlet/saveOutlet'); ?>">
                     <div class="form-group">
                       <label for="namaoutlet">Nama Outlet</label>
                       <input type="text" class="form-control" id="outlet" name="nama" placeholder="Nama" required />
@@ -176,7 +176,7 @@
                   
                     <div class="form-group">
                         <label for="linkMaps">Link Maps</label>
-                        <input type="text" class="form-control" name="linkMaps" placeholder="Link Maps" required />
+                        <input type="text" class="form-control" name="map" placeholder="Link Maps" required />
                     </div>
                          
                     <button type="submit" class="btn btn-warning btn-icon-text">Simpan</button>
