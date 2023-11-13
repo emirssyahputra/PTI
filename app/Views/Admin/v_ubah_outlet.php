@@ -84,7 +84,7 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('Job');?>">
+            <a class="nav-link" href="<?php echo site_url('Job'); ?>">
               <iconify-icon icon="heroicons:list-bullet" style="font-size: 18px; border: 2px solid; border-radius: 5px; padding: 0.5px;" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Lowongan</span>
             </a>
@@ -115,105 +115,80 @@
       </nav>
     <!-- PANEL MENU KIRI [END] -->
 
-      <!-- partial -->   
+      <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          <div class="row-cols">
-            
-            <div class="col-xl-13 grid-margin stretch-card">
+          <div class="row">
+                       
+            <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
+                  <h4 class="card-title">Ubah Data Outlet</h4>
+                  <form class="forms-sample" method="POST" action="#">
+                    <div class="form-group">
+                      <label for="namaoutlet">Nama Outlet</label>
+                      <input type="text" class="form-control" id="outlet" name="nama" placeholder="Nama" required />
+                    </div>                  
+                    <div class="form-group">
+                      <label>Alamat</label>
+                      <textarea name="alamat" rows="1" class="form-control" placeholder="Alamat"></textarea>
+                    </div>
 
-                  <h4 class="card-title nav-item" id="teksDouble">DATA ADMIN</h4>
-                  <a class="btn btn-info btn-rounded btn-fw float-left" href="<?php echo site_url('TambahPengguna'); ?>"><i class="fa fa-plus btn-icon-prepend">
-                  </i> Tambah </a> 
-
-                  <form action="<?= site_url('Pengguna/search'); ?>" method="post">
-                    <ul class="navbar-nav">
-                      <li class="nav-item nav-search">
-                        <div class="input-group">
-                          <div class="input-group-prepend" id="navbar-search-icon">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span class="input-group-text" id="search">
-                              <i class="icon-search"></i>
-                            </span>
+                    <div class="form-group">
+                      <label for="hariRange">Rentang Hari</label>
+                      <div class="row">
+                          <div class="col">
+                              <select class="form-control" name="startDay" required>
+                                  <option value="Senin">Senin</option>
+                                  <option value="Selasa">Selasa</option>
+                                  <option value="Rabu">Rabu</option>
+                                  <option value="Kamis">Kamis</option>
+                                  <option value="Jumat">Jumat</option>
+                                  <option value="Sabtu">Sabtu</option>
+                                  <option value="Minggu">Minggu</option>
+                              </select>
                           </div>
-                          <input type="text" class="form-control" placeholder="Cari Pengguna" name="pencarian">
+                          <div class="col">
+                              <select class="form-control" name="endDay" required>
+                                  <option value="Senin">Senin</option>
+                                  <option value="Selasa">Selasa</option>
+                                  <option value="Rabu">Rabu</option>
+                                  <option value="Kamis">Kamis</option>
+                                  <option value="Jumat">Jumat</option>
+                                  <option value="Sabtu">Sabtu</option>
+                                  <option value="Minggu">Minggu</option>
+                              </select>
+                          </div>
+                      </div>
+                    </div>
+                  
+                    <div class="form-group">
+                        <label for="jamRange">Rentang Jam Buka-Tutup</label>
+                        <div class="row">
+                            <div class="col">
+                                <input type="time" class="form-control" name="jamBuka" required>
+                            </div>
+                            <div class="col">
+                                <input type="time" class="form-control" name="jamTutup" required>
+                            </div>
                         </div>
-                      </li>
-                    </ul>
+                    </div>
+                  
+                    <div class="form-group">
+                        <label for="linkMaps">Link Maps</label>
+                        <input type="text" class="form-control" name="linkMaps" placeholder="Link Maps" required />
+                    </div>
+                         
+                    <button type="submit" class="btn btn-warning btn-icon-text">Simpan</button>
+                    <a class="btn btn-danger btn-icon-text" href="<?php echo site_url('Outlet'); ?>">Batal</a>
                   </form>
-                  <div class="table-responsive">
-                    <br><br>
-                    <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>No <i class="fa fa-sort" onclick="sortTable(0)"></i></th>
-                          <th>Nama <i class="fa fa-sort" onclick="sortTable(1)"></i></th>
-                          <th>Jabatan <i class="fa fa-sort" onclick="sortTable(2)"></i></th>
-                          <th>Email <i class="fa fa-sort" onclick="sortTable(3)"></i></th>
-                          <th>Aksi</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php foreach ($pengguna as $index => $admin):
-                          $nama = $admin['nama'];
-                          $jabatan = $admin['id_role'];
-                          $email = $admin['email'];
-                          $id = $admin['id_pengguna'];
-                          ?>
-                          <tr>
-                            <td>
-                              <?= $index + 1 ?>
-                            </td>
-                            <td>
-                              <?= $nama; ?>
-                            </td>
-                            <?php if ($jabatan == '1'): ?>
-                              <td>HRD</td>
-                            <?php else: ?>
-                              <td>Pelamar</td>
-                            <?php endif; ?>
-                            <td><?= $email; ?></td>
-                            <td align="left">
-                              <a href="<?php echo site_url('UbahPengguna/' . $id); ?>" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
-                                <i class="fa fa-pencil btn-icon-append"></i> Ubah
-                              </a>
-                              &nbsp;&nbsp;&nbsp;
-                              <a href="<?php echo site_url('pengguna/hapus/' . $id); ?>" type="button" data-id="<?= $id ?>" title="Hapus Data" class="btn btn-danger btn-icon-text">
-                                <i class="fa fa-trash btn-icon-prepend"></i> Hapus
-                              </a>
-                            </td>
-                          </tr>
-                        <?php endforeach; ?>
-                      </tbody>
-                    </table>
-                  </div>
                 </div>
               </div>
             </div>
+                      
           </div>
         </div>
         <!-- content-wrapper ends -->
-
-        <!-- Pop-up konfirmasi -->
-        <div class="popup" id="deletePopup">
-          <div class="popup-content">
-            <div class="popup-header">
-              <span class="popup-close" id="closeDeletePopup">
-                <iconify-icon icon="heroicons:x-mark-solid"></iconify-icon>
-              </span>
-            </div>
-            <div class="popup-body">
-              <p>Apakah Anda yakin ingin menghapus data admin?</p>
-            </div>
-            <div class="popup-footer">
-              <button class="btn btn-accept" id="confirmDelete" data-id="<?= $id ?>">Ya</button>
-              <button class="btn btn-danger" id="cancelDelete" data-id="<?= $id ?>">Tidak</button>
-            </div>
-          </div>
-        </div>
-
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
           <div class="d-flex justify-content-center">
@@ -221,7 +196,7 @@
               &copy; <script> document.write(new Date().getFullYear()) </script> PT. Loer Group Jaya. All rights reserved.
             </span>
           </div>
-        </footer>        
+        </footer>
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -240,42 +215,6 @@
   <script src="<?php echo base_url() . 'js/jsa/template.js' ?>"></script>
   <script src="<?php echo base_url() . 'js/jsa/settings.js' ?>"></script>
   <script src="<?php echo base_url() . 'js/jsa/todolist.js' ?>"></script>
-  <script src="<?php echo base_url() . 'js/jsa/sort.js' ?>"></script>
-  <script src="<?php echo base_url() . 'js/jsa/popout.js' ?>"></script>
-  <script>
-    // Fungsi untuk menampilkan pop-up konfirmasi
-    function showDeleteConfirmation(id) {
-        document.getElementById("confirmDelete").setAttribute("data-id", id);
-        document.getElementById("deletePopup").style.display = "block";
-    }
-
-    // Event listener untuk tombol "Hapus"
-    const deleteButtons = document.querySelectorAll(".btn.btn-danger");
-    deleteButtons.forEach((button) => {
-        button.addEventListener("click", function (e) {
-            e.preventDefault(); // Untuk mencegah tindakan default pada tautan
-            const id = this.getAttribute("data-id");
-            showDeleteConfirmation(id);
-        });
-    });
-
-    // Event listener untuk tombol "Ya" pada pop-up konfirmasi
-    document.getElementById("confirmDelete").addEventListener("click", function () {
-        const id = this.getAttribute("data-id");
-        window.location.href = "<?= site_url('pengguna/hapus/'); ?>" + id; // Ganti dengan URL atau rute yang sesuai
-    });
-
-    // Event listener untuk tombol "Tidak" pada pop-up konfirmasi
-    document.getElementById("cancelDelete").addEventListener("click", function () {
-        document.getElementById("deletePopup").style.display = "none";
-    });
-
-    // Event listener untuk tombol "Tutup" pada pop-up konfirmasi
-    document.getElementById("closeDeletePopup").addEventListener("click", function () {
-        document.getElementById("deletePopup").style.display = "none";
-    });
-</script>
-
   <!-- endinject -->
   <!-- Custom js for this page-->
   <!-- End custom js for this page-->
