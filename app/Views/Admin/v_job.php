@@ -84,7 +84,7 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('Job');?>">
+            <a class="nav-link" href="<?php echo site_url('Job'); ?>">
               <iconify-icon icon="heroicons:list-bullet" style="font-size: 18px; border: 2px solid; border-radius: 5px; padding: 0.5px;" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Lowongan</span>
             </a>
@@ -120,15 +120,15 @@
         <div class="content-wrapper">
           <div class="row-cols">
             
-            <div class="col-xl-13 grid-margin stretch-card">
+            <div class="col-xl-18 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
 
-                  <h4 class="card-title nav-item" id="teksDouble">DATA ADMIN</h4>
-                  <a class="btn btn-info btn-rounded btn-fw float-left" href="<?php echo site_url('TambahPengguna'); ?>"><i class="fa fa-plus btn-icon-prepend">
+                  <h4 class="card-title nav-item" id="teksDouble">DATA LOWONGAN</h4>
+                  <a class="btn btn-info btn-rounded btn-fw float-left" href="<?php echo site_url('TambahJob'); ?>"><i class="fa fa-plus btn-icon-prepend">
                   </i> Tambah </a> 
 
-                  <form action="<?= site_url('Pengguna/search'); ?>" method="post">
+                  <form action="job.php" method="GET">
                     <ul class="navbar-nav">
                       <li class="nav-item nav-search">
                         <div class="input-group">
@@ -138,91 +138,96 @@
                               <i class="icon-search"></i>
                             </span>
                           </div>
-                          <input type="text" class="form-control" placeholder="Cari Pengguna" name="pencarian">
+                          <input type="text" class="form-control" placeholder="Cari Lowongan" name="pencarian">
                         </div>
                       </li>
                     </ul>
                   </form>
-                  <div class="table-responsive">
-                    <br><br>
-                    <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>No <i class="fa fa-sort" onclick="sortTable(0)"></i></th>
-                          <th>Nama <i class="fa fa-sort" onclick="sortTable(1)"></i></th>
-                          <th>Jabatan <i class="fa fa-sort" onclick="sortTable(2)"></i></th>
-                          <th>Email <i class="fa fa-sort" onclick="sortTable(3)"></i></th>
-                          <th>Aksi</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php foreach ($pengguna as $index => $admin):
-                          $nama = $admin['nama'];
-                          $jabatan = $admin['id_role'];
-                          $email = $admin['email'];
-                          $id = $admin['id_pengguna'];
-                          ?>
-                          <tr>
-                            <td>
-                              <?= $index + 1 ?>
-                            </td>
-                            <td>
-                              <?= $nama; ?>
-                            </td>
-                            <?php if ($jabatan == '1'): ?>
-                              <td>HRD</td>
-                            <?php else: ?>
-                              <td>Pelamar</td>
-                            <?php endif; ?>
-                            <td><?= $email; ?></td>
-                            <td align="left">
-                              <a href="<?php echo site_url('UbahPengguna/' . $id); ?>" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
-                                <i class="fa fa-pencil btn-icon-append"></i> Ubah
-                              </a>
-                              &nbsp;&nbsp;&nbsp;
-                              <a href="<?php echo site_url('pengguna/hapus/' . $id); ?>" type="button" data-id="<?= $id ?>" title="Hapus Data" class="btn btn-danger btn-icon-text">
-                                <i class="fa fa-trash btn-icon-prepend"></i> Hapus
-                              </a>
-                            </td>
-                          </tr>
-                        <?php endforeach; ?>
-                      </tbody>
-                    </table>
-                  </div>
+                  <!-- <div class="table-responsive"> -->
+                    <div class="table-responsive">
+                        <br><br>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>No <i class="fa fa-sort" onclick="sortTable(0)"></i></th>
+                                    <th>ID Lowongan <i class="fa fa-sort" onclick="sortTable(1)"></i></th>
+                                    <th>Nama Lowongan <i class="fa fa-sort" onclick="sortTable(2)"></i></th>
+                                    <th>Periode Pendaftaran <i class="fa fa-sort" onclick="sortTable(3)"></i></th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data Dummy 1 -->
+                                <tr>
+                                    <td>1</td>
+                                    <td>JOB001</td>
+                                    <td>BARISTA</td>
+                                    <td class="text-danger">01 Juni 2023 - 30 Juni 2023</td>
+                                    <td align="left">
+                                        <a href="<?php echo site_url('UbahJob'); ?>" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
+                                          <i class="fa fa-pencil btn-icon-append"></i> Ubah
+                                        </a>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <!-- Button untuk membuka pop-up -->
+                                        <a href="#" type="button" title="Hapus Data" class="btn btn-danger btn-icon-text" id="openDeletePopup1">
+                                          <i class="fa fa-trash btn-icon-prepend"></i> Hapus
+                                        </a>
+                                    </td>
+                                </tr>
+                    
+                                <!-- Data Dummy 2 -->
+                                <tr>
+                                    <td>2</td>
+                                    <td>JOB002</td>
+                                    <td>PURCHASING</td>
+                                    <td class="text-danger">01 Juli 2023 - 30 Juli 2023</td>
+                                    <td align="left">
+                                        <a href="<?php echo site_url('UbahJob'); ?>" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
+                                          <i class="fa fa-pencil btn-icon-append"></i> Ubah
+                                        </a>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <!-- Button untuk membuka pop-up -->
+                                        <a href="#" type="button" title="Hapus Data" class="btn btn-danger btn-icon-text" id="openDeletePopup2">
+                                          <i class="fa fa-trash btn-icon-prepend"></i> Hapus
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
         <!-- content-wrapper ends -->
-
-        <!-- Pop-up konfirmasi -->
-        <div class="popup" id="deletePopup">
-          <div class="popup-content">
-            <div class="popup-header">
-              <span class="popup-close" id="closeDeletePopup">
-                <iconify-icon icon="heroicons:x-mark-solid"></iconify-icon>
-              </span>
-            </div>
-            <div class="popup-body">
-              <p>Apakah Anda yakin ingin menghapus data admin?</p>
-            </div>
-            <div class="popup-footer">
-              <button class="btn btn-accept" id="confirmDelete" data-id="<?= $id ?>">Ya</button>
-              <button class="btn btn-danger" id="cancelDelete" data-id="<?= $id ?>">Tidak</button>
-            </div>
-          </div>
-        </div>
-
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
-          <div class="d-flex justify-content-center">
-            <span class="text-muted text-center">
-              &copy; <script> document.write(new Date().getFullYear()) </script> PT. Loer Group Jaya. All rights reserved.
-            </span>
-          </div>
-        </footer>        
+            <div class="d-flex justify-content-center">
+              <span class="text-muted text-center">
+                &copy; <script> document.write(new Date().getFullYear()) </script> PT. Loer Group Jaya. All rights reserved.
+              </span>
+            </div>
+        </footer>
         <!-- partial -->
+        <!-- Pop-up konfirmasi -->
+        <div class="popup" id="deletePopup">
+            <div class="popup-content">
+              <div class="popup-header">
+                <span class="popup-close" id="closeDeletePopup">
+                  <iconify-icon icon="heroicons:x-mark-solid"></iconify-icon>
+                </span>
+              </div>
+              <div class="popup-body">
+                <p>Apakah Anda yakin ingin menghapus lowongan?</p>
+              </div>
+              <div class="popup-footer">
+                <button class="btn btn-accept" id="confirmDelete">Ya</button>
+                <button class="btn btn-danger" id="cancelDelete">Tidak</button>
+              </div>
+            </div>
+          </div>
       </div>
       <!-- main-panel ends -->
     </div>

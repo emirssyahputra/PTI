@@ -83,7 +83,7 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="<?php echo site_url('Job');?>">
               <iconify-icon icon="heroicons:list-bullet" style="font-size: 18px; border: 2px solid; border-radius: 5px; padding: 0.5px;" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Lowongan</span>
             </a>
@@ -100,6 +100,13 @@
             <a class="nav-link" href="<?php echo site_url('Pengguna'); ?>">
               <iconify-icon icon="fluent:people-edit-24-filled" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Admin</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo site_url('Outlet');?>">
+              <iconify-icon icon="fa-solid:store" style="font-size: 20px;" class="menu-icon"></iconify-icon>
+              <span class="menu-title">Data Outlet</span>
             </a>
           </li>
           

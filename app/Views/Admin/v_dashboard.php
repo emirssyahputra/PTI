@@ -84,12 +84,11 @@ function topFunction() {
                    
           
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="<?php echo site_url('Job');?>">
               <iconify-icon icon="heroicons:list-bullet" style="font-size: 18px; border: 2px solid; border-radius: 5px; padding: 0.5px;" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Lowongan</span>
             </a>
           </li>
-          
           
           <li class="nav-item">
             <a class="nav-link" href="#">
@@ -102,6 +101,13 @@ function topFunction() {
             <a class="nav-link" href="<?php echo site_url('Pengguna');?>">
               <iconify-icon icon="fluent:people-edit-24-filled" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Admin</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo site_url('Outlet');?>">
+              <iconify-icon icon="fa-solid:store" style="font-size: 20px;" class="menu-icon"></iconify-icon>
+              <span class="menu-title">Data Outlet</span>
             </a>
           </li>
           
@@ -127,7 +133,7 @@ function topFunction() {
             <div class="col-md-4 mb-4 stretch-card transparent">
               <div class="card card-tale">
                 <div class="card-body text-center">
-                  <a href="#" style="color: #555555; text-decoration: none;">
+                  <a href="<?php echo site_url('Job');?>" style="color: #555555; text-decoration: none;">
                     <p class="fs-20 mb-4">DATA LOWONGAN</p>
                     <p class="fs-30 mb-2"><?php echo $lowongan; ?></p>
                     <p class="fs-15 mb-6">Posisi Pekerjaan</p>
@@ -155,6 +161,18 @@ function topFunction() {
                     <p class="fs-20 mb-4">DATA ADMIN</p>
                     <p class="fs-30 mb-2"><?php echo $admin; ?></p>
                     <p class="fs-15 mb-6">Admin</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4 stretch-card transparent">
+              <div class="card card-tale">
+                <div class="card-body text-center">
+                  <a href="<?php echo site_url('Outlet');?>" style="color: #555555; text-decoration: none;">
+                    <p class="fs-20 mb-4">DATA OUTLET</p>
+                    <p class="fs-30 mb-2">4</p>
+                    <p class="fs-15 mb-6">Outlet</p>
                   </a>
                 </div>
               </div>
