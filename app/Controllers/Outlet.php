@@ -8,6 +8,34 @@ class Outlet extends BaseController
 {
     public function index()
     {
-        return view('admin/v_outlet.php');
+        $model = new \App\Models\M_outlet();
+        $data['outlet'] = $model->findAll();
+        return view('admin/v_outlet', $data);
     }
+    public function search()
+    {
+        $keyword = $this->request->getPost('pencarian'); // Ambil keyword pencarian dari form
+    
+        // Logika untuk melakukan pencarian data pengguna berdasarkan keyword dan syarat id_role = 1
+        $model = new \App\Models\M_outlet();
+        $data['outlet'] = $model->like('nama', $keyword, 'both', null, true)->findAll();
+    
+        return view('admin/v_outlet', $data);
+    }
+    public function hapus($id)
+{
+    $model = new \App\Models\M_outlet();
+    // Cek apakah pengguna dengan ID yang diberikan ada
+    $outlet = $model->find($id);
+
+    if ($outlet) {
+        // Hapus pengguna dengan ID yang diberikan
+        $model->delete($id);
+        // Redirect kembali ke halaman pengguna setelah penghapusan
+        return redirect()->to(site_url('Outlet'));
+    } else {
+        // Jika pengguna tidak ditemukan, Anda dapat menampilkan pesan kesalahan atau melakukan tindakan lain sesuai kebutuhan.
+        return redirect()->to(site_url('Outlet'));
+    }
+}
 }

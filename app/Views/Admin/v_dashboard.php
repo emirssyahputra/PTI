@@ -171,7 +171,7 @@ function topFunction() {
                 <div class="card-body text-center">
                   <a href="<?php echo site_url('Outlet');?>" style="color: #555555; text-decoration: none;">
                     <p class="fs-20 mb-4">DATA OUTLET</p>
-                    <p class="fs-30 mb-2">4</p>
+                    <p class="fs-30 mb-2"><?php echo $outlet; ?></p>
                     <p class="fs-15 mb-6">Outlet</p>
                   </a>
                 </div>

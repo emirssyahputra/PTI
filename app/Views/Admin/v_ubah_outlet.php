@@ -4,7 +4,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Data Admin</title>
+  <title>Ubah Data Outlet</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?= base_url('vendors/font-awesome/css/font-awesome.min.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('vendors/feather/feather.css'); ?>">
@@ -124,14 +124,14 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Ubah Data Outlet</h4>
-                  <form class="forms-sample" method="POST" action="#">
+                  <form class="forms-sample" method="post" action="<?php echo site_url('UbahOutlet/update/'. $id); ?>">
                     <div class="form-group">
                       <label for="namaoutlet">Nama Outlet</label>
-                      <input type="text" class="form-control" id="outlet" name="nama" placeholder="Nama" required />
+                      <input type="text" class="form-control" id="outlet" name="nama" placeholder="Nama" value="<?= $outlet['nama']; ?>" required />
                     </div>                  
                     <div class="form-group">
                       <label>Alamat</label>
-                      <textarea name="alamat" rows="1" class="form-control" placeholder="Alamat"></textarea>
+                      <textarea name="alamat" rows="1" class="form-control" placeholder="Alamat" ></textarea>
                     </div>
 
                     <div class="form-group">
@@ -176,7 +176,7 @@
                   
                     <div class="form-group">
                         <label for="linkMaps">Link Maps</label>
-                        <input type="text" class="form-control" name="linkMaps" placeholder="Link Maps" required />
+                        <input type="text" class="form-control" name="linkMaps" placeholder="Link Maps" value="<?= $outlet['map']; ?>" required />
                     </div>
                          
                     <button type="submit" class="btn btn-warning btn-icon-text">Simpan</button>
