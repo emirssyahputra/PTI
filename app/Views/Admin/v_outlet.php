@@ -4,7 +4,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Data Admin</title>
+  <title>Data Outlet</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?= base_url('vendors/font-awesome/css/font-awesome.min.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('vendors/feather/feather.css'); ?>">
@@ -128,7 +128,7 @@
                   <a class="btn btn-info btn-rounded btn-fw float-left" href="<?php echo site_url('TambahOutlet'); ?>"><i class="fa fa-plus btn-icon-prepend">
                   </i> Tambah </a> 
 
-                  <form action="outlet.php" method="GET">
+                  <form action="<?= site_url('Outlet/search'); ?>" method="post">
                     <ul class="navbar-nav">
                       <li class="nav-item nav-search">
                         <div class="input-group">
@@ -163,7 +163,7 @@
                             $alamat = $cabang['alamat'];
                             $jam = $cabang['jam'];
                             $map = $cabang['map'];
-                            $id = $cabang['id'];
+                            $id = $cabang['id_cabang'];
                             ?>                               
                              <tr>
                                     <td><?= $index + 1 ?></td>
@@ -172,12 +172,12 @@
                                     <td><?= $jam; ?></td>
                                     <td><a href="<?= $map; ?>" target="_blank">Lihat Map</a></td>
                                     <td align="left">
-                                        <a href="<?php echo site_url('UbahOutlet'); ?>" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
+                                        <a href="<?php echo site_url('UbahOutlet/'.$id); ?>" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
                                           <i class="fa fa-pencil btn-icon-append"></i> Ubah
                                         </a>
                                         &nbsp;&nbsp;&nbsp;
                                         <!-- Button untuk membuka pop-up -->
-                                        <a href="#" type="button" title="Hapus Data" class="btn btn-danger btn-icon-text" id="openDeletePopup1">
+                                        <a href="<?php echo site_url('Outlet/hapus/' . $id); ?>" type="button" data-id="<?= $id ?>" title="Hapus Data" class="btn btn-danger btn-icon-text" id="openDeletePopup1">
                                           <i class="fa fa-trash btn-icon-prepend"></i> Hapus
                                         </a>
                                     </td>
@@ -211,11 +211,11 @@
                 </span>
               </div>
               <div class="popup-body">
-                <p>Apakah Anda yakin ingin menghapus outlet?</p>
+                <p>Apakah Anda yakin ingin menghapus data outlet?</p>
               </div>
               <div class="popup-footer">
-                <button class="btn btn-accept" id="confirmDelete">Ya</button>
-                <button class="btn btn-danger" id="cancelDelete">Tidak</button>
+                <button class="btn btn-accept" id="confirmDelete" data-id="<?= $id ?>">Ya</button>
+                <button class="btn btn-danger" id="cancelDelete" data-id="<?= $id?>">Tidak</button>
               </div>
             </div>
           </div>
@@ -258,7 +258,7 @@
     // Event listener untuk tombol "Ya" pada pop-up konfirmasi
     document.getElementById("confirmDelete").addEventListener("click", function () {
         const id = this.getAttribute("data-id");
-        window.location.href = "<?= site_url('pengguna/hapus/'); ?>" + id; // Ganti dengan URL atau rute yang sesuai
+        window.location.href = "<?= site_url('Outlet/hapus/'); ?>" + id; // Ganti dengan URL atau rute yang sesuai
     });
 
     // Event listener untuk tombol "Tidak" pada pop-up konfirmasi
