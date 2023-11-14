@@ -112,9 +112,9 @@
             <p>Bergabunglah menjadi bagian dari #TimLoer! Tumbuh dan berkembang bersama Loer Group dan temukan
               passion-mu dalam cakupan dunia jasa dan pelayanan</p>
             <?php if (session()->has('error')): ?>
-            <div class="alert alert-danger">
-              <?php echo session('error'); ?>
-            </div>
+              <div class="alert alert-danger">
+                <?php echo session('error'); ?>
+              </div>
             <?php endif; ?>
           </div>
         </div>
@@ -142,6 +142,10 @@
                   <h2 class="section-title">Job Desk</h2>
                   <p>
                     <?= $job['jobdesk']; ?>
+                  </p>
+                  <h2 class="section-title">Periode Waktu</h2>
+                  <p>
+                    <?= date('j F Y', strtotime($job['waktu_mulai'])) . ' - ' . date('j F Y', strtotime($job['waktu_akhir'])); ?>
                   </p>
                 </div>
                 <div class="header-get-a-quote text-center my-2">
