@@ -8,8 +8,8 @@ class Career extends Controller
     public function index()
     {
         $lowongan = new M_career();
-        $data['loker'] = $lowongan->findAll(); // Mengambil semua data lowongan pekerjaan
+        $data['loker'] = $lowongan->get_lowongan_berjalan();
 
-        return view('v_career', $data); // Menampilkan data ke view
+        return view('v_career', $data);
     }
 }

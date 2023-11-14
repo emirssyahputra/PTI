@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -20,51 +21,55 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="<?= base_url('images/logo aku-nobg-notext.png'); ?>">
   <!-- <link rel="shortcut icon" href="../../images/logo-mini.svg" /> -->
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
 </head>
 
 <body>
   <button onclick="topFunction()" id="myBtn" title="Go to top">Back To Top</button>
   <script>
-  // fungsi ketika user men scroll ke bawah 40 px maka tombol back to top akan muncul
-  window.onscroll = function() {scrollFunction()};
-  function scrollFunction() {
+    // fungsi ketika user men scroll ke bawah 40 px maka tombol back to top akan muncul
+    window.onscroll = function () { scrollFunction() };
+    function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          document.getElementById("myBtn").style.display = "block";
+        document.getElementById("myBtn").style.display = "block";
       } else {
-          document.getElementById("myBtn").style.display = "none";
+        document.getElementById("myBtn").style.display = "none";
       }
-  }
-  // fungsi ketika user meng klik tombol back to top maka halaman akan menscroll ke atas
-  function topFunction() {
+    }
+    // fungsi ketika user meng klik tombol back to top maka halaman akan menscroll ke atas
+    function topFunction() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
-  }
-   
-</script>  
+    }
+
+  </script>
 
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="<?php echo site_url('Pengguna'); ?>"><img src="<?= base_url('images/logo aku-nobg-tex.png'); ?>" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="<?php echo site_url('Pengguna'); ?>"><img src="<?= base_url('images/logo aku-nobg-notext.png'); ?>" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="<?php echo site_url('Pengguna'); ?>"><img
+            src="<?= base_url('images/logo aku-nobg-tex.png'); ?>" class="mr-2" alt="logo" /></a>
+        <a class="navbar-brand brand-logo-mini" href="<?php echo site_url('Pengguna'); ?>"><img
+            src="<?= base_url('images/logo aku-nobg-notext.png'); ?>" alt="logo" /></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="fa fa-navicon"></span>
+          <span class="fa fa-navicon"></span>
         </button>
-        
+
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
-            <a href="<?php echo site_url('Login/logout'); ?>" class="dropdown-item" onclick="return confirm('Yakin ingin logout?')">
-                <i class="fa fa-power-off text-primary"></i>Logout
+            <a href="<?php echo site_url('Login/logout'); ?>" class="dropdown-item"
+              onclick="return confirm('Yakin ingin logout?')">
+              <i class="fa fa-power-off text-primary"></i>Logout
             </a>
           </li>
         </ul>
 
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type a="button" data-toggle="offcanvas">
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type a="button"
+          data-toggle="offcanvas">
           <span class="fa fa-navicon"></span>
         </button>
       </div>
@@ -72,20 +77,22 @@
 
     <!-- PANEL MENU KIRI [START] -->
     <div class="container-fluid page-body-wrapper">
-      <!--  partial:partials/_sidebar.html  --> 
-      <nav class="sidebar sidebar-offcanvas" id="sidebar" >
+      <!--  partial:partials/_sidebar.html  -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-    
+
           <li class="nav-item ">
             <a class="nav-link" href="<?php echo site_url('Dashboard'); ?>">
               <iconify-icon icon="heroicons:window" class="menu-icon"></iconify-icon>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          
+
           <li class="nav-item">
             <a class="nav-link" href="<?php echo site_url('Job'); ?>">
-              <iconify-icon icon="heroicons:list-bullet" style="font-size: 18px; border: 2px solid; border-radius: 5px; padding: 0.5px;" class="menu-icon"></iconify-icon>
+              <iconify-icon icon="heroicons:list-bullet"
+                style="font-size: 18px; border: 2px solid; border-radius: 5px; padding: 0.5px;"
+                class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Lowongan</span>
             </a>
           </li>
@@ -105,54 +112,56 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('Outlet');?>">
+            <a class="nav-link" href="<?php echo site_url('Outlet'); ?>">
               <iconify-icon icon="fa-solid:store" style="font-size: 20px;" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Outlet</span>
             </a>
           </li>
-          
+
         </ul>
       </nav>
-    <!-- PANEL MENU KIRI [END] -->
+      <!-- PANEL MENU KIRI [END] -->
 
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
-                       
+
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Tambah Lowongan</h4>
-                  <form class="forms-sample" method="POST" action="#">
+                  <form class="forms-sample" method="POST" action="<?= site_url('TambahJob/saveJob'); ?>">
                     <div class="form-group">
                       <label>Lowongan</label>
-                      <select class="form-control" name="jobname">
-                          <option value="">Pilih Lowongan</option>
-                          <option value="BARISTA">BARISTA</option>
-                          <option value="CASHIER">CASHIER</option>
-                          <option value="COOK & COOK HELPER">COOK & COOK HELPER</option>
-                          <option value="FINANCE">FINANCE</option>
-                          <option value="ACCOUNTING">ACCOUNTING</option>
-                          <option value="PURCHASING">PURCHASING</option>
+                      <select class="form-control" name="Nama" required>
+                        <option value="">Pilih Lowongan</option>
+                        <option value="BARISTA">BARISTA</option>
+                        <option value="CASHIER">CASHIER</option>
+                        <option value="COOK & COOK HELPER">COOK & COOK HELPER</option>
+                        <option value="FINANCE">FINANCE</option>
+                        <option value="ACCOUNTING">ACCOUNTING</option>
+                        <option value="PURCHASING">PURCHASING</option>
                       </select>
-                    </div>                  
+                    </div>
                     <div class="form-group">
                       <label>Deskripsi</label>
-                      <textarea name="jobqualification" rows="7" class="form-control" placeholder="Deskripsi"></textarea>
+                      <textarea name="jobdesk" rows="7" class="form-control" placeholder="Deskripsi"
+                        required></textarea>
                     </div>
                     <div class="form-group">
                       <label>Kualifikasi</label>
-                      <textarea name="jobdesc" rows="7" class="form-control" placeholder="Kualifikasi"></textarea>
+                      <textarea name="kualifikasi" rows="7" class="form-control" placeholder="Kualifikasi"
+                        required></textarea>
                     </div>
                     <p>Periode Pendaftaran</p>
                     <div class="form-group">
                       <label>Awal</label>
-                      <input type="date" class="form-control" name="jobstart">
+                      <input type="date" class="form-control" name="waktu_mulai" required>
                     </div>
                     <div class="form-group">
                       <label>Akhir</label>
-                      <input type="date" class="form-control" name="jobend">
+                      <input type="date" class="form-control" name="waktu_akhir" required>
                     </div>
 
                     <button type="submit" class="btn btn-warning btn-icon-text">Simpan</button>
@@ -161,7 +170,7 @@
                 </div>
               </div>
             </div>
-                      
+
           </div>
         </div>
         <!-- content-wrapper ends -->
@@ -169,7 +178,8 @@
         <footer class="footer">
           <div class="d-flex justify-content-center">
             <span class="text-muted text-center">
-              &copy; <script> document.write(new Date().getFullYear()) </script> PT. Loer Group Jaya. All rights reserved.
+              &copy;
+              <script> document.write(new Date().getFullYear()) </script> PT. Loer Group Jaya. All rights reserved.
             </span>
           </div>
         </footer>

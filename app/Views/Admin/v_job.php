@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -20,51 +21,55 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="<?= base_url('images/logo aku-nobg-notext.png'); ?>">
   <!-- <link rel="shortcut icon" href="../../images/logo-mini.svg" /> -->
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
 </head>
 
 <body>
   <button onclick="topFunction()" id="myBtn" title="Go to top">Back To Top</button>
   <script>
-  // fungsi ketika user men scroll ke bawah 40 px maka tombol back to top akan muncul
-  window.onscroll = function() {scrollFunction()};
-  function scrollFunction() {
+    // fungsi ketika user men scroll ke bawah 40 px maka tombol back to top akan muncul
+    window.onscroll = function () { scrollFunction() };
+    function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          document.getElementById("myBtn").style.display = "block";
+        document.getElementById("myBtn").style.display = "block";
       } else {
-          document.getElementById("myBtn").style.display = "none";
+        document.getElementById("myBtn").style.display = "none";
       }
-  }
-  // fungsi ketika user meng klik tombol back to top maka halaman akan menscroll ke atas
-  function topFunction() {
+    }
+    // fungsi ketika user meng klik tombol back to top maka halaman akan menscroll ke atas
+    function topFunction() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
-  }
-   
-</script>  
+    }
+
+  </script>
 
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="<?php echo site_url('Pengguna'); ?>"><img src="<?= base_url('images/logo aku-nobg-tex.png'); ?>" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="<?php echo site_url('Pengguna'); ?>"><img src="<?= base_url('images/logo aku-nobg-notext.png'); ?>" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="<?php echo site_url('Pengguna'); ?>"><img
+            src="<?= base_url('images/logo aku-nobg-tex.png'); ?>" class="mr-2" alt="logo" /></a>
+        <a class="navbar-brand brand-logo-mini" href="<?php echo site_url('Pengguna'); ?>"><img
+            src="<?= base_url('images/logo aku-nobg-notext.png'); ?>" alt="logo" /></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="fa fa-navicon"></span>
+          <span class="fa fa-navicon"></span>
         </button>
-        
+
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
-            <a href="<?php echo site_url('Login/logout'); ?>" class="dropdown-item" onclick="return confirm('Yakin ingin logout?')">
-                <i class="fa fa-power-off text-primary"></i>Logout
+            <a href="<?php echo site_url('Login/logout'); ?>" class="dropdown-item"
+              onclick="return confirm('Yakin ingin logout?')">
+              <i class="fa fa-power-off text-primary"></i>Logout
             </a>
           </li>
         </ul>
 
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type a="button" data-toggle="offcanvas">
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type a="button"
+          data-toggle="offcanvas">
           <span class="fa fa-navicon"></span>
         </button>
       </div>
@@ -72,20 +77,22 @@
 
     <!-- PANEL MENU KIRI [START] -->
     <div class="container-fluid page-body-wrapper">
-      <!--  partial:partials/_sidebar.html  --> 
-      <nav class="sidebar sidebar-offcanvas" id="sidebar" >
+      <!--  partial:partials/_sidebar.html  -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-    
+
           <li class="nav-item ">
             <a class="nav-link" href="<?php echo site_url('Dashboard'); ?>">
               <iconify-icon icon="heroicons:window" class="menu-icon"></iconify-icon>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          
+
           <li class="nav-item">
             <a class="nav-link" href="<?php echo site_url('Job'); ?>">
-              <iconify-icon icon="heroicons:list-bullet" style="font-size: 18px; border: 2px solid; border-radius: 5px; padding: 0.5px;" class="menu-icon"></iconify-icon>
+              <iconify-icon icon="heroicons:list-bullet"
+                style="font-size: 18px; border: 2px solid; border-radius: 5px; padding: 0.5px;"
+                class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Lowongan</span>
             </a>
           </li>
@@ -105,30 +112,31 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('Outlet');?>">
+            <a class="nav-link" href="<?php echo site_url('Outlet'); ?>">
               <iconify-icon icon="fa-solid:store" style="font-size: 20px;" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Outlet</span>
             </a>
           </li>
-          
+
         </ul>
       </nav>
-    <!-- PANEL MENU KIRI [END] -->
+      <!-- PANEL MENU KIRI [END] -->
 
-      <!-- partial -->   
+      <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row-cols">
-            
+
             <div class="col-xl-18 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
 
                   <h4 class="card-title nav-item" id="teksDouble">DATA LOWONGAN</h4>
-                  <a class="btn btn-info btn-rounded btn-fw float-left" href="<?php echo site_url('TambahJob'); ?>"><i class="fa fa-plus btn-icon-prepend">
-                  </i> Tambah </a> 
+                  <a class="btn btn-info btn-rounded btn-fw float-left" href="<?php echo site_url('TambahJob'); ?>"><i
+                      class="fa fa-plus btn-icon-prepend">
+                    </i> Tambah </a>
 
-                  <form action="job.php" method="GET">
+                  <form action="<?= site_url('Job/search'); ?>" method="post">
                     <ul class="navbar-nav">
                       <li class="nav-item nav-search">
                         <div class="input-group">
@@ -144,57 +152,62 @@
                     </ul>
                   </form>
                   <!-- <div class="table-responsive"> -->
-                    <div class="table-responsive">
-                        <br><br>
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>No <i class="fa fa-sort" onclick="sortTable(0)"></i></th>
-                                    <th>ID Lowongan <i class="fa fa-sort" onclick="sortTable(1)"></i></th>
-                                    <th>Nama Lowongan <i class="fa fa-sort" onclick="sortTable(2)"></i></th>
-                                    <th>Periode Pendaftaran <i class="fa fa-sort" onclick="sortTable(3)"></i></th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Data Dummy 1 -->
-                                <tr>
-                                    <td>1</td>
-                                    <td>JOB001</td>
-                                    <td>BARISTA</td>
-                                    <td class="text-danger">01 Juni 2023 - 30 Juni 2023</td>
-                                    <td align="left">
-                                        <a href="<?php echo site_url('UbahJob'); ?>" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
-                                          <i class="fa fa-pencil btn-icon-append"></i> Ubah
-                                        </a>
-                                        &nbsp;&nbsp;&nbsp;
-                                        <!-- Button untuk membuka pop-up -->
-                                        <a href="#" type="button" title="Hapus Data" class="btn btn-danger btn-icon-text" id="openDeletePopup1">
-                                          <i class="fa fa-trash btn-icon-prepend"></i> Hapus
-                                        </a>
-                                    </td>
-                                </tr>
-                    
-                                <!-- Data Dummy 2 -->
-                                <tr>
-                                    <td>2</td>
-                                    <td>JOB002</td>
-                                    <td>PURCHASING</td>
-                                    <td class="text-danger">01 Juli 2023 - 30 Juli 2023</td>
-                                    <td align="left">
-                                        <a href="<?php echo site_url('UbahJob'); ?>" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
-                                          <i class="fa fa-pencil btn-icon-append"></i> Ubah
-                                        </a>
-                                        &nbsp;&nbsp;&nbsp;
-                                        <!-- Button untuk membuka pop-up -->
-                                        <a href="#" type="button" title="Hapus Data" class="btn btn-danger btn-icon-text" id="openDeletePopup2">
-                                          <i class="fa fa-trash btn-icon-prepend"></i> Hapus
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                  <div class="table-responsive">
+                    <br><br>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>No <i class="fa fa-sort" onclick="sortTable(0)"></i></th>
+                          <th>ID Lowongan <i class="fa fa-sort" onclick="sortTable(1)"></i></th>
+                          <th>Nama Lowongan <i class="fa fa-sort" onclick="sortTable(2)"></i></th>
+                          <th>Periode Pendaftaran <i class="fa fa-sort" onclick="sortTable(3)"></i></th>
+                          <th>Aksi</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php foreach ($job as $index => $loker):
+                          $Nama = $loker['Nama'];
+                          $id_loker = $loker['id_loker'];
+                          $waktu_mulai = $loker['waktu_mulai'];
+                          $waktu_mulai = date('d F Y', strtotime($waktu_mulai));
+                          $waktu_akhir = $loker['waktu_akhir'];
+                          $waktu_akhir = date('d F Y', strtotime($waktu_akhir));
+                          $kualifikasi = $loker['kualifikasi'];
+                          $jobdesk = $loker['jobdesk'];
+                          ?>
+                          <tr>
+                            <td>
+                              <?= $index + 1 ?>
+                            </td>
+                            <td>
+                              <?= $id_loker ?>
+                            </td>
+                            <td>
+                              <?= $Nama ?>
+                            </td>
+                            <td class="text-danger">
+                              <?= $waktu_mulai ?> -
+                              <?= $waktu_akhir ?>
+                            </td>
+                            <td align="left">
+                              <a href="<?= site_url('UbahJob/' . $id_loker); ?>" type="button" title="Ubah Data"
+                                class="btn btn-warning btn-icon-text">
+                                <i class="fa fa-pencil btn-icon-append"></i> Ubah
+                              </a>
+
+                              &nbsp;&nbsp;&nbsp;
+                              <!-- Button untuk membuka pop-up -->
+                              <a href="<?php echo site_url('Job/hapus/' . $id_loker); ?>" type="button"
+                                data-id="<?= $id_loker ?>" title="Hapus Data" class="btn btn-danger btn-icon-text"
+                                id="openDeletePopup1">
+                                <i class="fa fa-trash btn-icon-prepend"></i> Hapus
+                              </a>
+                            </td>
+                          </tr>
+                        <?php endforeach; ?>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
@@ -204,30 +217,31 @@
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
-            <div class="d-flex justify-content-center">
-              <span class="text-muted text-center">
-                &copy; <script> document.write(new Date().getFullYear()) </script> PT. Loer Group Jaya. All rights reserved.
-              </span>
-            </div>
+          <div class="d-flex justify-content-center">
+            <span class="text-muted text-center">
+              &copy;
+              <script> document.write(new Date().getFullYear()) </script> PT. Loer Group Jaya. All rights reserved.
+            </span>
+          </div>
         </footer>
         <!-- partial -->
         <!-- Pop-up konfirmasi -->
         <div class="popup" id="deletePopup">
-            <div class="popup-content">
-              <div class="popup-header">
-                <span class="popup-close" id="closeDeletePopup">
-                  <iconify-icon icon="heroicons:x-mark-solid"></iconify-icon>
-                </span>
-              </div>
-              <div class="popup-body">
-                <p>Apakah Anda yakin ingin menghapus lowongan?</p>
-              </div>
-              <div class="popup-footer">
-                <button class="btn btn-accept" id="confirmDelete">Ya</button>
-                <button class="btn btn-danger" id="cancelDelete">Tidak</button>
-              </div>
+          <div class="popup-content">
+            <div class="popup-header">
+              <span class="popup-close" id="closeDeletePopup">
+                <iconify-icon icon="heroicons:x-mark-solid"></iconify-icon>
+              </span>
+            </div>
+            <div class="popup-body">
+              <p>Apakah Anda yakin ingin menghapus lowongan?</p>
+            </div>
+            <div class="popup-footer">
+              <button class="btn btn-accept" id="confirmDelete">Ya</button>
+              <button class="btn btn-danger" id="cancelDelete">Tidak</button>
             </div>
           </div>
+        </div>
       </div>
       <!-- main-panel ends -->
     </div>
@@ -250,36 +264,38 @@
   <script>
     // Fungsi untuk menampilkan pop-up konfirmasi
     function showDeleteConfirmation(id) {
-        document.getElementById("confirmDelete").setAttribute("data-id", id);
-        document.getElementById("deletePopup").style.display = "block";
+      document.getElementById("confirmDelete").setAttribute("data-id", id);
+      document.getElementById("deletePopup").style.display = "block";
     }
 
     // Event listener untuk tombol "Hapus"
     const deleteButtons = document.querySelectorAll(".btn.btn-danger");
     deleteButtons.forEach((button) => {
-        button.addEventListener("click", function (e) {
-            e.preventDefault(); // Untuk mencegah tindakan default pada tautan
-            const id = this.getAttribute("data-id");
-            showDeleteConfirmation(id);
-        });
+      button.addEventListener("click", function (e) {
+        e.preventDefault(); // Untuk mencegah tindakan default pada tautan
+        const id = this.getAttribute("data-id");
+        showDeleteConfirmation(id);
+      });
     });
 
     // Event listener untuk tombol "Ya" pada pop-up konfirmasi
     document.getElementById("confirmDelete").addEventListener("click", function () {
-        const id = this.getAttribute("data-id");
-        window.location.href = "<?= site_url('pengguna/hapus/'); ?>" + id; // Ganti dengan URL atau rute yang sesuai
+      const id = this.getAttribute("data-id");
+      const id_loker = document.getElementById("confirmDelete").getAttribute("data-id");
+      window.location.href = "<?= site_url('Job/hapus/'); ?>" + id_loker;
     });
+
 
     // Event listener untuk tombol "Tidak" pada pop-up konfirmasi
     document.getElementById("cancelDelete").addEventListener("click", function () {
-        document.getElementById("deletePopup").style.display = "none";
+      document.getElementById("deletePopup").style.display = "none";
     });
 
     // Event listener untuk tombol "Tutup" pada pop-up konfirmasi
     document.getElementById("closeDeletePopup").addEventListener("click", function () {
-        document.getElementById("deletePopup").style.display = "none";
+      document.getElementById("deletePopup").style.display = "none";
     });
-</script>
+  </script>
 
   <!-- endinject -->
   <!-- Custom js for this page-->
