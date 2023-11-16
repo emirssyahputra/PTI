@@ -31,14 +31,35 @@ $email = session()->getFlashdata('email');
                 <form class='login-items'action="<?= site_url('passwordbaru/changePassword') ?>" method="post">
                     <label htmlFor="username">Email</label>
                     <input type="email" class='login' name="email" placeholder='email@gmail.com' value="<?= isset($email) ? $email : ''; ?>" readonly required />
-                    <label htmlFor="password">Password Baru</label>
-                    <input type="password" class='login' name="password" placeholder="Password" required />
+                    <div class="form-group">
+                        <label for="password">Password Baru</label>
+                        <div class="password-container">
+                            <input type="password" class="login" name="password" id="password" placeholder="Password" required />
+                            <i class="fas fa-eye-slash toggle-password" onclick="togglePassword('password')"></i>
+                        </div>
+                    </div>
                     <input type="submit" class='login-btn' value="Reset Password" />
                 </form>
                 <p class='p'><a class='a' href="<?php echo site_url('/'); ?>">Kembali ke Home</a></p>
             </div>
         </div>
     </div>
+    <script>
+        function togglePassword(inputId) {
+            var passwordInput = document.getElementById(inputId);
+            var icon = document.querySelector('.toggle-password');
+
+            if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye', 'show-password');
+            } else {
+            passwordInput.type = 'password';
+            icon.classList.remove('fa-eye', 'show-password');
+            icon.classList.add('fa-eye-slash');
+            }
+        }
+    </script>
 </body>
 
 </html>
