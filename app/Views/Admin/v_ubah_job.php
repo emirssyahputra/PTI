@@ -147,9 +147,9 @@
                         </option>
                       </select>
                       <div class="form-group">
-                        <label>Deskripsi</label>
+                        <label>Job Desk</label>
                         <textarea name="jobdesk" rows="7" class="form-control"
-                          placeholder="Deskripsi"><?= $job['jobdesk'] ?></textarea>
+                          placeholder="Job Desk"><?= $job['jobdesk'] ?></textarea>
                       </div>
                       <div class="form-group">
                         <label>Kualifikasi</label>

@@ -30,8 +30,13 @@
                 <form class='login-items' action="<?php echo site_url('login/cek'); ?>" method="post">
                     <label for="email">Email</label>
                     <input type="email" class='login' name="email" placeholder='email@gmail.com' required />
-                    <label for="password">Password</label>
-                    <input type="password" class='login' name="password" placeholder="Password" required />
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="password-container">
+                            <input type="password" class="login" name="password" id="password" placeholder="Password" required />
+                            <i class="fas fa-eye-slash toggle-password" onclick="togglePassword('password')"></i>
+                        </div>
+                    </div>
                     <input type="submit" class='login-btn' value="Login" />
                 </form>
                 <p class='p'>Belum punya akun? <a class='a' href="<?php echo site_url('Register'); ?>">Register</a></p>
@@ -40,6 +45,22 @@
             </div>
         </div>
     </div>
+    <script>
+        function togglePassword(inputId) {
+            var passwordInput = document.getElementById(inputId);
+            var icon = document.querySelector('.toggle-password');
+
+            if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye', 'show-password');
+            } else {
+            passwordInput.type = 'password';
+            icon.classList.remove('fa-eye', 'show-password');
+            icon.classList.add('fa-eye-slash');
+            }
+        }
+    </script>
 </body>
 
 </html>
