@@ -13,7 +13,7 @@ class Lupa extends BaseController
 
     public function resetPassword()
 {
-    $userEmail = $this->request->getVar('email'); // Ganti variabel ke user's email
+    $userEmail = $this->request->getVar('email'); 
 
     $model = new M_otp();
     $user = $model->getUserByEmail($userEmail);
@@ -22,14 +22,14 @@ class Lupa extends BaseController
 
     if ($user) {
         $code = rand(999999, 111111);
-        $model->updateCode($userEmail, $code); // Ganti variabel ke user's email
+        $model->updateCode($userEmail, $code); 
 
         $subject = "Password Reset Code";
-        $message = "OTP anda untuk mereset password adalah $code";
+        $message = "Kode OTP anda untuk mereset password adalah $code ";
 
         $email = service('email');
         $email->setTo($userEmail); 
-        $email->setFrom('emirssyah2@gmail.com', 'CodeIgniter 4 Email'); 
+        $email->setFrom('emirssyah2@gmail.com', 'Loer Group'); 
         $email->setSubject($subject);
         $email->setMessage($message);
 
@@ -37,7 +37,7 @@ class Lupa extends BaseController
             session()->set('email', $userEmail);
             return redirect()->to('Verif');
         } else {
-            $data['errors']['otp-error'] = "Gagal mengirim kode OTP!";
+            $data['errors']['otp-error'] = "Gagal mengirim kode OTP !";
         }
     } else {
         $data['errors']['email'] = "Email tidak valid!";
