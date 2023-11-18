@@ -8,9 +8,17 @@ class Outlet extends BaseController
 {
     public function index()
     {
+        $sesi_pengguna_id = session()->get('idadmin');
+
+    if ($sesi_pengguna_id) {
         $model = new \App\Models\M_outlet();
         $data['outlet'] = $model->findAll();
         return view('admin/v_outlet', $data);
+    } else {
+        // Jika tidak ada sesi pengguna yang aktif, redirect ke halaman login
+        return redirect()->to(site_url('login'));
+    }
+       
     }
     public function search()
     {

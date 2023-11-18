@@ -145,6 +145,10 @@
               <p><?= $job['kualifikasi']; ?></p>
               <h2 class="section-title">Job Desk</h2>
               <p><?= $job['jobdesk']; ?></p>
+              <h2 class="section-title">Periode Waktu</h2>
+                  <p>
+                    <?= date('j F Y', strtotime($job['waktu_mulai'])) . ' - ' . date('j F Y', strtotime($job['waktu_akhir'])); ?>
+                  </p>
             </div>
             <div class="header-get-a-quote text-center my-2">
               <form method="post" action="<?php echo site_url('Apply'); ?>">

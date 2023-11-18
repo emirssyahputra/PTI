@@ -9,7 +9,15 @@ class TambahOutlet extends BaseController
 {
     public function index()
     {
-        return view('admin/v_tambah_outlet.php');
+        $sesi_pengguna_id = session()->get('idadmin');
+
+    if ($sesi_pengguna_id) {
+        return view('admin/v_tambah_outlet');
+    } else {
+        // Jika tidak ada sesi pengguna yang aktif, redirect ke halaman login
+        return redirect()->to(site_url('login'));
+    }
+
     }
     public function saveOutlet()
     {
