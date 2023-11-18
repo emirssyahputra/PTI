@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Required meta tags -->
+  <!-- meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Ubah Data Admin</title>
+  <title>Detail Pendaftar</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?= base_url('vendors/font-awesome/css/font-awesome.min.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('vendors/feather/feather.css'); ?>">
@@ -42,7 +41,9 @@
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
   }
-  </script>
+   
+</script>  
+
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -90,7 +91,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('Pendaftar');?>">
+            <a class="nav-link" href="<?php echo site_url('Pendaftar'); ?>">
               <iconify-icon icon="fluent:people-team-24-filled" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Pendaftar</span>
             </a>
@@ -117,55 +118,87 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          <div class="row">
-                       
-            <div class="col-lg-12 grid-margin stretch-card">
+          <div class="row-cols">
+
+            <div class="col-xl-13 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
+                  <h4 class="card-title">Detail Pendaftar</h4>
 
-                  <h4 class="card-title">Ubah Data Admin</h4>
-                  
-                  <form class="forms-sample" method="post" action="<?php echo site_url('UbahPengguna/update/' . $id); ?>">
+                  <form class="forms-sample">
                     <div class="form-group">
-                      <label for="exampleInputUsername1">Nama</label>
-                      <input type="text" class="form-control" id="exampleInputUsername1" name="nama" placeholder="Nama" value="<?= $pengguna['nama']; ?>" required />
+                        <label for="nama">Nama</label>
+                        <input type="text" class="form-control" id="nama" placeholder="Nama">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail">Email</label>
-                      <input type="email" class="form-control" id="exampleInputEmail" name="email" placeholder="Email" value="<?= $pengguna['email']; ?>" required />
+                        <label for="minat">Minat</label>
+                        <input type="text" class="form-control" id="minat" placeholder="Minat">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword" name="password" placeholder="Password" value="" required />
-                    </div>                    
-
-                    <button type="submit" class="btn btn-warning btn-icon-text">Simpan</button>
-                    <a class="btn btn-danger btn-icon-text" href="<?php echo site_url('Pengguna'); ?>">Batal</a>
+                        <label for="periode">Periode Pendaftaran</label>
+                        <input type="text" class="form-control" id="periode" placeholder="Periode Pendaftaran">
+                    </div>
+                    <div class="form-group">
+                        <label for="tgl_daftar">Tanggal Daftar</label>
+                        <input type="text" class="form-control" id="tgl_daftar" placeholder="Tanggal daftar">
+                    </div>
+                    <div class="form-group">
+                        <label for="jenis_kelamin">Jenis Kelamin</label>
+                        <input type="text" class="form-control" id="jenis_kelamin" placeholder="Jenis kelamin">
+                    </div>
+                    <div class="form-group">
+                        <label for="pendidikan_terakhir">Pendidikan Terakhir</label>
+                        <input type="text" class="form-control" id="pendidikan_terakhir" placeholder="Pendidikan Terakhir">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="telepon">Telepon</label>
+                        <input type="tel" class="form-control" id="telepon" placeholder="Telepon">
+                    </div>
+                    <div class="form-group">
+                        <label for="alamat">Alamat</label>
+                        <textarea class="form-control" id="alamat" rows="1" placeholder="Alamat"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="link_linkedin">Link LinkedIn</label>
+                        <input type="text" class="form-control" id="link_linkedin" placeholder="Link LinkedIn">
+                    </div>
+                    <!-- FUNGSI TOMBOL -->
+                    <a class="btn btn-danger mr-2 mt-2 btn-sm custom-btn" href="<?php echo site_url('Pendaftar'); ?>">Batal</a> | &nbsp;
+                    <a class="btn btn-warning mr-2 mt-2 btn-sm custom-btn" href="#"> KTP </a>
+                    <a class="btn btn-warning mr-2 mt-2 btn-sm custom-btn" href="#"> CV </a>
+                    <a class="btn btn-warning mr-2 mt-2 btn-sm custom-btn" href="#"> Surat Lamaran </a>
+                    <a class="btn btn-warning mr-2 mt-2 btn-sm custom-btn" href="#"> Ijazah </a>
+                    <a class="btn btn-warning mr-2 mt-2 btn-sm custom-btn" href="#"> SKCK </a>
+                    <a class="btn btn-warning mr-2 mt-2 btn-sm custom-btn" href="#"> Packlaring </a>
+                    <a class="btn btn-warning mr-2 mt-2 btn-sm custom-btn" href="#"> Sertifikat Kompetensi </a>
+                    <a class="btn btn-warning mr-2 mt-2 btn-sm custom-btn" href="#"> Berkas Pendukung Lainnya </a>
                   </form>
-
                 </div>
               </div>
             </div>
-            
-            
-          
+                
           </div>
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
-          <div class="d-flex justify-content-center">
-            <span class="text-muted text-center">
-              &copy; <script> document.write(new Date().getFullYear()) </script> PT. Loer Group Jaya. All rights reserved.
-            </span>
-          </div>
-        </footer> 
+            <div class="d-flex justify-content-center">
+              <span class="text-muted text-center">
+                &copy; <script> document.write(new Date().getFullYear()) </script> PT. Loer Group Jaya. All rights reserved.
+              </span>
+            </div>
+        </footer>
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->
   </div>
+ 
   <!-- container-scroller -->
   <!-- plugins:js -->
   <script src="<?php echo base_url() . 'vendors/js/vendor.bundle.base.js' ?>"></script>

@@ -4,7 +4,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Data Outlet</title>
+  <title>Kelola Pendaftar</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?= base_url('vendors/font-awesome/css/font-awesome.min.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('vendors/feather/feather.css'); ?>">
@@ -91,7 +91,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('Pendaftar');?>">
+            <a class="nav-link" href="<?php echo site_url('Pendaftar'); ?>">
               <iconify-icon icon="fluent:people-team-24-filled" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Pendaftar</span>
             </a>
@@ -120,79 +120,108 @@
         <div class="content-wrapper">
           <div class="row-cols">
             
-            <div class="col-xl-18 grid-margin stretch-card">
+            <div class="col-xl-13 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
+                    <h4 class="card-title nav-item" id="teksDouble">DATA PENDAFTAR</h4>
+                    <a class="btn btn-info btn-rounded btn-fw float-left" href="#"><i class="ti-printer btn-icon-prepend">
+                    </i> Cetak Laporan </a> 
 
-                  <h4 class="card-title nav-item" id="teksDouble">DATA OUTLET</h4>
-                  <a class="btn btn-info btn-rounded btn-fw float-left" href="<?php echo site_url('TambahOutlet'); ?>"><i class="fa fa-plus btn-icon-prepend">
-                  </i> Tambah </a> 
-
-                  <form action="<?= site_url('Outlet/search'); ?>" method="post">
-                    <ul class="navbar-nav">
-                      <li class="nav-item nav-search">
-                        <div class="input-group">
-                          <div class="input-group-prepend" id="navbar-search-icon">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span class="input-group-text" id="search">
-                              <i class="icon-search"></i>
-                            </span>
-                          </div>
-                          <input type="text" class="form-control" placeholder="Cari Outlet" name="pencarian">
-                        </div>
-                      </li>
-                    </ul>
-                  </form>
-                  <!-- <div class="table-responsive"> -->
+                    <form action="#" method="post">
+                        <ul class="navbar-nav">
+                        <li class="nav-item nav-search">
+                            <div class="input-group">
+                            <div class="input-group-prepend" id="navbar-search-icon">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span class="input-group-text" id="search">
+                                <i class="icon-search"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Cari Pendaftar" name="pencarian">
+                            </div>
+                        </li>
+                        </ul>
+                    </form>
                     <div class="table-responsive">
                         <br><br>
-                        <table class="table table-hover">
+                        <table class="table table-hover">    
                             <thead>
                                 <tr>
-                                    <th>No <i class="fa fa-sort" onclick="sortTable(0)"></i></th>
-                                    <th>Nama <i class="fa fa-sort" onclick="sortTable(1)"></i></th>
-                                    <th>Alamat <i class="fa fa-sort" onclick="sortTable(2)"></i></th>
-                                    <th>Jam <i class="fa fa-sort" onclick="sortTable(3)"></i></th>
-                                    <th>Map</th>
+                                    <th>ID Pendaftar <i class="fa fa-sort" onclick="sortTable(0)"></i></th>
+                                    <th>Nama Pendaftar <i class="fa fa-sort" onclick="sortTable(1)"></i></th>
+                                    <th>Minat Pendaftar <i class="fa fa-sort" onclick="sortTable(2)"></i></th>
+                                    <th>Periode Pendaftaran <i class="fa fa-sort" onclick="sortTable(3)"></i></th>
+                                    <th>Status <i class="fa fa-sort" onclick="sortTable(4)"></i></th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
+
                             <tbody>
-                            <?php foreach ($outlet as $index => $cabang):
-                            $nama = $cabang['nama'];
-                            $alamat = $cabang['alamat'];
-                            $jam = $cabang['jam'];
-                            $map = $cabang['map'];
-                            $id = $cabang['id_cabang'];
-                            ?>                               
-                             <tr>
-                                    <td><?= $index + 1 ?></td>
-                                    <td><?= $nama; ?></td>
-                                    <td><?= $alamat; ?></td>
-                                    <td><?= $jam; ?></td>
-                                    <td><a href="<?= $map; ?>" target="_blank">Lihat Map</a></td>
-                                    <td align="left">
-                                        <a href="<?php echo site_url('UbahOutlet/'.$id); ?>" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
-                                          <i class="fa fa-pencil btn-icon-append"></i> Ubah
-                                        </a>
-                                        &nbsp;&nbsp;&nbsp;
-                                        <!-- Button untuk membuka pop-up -->
-                                        <a href="<?php echo site_url('Outlet/hapus/' . $id); ?>" type="button" data-id="<?= $id ?>" title="Hapus Data" class="btn btn-danger btn-icon-text" id="openDeletePopup1">
-                                          <i class="fa fa-trash btn-icon-prepend"></i> Hapus
+                                <tr>
+                                    <td>P001</td>
+                                    <td>John Doe</td>
+                                    <td>Software Developer</td>
+                                    <td class="text-danger">01 Juni 2023 - 30 Juni 2023</td>
+                                    <td align="center"><label class="btn btn-process btn-icon-text menu-icon">Process</label></td>
+                                    <td>
+                                        <a href="<?php echo site_url('DetailPendaftar'); ?>" type="button" title="Ubah Data" class="btn btn-statuss btn-icon-text">
+                                            <iconify-icon icon="carbon:order-details" class="menu-icon" style="padding-right: 10px;"></iconify-icon>Detail
+                                        </a> &nbsp;
+                                        <a href="<?php echo site_url('UbahStatusPendaftar'); ?>" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
+                                            <iconify-icon icon="icon-park-outline:full-selection" class="menu-icon" style="padding-right: 10px;"></iconify-icon>Update
+                                        </a> &nbsp;
+                                        <a href="#" type="button" title="Hapus Data" class="btn btn-danger btn-icon-text" id="openDeletePopup1">
+                                            <i class="fa fa-trash btn-icon-prepend"></i> Hapus
                                         </a>
                                     </td>
                                 </tr>
-                                <?php endforeach; ?>
+
+                                <tr>
+                                    <td>P002</td>
+                                    <td>Jane Doe</td>
+                                    <td>Graphic Designer</td>
+                                    <td class="text-danger">01 Juli 2023 - 30 Agustus 2023</td>
+                                    <td align="center"><label class="btn btn-pending btn-icon-text menu-icon">Pending</label></td>
+                                    <td>
+                                        <a href="#" type="button" title="Ubah Data" class="btn btn-statuss btn-icon-text">
+                                            <iconify-icon icon="carbon:order-details" class="menu-icon" style="padding-right: 10px;"></iconify-icon>Detail
+                                        </a> &nbsp;
+                                        <a href="#" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
+                                            <iconify-icon icon="icon-park-outline:full-selection" class="menu-icon" style="padding-right: 10px;"></iconify-icon>Update
+                                        </a> &nbsp;
+                                        <a href="#" type="button" title="Hapus Data" class="btn btn-danger btn-icon-text" id="openDeletePopup2">
+                                            <i class="fa fa-trash btn-icon-prepend"></i> Hapus
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>P003</td>
+                                    <td>Jake Doe</td>
+                                    <td>Graphic Designer</td>
+                                    <td class="text-danger">01 Agustus 2023 - 30 September 2023</td>
+                                    <td align="center"><label class="btn btn-complete btn-icon-text menu-icon">Complete</label></td>
+                                    <td>
+                                        <a href="#" type="button" title="Ubah Data" class="btn btn-statuss btn-icon-text">
+                                            <iconify-icon icon="carbon:order-details" class="menu-icon" style="padding-right: 10px;"></iconify-icon>Detail
+                                        </a> &nbsp;
+                                        <a href="#" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
+                                            <iconify-icon icon="icon-park-outline:full-selection" class="menu-icon" style="padding-right: 10px;"></iconify-icon>Update
+                                        </a> &nbsp;
+                                        <a href="#" type="button" title="Hapus Data" class="btn btn-danger btn-icon-text" id="openDeletePopup3">
+                                            <i class="fa fa-trash btn-icon-prepend"></i> Hapus
+                                        </a>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
-        <!-- content-wrapper ends -->
+
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
             <div class="d-flex justify-content-center">
@@ -211,11 +240,11 @@
                 </span>
               </div>
               <div class="popup-body">
-                <p>Apakah Anda yakin ingin menghapus data outlet?</p>
+                <p>Apakah Anda yakin ingin menghapus pendaftar?</p>
               </div>
               <div class="popup-footer">
-                <button class="btn btn-accept" id="confirmDelete" data-id="<?= $id ?>">Ya</button>
-                <button class="btn btn-danger" id="cancelDelete" data-id="<?= $id?>">Tidak</button>
+                <button class="btn btn-accept" id="confirmDelete">Ya</button>
+                <button class="btn btn-danger" id="cancelDelete">Tidak</button>
               </div>
             </div>
           </div>
@@ -224,6 +253,7 @@
     </div>
     <!-- page-body-wrapper ends -->
   </div>
+ 
   <!-- container-scroller -->
   <!-- plugins:js -->
   <script src="<?php echo base_url() . 'vendors/js/vendor.bundle.base.js' ?>"></script>
@@ -238,40 +268,6 @@
   <script src="<?php echo base_url() . 'js/jsa/todolist.js' ?>"></script>
   <script src="<?php echo base_url() . 'js/jsa/sort.js' ?>"></script>
   <script src="<?php echo base_url() . 'js/jsa/popout.js' ?>"></script>
-  <script>
-    // Fungsi untuk menampilkan pop-up konfirmasi
-    function showDeleteConfirmation(id) {
-        document.getElementById("confirmDelete").setAttribute("data-id", id);
-        document.getElementById("deletePopup").style.display = "block";
-    }
-
-    // Event listener untuk tombol "Hapus"
-    const deleteButtons = document.querySelectorAll(".btn.btn-danger");
-    deleteButtons.forEach((button) => {
-        button.addEventListener("click", function (e) {
-            e.preventDefault(); // Untuk mencegah tindakan default pada tautan
-            const id = this.getAttribute("data-id");
-            showDeleteConfirmation(id);
-        });
-    });
-
-    // Event listener untuk tombol "Ya" pada pop-up konfirmasi
-    document.getElementById("confirmDelete").addEventListener("click", function () {
-        const id = this.getAttribute("data-id");
-        window.location.href = "<?= site_url('Outlet/hapus/'); ?>" + id; // Ganti dengan URL atau rute yang sesuai
-    });
-
-    // Event listener untuk tombol "Tidak" pada pop-up konfirmasi
-    document.getElementById("cancelDelete").addEventListener("click", function () {
-        document.getElementById("deletePopup").style.display = "none";
-    });
-
-    // Event listener untuk tombol "Tutup" pada pop-up konfirmasi
-    document.getElementById("closeDeletePopup").addEventListener("click", function () {
-        document.getElementById("deletePopup").style.display = "none";
-    });
-</script>
-
   <!-- endinject -->
   <!-- Custom js for this page-->
   <!-- End custom js for this page-->
