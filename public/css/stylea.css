@@ -8976,7 +8976,6 @@ th {
 
 label {
   display: inline-block;
-  margin-bottom: 0.5rem;
 }
 
 button {
@@ -11359,7 +11358,7 @@ fieldset:disabled .wizard > .actions a,
   color: #fff;
   background-color: #424096;
   border-color: #393883;
-  box-shadow: 0 0 0 0.2rem rgba(222, 170, 6, 0.5);
+  box-shadow: 0 0 0 0.2rem #393883;
 }
 
 .btn-warning.disabled, .btn-warning:disabled {
@@ -11378,6 +11377,154 @@ fieldset:disabled .wizard > .actions a,
 .btn-warning:not(:disabled):not(.disabled):active:focus, .btn-warning:not(:disabled):not(.disabled).active:focus,
 .show > .btn-warning.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem #2f2e6b;
+}
+
+.btn-process {
+  color: #fff;
+  background-color: #49acac;
+  border-color: #49acac;
+}
+
+.btn-process:hover {
+  color: #fff;
+  background-color: #44a0a0;
+  border-color: #419999;
+}
+
+.btn-process:focus, .btn-process.focus {
+  color: #fff;
+  background-color: #44a0a0;
+  border-color: #419999;
+  box-shadow: 0 0 0 0.2rem #419999;
+}
+
+.btn-process.disabled, .btn-process:disabled {
+  color: #fff;
+  background-color: #49acac;
+  border-color: #49acac;
+}
+
+.btn-process:not(:disabled):not(.disabled):active, .btn-process:not(:disabled):not(.disabled).active,
+.show > .btn-process.dropdown-toggle {
+  color: #fff;
+  background-color: #3d8f8f;
+  border-color: #3d8f8f;
+}
+
+.btn-process:not(:disabled):not(.disabled):active:focus, .btn-process:not(:disabled):not(.disabled).active:focus,
+.show > .btn-process.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem #3d8f8f;
+}
+
+.btn-pending {
+  color: #fff;
+  background-color: #ff6058;
+  border-color: #ff6058;
+}
+
+.btn-pending:hover {
+  color: #fff;
+  background-color: #f35a52;
+  border-color: #e7564e;
+}
+
+.btn-pending:focus, .btn-pending.focus {
+  color: #fff;
+  background-color: #f35a52;
+  border-color: #e7564e;
+  box-shadow: 0 0 0 0.2rem #e7564e;
+}
+
+.btn-pending.disabled, .btn-pending:disabled {
+  color: #fff;
+  background-color: #ff6058;
+  border-color: #ff6058;
+}
+
+.btn-pending:not(:disabled):not(.disabled):active, .btn-pending:not(:disabled):not(.disabled).active,
+.show > .btn-pending.dropdown-toggle {
+  color: #fff;
+  background-color: #dd524a;
+  border-color: #dd524a;
+}
+
+.btn-pending:not(:disabled):not(.disabled):active:focus, .btn-pending:not(:disabled):not(.disabled).active:focus,
+.show > .btn-pending.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem #dd524a;
+}
+
+.btn-complete {
+  color: #fff;
+  background-color: #3eaf3f;
+  border-color: #3eaf3f;
+}
+
+.btn-complete:hover {
+  color: #fff;
+  background-color: #3ca83e;
+  border-color: #39a03b;
+}
+
+.btn-complete:focus, .btn-complete.focus {
+  color: #fff;
+  background-color: #3ca83e;
+  border-color: #39a03b;
+  box-shadow: 0 0 0 0.2rem #39a03b;
+}
+
+.btn-complete.disabled, .btn-complete:disabled {
+  color: #fff;
+  background-color: #3eaf3f;
+  border-color: #3eaf3f;
+}
+
+.btn-complete:not(:disabled):not(.disabled):active, .btn-complete:not(:disabled):not(.disabled).active,
+.show > .btn-complete.dropdown-toggle {
+  color: #fff;
+  background-color: #369937;
+  border-color: #369937;
+}
+
+.btn-complete:not(:disabled):not(.disabled):active:focus, .btn-complete:not(:disabled):not(.disabled).active:focus,
+.show > .btn-complete.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem #369937;
+}
+
+.btn-statuss {
+  color: #fff;
+  background-color: #ecb637;
+  border-color: #ecb637;
+}
+
+.btn-statuss:hover {
+  color: #fff;
+  background-color: #ddaa34;
+  border-color: #ca9b2e;
+}
+
+.btn-statuss:focus, .btn-statuss.focus {
+  color: #fff;
+  background-color: #ddaa34;
+  border-color: #ca9b2e;
+  box-shadow: 0 0 0 0.2rem #ca9b2e;
+}
+
+.btn-statuss.disabled, .btn-statuss:disabled {
+  color: #fff;
+  background-color: #ecb637;
+  border-color: #ecb637;
+}
+
+.btn-statuss:not(:disabled):not(.disabled):active, .btn-statuss:not(:disabled):not(.disabled).active,
+.show > .btn-statuss.dropdown-toggle {
+  color: #fff;
+  background-color: #d6a228;
+  border-color: #d6a228;
+}
+
+.btn-statuss:not(:disabled):not(.disabled):active:focus, .btn-statuss:not(:disabled):not(.disabled).active:focus,
+.show > .btn-statuss.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem #d6a228;
 }
 
 .btn-accept {
@@ -14380,6 +14527,21 @@ a.badge-success:focus, .preview-list .preview-item .preview-thumbnail a.badge.ba
   box-shadow: 0 0 0 0.2rem rgba(87, 182, 87, 0.5);
 }
 
+.badge-process, .preview-list .preview-item .preview-thumbnail .badge.badge-online {
+  color: #fff;
+  background-color: #49acac;
+}
+
+a.badge-process:hover, .preview-list .preview-item .preview-thumbnail a.badge.badge-online:hover, a.badge-process:focus, .preview-list .preview-item .preview-thumbnail a.badge.badge-online:focus {
+  color: #fff;
+  background-color: #49acac;
+}
+
+a.badge-process:focus, .preview-list .preview-item .preview-thumbnail a.badge.badge-online:focus, a.badge-process.focus, .preview-list .preview-item .preview-thumbnail a.focus.badge.badge-online {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem #49acac;
+}
+
 .badge-info, .preview-list .preview-item .preview-thumbnail .badge.badge-offline {
   color: #fff;
   background-color: #62AC83;
@@ -15207,13 +15369,14 @@ a.close.disabled {
 .modal-backdrop.show {
   opacity: 0.5;
 }
-
+/*------------------------------------------------------------------
+   border-bottom: 1px solid #CED4DA;
+-------------------------------------------------------------------*/
 .modal-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   padding: 1rem 1rem;
-  border-bottom: 1px solid #CED4DA;
   border-top-left-radius: calc(0.3rem - 1px);
   border-top-right-radius: calc(0.3rem - 1px);
 }
@@ -15233,14 +15396,15 @@ a.close.disabled {
   flex: 1 1 auto;
   padding: 0.9375rem;
 }
-
+/*------------------------------------------------------------------
+  border-top: 1px solid #CED4DA;
+-------------------------------------------------------------------*/
 .modal-footer {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
   padding: 0.6875rem;
-  border-top: 1px solid #CED4DA;
   border-bottom-right-radius: calc(0.3rem - 1px);
   border-bottom-left-radius: calc(0.3rem - 1px);
 }
@@ -21068,12 +21232,15 @@ code {
 /* Buttons */
 .btn, .fc button, .ajax-upload-dragdrop .ajax-file-upload, .swal2-modal .swal2-buttonswrapper .swal2-styled, .swal2-modal .swal2-buttonswrapper .swal2-styled.swal2-confirm, .swal2-modal .swal2-buttonswrapper .swal2-styled.swal2-cancel, .wizard > .actions a {
   font-size: 0.875rem;
-  line-height: 1;
   font-weight: 400;
   border-radius: 10px;
   /* Buttons with only icons */
   /* Buttons with icon and text */
 }
+/* Buttons
+.custom-btn {
+  width: 120px; /* You can adjust the width as needed */
+/* Buttons */
 
 .btn i, .fc button i, .ajax-upload-dragdrop .ajax-file-upload i, .swal2-modal .swal2-buttonswrapper .swal2-styled i, .swal2-modal .swal2-buttonswrapper .swal2-styled.swal2-confirm i, .swal2-modal .swal2-buttonswrapper .swal2-styled.swal2-cancel i, .wizard > .actions a i {
   font-size: 1rem;
@@ -21085,7 +21252,6 @@ code {
 
 .btn.btn-sm, .btn-group-sm > .btn, .fc .btn-group-sm > button, .ajax-upload-dragdrop .btn-group-sm > .ajax-file-upload, .swal2-modal .swal2-buttonswrapper .btn-group-sm > .swal2-styled, .wizard > .actions .btn-group-sm > a, .fc button, .ajax-upload-dragdrop .btn-sm.ajax-file-upload, .ajax-upload-dragdrop .fc button.ajax-file-upload, .fc .ajax-upload-dragdrop button.ajax-file-upload, .swal2-modal .swal2-buttonswrapper .btn-sm.swal2-styled, .swal2-modal .swal2-buttonswrapper .fc button.swal2-styled, .fc .swal2-modal .swal2-buttonswrapper button.swal2-styled, .wizard > .actions a.btn-sm {
   font-size: 0.812rem;
-  border-radius: 15px;
 }
 
 .btn.btn-lg, .btn-group-lg > .btn, .fc .btn-group-lg > button, .ajax-upload-dragdrop .btn-group-lg > .ajax-file-upload, .swal2-modal .swal2-buttonswrapper .btn-group-lg > .swal2-styled, .wizard > .actions .btn-group-lg > a, .fc button.btn-lg, .ajax-upload-dragdrop .btn-lg.ajax-file-upload, .swal2-modal .swal2-buttonswrapper .btn-lg.swal2-styled, .wizard > .actions a.btn-lg {
@@ -22838,6 +23004,7 @@ select.tt-hint {
   border: 0;
   outline: 1px solid #CED4DA;
   color: #c9c8c8;
+  margin-bottom: 10px;
 }
 
 select.form-control:focus, select.asColorPicker-input:focus, .dataTables_wrapper select:focus,
@@ -23964,11 +24131,11 @@ dl li {
 }
 
 .modal .modal-dialog .modal-content .modal-body {
-  padding: 35px 26px;
+  padding: 0px 25px 0px 25px;
 }
 
 .modal .modal-dialog .modal-content .modal-footer {
-  padding: 15px 31px;
+  padding: 15px 0px;
 }
 
 @media (max-width: 400px) {

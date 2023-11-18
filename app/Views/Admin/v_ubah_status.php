@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Required meta tags -->
+  <!-- meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Ubah Data Admin</title>
+  <title>Status Pendaftar</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?= base_url('vendors/font-awesome/css/font-awesome.min.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('vendors/feather/feather.css'); ?>">
@@ -42,7 +41,9 @@
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
   }
-  </script>
+   
+</script>  
+
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -90,7 +91,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('Pendaftar');?>">
+            <a class="nav-link" href="<?php echo site_url('Pendaftar'); ?>">
               <iconify-icon icon="fluent:people-team-24-filled" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Pendaftar</span>
             </a>
@@ -122,49 +123,142 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-
-                  <h4 class="card-title">Ubah Data Admin</h4>
+                  <h4 class="card-title">Update Status Penerimaan</h4>
                   
-                  <form class="forms-sample" method="post" action="<?php echo site_url('UbahPengguna/update/' . $id); ?>">
+                  <form class="forms-sample">
                     <div class="form-group">
-                      <label for="exampleInputUsername1">Nama</label>
-                      <input type="text" class="form-control" id="exampleInputUsername1" name="nama" placeholder="Nama" value="<?= $pengguna['nama']; ?>" required />
+                      <label for="nama">Nama</label>
+                      <input type="text" class="form-control" id="nama" placeholder="Nama">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail">Email</label>
-                      <input type="email" class="form-control" id="exampleInputEmail" name="email" placeholder="Email" value="<?= $pengguna['email']; ?>" required />
+                      <label for="minat">Minat</label>
+                      <input type="text" class="form-control" id="minat" placeholder="Minat">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword" name="password" placeholder="Password" value="" required />
-                    </div>                    
+                      <label for="periode">Periode Pendaftaran</label>
+                      <input type="text" class="form-control" id="periode" placeholder="Periode Pendaftaran">
+                    </div>
+                    <div class="form-group">
+                      <label for="tgl_daftar">Tanggal Daftar</label>
+                      <input type="text" class="form-control" id="tgl_daftar" placeholder="Tanggal daftar">
+                    </div>
 
+                    <div class="form-group">
+                        <label>Seleksi Administrasi</label>
+                        <div class="row">
+                            <div class="col">
+                              <select name="status_seleksi_admin" class="form-control" style="width: 880px;">
+                                <option value="Pending">Pending</option>
+                                <option value="Lolos">Lolos</option>
+                                <option value="Tidak Lolos">Tidak Lolos</option>
+                              </select>
+                            </div>
+                            <div class="col">
+                              <button type="button" class="btn btn-warning btn-icon-text" data-toggle="modal" data-target="#commentModal">
+                                Komentar
+                              </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Seleksi Wawancara</label>
+                        <div class="row">
+                            <div class="col">
+                              <select name="status_wcr" class="form-control" style="width: 880px;">
+                                <option value="Pending">Pending</option>
+                                <option value="Lolos">Lolos</option>
+                                <option value="Tidak Lolos">Tidak Lolos</option>
+                              </select>
+                            </div>
+                            <div class="col">
+                              <button type="button" class="btn btn-warning btn-icon-text" data-toggle="modal" data-target="#commentModal">
+                                Komentar
+                              </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Seleksi Uji Kemampuan</label>
+                        <div class="row">
+                            <div class="col">
+                              <select name="status_uji" class="form-control" style="width: 880px;">
+                                <option value="Pending">Pending</option>
+                                <option value="Lolos">Lolos</option>
+                                <option value="Tidak Lolos">Tidak Lolos</option>
+                              </select>
+                            </div>
+                            <div class="col">
+                              <button type="button" class="btn btn-warning btn-icon-text" data-toggle="modal" data-target="#commentModal">
+                                Komentar
+                              </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Pengumuman</label>
+                        <div class="row">
+                            <div class="col">
+                              <select name="status_pengumuman" class="form-control" style="width: 880px;">
+                                <option value="Pending">Pending</option>
+                                <option value="Lolos">Lolos</option>
+                                <option value="Tidak Lolos">Tidak Lolos</option>
+                              </select>
+                            </div>
+                            <div class="col">
+                              <button type="button" class="btn btn-warning btn-icon-text" data-toggle="modal" data-target="#commentModal">
+                                Komentar
+                              </button>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <button type="submit" class="btn btn-warning btn-icon-text">Simpan</button>
-                    <a class="btn btn-danger btn-icon-text" href="<?php echo site_url('Pengguna'); ?>">Batal</a>
+                    <a class="btn btn-danger btn-icon-text" href="<?php echo site_url('Pendaftar'); ?>">Batal</a>
                   </form>
-
                 </div>
               </div>
             </div>
-            
-            
-          
           </div>
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
-          <div class="d-flex justify-content-center">
-            <span class="text-muted text-center">
-              &copy; <script> document.write(new Date().getFullYear()) </script> PT. Loer Group Jaya. All rights reserved.
-            </span>
-          </div>
-        </footer> 
+            <div class="d-flex justify-content-center">
+              <span class="text-muted text-center">
+                &copy; <script> document.write(new Date().getFullYear()) </script> PT. Loer Group Jaya. All rights reserved.
+              </span>
+            </div>
+        </footer>
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->
+  </div>
+  <!-- The modal for comments -->
+  <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="commentModalLabel">Komentar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <textarea class="form-control" id="comment" rows="7"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button type="button" class="btn btn-accept mr-4">Simpan</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Buang</button>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
