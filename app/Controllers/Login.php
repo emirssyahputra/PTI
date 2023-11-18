@@ -16,6 +16,16 @@ class Login extends Controller
 
     public function index()
     {
+        if (session()->get('masuk')) {
+            // Jika sesi sudah ada, cek peran pengguna dan redirect ke halaman yang sesuai
+            $akses = session()->get('akses');
+            
+            if ($akses == '1') {
+                return redirect()->to(base_url('Dashboard')); // Redirect ke halaman dashboard untuk peran 1
+            } elseif ($akses == '2') {
+                return redirect()->to(base_url('pCareer')); // Redirect ke halaman admin untuk peran 2
+            }
+        }
         return view('v_login');
     }
 
@@ -33,6 +43,7 @@ class Login extends Controller
             session()->set('masuk', true);
             session()->set('user', $u);
             $session = \Config\Services::session();
+            $session->regenerate();
             $userdata = [
                 'id_pengguna' => $cadmin->id_pengguna,
                 'nama' => $cadmin->nama,
