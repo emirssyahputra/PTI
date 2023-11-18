@@ -9,6 +9,9 @@ class UbahPengguna extends Controller
 {
     public function index($id)
     {
+        $sesi_pengguna_id = session()->get('idadmin');
+
+    if ($sesi_pengguna_id) {
         $model = new M_pengguna();
         $data['pengguna'] = $model->find($id);
 
@@ -19,7 +22,10 @@ class UbahPengguna extends Controller
         }
 
         return view('admin/v_ubah_pengguna', ['pengguna' => $data['pengguna'], 'id' => $id]);
-
+    } else {
+        // Jika tidak ada sesi pengguna yang aktif, redirect ke halaman login
+        return redirect()->to(site_url('login'));
+    }
     }
 
     public function update($id)

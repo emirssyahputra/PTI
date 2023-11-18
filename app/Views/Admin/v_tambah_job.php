@@ -145,8 +145,8 @@
                       </select>
                     </div>
                     <div class="form-group">
-                      <label>Deskripsi</label>
-                      <textarea name="jobdesk" rows="7" class="form-control" placeholder="Deskripsi"
+                      <label>Job Desk</label>
+                      <textarea name="jobdesk" rows="7" class="form-control" placeholder="Job Desk"
                         required></textarea>
                     </div>
                     <div class="form-group">

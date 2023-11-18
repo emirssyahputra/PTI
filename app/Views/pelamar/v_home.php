@@ -206,6 +206,10 @@
               <p><?= $job['kualifikasi']; ?></p>
               <h2 class="section-title">Job Desk</h2>
               <p><?= $job['jobdesk']; ?></p>
+              <h2 class="section-title">Periode Waktu</h2>
+                  <p>
+                    <?= date('j F Y', strtotime($job['waktu_mulai'])) . ' - ' . date('j F Y', strtotime($job['waktu_akhir'])); ?>
+                  </p>
             </div>
             <div class="header-get-a-quote text-center my-2">
               <a class="btn btn-primary apply-button" href="<?php echo site_url('Apply'); ?>">Apply Now</a>
