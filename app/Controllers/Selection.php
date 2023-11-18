@@ -9,7 +9,10 @@ class Selection extends BaseController
 {
     public function index()
     {
-        $session = \Config\Services::session();
+        $sesi_pengguna_id = session()->get('idadmin');
+
+        if ($sesi_pengguna_id) {
+            $session = \Config\Services::session();
         $id_pengguna = $session->get('id_pengguna');
 
         $model = new M_selection();
@@ -50,6 +53,11 @@ class Selection extends BaseController
         }
 
         return view('pelamar/v_selection', $viewData);
+        } else {
+            // Jika tidak ada sesi pengguna yang aktif, redirect ke halaman login
+            return redirect()->to(site_url('login'));
+        }
+        
     }
 
 }

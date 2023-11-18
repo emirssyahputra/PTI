@@ -8,10 +8,18 @@ class UbahJob extends BaseController
 {
     public function index($id_loker)
     {
+        $sesi_pengguna_id = session()->get('idadmin');
+
+    if ($sesi_pengguna_id) {
         $model = new M_job();
         $data['job'] = $model->getJobById($id_loker);
 
         return view('admin/v_ubah_job.php', $data);
+    } else {
+        // Jika tidak ada sesi pengguna yang aktif, redirect ke halaman login
+        return redirect()->to(site_url('login'));
+    }
+        
     }
     public function updateJob()
     {
