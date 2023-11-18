@@ -12,7 +12,7 @@ class Register extends BaseController
         return view('v_register');
     }
 
-    public function register()
+    public function daftar()
     {
         $model = new M_Register();
 

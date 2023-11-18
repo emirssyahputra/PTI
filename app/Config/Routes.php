@@ -33,6 +33,14 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->add('login/cek', 'Login::cek');
+$routes->add('Apply/(:num)', 'Apply::index/$1');
+$routes->add('UbahPengguna/(:num)', 'UbahPengguna::index/$1');
+$routes->add('UbahOutlet/(:num)', 'UbahOutlet::index/$1');
+$routes->get('UbahJob/(:segment)', 'UbahJob::index/$1');
+
+
+
+
 
 
 /*

@@ -17,13 +17,18 @@
             <div class='login-area'>
                 <img src="<?= base_url('images/logo.png'); ?>" alt="RedX Logo" class="centered-logo">
                 <h3>Register</h3>
-                <form class='login-items' action="<?= site_url('register/register'); ?>" method="post">
+                <form class='login-items' action="<?= site_url('register/daftar'); ?>" method="post">
                     <label for="nama">Nama</label>
                     <input type="text" class='login' name="nama" placeholder='Nama lengkap' required />
                     <label for="email">Email</label>
                     <input type="email" class='login' name="email" placeholder="email@gmail.com" required />
-                    <label for="password">Password</label>
-                    <input type="password" class='login' name="password" placeholder='Password' required />
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="password-container">
+                            <input type="password" class="login" name="password" id="password" placeholder="Password" required />
+                            <i class="fas fa-eye-slash toggle-password" onclick="togglePassword('password')"></i>
+                        </div>
+                    </div>
                     <input type="submit" class='login-btn' value="Register" />
                 </form>
                 <?php if (session()->getFlashdata('success')): ?>
@@ -43,6 +48,22 @@
             </div>
         </div>
     </div>
+    <script>
+        function togglePassword(inputId) {
+            var passwordInput = document.getElementById(inputId);
+            var icon = document.querySelector('.toggle-password');
+
+            if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye', 'show-password');
+            } else {
+            passwordInput.type = 'password';
+            icon.classList.remove('fa-eye', 'show-password');
+            icon.classList.add('fa-eye-slash');
+            }
+        }
+    </script>
 </body>
 
 </html>

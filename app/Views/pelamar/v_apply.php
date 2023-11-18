@@ -21,18 +21,18 @@
     <!-- CSS
 ================================================== -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url('plugins/bootstrap/bootstrap.min.css'); ?>">
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url('plugins/fontawesome/css/all.min.css'); ?>">
     <!-- Animation -->
-    <link rel="stylesheet" href="plugins/animate-css/animate.css">
+    <link rel="stylesheet" href="<?= base_url('plugins/animate-css/animate.css'); ?>">
     <!-- slick Carousel -->
-    <link rel="stylesheet" href="plugins/slick/slick.css">
-    <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+    <link rel="stylesheet" href="<?= base_url('plugins/slick/slick.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('plugins/slick/slick-theme.css'); ?>">
     <!-- Colorbox -->
-    <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
+    <link rel="stylesheet" href="<?= base_url('plugins/colorbox/colorbox.css'); ?>">
     <!-- Template styles-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<?= base_url('css/style.css'); ?>">
 
 </head>
 
@@ -52,8 +52,8 @@
                             <nav class="navbar navbar-expand-lg navbar-light p-0">
 
                                 <div class="logo">
-                                    <a class="d-block" href="index.html">
-                                        <img loading="lazy" src="images/logo.png" alt="Loer Group">
+                                    <a class="d-block" href="<?php echo site_url('pHome'); ?>">
+                                        <img loading="lazy" src="<?= base_url('images/logo.png'); ?>" alt="Loer Group">
                                     </a>
                                 </div><!-- logo end -->
 
@@ -65,16 +65,21 @@
 
                                 <div id="navbar-collapse" class="collapse navbar-collapse">
                                     <ul class="nav navbar-nav ml-auto align-items-center">
-                                        <li class="nav-item"><a class="nav-link" href="<?php echo site_url('/');?>">Home</a></li>
-                
-                                        <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Career');?>">Career</a></li>
-                                                        
-                                        <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Selection');?>">Selection</a></li>
+                                        <li class="nav-item"><a class="nav-link"
+                                                href="<?php echo site_url('pHome'); ?>">Home</a></li>
 
-                                        <li class="nav-item"><a class="nav-link" href="<?php echo site_url('About');?>">About</a></li>
+                                        <li class="nav-item"><a class="nav-link"
+                                                href="<?php echo site_url('pCareer'); ?>">Career</a></li>
+
+                                        <li class="nav-item"><a class="nav-link"
+                                                href="<?php echo site_url('Selection'); ?>">Selection</a></li>
+
+                                        <li class="nav-item"><a class="nav-link"
+                                                href="<?php echo site_url('pAbout'); ?>">About</a></li>
 
                                         <li class="header-get-a-quote">
-                                            <a class="btn btn-primary" href="<?php echo site_url('Login/logout');?>">LOG OUT</a>
+                                            <a class="btn btn-primary" href="<?php echo site_url('Login/logout'); ?>">LOG
+                                                OUT</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -110,23 +115,34 @@
                 <div class="row">
                     <div class="col-md-8 offset-md-2">
                         <div class="registration-form">
-                            <form action="<?= site_url('apply/apply'); ?>" method="post" enctype="multipart/form-data">
+                            <form action="<?= site_url('apply/daftar'); ?>" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
-                                    <label for="nama">Nama</label>
+                                    <input type="hidden" class="form-control" name="id_loker"
+                                        value="<?php echo $id_loker; ?>">
+                                </div>
+                                <div class="form-group">
+                                    <input type="hidden" class="form-control" name="waktu_apply"
+                                        value="<?php echo $waktuApply; ?>">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nama" class="required-label">Nama</label>
                                     <input type="text" class="form-control" value="<?php echo $nama; ?>" readonly>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="jenis-kelamin">Jenis Kelamin</label>
+                                    <label for="jenis-kelamin" class="required-label">Jenis Kelamin</label>
                                     <select class="form-control" id="jenis-kelamin" name="jenkel" required>
-                                        <option value="laki-laki">Laki-laki</option>
-                                        <option value="perempuan">Perempuan</option>
+                                        <option value="">Pilih Jenis Kelamin</option>
+                                        <option value="Laki-laki">Laki-laki</option>
+                                        <option value="Perempuan">Perempuan</option>
                                     </select>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="pendidikan-terakhir">Pendidikan Terakhir</label>
+                                    <label for="pendidikan-terakhir" class="required-label">Pendidikan Terakhir</label>
                                     <select class="form-control" id="pendidikan-terakhir" name="pend" required>
+                                        <option value="">Pilih Pendidikan Terakhir</option>
                                         <option value="SLTA Sederajat">SLTA Sederajat</option>
                                         <option value="D1">D1</option>
                                         <option value="D2">D2</option>
@@ -139,60 +155,61 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="email">Email</label>
+                                    <label for="email" class="required-label">Email</label>
                                     <input type="email" class="form-control" id="email" value="<?php echo $email; ?>"
                                         readonly>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="telepon">Nomor Telepon</label>
+                                    <label for="telepon" class="required-label">Nomor Telepon</label>
                                     <input type="tel" class="form-control" id="telepon" name="no_telp" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="alamat">Alamat</label>
+                                    <label for="alamat" class="required-label">Alamat</label>
                                     <textarea class="form-control" id="alamat" name="alamat" rows="2"
                                         required></textarea>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="linkedin">URL LinkedIn</label>
+                                    <label for="linkedin">URL LinkedIn (Opsional)</label>
                                     <input type="url" class="form-control" id="linkedin" name="linkedin"
-                                        value="https://" placeholder="mis: http://linkedin.com/in/username" required>
+                                        value="https://" placeholder="mis: http://linkedin.com/in/username">
                                 </div>
 
+                                <p>Silahkan upload file dengan format PDF untuk semua lampiran dokumen di bawah.</p>
                                 <div class="form-group">
-                                    <label for="cv">KTP</label>
+                                    <label for="cv" class="required-label">KTP</label>
                                     <input type="file" class="form-control-file" id="ktp" name="ktp" accept=".pdf"
                                         required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="cv">Upload Curriculum Vitae (CV)</label>
+                                    <label for="cv" class="required-label">Upload Curriculum Vitae (CV)</label>
                                     <input type="file" class="form-control-file" id="cv" name="cv" accept=".pdf"
                                         required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="surat-lamaran">Upload Surat Lamaran</label>
+                                    <label for="surat-lamaran" class="required-label">Upload Surat Lamaran</label>
                                     <input type="file" class="form-control-file" id="surat-lamaran" name="surat_lamaran"
                                         accept=".pdf" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ijazah">Upload File Ijazah</label>
+                                    <label for="ijazah" class="required-label">Upload File Ijazah</label>
                                     <input type="file" class="form-control-file" id="ijazah" name="ijazah" accept=".pdf"
                                         required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ijazah">SKCK</label>
+                                    <label for="ijazah" class="required-label">SKCK</label>
                                     <input type="file" class="form-control-file" id="skck" name="skck" accept=".pdf"
                                         required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ijazah">Packlaring</label>
+                                    <label for="ijazah" class="required-label">Packlaring</label>
                                     <input type="file" class="form-control-file" id="packlaring" name="packlaring"
                                         accept=".pdf" required>
                                 </div>
@@ -290,26 +307,26 @@
   ================================================== -->
 
         <!-- initialize jQuery Library -->
-        <script src="plugins/jQuery/jquery.min.js"></script>
+        <script src="<?php echo base_url() . 'plugins/jQuery/jquery.min.js' ?>"></script>
         <!-- Bootstrap jQuery -->
-        <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
+        <script src="<?php echo base_url() . 'plugins/bootstrap/bootstrap.min.js' ?>"></script>
         <!-- Slick Carousel -->
-        <script src="plugins/slick/slick.min.js"></script>
-        <script src="plugins/slick/slick-animation.min.js"></script>
+        <script src="<?php echo base_url() . 'plugins/slick/slick.min.js' ?>"></script>
+        <script src="<?php echo base_url() . 'plugins/slick/slick-animation.min.js' ?>"></script>
         <!-- Color box -->
-        <script src="plugins/colorbox/jquery.colorbox.js"></script>
+        <script src="<?php echo base_url() . 'plugins/colorbox/jquery.colorbox.js' ?>"></script>
         <!-- shuffle -->
-        <script src="plugins/shuffle/shuffle.min.js" defer></script>
+        <script src="<?php echo base_url() . 'plugins/shuffle/shuffle.min.js' ?>"></script>
 
 
         <!-- Google Map API Key-->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"
             defer></script>
         <!-- Google Map Plugin-->
-        <script src="plugins/google-map/map.js" defer></script>
+        <script src="<?= base_url('plugins/google-map/map.js'); ?>" defer></script>
 
         <!-- Template custom -->
-        <script src="js/script.js"></script>
+        <script src="<?php echo base_url() . 'js/script.js' ?>"></script>
 
     </div><!-- Body inner end -->
 </body>

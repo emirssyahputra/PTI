@@ -50,8 +50,8 @@
               <nav class="navbar navbar-expand-lg navbar-light p-0">
                 
                 <div class="logo">
-                    <a class="d-block" href="<?php echo site_url('/');?>">
-                      <img loading="lazy" src="images/logo.png" alt="Loer Group">
+                    <a class="d-block" href="<?php echo site_url('pHome');?>">
+                      <img loading="lazy" src="<?= base_url('images/logo.png'); ?>" alt="Loer Group">
                     </a>
                 </div><!-- logo end -->
 
@@ -61,13 +61,13 @@
                 
                 <div id="navbar-collapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav ml-auto align-items-center">
-                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('/');?>">Home</a></li>
+                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('pHome');?>">Home</a></li>
               
-                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Career');?>">Career</a></li>
+                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('pCareer');?>">Career</a></li>
                                     
                       <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Selection');?>">Selection</a></li>
 
-                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('About');?>">About</a></li>
+                      <li class="nav-item"><a class="nav-link" href="<?php echo site_url('pAbout');?>">About</a></li>
 
                       <li class="header-get-a-quote">
                           <a class="btn btn-primary" href="<?php echo site_url('Login/logout');?>">LOG OUT</a>
@@ -183,142 +183,45 @@
 
 <section id="ts-features" class="ts-features">
   <div class="container">
-        <div class="row text-center">
-          <div class="col-12">
-            <h3 class="section-sub-title">Carrer</h3>
-          </div>
-        </div>
+    <div class="row text-center">
+      <div class="col-12">
+        <h3 class="section-sub-title">Career</h3>
+      </div>
+    </div>
 
-        <div class="accordion accordion-group" id="our-values-accordion">
-          <div class="card">
-            <div class="card-header p-0 bg-transparent" id="headingOne">
-              <h2 class="mb-0">
-                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  BARISTA
-                </button>
-              </h2>
-            </div>
-            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#our-values-accordion">
-              <div class="card-body">
-                <h2 class="section-title">Kualifikasi</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque erat nec justo auctor viverra. Etiam tempor laoreet odio, eget convallis diam consectetur vel. Sed nec turpis laoreet mauris interdum tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec malesuada id nulla vitae commodo. In sed eros ligula. Integer rutrum fermentum fringilla. Aenean eget nulla eget eros imperdiet consequat id hendrerit massa.</p>
-                <h2 class="section-title">Job Desk</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque erat nec justo auctor viverra. Etiam tempor laoreet odio, eget convallis diam consectetur vel. Sed nec turpis laoreet mauris interdum tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec malesuada id nulla vitae commodo. In sed eros ligula. Integer rutrum fermentum fringilla. Aenean eget nulla eget eros imperdiet consequat id hendrerit massa.</p>
-              </div>
-              <!-- Tombol "Apply Now" -->
-              <div class="header-get-a-quote text-center my-2">
-                <a class="btn btn-primary apply-button" href=#>Apply Now</a>
-              </div>              
-            </div>
+    <div class="accordion accordion-group" id="career-accordion">
+      <?php foreach ($loker as $index => $job): ?>
+        <div class="card">
+          <div class="card-header p-0 bg-transparent" id="career-heading<?= $index ?>">
+            <h2 class="mb-0">
+              <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse"
+                data-target="#career-collapse<?= $index ?>" aria-expanded="false" aria-controls="career-collapse<?= $index ?>">
+                <?= $job['Nama']; ?>
+              </button>
+            </h2>
           </div>
-          <div class="card">
-            <div class="card-header p-0 bg-transparent" id="headingTwo">
-              <h2 class="mb-0">
-                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  CASHIER
-                </button>
-              </h2>
+          <div id="career-collapse<?= $index ?>" class="collapse" aria-labelledby="career-heading<?= $index ?>" data-parent="#career-accordion">
+            <div class="card-body">
+              <h2 class="section-title">Kualifikasi</h2>
+              <p><?= $job['kualifikasi']; ?></p>
+              <h2 class="section-title">Job Desk</h2>
+              <p><?= $job['jobdesk']; ?></p>
+              <h2 class="section-title">Periode Waktu</h2>
+                  <p>
+                    <?= date('j F Y', strtotime($job['waktu_mulai'])) . ' - ' . date('j F Y', strtotime($job['waktu_akhir'])); ?>
+                  </p>
             </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#our-values-accordion">
-              <div class="card-body">
-                <h2 class="section-title">Kualifikasi</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque erat nec justo auctor viverra. Etiam tempor laoreet odio, eget convallis diam consectetur vel. Sed nec turpis laoreet mauris interdum tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec malesuada id nulla vitae commodo. In sed eros ligula. Integer rutrum fermentum fringilla. Aenean eget nulla eget eros imperdiet consequat id hendrerit massa.</p>
-                <h2 class="section-title">Job Desk</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque erat nec justo auctor viverra. Etiam tempor laoreet odio, eget convallis diam consectetur vel. Sed nec turpis laoreet mauris interdum tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec malesuada id nulla vitae commodo. In sed eros ligula. Integer rutrum fermentum fringilla. Aenean eget nulla eget eros imperdiet consequat id hendrerit massa.</p>
-              </div>
-              <!-- Tombol "Apply Now" -->
-              <div class="header-get-a-quote text-center my-2">
-                <a class="btn btn-primary apply-button" href=#>Apply Now</a>
-              </div>              
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header p-0 bg-transparent" id="headingThree">
-              <h2 class="mb-0">
-                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  COOK & COOK HELPER
-                </button>
-              </h2>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#our-values-accordion">
-              <div class="card-body">
-                <h2 class="section-title">Kualifikasi</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque erat nec justo auctor viverra. Etiam tempor laoreet odio, eget convallis diam consectetur vel. Sed nec turpis laoreet mauris interdum tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec malesuada id nulla vitae commodo. In sed eros ligula. Integer rutrum fermentum fringilla. Aenean eget nulla eget eros imperdiet consequat id hendrerit massa.</p>
-                <h2 class="section-title">Job Desk</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque erat nec justo auctor viverra. Etiam tempor laoreet odio, eget convallis diam consectetur vel. Sed nec turpis laoreet mauris interdum tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec malesuada id nulla vitae commodo. In sed eros ligula. Integer rutrum fermentum fringilla. Aenean eget nulla eget eros imperdiet consequat id hendrerit massa.</p>
-              </div>
-              <!-- Tombol "Apply Now" -->
-              <div class="header-get-a-quote text-center my-2">
-                <a class="btn btn-primary apply-button" href=#>Apply Now</a>
-              </div>              
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header p-0 bg-transparent" id="headingFour">
-              <h2 class="mb-0">
-                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  FINANCE
-                </button>
-              </h2>
-            </div>
-            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#our-values-accordion">
-              <div class="card-body">
-                <h2 class="section-title">Kualifikasi</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque erat nec justo auctor viverra. Etiam tempor laoreet odio, eget convallis diam consectetur vel. Sed nec turpis laoreet mauris interdum tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec malesuada id nulla vitae commodo. In sed eros ligula. Integer rutrum fermentum fringilla. Aenean eget nulla eget eros imperdiet consequat id hendrerit massa.</p>
-                <h2 class="section-title">Job Desk</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque erat nec justo auctor viverra. Etiam tempor laoreet odio, eget convallis diam consectetur vel. Sed nec turpis laoreet mauris interdum tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec malesuada id nulla vitae commodo. In sed eros ligula. Integer rutrum fermentum fringilla. Aenean eget nulla eget eros imperdiet consequat id hendrerit massa.</p>
-              </div>
-              <!-- Tombol "Apply Now" -->
-              <div class="header-get-a-quote text-center my-2">
-                <a class="btn btn-primary apply-button" href=#>Apply Now</a>
-              </div>              
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header p-0 bg-transparent" id="headingFive">
-              <h2 class="mb-0">
-                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                  ACCOUNTING
-                </button>
-              </h2>
-            </div>
-            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#our-values-accordion">
-              <div class="card-body">
-                <h2 class="section-title">Kualifikasi</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque erat nec justo auctor viverra. Etiam tempor laoreet odio, eget convallis diam consectetur vel. Sed nec turpis laoreet mauris interdum tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec malesuada id nulla vitae commodo. In sed eros ligula. Integer rutrum fermentum fringilla. Aenean eget nulla eget eros imperdiet consequat id hendrerit massa.</p>
-                <h2 class="section-title">Job Desk</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque erat nec justo auctor viverra. Etiam tempor laoreet odio, eget convallis diam consectetur vel. Sed nec turpis laoreet mauris interdum tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec malesuada id nulla vitae commodo. In sed eros ligula. Integer rutrum fermentum fringilla. Aenean eget nulla eget eros imperdiet consequat id hendrerit massa.</p>
-              </div>
-              <!-- Tombol "Apply Now" -->
-              <div class="header-get-a-quote text-center my-2">
-                <a class="btn btn-primary apply-button" href=#>Apply Now</a>
-              </div>              
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header p-0 bg-transparent" id="headingSix">
-              <h2 class="mb-0">
-                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                  PURCHASING
-                </button>
-              </h2>
-            </div>
-            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#our-values-accordion">
-              <div class="card-body">
-                <h2 class="section-title">Kualifikasi</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque erat nec justo auctor viverra. Etiam tempor laoreet odio, eget convallis diam consectetur vel. Sed nec turpis laoreet mauris interdum tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec malesuada id nulla vitae commodo. In sed eros ligula. Integer rutrum fermentum fringilla. Aenean eget nulla eget eros imperdiet consequat id hendrerit massa.</p>
-                <h2 class="section-title">Job Desk</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque erat nec justo auctor viverra. Etiam tempor laoreet odio, eget convallis diam consectetur vel. Sed nec turpis laoreet mauris interdum tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec malesuada id nulla vitae commodo. In sed eros ligula. Integer rutrum fermentum fringilla. Aenean eget nulla eget eros imperdiet consequat id hendrerit massa.</p>
-              </div>
-              <!-- Tombol "Apply Now" -->
-              <div class="header-get-a-quote text-center my-2">
-                <a class="btn btn-primary apply-button" href=#>Apply Now</a>
-              </div>              
+            <div class="header-get-a-quote text-center my-2">
+              <a class="btn btn-primary apply-button" href="<?php echo site_url('Apply'); ?>">Apply Now</a>
             </div>
           </div>
         </div>
-        <!--/ Accordion end -->
-      </div><!-- Col end -->
+      <?php endforeach; ?>
+    </div>
+
+  </div>
+  <!--/ Accordion end -->
+  </div><!-- Col end -->
 </section><!-- Feature area end -->
 
 
@@ -341,7 +244,7 @@
                 <img loading="lazy" src="images/icon-image/outlet.png" alt="facts-img">
               </div>
               <div class="ts-facts-content">
-                <h2 class="ts-facts-num"><span class="counterUp" data-count="5">0</span></h2>
+                <h2 class="ts-facts-num"><span class="counterUp" data-count="<?php echo $tot_outlet; ?>">0</span></h2>
                 <h3 class="ts-facts-title">OUTLETS</h3>
               </div>
           </div><!-- Col end -->
