@@ -98,12 +98,12 @@ class Apply extends BaseController
 
         $lastApply = $model->orderBy('id_form', 'DESC')->first();
         if ($lastApply) {
-            $lastId = 'P' . str_pad((intval($lastApply['id_form']) + 1), 4, '0', STR_PAD_LEFT);
+            $lastId = 'P' . str_pad((intval(substr($lastApply['id_form'], 1)) + 1), 4, '0', STR_PAD_LEFT);
         } else {
             $lastId = 'P0001';
         }
-
-        $data['id_form'] = $lastId;
+        
+        $data['id_form'] = $lastId;        
 
         foreach ($fileFields as $field) {
             if (isset($uploadedFiles[$field])) {
@@ -112,19 +112,19 @@ class Apply extends BaseController
         }
         
         $model->insert($data);
-        $modelselection = new M_selection();
-        $id_loker = $data['id_loker'];
-        $waktu = $data['waktu_apply'];
-        $loker = $modelselection->getNamaPekerjaan($id_loker);
-        $subject = "Status Tahapan Seleksi";
-        $message = "Selamat anda berhasil mendaftar untuk posisi $loker pada $waktu ";
+        // $modelselection = new M_selection();
+        // $id_loker = $data['id_loker'];
+        // $waktu = $data['waktu_apply'];
+        // $loker = $modelselection->getNamaPekerjaan($id_loker);
+        // $subject = "Status Tahapan Seleksi";
+        // $message = "Selamat anda berhasil mendaftar untuk posisi $loker pada $waktu ";
 
-        $email = service('email');
-        $email->setTo($data['email']);
-        $email->setFrom('emirssyah2@gmail.com', 'Loer Group');
-        $email->setSubject($subject);
-        $email->setMessage($message);
-        $email->send();
+        // $email = service('email');
+        // $email->setTo($data['email']);
+        // $email->setFrom('emirssyah2@gmail.com', 'Loer Group');
+        // $email->setSubject($subject);
+        // $email->setMessage($message);
+        // $email->send();
         return redirect()->to('Selection')->with('success', 'Lamaran berhasil dikirim.');
     }
 
