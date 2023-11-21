@@ -192,20 +192,20 @@
                                 <div class="form-group">
                                     <label for="linkedin">URL LinkedIn (Opsional)</label>
                                     <input type="url" class="form-control" id="linkedin" name="linkedin"
-                                        value="https://" placeholder="mis: http://linkedin.com/in/username">
+                                        placeholder="mis: http://linkedin.com/in/username">
                                 </div>
 
                                 <p>Silahkan upload file dengan format PDF untuk semua lampiran dokumen di bawah.</p>
                                 <div class="form-group">
                                     <label for="cv" class="required-label">KTP</label>
-                                    <input type="file" class="form-control-file" id="ktp" name="ktp" accept=".pdf, .doc, .docx"
-                                        required>
+                                    <input type="file" class="form-control-file" id="ktp" name="ktp"
+                                        accept=".pdf, .doc, .docx" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="cv" class="required-label">Upload Curriculum Vitae (CV)</label>
-                                    <input type="file" class="form-control-file" id="cv" name="cv" accept=".pdf, .doc, .docx"
-                                        required>
+                                    <input type="file" class="form-control-file" id="cv" name="cv"
+                                        accept=".pdf, .doc, .docx" required>
                                 </div>
 
                                 <div class="form-group">
@@ -216,18 +216,18 @@
 
                                 <div class="form-group">
                                     <label for="ijazah" class="required-label">Upload File Ijazah</label>
-                                    <input type="file" class="form-control-file" id="ijazah" name="ijazah" accept=".pdf, .doc, .docx"
-                                        required>
+                                    <input type="file" class="form-control-file" id="ijazah" name="ijazah"
+                                        accept=".pdf, .doc, .docx" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ijazah">SKCK  (Opsional)</label>
-                                    <input type="file" class="form-control-file" id="skck" name="skck" accept=".pdf, .doc, .docx"
-                                        >
+                                    <label for="ijazah">SKCK (Opsional)</label>
+                                    <input type="file" class="form-control-file" id="skck" name="skck"
+                                        accept=".pdf, .doc, .docx">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ijazah">Packlaring  (Opsional)</label>
+                                    <label for="ijazah">Packlaring (Opsional)</label>
                                     <input type="file" class="form-control-file" id="packlaring" name="packlaring"
                                         accept=".pdf, .doc, .docx">
                                 </div>
