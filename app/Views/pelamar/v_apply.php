@@ -78,7 +78,8 @@
                                                 href="<?php echo site_url('pAbout'); ?>">About</a></li>
 
                                         <li class="header-get-a-quote">
-                                            <a class="btn btn-primary" href="<?php echo site_url('Login/logout'); ?>">LOG
+                                            <a class="btn btn-primary"
+                                                href="<?php echo site_url('Login/logout'); ?>">LOG
                                                 OUT</a>
                                         </li>
                                     </ul>
@@ -126,6 +127,12 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="email" class="required-label">Email</label>
+                                    <input type="email" class="form-control" id="email" value="<?php echo $email; ?>"
+                                        readonly>
+                                </div>
+
+                                <div class="form-group">
                                     <label for="nama" class="required-label">Nama</label>
                                     <input type="text" class="form-control" value="<?php echo $nama; ?>" readonly>
                                 </div>
@@ -137,6 +144,18 @@
                                         <option value="Laki-laki">Laki-laki</option>
                                         <option value="Perempuan">Perempuan</option>
                                     </select>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="tempat_lahir" class="required-label">Tempat Lahir</label>
+                                        <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir"
+                                            required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="tanggal_lahir" class="required-label">Tanggal Lahir</label>
+                                        <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir"
+                                            required>
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
@@ -155,14 +174,13 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="email" class="required-label">Email</label>
-                                    <input type="email" class="form-control" id="email" value="<?php echo $email; ?>"
-                                        readonly>
+                                    <label for="telepon" class="required-label">Nomor HP (Whatsapp)</label>
+                                    <input type="tel" class="form-control" id="telepon" name="no_telp" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="telepon" class="required-label">Nomor Telepon</label>
-                                    <input type="tel" class="form-control" id="telepon" name="no_telp" required>
+                                    <label for="hp">Nomor HP (Opsional)</label>
+                                    <input type="tel" class="form-control" id="hp" name="no_hp">
                                 </div>
 
                                 <div class="form-group">
@@ -180,50 +198,50 @@
                                 <p>Silahkan upload file dengan format PDF untuk semua lampiran dokumen di bawah.</p>
                                 <div class="form-group">
                                     <label for="cv" class="required-label">KTP</label>
-                                    <input type="file" class="form-control-file" id="ktp" name="ktp" accept=".pdf"
+                                    <input type="file" class="form-control-file" id="ktp" name="ktp" accept=".pdf, .doc, .docx"
                                         required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="cv" class="required-label">Upload Curriculum Vitae (CV)</label>
-                                    <input type="file" class="form-control-file" id="cv" name="cv" accept=".pdf"
+                                    <input type="file" class="form-control-file" id="cv" name="cv" accept=".pdf, .doc, .docx"
                                         required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="surat-lamaran" class="required-label">Upload Surat Lamaran</label>
                                     <input type="file" class="form-control-file" id="surat-lamaran" name="surat_lamaran"
-                                        accept=".pdf" required>
+                                        accept=".pdf, .doc, .docx" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="ijazah" class="required-label">Upload File Ijazah</label>
-                                    <input type="file" class="form-control-file" id="ijazah" name="ijazah" accept=".pdf"
+                                    <input type="file" class="form-control-file" id="ijazah" name="ijazah" accept=".pdf, .doc, .docx"
                                         required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ijazah" class="required-label">SKCK</label>
-                                    <input type="file" class="form-control-file" id="skck" name="skck" accept=".pdf"
-                                        required>
+                                    <label for="ijazah">SKCK  (Opsional)</label>
+                                    <input type="file" class="form-control-file" id="skck" name="skck" accept=".pdf, .doc, .docx"
+                                        >
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ijazah" class="required-label">Packlaring</label>
+                                    <label for="ijazah">Packlaring  (Opsional)</label>
                                     <input type="file" class="form-control-file" id="packlaring" name="packlaring"
-                                        accept=".pdf" required>
+                                        accept=".pdf, .doc, .docx">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="sertifikat">Upload File Sertifikat Kompetensi (Opsional)</label>
                                     <input type="file" class="form-control-file" id="sertifikat"
-                                        name="sertifikat_kompetensi" accept=".pdf">
+                                        name="sertifikat_kompetensi" accept=".pdf, .doc, .docx">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="berkas-pendukung">Upload Berkas Pendukung Lainnya (Opsional)</label>
-                                    <input type="file" class="form-control-file" id="berkas-pendukung"
-                                        name="berkas-pendukung" accept=".pdf">
+                                    <input type="file" class="form-control-file" id="berkas_pendukung"
+                                        name="berkas_pendukung" accept=".pdf, .doc, .docx">
                                 </div>
 
                                 <div class="header-get-a-quote text-center my-2">

@@ -58,7 +58,7 @@ class Apply extends BaseController
         $uploadedFiles = [];
 
         // Daftar nama field file
-        $fileFields = ['surat_lamaran', 'cv', 'ktp', 'ijazah', 'skck', 'packlaring', 'sertifikat_kompetensi'];
+        $fileFields = ['surat_lamaran', 'cv', 'ktp', 'ijazah', 'skck', 'packlaring', 'sertifikat_kompetensi', 'berkas_pendukung'];
 
         $session = \Config\Services::session();
         $id_pengguna = $session->get('id_pengguna');
@@ -85,15 +85,26 @@ class Apply extends BaseController
             'nama' => $nama,
             'email' => $email,
             'jenkel' => $this->request->getVar('jenkel'),
+            'tempat_lahir' => $this->request->getVar('tempat_lahir'),
+            'tanggal_lahir' => $this->request->getVar('tanggal_lahir'),
             'pend' => $this->request->getVar('pend'),
             'no_telp' => $this->request->getVar('no_telp'),
+            'no_hp' => $this->request->getVar('no_hp'),
             'alamat' => $this->request->getVar('alamat'),
             'linkedin' => $this->request->getVar('linkedin'),
             'id_loker' => $this->request->getVar('id_loker'),
             'waktu_apply' => $waktuApply,
         ];
 
-        // Menambahkan nama file yang diunggah ke dalam data
+        $lastApply = $model->orderBy('id_form', 'DESC')->first();
+        if ($lastApply) {
+            $lastId = 'P' . str_pad((intval($lastApply['id_form']) + 1), 4, '0', STR_PAD_LEFT);
+        } else {
+            $lastId = 'P0001';
+        }
+
+        $data['id_form'] = $lastId;
+
         foreach ($fileFields as $field) {
             if (isset($uploadedFiles[$field])) {
                 $data[$field] = $uploadedFiles[$field];

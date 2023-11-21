@@ -124,9 +124,6 @@
               <div class="card">
                 <div class="card-body">
                     <h4 class="card-title nav-item" id="teksDouble">DATA PENDAFTAR</h4>
-                    <a class="btn btn-info btn-rounded btn-fw float-left" href="#"><i class="ti-printer btn-icon-prepend">
-                    </i> Cetak Laporan </a> 
-
                     <form action="#" method="post">
                         <ul class="navbar-nav">
                         <li class="nav-item nav-search">

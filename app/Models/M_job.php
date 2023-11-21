@@ -25,6 +25,4 @@ class M_job extends Model
     {
         return $this->update($where, $data);
     }
-
-
 }
