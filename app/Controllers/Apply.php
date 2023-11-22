@@ -112,19 +112,19 @@ class Apply extends BaseController
         }
         
         $model->insert($data);
-        // $modelselection = new M_selection();
-        // $id_loker = $data['id_loker'];
-        // $waktu = $data['waktu_apply'];
-        // $loker = $modelselection->getNamaPekerjaan($id_loker);
-        // $subject = "Status Tahapan Seleksi";
-        // $message = "Selamat anda berhasil mendaftar untuk posisi $loker pada $waktu ";
+        $modelselection = new M_selection();
+        $id_loker = $data['id_loker'];
+        $waktu = $data['waktu_apply'];
+        $loker = $modelselection->getNamaPekerjaan($id_loker);
+        $subject = "Status Tahapan Seleksi";
+        $message = "Selamat anda berhasil mendaftar untuk posisi <strong>$loker</strong> pada <strong>$waktu</strong> ";
 
-        // $email = service('email');
-        // $email->setTo($data['email']);
-        // $email->setFrom('emirssyah2@gmail.com', 'Loer Group');
-        // $email->setSubject($subject);
-        // $email->setMessage($message);
-        // $email->send();
+        $email = service('email');
+        $email->setTo($data['email']);
+        $email->setFrom('emirssyah2@gmail.com', 'Loer Group');
+        $email->setSubject($subject);
+        $email->setMessage($message);
+        $email->send();
         return redirect()->to('Selection')->with('success', 'Lamaran berhasil dikirim.');
     }
 
