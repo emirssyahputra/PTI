@@ -58,7 +58,7 @@ class Apply extends BaseController
         $uploadedFiles = [];
 
         // Daftar nama field file
-        $fileFields = ['surat_lamaran', 'cv', 'ktp', 'ijazah', 'skck', 'packlaring', 'sertifikat_kompetensi'];
+        $fileFields = ['surat_lamaran', 'cv', 'ktp', 'ijazah', 'skck', 'packlaring', 'sertifikat_kompetensi', 'berkas_pendukung'];
 
         $session = \Config\Services::session();
         $id_pengguna = $session->get('id_pengguna');
@@ -85,39 +85,47 @@ class Apply extends BaseController
             'nama' => $nama,
             'email' => $email,
             'jenkel' => $this->request->getVar('jenkel'),
+            'tempat_lahir' => $this->request->getVar('tempat_lahir'),
+            'tanggal_lahir' => $this->request->getVar('tanggal_lahir'),
             'pend' => $this->request->getVar('pend'),
             'no_telp' => $this->request->getVar('no_telp'),
+            'no_hp' => $this->request->getVar('no_hp'),
             'alamat' => $this->request->getVar('alamat'),
             'linkedin' => $this->request->getVar('linkedin'),
             'id_loker' => $this->request->getVar('id_loker'),
             'waktu_apply' => $waktuApply,
         ];
 
-        // Menambahkan nama file yang diunggah ke dalam data
+        $lastApply = $model->orderBy('id_form', 'DESC')->first();
+        if ($lastApply) {
+            $lastId = 'P' . str_pad((intval(substr($lastApply['id_form'], 1)) + 1), 4, '0', STR_PAD_LEFT);
+        } else {
+            $lastId = 'P0001';
+        }
+        
+        $data['id_form'] = $lastId;        
+
         foreach ($fileFields as $field) {
             if (isset($uploadedFiles[$field])) {
                 $data[$field] = $uploadedFiles[$field];
             }
         }
+        
+        $model->insert($data);
+        // $modelselection = new M_selection();
+        // $id_loker = $data['id_loker'];
+        // $waktu = $data['waktu_apply'];
+        // $loker = $modelselection->getNamaPekerjaan($id_loker);
+        // $subject = "Status Tahapan Seleksi";
+        // $message = "Selamat anda berhasil mendaftar untuk posisi $loker pada $waktu ";
 
-        if ($model->insert($data)) {
-            $model = new M_selection();
-            $id_loker = $data['id_loker'];
-            $waktu = $data['waktu_apply'];
-            $loker = $model->getNamaPekerjaan($id_loker);
-            $subject = "Status Tahapan Seleksi";
-            $message = "Selamat anda berhasil mendaftar untuk posisi $loker pada $waktu ";
-
-            $email = service('email');
-            $email->setTo($data['email']);
-            $email->setFrom('emirssyah2@gmail.com', 'Loer Group');
-            $email->setSubject($subject);
-            $email->setMessage($message);
-            $email->send();
-            return redirect()->to('Selection')->with('success', 'Lamaran berhasil dikirim.');
-        } else {
-            return redirect()->to('Apply')->with('error', 'Gagal mengirim lamaran. Silakan coba lagi.');
-        }
+        // $email = service('email');
+        // $email->setTo($data['email']);
+        // $email->setFrom('emirssyah2@gmail.com', 'Loer Group');
+        // $email->setSubject($subject);
+        // $email->setMessage($message);
+        // $email->send();
+        return redirect()->to('Selection')->with('success', 'Lamaran berhasil dikirim.');
     }
 
 }
