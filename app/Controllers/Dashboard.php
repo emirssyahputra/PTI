@@ -15,11 +15,11 @@ class Dashboard extends BaseController
         $data['nama'] = $session->get('namaa');
         $m_pengguna = new \App\Models\M_pengguna();
         $m_career = new \App\Models\M_career();
-        $m_pelamar = new \App\Models\M_career();
+        $m_pelamar = new \App\Models\M_pendaftar();
         $m_outlet = new \App\Models\M_outlet();
         $data['admin'] = $m_pengguna->where('id_role', 1)->countAllResults();
         $data['lowongan'] = $m_career->countAllResults();
-        $data['pelamar'] = $m_pengguna->countAllResults();
+        $data['pelamar'] = $m_pelamar->countAllResults();
         $data['outlet'] = $m_outlet->countAllResults();
         return view('admin/v_dashboard', $data);
     } else {
