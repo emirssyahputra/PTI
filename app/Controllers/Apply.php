@@ -74,7 +74,7 @@ class Apply extends BaseController
 
             if ($file->isValid()) {
                 $newName = $file->getRandomName();
-                $file->move(ROOTPATH . 'writable' . DIRECTORY_SEPARATOR, $newName);
+                $file->move(ROOTPATH . 'public/doc' . DIRECTORY_SEPARATOR, $newName);
                 $uploadedFiles[$field] = $newName;
             }
         }
