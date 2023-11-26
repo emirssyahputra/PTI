@@ -10,7 +10,7 @@ class Cetak extends BaseController
     public function index()
     {
         // Path menuju file HTML yang ingin diubah menjadi PDF
-        $html = view('admin/v_cetak'); // Gantilah 'nama_file_html' dengan nama file HTML Anda
+        $html = view('admin/v_cetak');
 
         // Load library Dompdf
         $options = new Options();
