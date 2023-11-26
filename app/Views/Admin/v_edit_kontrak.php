@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Ubah Data Outlet</title>
+  <title>Edit Kontrak Kerja</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?= base_url('vendors/font-awesome/css/font-awesome.min.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('vendors/feather/feather.css'); ?>">
@@ -20,51 +21,55 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="<?= base_url('images/logo aku-nobg-notext.png'); ?>">
   <!-- <link rel="shortcut icon" href="../../images/logo-mini.svg" /> -->
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
 </head>
 
 <body>
   <button onclick="topFunction()" id="myBtn" title="Go to top">Back To Top</button>
   <script>
-  // fungsi ketika user men scroll ke bawah 40 px maka tombol back to top akan muncul
-  window.onscroll = function() {scrollFunction()};
-  function scrollFunction() {
+    // fungsi ketika user men scroll ke bawah 40 px maka tombol back to top akan muncul
+    window.onscroll = function () { scrollFunction() };
+    function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          document.getElementById("myBtn").style.display = "block";
+        document.getElementById("myBtn").style.display = "block";
       } else {
-          document.getElementById("myBtn").style.display = "none";
+        document.getElementById("myBtn").style.display = "none";
       }
-  }
-  // fungsi ketika user meng klik tombol back to top maka halaman akan menscroll ke atas
-  function topFunction() {
+    }
+    // fungsi ketika user meng klik tombol back to top maka halaman akan menscroll ke atas
+    function topFunction() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
-  }
-   
-</script>  
+    }
+
+  </script>
 
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="<?php echo site_url('Pengguna'); ?>"><img src="<?= base_url('images/logo aku-nobg-tex.png'); ?>" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="<?php echo site_url('Pengguna'); ?>"><img src="<?= base_url('images/logo aku-nobg-notext.png'); ?>" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="<?php echo site_url('Pengguna'); ?>"><img
+            src="<?= base_url('images/logo aku-nobg-tex.png'); ?>" class="mr-2" alt="logo" /></a>
+        <a class="navbar-brand brand-logo-mini" href="<?php echo site_url('Pengguna'); ?>"><img
+            src="<?= base_url('images/logo aku-nobg-notext.png'); ?>" alt="logo" /></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="fa fa-navicon"></span>
+          <span class="fa fa-navicon"></span>
         </button>
-        
+
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item nav-profile dropdown">
-            <a href="<?php echo site_url('Login/logout'); ?>" class="dropdown-item" onclick="return confirm('Yakin ingin logout?')">
-                <i class="fa fa-power-off text-primary"></i>Logout
+            <a href="<?php echo site_url('Login/logout'); ?>" class="dropdown-item"
+              onclick="return confirm('Yakin ingin logout?')">
+              <i class="fa fa-power-off text-primary"></i>Logout
             </a>
           </li>
         </ul>
 
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type a="button" data-toggle="offcanvas">
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type a="button"
+          data-toggle="offcanvas">
           <span class="fa fa-navicon"></span>
         </button>
       </div>
@@ -72,20 +77,22 @@
 
     <!-- PANEL MENU KIRI [START] -->
     <div class="container-fluid page-body-wrapper">
-      <!--  partial:partials/_sidebar.html  --> 
-      <nav class="sidebar sidebar-offcanvas" id="sidebar" >
+      <!--  partial:partials/_sidebar.html  -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-    
+
           <li class="nav-item ">
             <a class="nav-link" href="<?php echo site_url('Dashboard'); ?>">
               <iconify-icon icon="heroicons:window" class="menu-icon"></iconify-icon>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          
+
           <li class="nav-item">
             <a class="nav-link" href="<?php echo site_url('Job'); ?>">
-              <iconify-icon icon="heroicons:list-bullet" style="font-size: 18px; border: 2px solid; border-radius: 5px; padding: 0.5px;" class="menu-icon"></iconify-icon>
+              <iconify-icon icon="heroicons:list-bullet"
+                style="font-size: 18px; border: 2px solid; border-radius: 5px; padding: 0.5px;"
+                class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Lowongan</span>
             </a>
           </li>
@@ -112,87 +119,103 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('Outlet');?>">
+            <a class="nav-link" href="<?php echo site_url('Outlet'); ?>">
               <iconify-icon icon="fa-solid:store" style="font-size: 20px;" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Outlet</span>
             </a>
           </li>
-          
+
         </ul>
       </nav>
-    <!-- PANEL MENU KIRI [END] -->
+      <!-- PANEL MENU KIRI [END] -->
 
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
-                       
+
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Ubah Data Outlet</h4>
-                  <form class="forms-sample" method="post" action="<?php echo site_url('UbahOutlet/update/'. $id); ?>">
+                  <h4 class="card-title">Edit Kontrak Kerja</h4>
+                  <form class="forms-sample" method="POST" action="<?= site_url('UbahJob/updateJob'); ?>">
                     <div class="form-group">
-                      <label for="namaoutlet">Nama Outlet</label>
-                      <input type="text" class="form-control" id="outlet" name="nama" placeholder="Nama" value="<?= $outlet['nama']; ?>" required />
-                    </div>                  
-                    <div class="form-group">
-                      <label>Alamat</label>
-                      <textarea name="alamat" rows="1" class="form-control" placeholder="Alamat" ></textarea>
+                        <label for="judul">Judul</label>
+                        <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul">
                     </div>
-
-                    <div class="form-group">
-                      <label for="hariRange">Rentang Hari</label>
-                      <div class="row">
-                          <div class="col">
-                              <select class="form-control" name="startDay" required>
-                                  <option value="Senin">Senin</option>
-                                  <option value="Selasa">Selasa</option>
-                                  <option value="Rabu">Rabu</option>
-                                  <option value="Kamis">Kamis</option>
-                                  <option value="Jumat">Jumat</option>
-                                  <option value="Sabtu">Sabtu</option>
-                                  <option value="Minggu">Minggu</option>
-                              </select>
-                          </div>
-                          <div class="col">
-                              <select class="form-control" name="endDay" required>
-                                  <option value="Senin">Senin</option>
-                                  <option value="Selasa">Selasa</option>
-                                  <option value="Rabu">Rabu</option>
-                                  <option value="Kamis">Kamis</option>
-                                  <option value="Jumat">Jumat</option>
-                                  <option value="Sabtu">Sabtu</option>
-                                  <option value="Minggu">Minggu</option>
-                              </select>
-                          </div>
-                      </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="nomor">Nomor</label>
+                            <input type="text" class="form-control" id="nomor" name="nomor" placeholder="Nomor">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="sr_hrd_klj">SR/HRD-KLJ</label>
+                            <input type="text" class="form-control" id="sr_hrd_klj" name="sr_hrd_klj" placeholder="SR/HRD-KLJ">
+                        </div>
                     </div>
-                  
                     <div class="form-group">
-                        <label for="jamRange">Rentang Jam Buka-Tutup</label>
-                        <div class="row">
-                            <div class="col">
-                                <input type="time" class="form-control" name="jamBuka" required>
+                        <label for="nik">NIK</label>
+                        <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK">
+                    </div>
+                    <div class="form-group">
+                        <label for="nama">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
+                    </div>
+                    <div class="form-group">
+                        <label for="alamat">Alamat</label>
+                        <textarea class="form-control" id="alamat" name="alamat" placeholder="Alamat"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="jabatan">Jabatan</label>
+                        <input type="text" class="form-control" id="jabatan" name="jabatan" placeholder="Jabatan">
+                    </div>
+                    <div class="form-group">
+                        <label for="divisi">Divisi</label>
+                        <input type="text" class="form-control" id="divisi" name="divisi" placeholder="Divisi">
+                    </div>
+                    <div class="form-group">
+                        <label for="masa">Masa Kontrak Pekerjaan</label>
+                        <input type="text" class="form-control" id="masa" name="masa" placeholder="ex : masa percobaan (probation)">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="dari">Dari Tanggal</label>
+                            <input type="date" class="form-control" id="dari" name="dari">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="sampai">Sampai Tanggal</label>
+                            <input type="date" class="form-control" id="sampai" name="sampai">
+                        </div>
+                    </div>
+                    <p>Gaji</p>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="kompensasi">Kompensasi</label>
+                            <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Rp</span>
                             </div>
-                            <div class="col">
-                                <input type="time" class="form-control" name="jamTutup" required>
+                            <input type="number" class="form-control" id="kompensasi" name="kompensasi" placeholder="Kompensasi" pattern="\d*" required>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="tunjangan_transport_meal">Tunjangan Transport & Meal</label>
+                            <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Rp</span>
+                            </div>
+                            <input type="number" class="form-control" id="tunjangan_transport_meal" name="tunjangan_transport_meal" placeholder="Tunjangan Transport & Meal" pattern="\d*" required>
                             </div>
                         </div>
                     </div>
-                  
-                    <div class="form-group">
-                        <label for="linkMaps">Link Maps</label>
-                        <input type="text" class="form-control" name="linkMaps" placeholder="Link Maps" value="<?= $outlet['map']; ?>" required />
-                    </div>
-                         
+
                     <button type="submit" class="btn btn-warning btn-icon-text">Simpan</button>
-                    <a class="btn btn-danger btn-icon-text" href="<?php echo site_url('Outlet'); ?>">Batal</a>
-                  </form>
+                    <a class="btn btn-danger btn-icon-text" href="<?= site_url('KontrakKerja'); ?>">Batal</a>
+                </form>
                 </div>
               </div>
             </div>
-                      
+
           </div>
         </div>
         <!-- content-wrapper ends -->
@@ -200,7 +223,8 @@
         <footer class="footer">
           <div class="d-flex justify-content-center">
             <span class="text-muted text-center">
-              &copy; <script> document.write(new Date().getFullYear()) </script> PT. Loer Group Jaya. All rights reserved.
+              &copy;
+              <script> document.write(new Date().getFullYear()) </script> PT. Loer Group Jaya. All rights reserved.
             </span>
           </div>
         </footer>

@@ -55,7 +55,7 @@
 </head>
 <body>
     <img src="<?= base_url('images/header.png'); ?>" alt="Header Image" width="645" height="111">
-    <p class="bold-underline" style="text-align:center">PERJANJIAN KERJA KARYAWAN TIDAK TETAP<br>MASA PERCOBAAN</p>
+    <p class="bold-underline" style="text-align:center; margin: 0px 30px 0px 30px;">PERJANJIAN KERJA KARYAWAN TIDAK TETAP MASA PERCOBAAN</p>
     <p style="text-align:center">
         Nomor : ______/SR/HRD-KLJ/___/____
     </p><br>

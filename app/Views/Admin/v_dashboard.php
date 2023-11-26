@@ -91,10 +91,17 @@ function topFunction() {
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('Pendaftar');?>">
+            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
               <iconify-icon icon="fluent:people-team-24-filled" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Pendaftar</span>
+              <iconify-icon icon="heroicons:chevron-right-20-solid" class="menu-icon" style="margin-left: 20px"></iconify-icon>
             </a>
+            <div class="collapse" id="form-elements">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Pendaftar');?>">Kelola Data</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo site_url('KontrakKerja');?>">Kontrak Kerja</a></li>
+              </ul>
+            </div>
           </li>
 
           <li class="nav-item">

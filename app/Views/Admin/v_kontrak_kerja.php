@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Data Admin</title>
+  <title>Kontrak Kerja</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?= base_url('vendors/font-awesome/css/font-awesome.min.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('vendors/feather/feather.css'); ?>">
@@ -134,94 +134,84 @@
         <div class="content-wrapper">
           <div class="row-cols">
 
-            <div class="col-xl-18 grid-margin stretch-card">
+            <div class="col-xl-13 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-
-                  <h4 class="card-title nav-item" id="teksDouble">DATA LOWONGAN</h4>
-                  <a class="btn btn-info btn-rounded btn-fw float-left" href="<?php echo site_url('TambahJob'); ?>"><i
-                      class="fa fa-plus btn-icon-prepend">
-                    </i> Tambah </a>
-
-                  <form action="<?= site_url('Job/search'); ?>" method="post">
-                    <ul class="navbar-nav">
-                      <li class="nav-item nav-search">
-                        <div class="input-group">
-                          <div class="input-group-prepend" id="navbar-search-icon">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span class="input-group-text" id="search">
-                              <i class="icon-search"></i>
-                            </span>
-                          </div>
-                          <input type="text" class="form-control" placeholder="Cari Lowongan" name="pencarian">
-                        </div>
-                      </li>
-                    </ul>
+                  <h4 class="card-title nav-item" id="teksDouble">KONTRAK KERJA</h4>
+                  <form action="#" method="post">
+                    <div class="input-group">
+                      <div class="input-group-prepend" id="navbar-search-icon">
+                        <span class="input-group-text" id="search">
+                          <i class="icon-search"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="Cari Karyawan" name="pencarian">
+                    </div>
                   </form>
-                  <!-- <div class="table-responsive"> -->
                   <div class="table-responsive">
                     <br><br>
-                    <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>No <i class="fa fa-sort" onclick="sortTable(0)"></i></th>
-                          <th>ID Lowongan <i class="fa fa-sort" onclick="sortTable(1)"></i></th>
-                          <th>Nama Lowongan <i class="fa fa-sort" onclick="sortTable(2)"></i></th>
-                          <th>Periode Pendaftaran <i class="fa fa-sort" onclick="sortTable(3)"></i></th>
-                          <th>Aksi</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php foreach ($job as $index => $loker):
-                          $Nama = $loker['Nama'];
-                          $id_loker = $loker['id_loker'];
-                          $waktu_mulai = $loker['waktu_mulai'];
-                          $waktu_mulai = date('d F Y', strtotime($waktu_mulai));
-                          $waktu_akhir = $loker['waktu_akhir'];
-                          $waktu_akhir = date('d F Y', strtotime($waktu_akhir));
-                          $kualifikasi = $loker['kualifikasi'];
-                          $jobdesk = $loker['jobdesk'];
-                          ?>
-                          <tr>
-                            <td>
-                              <?= $index + 1 ?>
-                            </td>
-                            <td>
-                              <?= $id_loker ?>
-                            </td>
-                            <td>
-                              <?= $Nama ?>
-                            </td>
-                            <td class="text-danger">
-                              <?= $waktu_mulai ?> -
-                              <?= $waktu_akhir ?>
-                            </td>
-                            <td align="left">
-                              <a href="<?= site_url('UbahJob/' . $id_loker); ?>" type="button" title="Ubah Data"
-                                class="btn btn-warning btn-icon-text">
-                                <i class="fa fa-pencil btn-icon-append"></i> Ubah
-                              </a>
+                    <div class="table-responsive">
+                        <table class="table table-hover">    
+                            <thead>
+                                <tr>
+                                    <th>ID Karyawan<i class="fa fa-sort" onclick="sortTable(0)"></i></th>
+                                    <th>Nama Karyawan <i class="fa fa-sort" onclick="sortTable(1)"></i></th>
+                                    <th>Jabatan Karyawan <i class="fa fa-sort" onclick="sortTable(2)"></i></th>
+                                    <th>Jangka Waktu Kontrak <i class="fa fa-sort" onclick="sortTable(3)"></i></th>
+                                    <th>Kontrak Kerja <i class="fa fa-sort" onclick="sortTable(5)"></i></th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
 
-                              &nbsp;&nbsp;&nbsp;
-                              <!-- Button untuk membuka pop-up -->
-                              <a href="<?php echo site_url('Job/hapus/' . $id_loker); ?>" type="button"
-                                data-id="<?= $id_loker ?>" title="Hapus Data" class="btn btn-danger btn-icon-text"
-                                id="openDeletePopup1">
-                                <i class="fa fa-trash btn-icon-prepend"></i> Hapus
-                              </a>
-                            </td>
-                          </tr>
-                        <?php endforeach; ?>
-                      </tbody>
-                    </table>
+                            <tbody>
+                                <tr>
+                                    <td>P001</td>
+                                    <td>John Doe</td>
+                                    <td>Software Developer</td>
+                                    <td class="text-danger">01 Juni 2023 - 30 Juni 2023</td>
+                                    <td>
+                                        <a href="<?php echo site_url('Cetak'); ?>" type="button" title="Ubah Data" class="btn btn-info btn-rounded btn-fw float-left">
+                                            <i class="ti-printer btn-icon-prepend" style="padding-right: 10px;"></i>Cetak
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="<?php echo site_url('EditKontrak'); ?>" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
+                                            <i class="fa fa-pencil btn-icon-append"></i> Edit
+                                        </a>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <a href="#" type="button" title="Hapus Data" class="btn btn-danger btn-icon-text" id="openDeletePopup2">
+                                            <i class="fa fa-trash btn-icon-prepend"></i> Hapus
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>P002</td>
+                                    <td>Jane Doe</td>
+                                    <td>Graphic Designer</td>
+                                    <td class="text-danger">01 Juli 2023 - 30 Agustus 2023</td>
+                                    <td>
+                                        <a href="#" type="button" title="Ubah Data" class="btn btn-pending btn-icon-text">Belum Ada</a>
+                                    </td>
+                                    <td>
+                                        <a href="#" type="button" title="Ubah Data" class="btn btn-warning btn-icon-text">
+                                            <i class="fa fa-pencil btn-icon-append"></i> Edit
+                                        </a>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <a href="#" type="button" title="Hapus Data" class="btn btn-danger btn-icon-text" id="openDeletePopup2">
+                                            <i class="fa fa-trash btn-icon-prepend"></i> Hapus
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
-        <!-- content-wrapper ends -->
+
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">
           <div class="d-flex justify-content-center">
@@ -241,7 +231,7 @@
               </span>
             </div>
             <div class="popup-body">
-              <p>Apakah Anda yakin ingin menghapus lowongan?</p>
+              <p>Apakah Anda yakin ingin menghapus karyawan?</p>
             </div>
             <div class="popup-footer">
               <button class="btn btn-accept" id="confirmDelete">Ya</button>
@@ -254,6 +244,7 @@
     </div>
     <!-- page-body-wrapper ends -->
   </div>
+
   <!-- container-scroller -->
   <!-- plugins:js -->
   <script src="<?php echo base_url() . 'vendors/js/vendor.bundle.base.js' ?>"></script>
@@ -287,9 +278,8 @@
 
     // Event listener untuk tombol "Ya" pada pop-up konfirmasi
     document.getElementById("confirmDelete").addEventListener("click", function () {
-      const id = this.getAttribute("data-id");
-      const id_loker = document.getElementById("confirmDelete").getAttribute("data-id");
-      window.location.href = "<?= site_url('Job/hapus/'); ?>" + id_loker;
+      const id_form = this.getAttribute("data-id");
+      window.location.href = "<?= site_url('Pendaftar/hapus/'); ?>" + id_form;
     });
 
 
@@ -303,7 +293,6 @@
       document.getElementById("deletePopup").style.display = "none";
     });
   </script>
-
   <!-- endinject -->
   <!-- Custom js for this page-->
   <!-- End custom js for this page-->
