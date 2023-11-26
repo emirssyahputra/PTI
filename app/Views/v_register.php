@@ -17,7 +17,30 @@
             <div class='login-area'>
                 <img src="<?= base_url('images/logo.png'); ?>" alt="RedX Logo" class="centered-logo">
                 <h3>Register</h3>
-                <form class='login-items' action="<?= site_url('register/daftar'); ?>" method="post">
+                <?php if ($success = session()->getFlashdata('success')): ?>
+                    <div class="alert alert-success">
+                        <?= $success ?>
+                    </div>
+                <?php endif ?>
+
+                <?php if ($error = session()->getFlashdata('error')): ?>
+                    <div class="alert alert-danger">
+                        <?= $error ?>
+                    </div>
+                <?php endif ?>
+
+                <?php if ($validationErrors = session()->getFlashdata('validation_errors')): ?>
+                    <div class="alert alert-danger">
+                        <ul>
+                            <?php foreach ($validationErrors as $error): ?>
+                                <li>
+                                    <?= esc($error) ?>
+                                </li>
+                            <?php endforeach ?>
+                        </ul>
+                    </div>
+                <?php endif ?>
+                <form class='login-items' action="<?= site_url('register/process'); ?>" method="post">
                     <label for="nama">Nama</label>
                     <input type="text" class='login' name="nama" placeholder='Nama lengkap' required />
                     <label for="email">Email</label>
@@ -25,22 +48,15 @@
                     <div class="form-group">
                         <label for="password">Password</label>
                         <div class="password-container">
-                            <input type="password" class="login" name="password" id="password" placeholder="Password" required />
+                            <input type="password" class="login" name="password" id="password" placeholder="Password"
+                                required />
                             <i class="fas fa-eye-slash toggle-password" onclick="togglePassword('password')"></i>
                         </div>
                     </div>
                     <input type="submit" class='login-btn' value="Register" />
                 </form>
-                <?php if (session()->getFlashdata('success')): ?>
-                    <div class="alert alert-success">
-                        <?= session()->getFlashdata('success') ?>
-                    </div>
-                <?php endif; ?>
-                <?php if (session()->getFlashdata('error')): ?>
-                    <div class="alert alert-danger">
-                        <?= session()->getFlashdata('error') ?>
-                    </div>
-                <?php endif; ?>
+
+
                 <p class='p'>Sudah punya akun?
                     <a class='a' href="<?= site_url('login'); ?>">Login</a>
                 </p>
@@ -54,13 +70,13 @@
             var icon = document.querySelector('.toggle-password');
 
             if (passwordInput.type === 'password') {
-            passwordInput.type = 'text';
-            icon.classList.remove('fa-eye-slash');
-            icon.classList.add('fa-eye', 'show-password');
+                passwordInput.type = 'text';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye', 'show-password');
             } else {
-            passwordInput.type = 'password';
-            icon.classList.remove('fa-eye', 'show-password');
-            icon.classList.add('fa-eye-slash');
+                passwordInput.type = 'password';
+                icon.classList.remove('fa-eye', 'show-password');
+                icon.classList.add('fa-eye-slash');
             }
         }
     </script>

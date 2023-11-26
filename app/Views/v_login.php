@@ -33,7 +33,8 @@
                     <div class="form-group">
                         <label for="password">Password</label>
                         <div class="password-container">
-                            <input type="password" class="login" name="password" id="password" placeholder="Password" required />
+                            <input type="password" class="login" name="password" id="password" placeholder="Password"
+                                required />
                             <i class="fas fa-eye-slash toggle-password" onclick="togglePassword('password')"></i>
                         </div>
                     </div>
@@ -51,13 +52,13 @@
             var icon = document.querySelector('.toggle-password');
 
             if (passwordInput.type === 'password') {
-            passwordInput.type = 'text';
-            icon.classList.remove('fa-eye-slash');
-            icon.classList.add('fa-eye', 'show-password');
+                passwordInput.type = 'text';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye', 'show-password');
             } else {
-            passwordInput.type = 'password';
-            icon.classList.remove('fa-eye', 'show-password');
-            icon.classList.add('fa-eye-slash');
+                passwordInput.type = 'password';
+                icon.classList.remove('fa-eye', 'show-password');
+                icon.classList.add('fa-eye-slash');
             }
         }
     </script>
