@@ -91,7 +91,7 @@ function topFunction() {
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="<?php echo site_url('Pendaftar');?>">
               <iconify-icon icon="fluent:people-team-24-filled" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Pendaftar</span>
             </a>
@@ -145,9 +145,9 @@ function topFunction() {
             <div class="col-md-4 mb-4 stretch-card transparent">
               <div class="card card-tale">
                 <div class="card-body text-center">
-                  <a href="#" style="color: #555555; text-decoration: none;">
+                  <a href="<?php echo site_url('Pendaftar');?>" style="color: #555555; text-decoration: none;">
                     <p class="fs-20 mb-4">DATA PENDAFTAR</p>
-                    <p class="fs-30 mb-2">6</p>
+                    <p class="fs-30 mb-2"><?php echo $pelamar; ?></p>
                     <p class="fs-15 mb-6">Pendaftar</p>
                   </a>
                 </div>

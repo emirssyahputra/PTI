@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
+  <!-- meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Data Admin</title>
+  <title>Detail Pendaftar</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?= base_url('vendors/font-awesome/css/font-awesome.min.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('vendors/feather/feather.css'); ?>">
@@ -98,7 +98,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('Pendaftar');?>">
+            <a class="nav-link" href="<?php echo site_url('Pendaftar'); ?>">
               <iconify-icon icon="fluent:people-team-24-filled" class="menu-icon"></iconify-icon>
               <span class="menu-title">Data Pendaftar</span>
             </a>
@@ -125,47 +125,115 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          <div class="row">
+          <div class="row-cols">
 
-            <div class="col-lg-12 grid-margin stretch-card">
+            <div class="col-xl-13 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Tambah Lowongan</h4>
-                  <form class="forms-sample" method="POST" action="<?= site_url('TambahJob/saveJob'); ?>">
-                    <div class="form-group">
-                      <label>Lowongan</label>
-                      <select class="form-control" name="Nama" required>
-                        <option value="">Pilih Lowongan</option>
-                        <option value="BARISTA">BARISTA</option>
-                        <option value="CASHIER">CASHIER</option>
-                        <option value="COOK & COOK HELPER">COOK & COOK HELPER</option>
-                        <option value="FINANCE">FINANCE</option>
-                        <option value="ACCOUNTING">ACCOUNTING</option>
-                        <option value="PURCHASING">PURCHASING</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label>Job Desk</label>
-                      <textarea name="jobdesk" rows="7" class="form-control" placeholder="Job Desk"
-                        required></textarea>
-                    </div>
-                    <div class="form-group">
-                      <label>Kualifikasi</label>
-                      <textarea name="kualifikasi" rows="7" class="form-control" placeholder="Kualifikasi"
-                        required></textarea>
-                    </div>
-                    <p>Periode Pendaftaran</p>
-                    <div class="form-group">
-                      <label>Awal</label>
-                      <input type="date" class="form-control" name="waktu_mulai" required>
-                    </div>
-                    <div class="form-group">
-                      <label>Akhir</label>
-                      <input type="date" class="form-control" name="waktu_akhir" required>
-                    </div>
+                  <h4 class="card-title">Detail Pendaftar</h4>
 
-                    <button type="submit" class="btn btn-warning btn-icon-text">Simpan</button>
-                    <a class="btn btn-danger btn-icon-text" href="<?php echo site_url('Job'); ?>">Batal</a>
+                  <form class="forms-sample">
+                    <div class="form-group">
+                      <label for="nama">Nama</label>
+                      <input type="text" class="form-control" id="nama" placeholder="Nama"
+                        value="<?= $pendaftar['nama'] ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                      <label for="minat">Minat</label>
+                      <input type="text" class="form-control" id="minat" placeholder="Minat"
+                        value="<?= $pendaftar['nama_job'] ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                      <label for="periode">Periode Pendaftaran</label>
+                      <input type="text" class="form-control" id="periode" placeholder="Periode Pendaftaran"
+                        value="<?= date('d F Y', strtotime($pendaftar['waktu_mulai'])) ?> - <?= date('d F Y', strtotime($pendaftar['waktu_akhir'])) ?>"
+                        readonly>
+                    </div>
+                    <div class="form-group">
+                      <label for="tgl_daftar">Tanggal Daftar</label>
+                      <input type="text" class="form-control" id="tgl_daftar" placeholder="Tanggal daftar"
+                        value="<?= date('d F Y', strtotime($pendaftar['waktu_apply'])) ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                      <label for="jenis_kelamin">Jenis Kelamin</label>
+                      <input type="text" class="form-control" id="jenis_kelamin" placeholder="Jenis kelamin"
+                        value="<?= $pendaftar['jenkel'] ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                      <label for="periode">Tempat, Tanggal Lahir</label>
+                      <input type="text" class="form-control" id="periode" placeholder="Periode Pendaftaran"
+                        value="<?= $pendaftar['tempat_lahir'] ?>, <?= date('d F Y', strtotime($pendaftar['tanggal_lahir'])) ?>"
+                        readonly>
+                    </div>
+                    <div class="form-group">
+                      <label for="pendidikan_terakhir">Pendidikan Terakhir</label>
+                      <input type="text" class="form-control" id="pendidikan_terakhir" placeholder="Pendidikan Terakhir"
+                        value="<?= $pendaftar['pend'] ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control" id="email" placeholder="Email"
+                        value="<?= $pendaftar['email'] ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                      <label for="telepon">No HP (Whatsapp)</label>
+                      <input type="tel" class="form-control" id="telepon" placeholder="Telepon"
+                        value="<?= $pendaftar['no_telp'] ?>" readonly>
+                    </div>
+                    <?php if (!empty($pendaftar['no_hp'])): ?>
+                      <div class="form-group">
+                        <label for="telepon">No HP (Opsional)</label>
+                        <input type="tel" class="form-control" id="telepon" placeholder="Telepon"
+                          value="<?= $pendaftar['no_hp'] ?>" readonly>
+                      </div>
+                    <?php endif ?>
+                    <div class="form-group">
+                      <label for="alamat">Alamat</label>
+                      <textarea class="form-control" id="alamat" rows="1" placeholder="Alamat"
+                        readonly><?= $pendaftar['alamat'] ?></textarea>
+                    </div>
+                    <?php if (!empty($pendaftar['linkedin'])): ?>
+                      <div class="form-group">
+                        <label for="link_linkedin">Link LinkedIn</label>
+                        <input type="text" class="form-control" id="link_linkedin" placeholder="Link LinkedIn"
+                          value="<?= $pendaftar['linkedin'] ?>" readonly>
+                      </div>
+                    <?php endif ?>
+                    <!-- FUNGSI TOMBOL -->
+                    <a class="btn btn-danger mr-2 mt-2 btn-sm custom-btn"
+                      href="<?php echo site_url('Pendaftar'); ?>">Batal</a> | &nbsp;
+                    <a class="btn btn-warning mr-2 mt-2 btn-sm custom-btn"
+                      href="<?= site_url('DetailPendaftar/downloadFile/' . $pendaftar['ktp']) ?>" target="_blank"> KTP
+                    </a>
+                    <a class="btn btn-warning mr-2 mt-2 btn-sm custom-btn"
+                      href="<?= base_url('DetailPendaftar/downloadFile/' . $pendaftar['cv']) ?>" target="_blank"> CV
+                    </a>
+                    <a class="btn btn-warning mr-2 mt-2 btn-sm custom-btn"
+                      href="<?= base_url('DetailPendaftar/downloadFile/' . $pendaftar['surat_lamaran']) ?>"
+                      target="_blank"> Surat Lamaran </a>
+                    <a class="btn btn-warning mr-2 mt-2 btn-sm custom-btn"
+                      href="<?= base_url('DetailPendaftar/downloadFile/' . $pendaftar['ijazah']) ?>" target="_blank">
+                      Ijazah </a>
+                    <?php if (!empty($pendaftar['skck'])): ?>
+                      <a class="btn btn-warning mr-2 mt-2 btn-sm custom-btn"
+                        href="<?= base_url('DetailPendaftar/downloadFile/' . $pendaftar['skck']) ?>" target="_blank"> SKCK
+                      </a>
+                    <?php endif ?>
+                    <?php if (!empty($pendaftar['packlaring'])): ?>
+                      <a class="btn btn-warning mr-2 mt-2 btn-sm custom-btn"
+                        href="<?= base_url('DetailPendaftar/downloadFile/' . $pendaftar['packlaring']) ?>"
+                        target="_blank"> Packlaring </a>
+                    <?php endif ?>
+                    <?php if (!empty($pendaftar['sertifikat_kompetensi'])): ?>
+                      <a class="btn btn-warning mr-2 mt-2 btn-sm custom-btn"
+                        href="<?= base_url('DetailPendaftar/downloadFile/' . $pendaftar['sertifikat_kompetensi']) ?>"
+                        target="_blank"> Sertifikat Kompetensi </a>
+                    <?php endif ?>
+                    <?php if (!empty($pendaftar['berkas_pendukung'])): ?>
+                      <a class="btn btn-warning mr-2 mt-2 btn-sm custom-btn"
+                        href="<?= base_url('DetailPendaftar/downloadFile/' . $pendaftar['berkas_pendukung']) ?>"
+                        target="_blank"> Berkas Pendukung Lainnya </a>
+                    <?php endif ?>
                   </form>
                 </div>
               </div>
@@ -189,6 +257,7 @@
     </div>
     <!-- page-body-wrapper ends -->
   </div>
+
   <!-- container-scroller -->
   <!-- plugins:js -->
   <script src="<?php echo base_url() . 'vendors/js/vendor.bundle.base.js' ?>"></script>
