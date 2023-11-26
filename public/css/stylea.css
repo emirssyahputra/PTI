@@ -8700,6 +8700,34 @@
   box-sizing: border-box;
 }
 
+.password-container {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.password-container i.fa-eye {
+    display: block;
+}
+
+.password-container i.fa-eye-slash {
+    display: block;
+}
+
+.password-container i.fa-eye.show-password {
+    display: block;
+}
+
+.password-container i.fa-eye-slash.show-password {
+    display: block;
+}
+
 .no-padding-right {
   padding-right: 0 !important;
 }
