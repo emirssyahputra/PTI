@@ -18,6 +18,11 @@
             <img src="<?= base_url('images/logo.png'); ?>" alt="RedX Logo" class="centered-logo">
                 <h3>Verifikasi Email</h3>
                 <p>Silakan cek email Anda, kami telah mengirimkan kode OTP untuk mereset password Anda.</p>
+                <?php if (session()->getFlashdata('validation')): ?>
+                    <div class="alert alert-danger text-center">
+                        <?php echo implode('<br>', session()->getFlashdata('validation')); ?>
+                    </div>
+                <?php endif ?>
                 <?php if (!empty($errors)): ?>
                     <div class="alert alert-danger text-center">
                         <?php foreach ($errors as $error): ?>
