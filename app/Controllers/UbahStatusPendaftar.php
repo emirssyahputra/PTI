@@ -152,7 +152,7 @@ class UbahStatusPendaftar extends BaseController
             $kataStatus = "<strong>Tidak Lolos</strong>";
         }
         $subject = "Status Tahapan Seleksi";
-        $message = "Anda dinyatakan $kataStatus pada posisi <strong>$loker</strong>, silahkan cek tahapan seleksi pada website untuk mendownload kontrak kerja ";
+        $message = "Anda dinyatakan $kataStatus pada posisi <strong>$loker</strong>, silahkan cek tahapan seleksi pada website untuk info lebih lanjut ";
 
         $email = service('email');
         $email->setTo($emailPendaftar);
