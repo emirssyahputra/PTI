@@ -26,13 +26,7 @@ class Register extends BaseController
             'errors' => [
                 'is_unique' => 'Email telah terdaftar, silakan gunakan email lain.',
             ],
-        ],
-        'password' => [
-            'rules' => 'required|min_length[8]',
-            'errors' => [
-                'min_length' => 'Password harus memiliki panjang minimal 8 karakter.',
-            ],
-        ],
+        ]
     ];
 
     if (!$this->validate($validationRules)) {
