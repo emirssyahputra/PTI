@@ -45,7 +45,7 @@
                     <div class="form-group">
                         <label for="password">Password</label>
                         <div class="password-container">
-                            <input type="password" class="login" name="password" id="password" placeholder="Password"
+                            <input type="password" class="login" name="password" id="password" placeholder="Password" minlength="8"
                                 required />
                             <i class="fas fa-eye-slash toggle-password" onclick="togglePassword('password')"></i>
                         </div>
