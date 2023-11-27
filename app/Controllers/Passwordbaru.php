@@ -20,7 +20,7 @@ class Passwordbaru extends BaseController
         if ($request->getMethod(true) === 'POST' ) {
             $session->remove('info');
             $userModel = new M_otp();
-
+            
             $email = $request->getPost('email');
             $password = $request->getPost('password');
 
