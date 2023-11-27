@@ -7,7 +7,7 @@ class M_job extends Model
 {
     protected $table = 'lowongan_pekerjaan';
     protected $primaryKey = 'id_loker';
-    protected $allowedFields = [ 'Nama', 'waktu_mulai', 'waktu_akhir', 'kualifikasi', 'jobdesk'];
+    protected $allowedFields = [ 'Nama', 'waktu_mulai', 'waktu_akhir', 'kualifikasi', 'jobdesk','id_loker'];
 
     public function hapusjob($id_loker)
     {
