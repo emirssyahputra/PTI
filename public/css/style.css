@@ -201,12 +201,14 @@ h5 {
     color: red;
     background-color: #ffcccc;
     border: 1px solid #ff0000;
+    text-align: justify;
 }
 
 .alert-success {
     color: green;
     background-color: #ccffcc;
     border: 1px solid #00ff00;
+    text-align: justify;
 }
 
 
