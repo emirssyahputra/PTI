@@ -31,15 +31,12 @@
 
                 <?php if ($validationErrors = session()->getFlashdata('validation_errors')): ?>
                     <div class="alert alert-danger">
-                        <ul>
-                            <?php foreach ($validationErrors as $error): ?>
-                                <li>
-                                    <?= esc($error) ?>
-                                </li>
-                            <?php endforeach ?>
-                        </ul>
+                        <?php foreach ($validationErrors as $error): ?>
+                            <?= esc($error) ?>
+                        <?php endforeach ?>
                     </div>
                 <?php endif ?>
+
                 <form class='login-items' action="<?= site_url('register/process'); ?>" method="post">
                     <label for="nama">Nama</label>
                     <input type="text" class='login' name="nama" placeholder='Nama lengkap' required />
