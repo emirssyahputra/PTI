@@ -34,6 +34,57 @@
     <!-- Template styles-->
     <link rel="stylesheet" href="<?= base_url('css/style.css'); ?>">
 
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Script untuk membatasi ukuran file -->
+    <script>
+        $(document).ready(function () {
+            function checkFileSize(inputId, maxSize) {
+                var input = document.getElementById(inputId);
+                if (input.files.length > 0) {
+                    var fileSize = input.files[0].size / 1024;
+                    if (fileSize > maxSize) {
+                        alert('Ukuran file terlalu besar. Maksimal 300 KB.');
+                        $('#' + inputId).val('');
+                    }
+                }
+            }
+
+            $('#ktp').change(function () {
+                checkFileSize('ktp', 300);
+            });
+
+            $('#cv').change(function () {
+                checkFileSize('cv', 300);
+            });
+
+            $('#surat-lamaran').change(function () {
+                checkFileSize('surat-lamaran', 300);
+            });
+
+            $('#ijazah').change(function () {
+                checkFileSize('ijazah', 300);
+            });
+
+            $('#skck').change(function () {
+                checkFileSize('skck', 300);
+            });
+
+            $('#packlaring').change(function () {
+                checkFileSize('packlaring', 300);
+            });
+
+            $('#sertifikat').change(function () {
+                checkFileSize('sertifikat', 300);
+            });
+
+            $('#berkas_pendukung').change(function () {
+                checkFileSize('berkas_pendukung', 300);
+            });
+        });
+    </script>
+
 </head>
 
 <body>
