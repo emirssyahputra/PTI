@@ -246,7 +246,7 @@
                                         placeholder="mis: http://linkedin.com/in/username">
                                 </div>
 
-                                <p>Silahkan upload file dengan format PDF/DOC/JPG/JPEG/PNG untuk semua lampiran dokumen di bawah.<br>Minimal ukuran file 1 MB.</p>
+                                <p>Silahkan upload file dengan format PDF/DOC/DOCX untuk semua lampiran dokumen di bawah.<br>Minimal ukuran file 1 MB.</p>
                                 <div class="form-group">
                                     <label for="cv" class="required-label">KTP</label>
                                     <input type="file" class="form-control-file" id="ktp" name="ktp"
