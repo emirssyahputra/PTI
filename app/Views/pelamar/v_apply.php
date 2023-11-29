@@ -45,42 +45,42 @@
                 if (input.files.length > 0) {
                     var fileSize = input.files[0].size / 1024;
                     if (fileSize > maxSize) {
-                        alert('Ukuran file terlalu besar. Maksimal 300 KB.');
+                        alert('Ukuran file terlalu besar. Maksimal 1 MB.');
                         $('#' + inputId).val('');
                     }
                 }
             }
 
             $('#ktp').change(function () {
-                checkFileSize('ktp', 300);
+                checkFileSize('ktp', 1000);
             });
 
             $('#cv').change(function () {
-                checkFileSize('cv', 300);
+                checkFileSize('cv', 1000);
             });
 
             $('#surat-lamaran').change(function () {
-                checkFileSize('surat-lamaran', 300);
+                checkFileSize('surat-lamaran', 1000);
             });
 
             $('#ijazah').change(function () {
-                checkFileSize('ijazah', 300);
+                checkFileSize('ijazah', 1000);
             });
 
             $('#skck').change(function () {
-                checkFileSize('skck', 300);
+                checkFileSize('skck', 1000);
             });
 
             $('#packlaring').change(function () {
-                checkFileSize('packlaring', 300);
+                checkFileSize('packlaring', 1000);
             });
 
             $('#sertifikat').change(function () {
-                checkFileSize('sertifikat', 300);
+                checkFileSize('sertifikat', 1000);
             });
 
             $('#berkas_pendukung').change(function () {
-                checkFileSize('berkas_pendukung', 300);
+                checkFileSize('berkas_pendukung', 1000);
             });
         });
     </script>
@@ -246,53 +246,53 @@
                                         placeholder="mis: http://linkedin.com/in/username">
                                 </div>
 
-                                <p>Silahkan upload file dengan format PDF/DOC untuk semua lampiran dokumen di bawah.</p>
+                                <p>Silahkan upload file dengan format PDF/DOC/JPG/JPEG/PNG untuk semua lampiran dokumen di bawah.<br>Minimal ukuran file 1 MB.</p>
                                 <div class="form-group">
                                     <label for="cv" class="required-label">KTP</label>
                                     <input type="file" class="form-control-file" id="ktp" name="ktp"
-                                        accept=".pdf, .doc, .docx" required>
+                                        accept=".pdf, .doc, .docx, .jpg, .jpeg, .png" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="cv" class="required-label">Upload Curriculum Vitae (CV)</label>
                                     <input type="file" class="form-control-file" id="cv" name="cv"
-                                        accept=".pdf, .doc, .docx" required>
+                                        accept=".pdf, .doc, .docx, .jpg, .jpeg, .png" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="surat-lamaran" class="required-label">Upload Surat Lamaran</label>
                                     <input type="file" class="form-control-file" id="surat-lamaran" name="surat_lamaran"
-                                        accept=".pdf, .doc, .docx" required>
+                                        accept=".pdf, .doc, .docx, .jpg, .jpeg, .png" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="ijazah" class="required-label">Upload File Ijazah</label>
                                     <input type="file" class="form-control-file" id="ijazah" name="ijazah"
-                                        accept=".pdf, .doc, .docx" required>
+                                        accept=".pdf, .doc, .docx, .jpg, .jpeg, .png" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="ijazah">SKCK (Opsional)</label>
                                     <input type="file" class="form-control-file" id="skck" name="skck"
-                                        accept=".pdf, .doc, .docx">
+                                        accept=".pdf, .doc, .docx, .jpg, .jpeg, .png">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="ijazah">Packlaring (Opsional)</label>
                                     <input type="file" class="form-control-file" id="packlaring" name="packlaring"
-                                        accept=".pdf, .doc, .docx">
+                                        accept=".pdf, .doc, .docx, .jpg, .jpeg, .png">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="sertifikat">Upload File Sertifikat Kompetensi (Opsional)</label>
                                     <input type="file" class="form-control-file" id="sertifikat"
-                                        name="sertifikat_kompetensi" accept=".pdf, .doc, .docx">
+                                        name="sertifikat_kompetensi" accept=".pdf, .doc, .docx, .jpg, .jpeg, .png">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="berkas-pendukung">Upload Berkas Pendukung Lainnya (Opsional)</label>
                                     <input type="file" class="form-control-file" id="berkas_pendukung"
-                                        name="berkas_pendukung" accept=".pdf, .doc, .docx">
+                                        name="berkas_pendukung" accept=".pdf, .doc, .docx, .jpg, .jpeg, .png">
                                 </div>
 
                                 <div class="header-get-a-quote text-center my-2">

@@ -14,11 +14,13 @@ class Selection extends BaseController
         if ($sesi_pengguna_id) {
             $session = \Config\Services::session();
         $id_pengguna = $session->get('id_pengguna');
-
+        
         $model = new M_selection();
 
         $data = $model->orderBy('waktu_apply', 'desc')
             ->getFormByUserId($id_pengguna);
+           
+
 
         $viewData = [
             'Nama' => null,
@@ -37,6 +39,7 @@ class Selection extends BaseController
             $id_loker = $data['id_loker'];
             $Nama = $model->getNamaPekerjaan($id_loker);
             $waktu_apply = date('d F Y', strtotime($data['waktu_apply']));
+           
 
             $viewData = [
                 'Nama' => $Nama,
