@@ -246,53 +246,53 @@
                                         placeholder="mis: http://linkedin.com/in/username">
                                 </div>
 
-                                <p>Silahkan upload file dengan format PDF/DOC/JPG/JPEG/PNG untuk semua lampiran dokumen di bawah.<br>Minimal ukuran file 1 MB.</p>
+                                <p>Silahkan upload file dengan format PDF/DOC/DOCX untuk semua lampiran dokumen di bawah.<br>Minimal ukuran file 1 MB.</p>
                                 <div class="form-group">
                                     <label for="cv" class="required-label">KTP</label>
                                     <input type="file" class="form-control-file" id="ktp" name="ktp"
-                                        accept=".pdf, .doc, .docx, .jpg, .jpeg, .png" required>
+                                        accept=".pdf, .doc, .docx" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="cv" class="required-label">Upload Curriculum Vitae (CV)</label>
                                     <input type="file" class="form-control-file" id="cv" name="cv"
-                                        accept=".pdf, .doc, .docx, .jpg, .jpeg, .png" required>
+                                        accept=".pdf, .doc, .docx" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="surat-lamaran" class="required-label">Upload Surat Lamaran</label>
                                     <input type="file" class="form-control-file" id="surat-lamaran" name="surat_lamaran"
-                                        accept=".pdf, .doc, .docx, .jpg, .jpeg, .png" required>
+                                        accept=".pdf, .doc, .docx" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="ijazah" class="required-label">Upload File Ijazah</label>
                                     <input type="file" class="form-control-file" id="ijazah" name="ijazah"
-                                        accept=".pdf, .doc, .docx, .jpg, .jpeg, .png" required>
+                                        accept=".pdf, .doc, .docx" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="ijazah">SKCK (Opsional)</label>
                                     <input type="file" class="form-control-file" id="skck" name="skck"
-                                        accept=".pdf, .doc, .docx, .jpg, .jpeg, .png">
+                                        accept=".pdf, .doc, .docx">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="ijazah">Packlaring (Opsional)</label>
                                     <input type="file" class="form-control-file" id="packlaring" name="packlaring"
-                                        accept=".pdf, .doc, .docx, .jpg, .jpeg, .png">
+                                        accept=".pdf, .doc, .docx">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="sertifikat">Upload File Sertifikat Kompetensi (Opsional)</label>
                                     <input type="file" class="form-control-file" id="sertifikat"
-                                        name="sertifikat_kompetensi" accept=".pdf, .doc, .docx, .jpg, .jpeg, .png">
+                                        name="sertifikat_kompetensi" accept=".pdf, .doc, .docx">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="berkas-pendukung">Upload Berkas Pendukung Lainnya (Opsional)</label>
                                     <input type="file" class="form-control-file" id="berkas_pendukung"
-                                        name="berkas_pendukung" accept=".pdf, .doc, .docx, .jpg, .jpeg, .png">
+                                        name="berkas_pendukung" accept=".pdf, .doc, .docx">
                                 </div>
 
                                 <div class="header-get-a-quote text-center my-2">
@@ -374,7 +374,30 @@
 
         <!-- Javascript Files
   ================================================== -->
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
+        <script>
+            $(document).ready(function () {
+                $('form').submit(function () {
+                    var allowedFileTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+                    
+                    // Check each file input field
+                    var isValid = true;
+                    $('.form-control-file').each(function () {
+                        var fileType = this.files[0]?.type;
+
+                        if (fileType && allowedFileTypes.indexOf(fileType) === -1) {
+                            alert('Format file tidak sesuai. Silahkan upload file dengan format PDF/DOC/DOCX');
+                            isValid = false;
+                            return false;
+                        }
+                    });
+
+                    return isValid;
+                });
+            });
+        </script>
         <!-- initialize jQuery Library -->
         <script src="<?php echo base_url() . 'plugins/jQuery/jquery.min.js' ?>"></script>
         <!-- Bootstrap jQuery -->

@@ -178,6 +178,12 @@
                           } else {
                             $status = 0;
                           }
+
+                          if ($status_adm == null && $status_wwc == null && $status_uji == null && $status_akhir == null) {
+                            $delete = 1;
+                          } else {
+                            $delete = 0;
+                          }
                           ?>
                           <tr>
                             <td>
@@ -214,10 +220,12 @@
                                 <iconify-icon icon="icon-park-outline:full-selection" class="menu-icon"
                                   style="padding-right: 10px;"></iconify-icon>Update
                               </a> &nbsp;
-                              <button type="button" title="Hapus Data" data-id="<?= $id_form ?>"
-                                class="btn btn-danger btn-icon-text openDeletePopup">
-                                <i class="fa fa-trash btn-icon-prepend"></i> Hapus
-                              </button>
+                              <?php if ($delete == 1): ?>
+                                <button type="button" title="Hapus Data" data-id="<?= $id_form ?>"
+                                  class="btn btn-danger btn-icon-text openDeletePopup">
+                                  <i class="fa fa-trash btn-icon-prepend"></i> Hapus
+                                </button>
+                              <?php endif; ?>
                             </td>
                           </tr>
                         <?php endforeach; ?>
