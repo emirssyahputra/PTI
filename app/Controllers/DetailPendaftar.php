@@ -21,15 +21,6 @@ class DetailPendaftar extends BaseController
     {
         $file = FCPATH . 'doc\\' . $filename;
 
-        // Check if the file exists
-        if (file_exists($file)) {
-            $data['file_path'] = $file;
-    
-            // Load a view to display the file content
-            return view('admin/v_views_file', $data);
-        } else {
-            // File not found, you may want to handle this case accordingly
-            return "File not found";
-        }
+        return $this->response->download($file, null);
     }
 }
