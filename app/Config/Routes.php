@@ -40,6 +40,12 @@ $routes->get('UbahJob/(:segment)', 'UbahJob::index/$1');
 $routes->get('DetailPendaftar/(:segment)', 'DetailPendaftar::index/$1');
 $routes->get('UbahStatusPendaftar/(:segment)', 'UbahStatusPendaftar::index/$1');
 $routes->get('file/(:segment)', 'DetailPendaftar::downloadFile/$1');
+$routes->get('pCareer', 'pCareer::index');
+$routes->get('pHome', 'pHome::index');
+$routes->get('pAbout', 'pAbout::index');
+$routes->get('TambahOutlet', 'TambahOutlet::index');
+
+
 
 
 

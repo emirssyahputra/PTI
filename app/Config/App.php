@@ -16,7 +16,7 @@ class App extends BaseConfig
      *
      *    http://example.com/
      */
-    public string $baseURL = 'http://localhost/PTI/public/';
+    public string $baseURL = 'https://testing.loergroup.com/public';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.

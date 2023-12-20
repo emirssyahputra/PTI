@@ -3,15 +3,17 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
-use App\Models\M_pengguna; // Sesuaikan dengan model yang digunakan
+use App\Models\M_pengguna; 
 
 class UbahPengguna extends Controller
 {
     public function index($id)
     {
         $sesi_pengguna_id = session()->get('idadmin');
+        $akses_pengguna = session()->get('akses');
 
     if ($sesi_pengguna_id) {
+        if ($akses_pengguna == 1) {
         $model = new M_pengguna();
         $data['pengguna'] = $model->find($id);
 
@@ -22,6 +24,11 @@ class UbahPengguna extends Controller
         }
 
         return view('admin/v_ubah_pengguna', ['pengguna' => $data['pengguna'], 'id' => $id]);
+        } else {
+            // Jika akses tidak sama dengan 1, lakukan logout dan redirect ke halaman login
+            session()->destroy();
+            return redirect()->to(site_url('login'));
+        }
     } else {
         // Jika tidak ada sesi pengguna yang aktif, redirect ke halaman login
         return redirect()->to(site_url('login'));
@@ -35,7 +42,6 @@ class UbahPengguna extends Controller
             'nama' => $this->request->getPost('nama'),
             'email' => $this->request->getPost('email'),
             'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
-            // Tambahkan field lain yang perlu diubah
         ];
 
         if ($model->update($id, $data)) {

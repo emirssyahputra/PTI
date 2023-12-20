@@ -28,17 +28,17 @@ class Email extends BaseConfig
     /**
      * SMTP Server Address
      */
-    public string $SMTPHost = 'smtp.googlemail.com';
+    public string $SMTPHost = 'mail.loergroup.com';
 
     /**
      * SMTP Username
      */
-    public string $SMTPUser = 'emirssyah2@gmail.com';
+    public string $SMTPUser = 'nadya@loergroup.com';
 
     /**
      * SMTP Password
      */
-    public string $SMTPPass = 'atkbcwaamqcmanwg';
+    public string $SMTPPass = 'admin123klj!';
 
     /**
      * SMTP Port

@@ -227,11 +227,11 @@
                 <?php if ($status_akhir === null): ?>
                   <p>Belum ada informasi</p>
                 <?php elseif ($status_akhir === '1'): ?>
-                  <p>Anda dinyatakan <strong>Lolos Seleksi Penerimaan Pegawai Loer Group Pada Jabatan
+                  <p>Anda dinyatakan <strong>Lolos Seleksi Penerimaan Pegawai Loer Group Pada Posisi
                     <?= $Nama; ?></strong>
                   </p>
                 <?php elseif ($status_akhir === '2'): ?>
-                  <p>Maaf, anda dinyatakan <strong>Tidak Lolos Seleksi Penerimaan Pegawai Loer Group Pada Jabatan
+                  <p>Maaf, anda dinyatakan <strong>Tidak Lolos Seleksi Penerimaan Pegawai Loer Group Pada Posisi
                     <?= $Nama; ?></strong>
                   </p>
                 <?php endif; ?>
@@ -280,9 +280,9 @@
             <div class="col-lg-2 col-md-6 mt-5 mt-lg-0 footer-widget">
               <h3 class="widget-title">Brands</h3>
               <ul class="list-arrow">
-                <p>Kopi Loer</p>
-                <p>Kora</p>
-                <p>Rumah Loer</p>
+                  <p>Kopi Loer</p>
+                  <p>Rumah Loer</p>
+                  <p>KORA Coffee</p>
               </ul>
             </div><!-- Col end -->
           </div><!-- Row end -->

@@ -9,12 +9,19 @@ class UbahStatusPendaftar extends BaseController
     public function index($id_form)
     {
         $sesi_pengguna_id = session()->get('idadmin');
+        $akses_pengguna = session()->get('akses');
 
         if ($sesi_pengguna_id) {
+            if ($akses_pengguna == 1) {
             $model = new \App\Models\M_pendaftar();
             $data['pendaftar'] = $model->get_pendaftar_by_id($id_form);
 
             return view('admin/v_ubah_status', $data);
+        } else {
+            // Jika akses tidak sama dengan 1, lakukan logout dan redirect ke halaman login
+            session()->destroy();
+            return redirect()->to(site_url('login'));
+        }
         } else {
             return redirect()->to(site_url('login'));
         }
@@ -40,15 +47,16 @@ class UbahStatusPendaftar extends BaseController
         $status = $data['status_adm'];
         if ($status == 1) {
             $kataStatus = "<strong>Lolos</strong>";
+            $message = "Hi Loer!<br><br>Selamat, anda dinyatakan $kataStatus pada tahap seleksi <strong>administrasi</strong> untuk posisi <strong>$loker</strong>. Silahkan cek tahapan seleksi pada website kami secara berkala untuk informasi selanjutnya.<br><br>Salam Sedoloer…<br>#TimLoerGroup";
         }else { 
             $kataStatus = "<strong>Tidak Lolos</strong>";
+            $message = "Hi Loer!<br><br>Kami ingin menginformasikan bahwa anda dinyatakan $kataStatus pada tahap seleksi <strong>administrasi</strong> untuk posisi <strong>$loker</strong>. Tentunya kami berharap untuk kesuksesan karir anda kedepan, silahkan ikuti social media kami untuk informasi mengenai bukaan lowongan kerja lainnya di masa mendatang. Terima kasih!<br><br>Salam Sedoloer…<br>#TimLoerGroup";
         }
         $subject = "Status Tahapan Seleksi";
-        $message = "Anda dinyatakan $kataStatus pada tahap seleksi <strong>administrasi</strong> untuk posisi <strong>$loker</strong>, silahkan cek tahapan seleksi pada website untuk informasi lebih lanjut ";
 
         $email = service('email');
         $email->setTo($emailPendaftar);
-        $email->setFrom('emirssyah2@gmail.com', 'Loer Group');
+        $email->setFrom('nadya@loergroup.com', 'Loer Group No Reply');
         $email->setSubject($subject);
         $email->setMessage($message);
         $email->send();
@@ -76,15 +84,18 @@ class UbahStatusPendaftar extends BaseController
         $status = $data['status_wwc'];
         if ($status == 1) {
             $kataStatus = "<strong>Lolos</strong>";
+            $message = "Hi Loer!<br><br>Selamat, anda dinyatakan $kataStatus pada tahap seleksi <strong>wawancara</strong> untuk posisi <strong>$loker</strong>. Silahkan cek tahapan seleksi pada website kami secara berkala untuk informasi selanjutnya.<br><br>Salam Sedoloer…<br>#TimLoerGroup";
+
         }else { 
             $kataStatus = "<strong>Tidak Lolos</strong>";
+            $message = "Hi Loer!<br><br>Kami ingin menginformasikan bahwa anda dinyatakan $kataStatus pada tahap seleksi <strong>wawancara</strong> untuk posisi <strong>$loker</strong>. Tentunya kami berharap untuk kesuksesan karir anda kedepan, silahkan ikuti social media kami untuk informasi mengenai bukaan lowongan kerja lainnya di masa mendatang. Terima kasih!<br><br>Salam Sedoloer…<br>#TimLoerGroup";
+
         }
         $subject = "Status Tahapan Seleksi";
-        $message = "Anda dinyatakan $kataStatus pada tahap seleksi <strong>wawancara</strong> untuk posisi <strong>$loker</strong>, silahkan cek tahapan seleksi pada website untuk informasi lebih lanjut ";
 
         $email = service('email');
         $email->setTo($emailPendaftar);
-        $email->setFrom('emirssyah2@gmail.com', 'Loer Group');
+        $email->setFrom('nadya@loergroup.com', 'Loer Group No Reply');
         $email->setSubject($subject);
         $email->setMessage($message);
         $email->send();
@@ -112,15 +123,17 @@ class UbahStatusPendaftar extends BaseController
         $status = $data['status_uji'];
         if ($status == 1) {
             $kataStatus = "<strong>Lolos</strong>";
+            $message = "Hi Loer!<br><br>Selamat, anda dinyatakan $kataStatus pada tahap seleksi <strong>uji kemampuan</strong> untuk posisi <strong>$loker</strong>. Silahkan cek tahapan seleksi pada website kami secara berkala untuk informasi selanjutnya.<br><br>Salam Sedoloer…<br>#TimLoerGroup";
         }else { 
             $kataStatus = "<strong>Tidak Lolos</strong>";
+            $message = "Hi Loer!<br><br>Kami ingin menginformasikan bahwa anda dinyatakan $kataStatus pada tahap seleksi <strong>uji kemampuan</strong> untuk posisi <strong>$loker</strong>. Tentunya kami berharap untuk kesuksesan karir anda kedepan, silahkan ikuti social media kami untuk informasi mengenai bukaan lowongan kerja lainnya di masa mendatang. Terima kasih!<br><br>Salam Sedoloer…<br>#TimLoerGroup";
+
         }
         $subject = "Status Tahapan Seleksi";
-        $message = "Anda dinyatakan $kataStatus pada tahap seleksi <strong>uji kemampuan</strong> untuk posisi <strong>$loker</strong>, silahkan cek tahapan seleksi pada website untuk informasi lebih lanjut ";
 
         $email = service('email');
         $email->setTo($emailPendaftar);
-        $email->setFrom('emirssyah2@gmail.com', 'Loer Group');
+        $email->setFrom('nadya@loergroup.com', 'Loer Group No Reply');
         $email->setSubject($subject);
         $email->setMessage($message);
         $email->send();
@@ -148,15 +161,16 @@ class UbahStatusPendaftar extends BaseController
         $status = $data['status_akhir'];
         if ($status == 1) {
             $kataStatus = "<strong>Lolos</strong>";
+            $message = "Hi Loer!<br><br>Selamat, anda dinyatakan $kataStatus untuk posisi <strong>$loker</strong>. Silahkan untuk melakukan konfirmasi kepada kami melalui Whatsapp +62813 1779 3414 mengenai ketersediaan anda untuk bergabung bersama PT KOPI LOER JAYA.<br><br>Salam Sedoloer…<br>#TimLoerGroup";
         }else { 
             $kataStatus = "<strong>Tidak Lolos</strong>";
+            $message = "Hi Loer!<br><br>Kami ingin menginformasikan bahwa anda dinyatakan $kataStatus untuk posisi <strong>$loker</strong>. Tentunya kami berharap untuk kesuksesan karir anda kedepan, silahkan ikuti social media kami untuk informasi mengenai bukaan lowongan kerja lainnya di masa mendatang.Terima kasih!<br><br>Salam Sedoloer…<br>#TimLoerGroup";
         }
         $subject = "Status Tahapan Seleksi";
-        $message = "Anda dinyatakan $kataStatus pada posisi <strong>$loker</strong>, silahkan cek tahapan seleksi pada website untuk info lebih lanjut ";
 
         $email = service('email');
         $email->setTo($emailPendaftar);
-        $email->setFrom('emirssyah2@gmail.com', 'Loer Group');
+        $email->setFrom('nadya@loergroup.com', 'Loer Group No Reply');
         $email->setSubject($subject);
         $email->setMessage($message);
         $email->send();

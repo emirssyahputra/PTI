@@ -42,7 +42,12 @@
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     }
-
+    tinymce.init({
+    selector: 'textarea#jobdesk, textarea#kualifikasi',
+    plugins: 'lists, link, autolink, autosave, code, preview, searchreplace, table, wordcount',
+    toolbar: 'undo redo | bold italic | bullist numlist | link | code | preview',
+    menubar: 'file edit view insert format tools table',
+  });
   </script>
 
   <div class="container-scroller">
@@ -203,6 +208,9 @@
   <script src="<?php echo base_url() . 'js/jsa/todolist.js' ?>"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
+  <!-- Tambahkan pustaka TinyMCE -->
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
   <!-- End custom js for this page-->
 </body>
 

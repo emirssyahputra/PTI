@@ -10,8 +10,9 @@ class UbahOutlet extends Controller
     public function index($id)
     {
         $sesi_pengguna_id = session()->get('idadmin');
-
+        $akses_pengguna = session()->get('akses');
     if ($sesi_pengguna_id) {
+        if ($akses_pengguna == 1) {
         $model = new M_outlet();
         $data['outlet'] = $model->find($id);
 
@@ -22,6 +23,11 @@ class UbahOutlet extends Controller
         }
 
         return view('admin/v_ubah_outlet', ['outlet' => $data['outlet'], 'id' => $id]);
+        } else {
+            // Jika akses tidak sama dengan 1, lakukan logout dan redirect ke halaman login
+            session()->destroy();
+            return redirect()->to(site_url('login'));
+        }
     } else {
         // Jika tidak ada sesi pengguna yang aktif, redirect ke halaman login
         return redirect()->to(site_url('login'));

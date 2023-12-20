@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
-use App\Models\M_Apply;
+use App\Models\M_apply;
 use App\Models\M_selection;
 
 
@@ -11,6 +11,10 @@ class Apply extends BaseController
 {
     public function index()
     {
+        $sesi_pengguna_id = session()->get('idadmin');
+        $akses_pengguna = session()->get('akses');
+        
+        if ($akses_pengguna == 2) {
         date_default_timezone_set('Asia/Jakarta');
         $session = \Config\Services::session();
         $id_pengguna = $session->get('id_pengguna');
@@ -47,12 +51,17 @@ class Apply extends BaseController
         ];
 
         return view('pelamar/v_apply', $data_pelamar); // Menampilkan halaman apply jika pengguna sudah masuk.
+        } else {
+            
+            session()->destroy();
+            return redirect()->to(site_url('login'));
+        }
     }
 
 
     public function daftar()
     {
-        $model = new M_Apply();
+        $model = new M_apply();
 
         // Array untuk menyimpan nama file yang diunggah
         $uploadedFiles = [];
@@ -117,11 +126,11 @@ class Apply extends BaseController
         $waktu = $data['waktu_apply'];
         $loker = $modelselection->getNamaPekerjaan($id_loker);
         $subject = "Status Tahapan Seleksi";
-        $message = "Selamat anda berhasil mendaftar untuk posisi <strong>$loker</strong> pada <strong>$waktu</strong> ";
+        $message = "Hi Loer!<br><br>Selamat anda berhasil mendaftar untuk posisi <strong>$loker</strong> pada <strong>$waktu</strong> Silahkan cek tahapan seleksi pada website kami secara berkala untuk informasi selanjutnya.<br><br>Salam Sedoloer…<br>#TimLoerGroup";
 
         $email = service('email');
         $email->setTo($data['email']);
-        $email->setFrom('emirssyah2@gmail.com', 'Loer Group');
+        $email->setFrom('nadya@loergroup.com', 'Loer Group No Reply');
         $email->setSubject($subject);
         $email->setMessage($message);
         $email->send();

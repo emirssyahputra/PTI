@@ -105,10 +105,10 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-7">
-        <p>𝑺𝑬𝑫𝑶𝑳𝑶𝑬𝑹 (P) - 𝑳𝑶𝑬𝑹 (S) - (/lur) sapaan hangat khas wong kito galo, berasal dari kata 'dulur' yang artinya saudara, sapaan dekat yang mencairkan suasana…</p>
-        <p>Berangkat dari antusiasme dan rasa cinta akan dunia kuliner, Kopi Loer hadir di pertengahan tahun 2019 dengan konsep kedai kopi kekinian yang sederhana di tengah-tengah Kota Palembang.</p>
-        <p>Satu tahun setelah Kopi Loer hadir ditengah semaraknya perkembangan dunia kuliner di Kota Palembang, Kopi Loer menerima pendanaan melalui Equity Crowd Funding (ECF) dan melakukan pengembangan dengan penambahan kedai-kedai Kopi Loer, diantaranya Kopi Loer Sudirman dan KL Celentang. Pada penghujung tahun 2021, Rumah Loer hadir dan menjadi resto dengan konsep satu-kesatuan seluruh kedai Kopi Loer yang ada, menyajikan pengalaman menikmati seduhan kopi dan hidangan makanan yang lebih berkesan.</p>
-      </div><!-- Col end -->
+            <p>𝑺𝑬𝑫𝑶𝑳𝑶𝑬𝑹 (P) - 𝑳𝑶𝑬𝑹 (S) - (/lur) sapaan hangat khas wong kito galo, berasal dari kata 'dulur' yang artinya saudara, sapaan dekat yang mencairkan suasana…</p>
+            <p>Berangkat dari antusiasme dan rasa cinta akan dunia kuliner, Kopi Loer hadir di pertengahan tahun 2019 dengan konsep kedai kopi kekinian yang sederhana di tengah-tengah Kota Palembang.</p>
+            <p>Satu tahun setelah Kopi Loer hadir ditengah semaraknya perkembangan dunia kuliner di Kota Palembang, Kopi Loer menerima pendanaan melalui Equity Crowd Funding (ECF) dan melakukan pengembangan dengan penambahan kedai-kedai Kopi Loer, diantaranya Kopi Loer Sudirman dan Kopi Loer Celentang. Pada penghujung tahun 2021, Loer Group melakukan pengambangan brand yaitu Rumah Loer yang hadir dan menjadi resto dengan konsep satu-kesatuan yang sarat akan budaya Palembang yang kaya, menyajikan pengalaman menikmati seduhan kopi dan hidangan makanan yang lebih berkesan.</p>
+          </div><!-- Col end -->
 
       <div class="col-lg-5 mt-5 mt-lg-0">
         <div id="page-slider" class="page-slider small-bg">
@@ -217,9 +217,9 @@
         <div class="col-lg-2 col-md-6 mt-5 mt-lg-0 footer-widget">
           <h3 class="widget-title">Brands</h3>
           <ul class="list-arrow">
-            <p>Kopi Loer</p>
-            <p>Kora</p>
-            <p>Rumah Loer</p>
+              <p>Kopi Loer</p>
+              <p>Rumah Loer</p>
+              <p>KORA Coffee</p>
           </ul>
         </div><!-- Col end -->
       </div><!-- Row end -->

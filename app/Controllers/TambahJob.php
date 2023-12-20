@@ -10,9 +10,16 @@ class TambahJob extends BaseController
     public function index()
     {
         $sesi_pengguna_id = session()->get('idadmin');
+        $akses_pengguna = session()->get('akses');
 
     if ($sesi_pengguna_id) {
+        if ($akses_pengguna == 1) {
         return view('admin/v_tambah_job.php');
+        } else {
+            // Jika akses tidak sama dengan 1, lakukan logout dan redirect ke halaman login
+            session()->destroy();
+            return redirect()->to(site_url('login'));
+        }
     } else {
         // Jika tidak ada sesi pengguna yang aktif, redirect ke halaman login
         return redirect()->to(site_url('login'));

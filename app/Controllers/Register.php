@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\M_Register;
+use App\Models\M_register;
 use App\Models\M_pengguna;
 
 
@@ -101,7 +101,7 @@ class Register extends BaseController
     }
 
     // Simpan data pengguna ke dalam database
-    $userModel = new M_Register();
+    $userModel = new M_register();
     $userModel->insert($userData);
     
     // Bersihkan data sementara dari sesi
@@ -116,7 +116,7 @@ class Register extends BaseController
 
     private function generateOTP()
     {
-        // Generate OTP (contoh sederhana, Anda bisa menggunakan library OTP yang lebih aman)
+        
         return rand(100000, 999999);
     }
 
@@ -126,9 +126,9 @@ class Register extends BaseController
         $emailService = service('email');
 
         $emailService->setTo($email);
-        $emailService->setFrom('emirssyah2@gmail.com', 'Loer Group');
-        $emailService->setSubject('Verifikasi OTP');
-        $emailService->setMessage('Kode OTP Anda: ' . $otpCode);
+        $emailService->setFrom('nadya@loergroup.com', 'Loer Group No Reply');
+        $emailService->setSubject('Register Code OTP');
+        $emailService->setMessage('Kode OTP anda adalah : ' . $otpCode);
 
         $emailService->send();
     }

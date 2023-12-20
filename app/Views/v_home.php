@@ -101,39 +101,42 @@
 <!--/ Header end -->
 
 <div class="banner-carousel banner-carousel-1 mb-0">
-  <div class="banner-carousel-item" style="background-image:url(images/slider-main/KOPI-LOER.jpg)">
-    <div class="slider-content">
-        <div class="container h-100">
-          <div class="row align-items-center h-100">
-              <div class="col-md-12 text-center">
-                <h3 class="slide-sub-title" data-animation-in="slideInRight">Loer Group</h3>
-              </div>
-          </div>
-        </div>
-    </div>
-  </div>
-
-  <div class="banner-carousel-item" style="background-image:url(images/slider-main/KORA.jpg)">
-    <div class="slider-content text-left">
-        <div class="container h-100">
-          <div class="row align-items-center h-100">
-              <div class="col-md-12">
-                <h3 class="slide-title" data-animation-in="fadeIn">Lorem Ipsum</h3>
-                <h3 class="slide-sub-title" data-animation-in="slideInLeft">Loer Group</h3>
-              </div>
-          </div>
-        </div>
-    </div>
-  </div>
-
-  <div class="banner-carousel-item" style="background-image:url(images/slider-main/RUMAH-LOER.jpg)">
+  <div class="banner-carousel-item" style="background-image:url(images/slider-main/RUMAH-LOER.webp)">
     <div class="slider-content text-right">
         <div class="container h-100">
           <div class="row align-items-center h-100">
               <div class="col-md-12">
-                <h2 class="slide-title" data-animation-in="slideInDown">Palembang</h2>
                 <h3 class="slide-sub-title" data-animation-in="fadeIn">Loer Group</h3>
-                <p class="slider-description lead" data-animation-in="slideInRight">Lorem Ipsum</p>
+                <h2 class="slide-title" data-animation-in="slideInDown">RUMAH LOER MERDEKA</h2>
+                <p class="slider-description lead" data-animation-in="slideInRight">Pengembangan konsep dari Kopi Loer yang hadir di awal tahun 2021, terinspirasi dari peninggalan budaya yang kaya, Rumah Loer sarat adan khas akan Kota Palembang melalui sajian minuman, makanan hingga pembawaannya.</p>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="banner-carousel-item" style="background-image:url(images/slider-main/KORA.webp)">
+    <div class="slider-content text-right">
+        <div class="container h-100">
+          <div class="row align-items-center h-100">
+              <div class="col-md-12">
+                <h3 class="slide-sub-title" data-animation-in="fadeIn">Loer Group</h3>
+                <h2 class="slide-title" data-animation-in="slideInDown">KORA COFFEE</h2>
+                <p class="slider-description lead" data-animation-in="slideInRight">Konsep Coffe Outlet kolaborasi bersama dengan THE HUB SUDIRMAN, membawa kopi sebagai necessity dari keseharian muda-mudi di Kota Palembang.</p>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="banner-carousel-item" style="background-image:url(images/slider-main/KOPI-LOER.webp)">
+    <div class="slider-content text-right">
+        <div class="container h-100">
+          <div class="row align-items-center h-100">
+              <div class="col-md-12">
+                <h3 class="slide-sub-title" data-animation-in="fadeIn">Loer Group</h3>
+                <h2 class="slide-title" data-animation-in="slideInDown">KOPI LOER</h2>
+                <p class="slider-description lead" data-animation-in="slideInRight">Hadir dengan konsep kopi kekinian menghadirkan produk-produk olahan kopi yang menggunakan biji kopi lokal asli Indonesia, dikemas trendy dengan harga yang terjangkau serta cita rasa yang hangat dan dekat dengan semua orang. Temukan outlet Kopi Loer di cabang Sudirman dan Celentang.</p>
               </div>
           </div>
         </div>
@@ -215,11 +218,11 @@
           </div>
           <div id="career-collapse<?= $index ?>" class="collapse" aria-labelledby="career-heading<?= $index ?>" data-parent="#career-accordion">
             <div class="card-body">
-              <h2 class="section-title">Kualifikasi</h2>
-              <p><?= $job['kualifikasi']; ?></p>
-              <h2 class="section-title">Job Desk</h2>
-              <p><?= $job['jobdesk']; ?></p>
-              <h2 class="section-title">Periode Waktu</h2>
+              <h2 class="section-title"><strong>Kualifikasi</strong></h2>
+              <p><?= nl2br($job['kualifikasi']); ?></p>
+              <h2 class="section-title"><strong>Job Desk</strong></h2>
+              <p><?= nl2br($job['jobdesk']); ?></p>
+              <h2 class="section-title"><strong>Periode Waktu</strong></h2>
                   <p>
                     <?= date('j F Y', strtotime($job['waktu_mulai'])) . ' - ' . date('j F Y', strtotime($job['waktu_akhir'])); ?>
                   </p>
@@ -309,8 +312,8 @@
             <h3 class="widget-title">Brands</h3>
             <ul class="list-arrow">
               <p>Kopi Loer</p>
-              <p>Kora</p>
               <p>Rumah Loer</p>
+              <p>KORA Coffee</p>
             </ul>
           </div><!-- Col end -->
         </div><!-- Row end -->

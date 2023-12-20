@@ -134,7 +134,6 @@
                   <form action="<?= site_url('Pendaftar'); ?>" method="post">
                     <div class="input-group">
                       <div class="input-group-prepend" id="navbar-search-icon">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <span class="input-group-text" id="search">
                           <i class="icon-search"></i>
                         </span>

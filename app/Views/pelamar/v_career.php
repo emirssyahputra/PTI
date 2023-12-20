@@ -135,15 +135,11 @@
               <div id="job-collapse<?= $index ?>" class="collapse" aria-labelledby="job-heading<?= $index ?>"
                 data-parent="#job-accordion">
                 <div class="card-body">
-                  <h2 class="section-title">Kualifikasi</h2>
-                  <p>
-                    <?= $job['kualifikasi']; ?>
-                  </p>
-                  <h2 class="section-title">Job Desk</h2>
-                  <p>
-                    <?= $job['jobdesk']; ?>
-                  </p>
-                  <h2 class="section-title">Periode Waktu</h2>
+                  <h2 class="section-title"><strong>Kualifikasi</strong></h2>
+              <p><?= nl2br($job['kualifikasi']); ?></p>
+              <h2 class="section-title"><strong>Job Desk</strong></h2>
+              <p><?= nl2br($job['jobdesk']); ?></p>
+              <h2 class="section-title"><strong>Periode Waktu</strong></h2>
                   <p>
                     <?= date('j F Y', strtotime($job['waktu_mulai'])) . ' - ' . date('j F Y', strtotime($job['waktu_akhir'])); ?>
                   </p>
@@ -194,9 +190,9 @@
             <div class="col-lg-2 col-md-6 mt-5 mt-lg-0 footer-widget">
               <h3 class="widget-title">Brands</h3>
               <ul class="list-arrow">
-                <p>Kopi Loer</p>
-                <p>Kora</p>
-                <p>Rumah Loer</p>
+                  <p>Kopi Loer</p>
+                  <p>Rumah Loer</p>
+                  <p>KORA Coffee</p>
               </ul>
             </div><!-- Col end -->
           </div><!-- Row end -->
