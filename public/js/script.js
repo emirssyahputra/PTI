@@ -1,9 +1,7 @@
 jQuery(function ($) {
 	'use strict';
 
-	/* ----------------------------------------------------------- */
-	/*  Fixed header
-	/* ----------------------------------------------------------- */
+	/*  Fixed header */
 	$(window).on('scroll', function () {
 
 		// fixedHeader on scroll
@@ -20,7 +18,6 @@ jQuery(function ($) {
 			}
 		}
 		fixedHeader();
-
 
 		// Count Up
 		function counter() {
@@ -50,7 +47,6 @@ jQuery(function ($) {
 			}
 		}
 		counter();
-
 
 		// scroll to top btn show/hide
 		function scrollTopBtn() {

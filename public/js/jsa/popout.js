@@ -1,25 +1,20 @@
-// File: popout.js
-
-// Function to show the pop-up
+// Fungsi untuk menampilkan pop-up
 function openDeletePopup() {
     document.getElementById('deletePopup').style.display = 'block';
   }
   
-  // Function to hide the pop-up
+  // Fungsi untuk menyembunyikan the pop-up
   function closeDeletePopup() {
     document.getElementById('deletePopup').style.display = 'none';
   }
   
-  // Function to cancel the delete action
+  // Fungsi untuk batalkan aksi hapus
   function cancelDelete() {
     document.getElementById('deletePopup').style.display = 'none';
   }
   
-  // Function to confirm and delete user (add your logic here)
+  // Fungsi untuk konfitmmasi dan hapus data
   function confirmDelete() {
-    // Add your user deletion logic here
-  
-    // Then hide the pop-up
     document.getElementById('deletePopup').style.display = 'none';
   }
   

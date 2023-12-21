@@ -4,19 +4,19 @@
   min-height: 100vh;
 }
 .login-container {
-  margin-top: 60px; /* Mengurangi margin */
+  margin-top: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .login-area {
   width: 350px;
-  padding: 30px; /* Mengurangi padding */
-  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2); /* Perbaikan sintaks warna shadow */
+  padding: 30px;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.2);
 }
 .login-area h3 {
   text-align: center;
-  font-size: 20px; /* Mengurangi ukuran font */
+  font-size: 20px;
 }
 .login-items {
   display: flex;
@@ -25,23 +25,23 @@
 .centered-logo {
   display: block;
   margin: 0 auto;
-  width: 120px; /* Mengurangi ukuran logo */
+  width: 120px;
   height: auto;
 }
 label {
   margin-bottom: 5px;
-  font-size: 16px; /* Mengurangi ukuran font */
+  font-size: 16px;
 }
 .a {
   text-decoration: none;
   color: #AC8362;
-  font-size: 16px; /* Mengurangi ukuran font */
+  font-size: 16px;
 }
 
 .login-container .p {
   margin: 0;
-  font-size: 16px; /* Mengurangi ukuran font */
-  margin-bottom: 6px; /* Mengurangi margin */
+  font-size: 16px;
+  margin-bottom: 6px;
 }
 .a:hover {
   color: #62AC83;
@@ -53,17 +53,17 @@ label {
   background: #efefef;
   outline: none;
   border: none;
-  padding: 8px 40px 8px 16px; /* Adjusted padding on the right side */
+  padding: 8px 40px 8px 16px;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
   color: #495057;
   margin-bottom: 10px;
-  width: calc(100% - 56px); /* Adjusted width */
+  width: calc(100% - 56px);
 }
 ::placeholder {
   color: gray;
-  font-size: 16px; /* Mengurangi ukuran font */
+  font-size: 16px;
 }
 
 .login-btn {
@@ -72,15 +72,15 @@ label {
   border-color: #AC8362;
   border: none;
   border-radius: 4px;
-  height: 40px; /* Mengurangi tinggi */
-  margin-top: 15px; /* Mengurangi margin */
-  margin-bottom: 10px; /* Mengurangi margin */
-  font-size: 16px; /* Mengurangi ukuran font */
+  height: 40px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 16px;
   cursor: pointer;
 }
 .prompt {
   text-align: center;
-  margin: 10px 0; /* Mengurangi margin */
+  margin: 10px 0;
 }
 
 @media (max-width: 688px) {
@@ -95,15 +95,15 @@ label {
   }
   .a,
   .p {
-    font-size: 14px !important; /* Mengurangi ukuran font */
+    font-size: 14px !important;
   }
   .login-btn {
-    font-size: 14px; /* Mengurangi ukuran font */
-    height: 36px; /* Mengurangi tinggi */
+    font-size: 14px;
+    height: 36px;
     margin-top: 6px;
   }
   .login {
-    height: 32px !important; /* Mengurangi tinggi */
+    height: 32px !important;
   }
 }
 
@@ -211,9 +211,7 @@ h5 {
     text-align: justify;
 }
 
-
-/* Global styles
-================================================== */
+/* Global styles */
 html {
   overflow-x: hidden !important;
   width: 100%;
@@ -663,7 +661,7 @@ a[href^=tel] {
   font-family: "Montserrat", sans-serif;
   transition: 350ms;
   font-size: 14px;
-  background: #0CB357; /* Warna hijau untuk tombol Accept */
+  background: #0CB357;
 }
 
 @media (max-width: 767px) {
@@ -679,7 +677,7 @@ a[href^=tel] {
 
 .btn-accept:hover,
 .btn-white.btn-accept:hover {
-  background: rgb(61, 145, 61); /* Warna hijau yang lebih gelap saat hover */
+  background: rgb(61, 145, 61);
   color: #fff;
 }
 
@@ -688,7 +686,7 @@ a[href^=tel] {
 .btn-white.btn-accept:hover:active,
 .btn-white.btn-accept:hover:focus {
   color: #fff;
-  background-color: rgb(61, 145, 61) !important; /* Warna hijau yang lebih gelap saat active atau focus */
+  background-color: rgb(61, 145, 61) !important;
 }
 
 /* Tombol Cancel */
@@ -702,7 +700,7 @@ a[href^=tel] {
   font-family: "Montserrat", sans-serif;
   transition: 350ms;
   font-size: 14px;
-  background: #DA0F0F; /* Warna merah untuk tombol Cancel */
+  background: #DA0F0F;
 }
 
 @media (max-width: 767px) {
@@ -718,7 +716,7 @@ a[href^=tel] {
 
 .btn-cancel:hover,
 .btn-white.btn-cancel:hover {
-  background: #c40d0d; /* Warna merah yang lebih gelap saat hover */
+  background: #c40d0d;
   color: #fff;
 }
 
@@ -727,7 +725,7 @@ a[href^=tel] {
 .btn-white.btn-cancel:hover:active,
 .btn-white.btn-cancel:hover:focus {
   color: #fff;
-  background-color: #c40d0d !important; /* Warna merah yang lebih gelap saat active atau focus */
+  background-color: #c40d0d !important;
 }
 
 .general-btn {
@@ -757,8 +755,7 @@ a[href^=tel] {
   text-decoration: none;
 }
 
-/* Top Bar
-================================================== */
+/* Top Bar */
 .top-bar {
   padding: 1px 0;
   background: #ffffff;
@@ -813,8 +810,7 @@ ul.top-info li p.info-text {
   color: #ac8362;
 }
 
-/* Header area
-================================================== */
+/* Header */
 .header {
   background: #fff;
   position: relative;
@@ -1121,7 +1117,7 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   line-height: normal;
   text-transform: capitalize;
   color: #fff;
-  margin-top: 10px; /* Menambahkan sedikit jarak dari bawah */
+  margin-top: 10px;
 }
 
 .text-center {
@@ -1366,8 +1362,8 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   display: inline-flex;
   padding: 20px 30px;
   max-width: 650px;
-  text-align: center; /* Menengahkan teks secara horizontal */
-  margin: 0 auto; /* Menengahkan box secara horizontal */
+  text-align: center;
+  margin: 0 auto;
 }
 
 .box-slide-title {
@@ -1375,7 +1371,7 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   font-weight: 300;
   margin: 0;
   color: #fff;
-  text-align: center; /* Menengahkan teks secara horizontal */
+  text-align: center;
 }
 
 @media (max-width: 767px) {
@@ -1414,8 +1410,7 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   margin: -20px;
 }
 
-/* Facts
-================================================== */
+/* Facts */
 .facts-wrapper {
   text-align: center;
 }
@@ -1441,8 +1436,7 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   margin: 0;
 }
 
-/* Content area
-================================================== */
+/* Content area */
 /* Accordion */
 .accordion-group .card {
   border-radius: 0;
@@ -1497,8 +1491,7 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   display: none;
 }
 
-/* Footer
-================================================== */
+/* Footer */
 /*- Footer common */
 .footer {
   background-color: #f9f9f9;
@@ -1662,8 +1655,7 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   color: #fff;
 }
 
-/* Sub Pages
-================================================== */
+/* Sub Pages */
 /*-- Title border --*/
 .main-container .border-left {
   margin-bottom: 30px;
