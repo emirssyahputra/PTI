@@ -2,36 +2,20 @@
 <html lang="en">
 <head>
 
-  <!-- Basic Page Needs
-================================================== -->
   <meta charset="utf-8">
   <title>About</title>
-
-  <!-- Mobile Specific Metas
-================================================== -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Construction Html5 Template">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-
-  <!-- Favicon
-================================================== -->
-<link rel="icon" type="image/png" href="<?= base_url('images/favicon.png'); ?>">
-  <!-- CSS
-================================================== -->
-   <!-- Bootstrap -->
-   <link rel="stylesheet" href="<?= base_url('plugins/bootstrap/bootstrap.min.css'); ?>">
-  <!-- FontAwesome -->
+  <link rel="icon" type="image/png" href="<?= base_url('images/favicon.png'); ?>">
+  <!-- CSS -->
+  <link rel="stylesheet" href="<?= base_url('plugins/bootstrap/bootstrap.min.css'); ?>">
   <link rel="stylesheet"href="<?= base_url('plugins/fontawesome/css/all.min.css'); ?>">
-  <!-- Animation -->
   <link rel="stylesheet" href="<?= base_url('plugins/animate-css/animate.css'); ?>">
-  <!-- slick Carousel -->
   <link rel="stylesheet" href="<?= base_url('plugins/slick/slick.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('plugins/slick/slick-theme.css'); ?>">
-  <!-- Colorbox -->
   <link rel="stylesheet" href="<?= base_url('plugins/colorbox/colorbox.css'); ?>">
-  <!-- Template styles-->
   <link rel="stylesheet" href="<?= base_url('css/style.css'); ?>">
-
 
 </head>
 <body>
@@ -53,7 +37,7 @@
                     <a class="d-block" href="<?php echo site_url('pHome');?>">
                       <img loading="lazy" src="<?= base_url('images/logo.png'); ?>" alt="Loer Group">
                     </a>
-                </div><!-- logo end -->
+                </div>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -76,14 +60,9 @@
                 </div>
               </nav>
           </div>
-          <!--/ Col end -->
         </div>
-        <!--/ Row end -->
     </div>
-    <!--/ Container end -->
-
   </div>
-  <!--/ Navigation end -->
 </header>
 <!--/ Header end -->
 
@@ -95,11 +74,11 @@
               <div class="banner-heading">
                 <h1 class="banner-title">About Us</h1>
               </div>
-          </div><!-- Col end -->
-        </div><!-- Row end -->
-    </div><!-- Container end -->
-  </div><!-- Banner text end -->
-</div><!-- Banner area end --> 
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
 
 <section id="main-container" class="main-container">
   <div class="container">
@@ -108,7 +87,7 @@
             <p>𝑺𝑬𝑫𝑶𝑳𝑶𝑬𝑹 (P) - 𝑳𝑶𝑬𝑹 (S) - (/lur) sapaan hangat khas wong kito galo, berasal dari kata 'dulur' yang artinya saudara, sapaan dekat yang mencairkan suasana…</p>
             <p>Berangkat dari antusiasme dan rasa cinta akan dunia kuliner, Kopi Loer hadir di pertengahan tahun 2019 dengan konsep kedai kopi kekinian yang sederhana di tengah-tengah Kota Palembang.</p>
             <p>Satu tahun setelah Kopi Loer hadir ditengah semaraknya perkembangan dunia kuliner di Kota Palembang, Kopi Loer menerima pendanaan melalui Equity Crowd Funding (ECF) dan melakukan pengembangan dengan penambahan kedai-kedai Kopi Loer, diantaranya Kopi Loer Sudirman dan Kopi Loer Celentang. Pada penghujung tahun 2021, Loer Group melakukan pengambangan brand yaitu Rumah Loer yang hadir dan menjadi resto dengan konsep satu-kesatuan yang sarat akan budaya Palembang yang kaya, menyajikan pengalaman menikmati seduhan kopi dan hidangan makanan yang lebih berkesan.</p>
-          </div><!-- Col end -->
+          </div>
 
       <div class="col-lg-5 mt-5 mt-lg-0">
         <div id="page-slider" class="page-slider small-bg">
@@ -121,7 +100,7 @@
                 </div>
               </div>
             </div>
-          </div><!-- Item 1 end -->
+          </div>
 
           <div class="item" style="background-image:url(images/slider-pages/KORA-TIM.jpg)">
             <div class="container">
@@ -131,7 +110,7 @@
                 </div>
               </div>
             </div>
-          </div><!-- Item 2 end -->
+          </div>
 
           <div class="item" style="background-image:url(images/slider-pages/RUMAH-LOER-TIM.jpg)">
             <div class="container">
@@ -141,12 +120,12 @@
                 </div>
               </div>
             </div>
-          </div><!-- Item 3 end -->
-        </div><!-- Page slider end -->
-      </div><!-- Col end -->
-    </div><!-- Content row end -->
-  </div><!-- Container end -->
-</section><!-- Main container end -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <section id="ts-features" class="ts-features">
@@ -182,9 +161,8 @@
     </div>
 
   </div>
-  <!--/ Accordion end -->
-  </div><!-- Col end -->
-</section><!-- Feature area end -->
+  </div>
+</section>
 
 
 <footer id="footer" class="footer bg-overlay">
@@ -196,7 +174,7 @@
           <a href="index.html">
             <img loading="lazy" class="footer-logo" src="images/footer-logo.png" alt="Constra">
           </a>
-        </div><!-- Col end -->
+        </div>
 
         <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
           <h3 class="widget-title">Hubungi Kami</h3>
@@ -211,8 +189,8 @@
                     class="fab fa-instagram"></i></a></li>
               <li><a href="https://id.linkedin.com/company/kopi-loer-group" aria-label="Linkedin"><i class="fab fa-linkedin"></i></a></li>
             </ul>
-          </div><!-- Footer social end -->
-        </div><!-- Col end -->
+          </div>
+        </div>
 
         <div class="col-lg-2 col-md-6 mt-5 mt-lg-0 footer-widget">
           <h3 class="widget-title">Brands</h3>
@@ -221,10 +199,10 @@
               <p>Rumah Loer</p>
               <p>KORA Coffee</p>
           </ul>
-        </div><!-- Col end -->
-      </div><!-- Row end -->
-    </div><!-- Container end -->
-  </div><!-- Footer main end -->
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="copyright">
     <div class="container">
@@ -236,7 +214,7 @@
               </script> PT. Loer Group Jaya. All rights reserved.</span>
           </div>
         </div>
-      </div><!-- Row end -->
+      </div>
 
       <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
         <button class="btn btn-primary" title="Back to Top">
@@ -244,36 +222,24 @@
         </button>
       </div>
 
-    </div><!-- Container end -->
-  </div><!-- Copyright end -->
-</footer><!-- Footer end -->
+    </div>
+  </div>
+</footer>
 
 
-  <!-- Javascript Files
-  ================================================== -->
-
-  <!-- initialize jQuery Library -->
+  <!-- Javascript Files -->
   <script src="<?php echo base_url().'plugins/jQuery/jquery.min.js'?>"></script>
-  <!-- Bootstrap jQuery -->
   <script src="<?php echo base_url().'plugins/bootstrap/bootstrap.min.js'?>"></script>
-  <!-- Slick Carousel -->
   <script src="<?php echo base_url().'plugins/slick/slick.min.js'?>"></script>
   <script src="<?php echo base_url().'plugins/slick/slick-animation.min.js'?>"></script>
-  <!-- Color box -->
   <script src="<?php echo base_url().'plugins/colorbox/jquery.colorbox.js'?>"></script>
-  <!-- shuffle -->
   <script src="<?php echo base_url().'plugins/shuffle/shuffle.min.js'?>"></script>
-
-
+  <script src="<?php echo base_url().'js/script.js'?>"></script>
   <!-- Google Map API Key-->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
   <!-- Google Map Plugin-->
   <script src="<?= base_url('plugins/google-map/map.js'); ?>" defer></script>
+  </div>
+</body>
 
-  <!-- Template custom -->
-  <script src="<?php echo base_url().'js/script.js'?>"></script>
-
-  </div><!-- Body inner end -->
-  </body>
-
-  </html>
+</html>

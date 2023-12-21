@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Dashboard</title>
@@ -9,18 +8,11 @@
   <link rel="stylesheet" href="<?= base_url('vendors/font-awesome/css/font-awesome.min.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('vendors/css/vendor.bundle.base.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('vendors/mdi/css/materialdesignicons.min.css'); ?>">
-  <!-- endinject -->
-  <!-- Plugin css for this page -->
   <link rel="stylesheet" href="<?= base_url('vendors/datatables.net-bs4/dataTables.bootstrap4.css'); ?>">
   <link rel="stylesheet" type="text/css" href="<?= base_url('js/jsa/select.dataTables.min.css'); ?>">
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
   <link rel="stylesheet"href="<?= base_url('css/stylea.css'); ?>">
-  <!-- endinject -->
-  <!--   <link rel="shortcut icon" href="images/logo-mini.svg" /> -->
   <link rel="shortcut icon" href="<?= base_url('images/logo aku-nobg-notext.png'); ?>">
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-
 </head>
 
 <body>
@@ -71,7 +63,6 @@ function topFunction() {
 
     <!-- PANEL MENU KIRI [START] -->
     <div class="container-fluid page-body-wrapper">
-      <!--  partial:partials/_sidebar.html  --> 
       <nav class="sidebar sidebar-offcanvas" id="sidebar" >
         <ul class="nav">
     
@@ -177,13 +168,8 @@ function topFunction() {
                 </div>
               </div>
             </div>
-          </div>
-          
+          </div>     
         </div>
-
-        <!-- content-wrapper ends -->
-
-        <!-- partial:partials/_footer.html -->
         <footer class="footer">
           <div class="d-flex justify-content-center">
             <span class="text-muted text-center">
@@ -191,36 +177,24 @@ function topFunction() {
             </span>
           </div>
         </footer>        
-        
-        <!-- partial -->
       </div>
       <!-- main-panel ends -->
     </div>
-    <!-- page-body-wrapper ends -->
   </div>
-  <!-- container-scroller -->
 
   <!-- plugins:js -->
   <script src="<?php echo base_url().'vendors/js/vendor.bundle.base.js'?>"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
   <script src="<?php echo base_url().'vendors/chart.js/Chart.min.js'?>"></script>
   <script src="<?php echo base_url().'vendors/datatables.net/jquery.dataTables.js'?>"></script>
   <script src="<?php echo base_url().'vendors/datatables.net-bs4/dataTables.bootstrap4.js'?>"></script>
   <script src="<?php echo base_url().'js/jsa/dataTables.select.min.js'?>"></script>
-
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
   <script src="<?php echo base_url().'js/jsa/off-canvas.js'?>"></script>
   <script src="<?php echo base_url().'js/jsa/hoverable-collapse.js'?>"></script>
   <script src="<?php echo base_url().'js/jsa/template.js'?>"></script>
   <script src="<?php echo base_url().'js/jsa/settings.js'?>"></script>
   <script src="<?php echo base_url().'js/jsa/todolist.js'?>"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
   <script src="<?php echo base_url().'js/jsa/dashboard.js'?>"></script>
   <script src="<?php echo base_url().'js/jsa/Chart.roundedBarCharts.js'?>"></script>
-  <!-- End custom js for this page-->
 </body>
 
 </html>

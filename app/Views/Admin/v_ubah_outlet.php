@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Ubah Data Outlet</title>
@@ -11,16 +10,10 @@
   <link rel="stylesheet" href="<?= base_url('vendors/ti-icons/css/themify-icons.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('vendors/css/vendor.bundle.base.css'); ?>">
   <link rel="stylesheet" href="<?= base_url('vendors/mdi/css/materialdesignicons.min.css'); ?>">
-  <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
   <link rel="stylesheet" href="<?= base_url('css/stylea.css'); ?>">
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
-  <!-- endinject -->
   <link rel="shortcut icon" href="<?= base_url('images/logo aku-nobg-notext.png'); ?>">
-  <!-- <link rel="shortcut icon" href="../../images/logo-mini.svg" /> -->
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
 </head>
 
@@ -45,7 +38,6 @@
 </script>  
 
   <div class="container-scroller">
-    <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <a class="navbar-brand brand-logo mr-5" href="<?php echo site_url('Pengguna'); ?>"><img src="<?= base_url('images/logo aku-nobg-tex.png'); ?>" class="mr-2" alt="logo"/></a>
@@ -72,7 +64,6 @@
 
     <!-- PANEL MENU KIRI [START] -->
     <div class="container-fluid page-body-wrapper">
-      <!--  partial:partials/_sidebar.html  --> 
       <nav class="sidebar sidebar-offcanvas" id="sidebar" >
         <ul class="nav">
     
@@ -115,7 +106,6 @@
       </nav>
     <!-- PANEL MENU KIRI [END] -->
 
-      <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
@@ -188,8 +178,7 @@
                       
           </div>
         </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:../../partials/_footer.html -->
+
         <footer class="footer">
           <div class="d-flex justify-content-center">
             <span class="text-muted text-center">
@@ -197,27 +186,17 @@
             </span>
           </div>
         </footer>
-        <!-- partial -->
       </div>
-      <!-- main-panel ends -->
     </div>
-    <!-- page-body-wrapper ends -->
   </div>
-  <!-- container-scroller -->
+
   <!-- plugins:js -->
   <script src="<?php echo base_url() . 'vendors/js/vendor.bundle.base.js' ?>"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
   <script src="<?php echo base_url() . 'js/jsa/off-canvas.js' ?>"></script>
   <script src="<?php echo base_url() . 'js/jsa/hoverable-collapse.js' ?>"></script>
   <script src="<?php echo base_url() . 'js/jsa/template.js' ?>"></script>
   <script src="<?php echo base_url() . 'js/jsa/settings.js' ?>"></script>
   <script src="<?php echo base_url() . 'js/jsa/todolist.js' ?>"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <!-- End custom js for this page-->
 </body>
 
 </html>

@@ -2,38 +2,21 @@
 <html lang="en">
 
 <head>
-
-    <!-- Basic Page Needs
-================================================== -->
     <meta charset="utf-8">
     <title>Apply Career</title>
-
-    <!-- Mobile Specific Metas
-================================================== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Construction Html5 Template">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-
-    <!-- Favicon
-================================================== -->
     <link rel="icon" type="image/png" href="images/favicon.png">
 
-    <!-- CSS
-================================================== -->
-    <!-- Bootstrap -->
+    <!-- CSS -->
     <link rel="stylesheet" href="<?= base_url('plugins/bootstrap/bootstrap.min.css'); ?>">
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="<?= base_url('plugins/fontawesome/css/all.min.css'); ?>">
-    <!-- Animation -->
     <link rel="stylesheet" href="<?= base_url('plugins/animate-css/animate.css'); ?>">
-    <!-- slick Carousel -->
     <link rel="stylesheet" href="<?= base_url('plugins/slick/slick.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('plugins/slick/slick-theme.css'); ?>">
-    <!-- Colorbox -->
     <link rel="stylesheet" href="<?= base_url('plugins/colorbox/colorbox.css'); ?>">
-    <!-- Template styles-->
     <link rel="stylesheet" href="<?= base_url('css/style.css'); ?>">
-
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
@@ -106,7 +89,7 @@
                                     <a class="d-block" href="<?php echo site_url('pHome'); ?>">
                                         <img loading="lazy" src="<?= base_url('images/logo.png'); ?>" alt="Loer Group">
                                     </a>
-                                </div><!-- logo end -->
+                                </div>
 
                                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                                     data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false"
@@ -137,17 +120,11 @@
                                 </div>
                             </nav>
                         </div>
-                        <!--/ Col end -->
                     </div>
-                    <!--/ Row end -->
                 </div>
-                <!--/ Container end -->
-
-            </div>
-            <!--/ Navigation end -->
+            </div>   
         </header>
-        <!--/ Header end -->
-
+        
         <div id="banner-area" class="banner-area" style="background-image:url(images/banner/banner1.jpg)">
             <div class="banner-text">
                 <div class="container">
@@ -156,11 +133,11 @@
                             <div class="banner-heading">
                                 <h1 class="banner-title">Apply Career</h1>
                             </div>
-                        </div><!-- Col end -->
-                    </div><!-- Row end -->
-                </div><!-- Container end -->
-            </div><!-- Banner text end -->
-        </div><!-- Banner area end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <section id="registration" class="registration">
             <div class="container">
@@ -315,7 +292,7 @@
                             <a href="index.html">
                                 <img loading="lazy" class="footer-logo" src="images/footer-logo.png" alt="Constra">
                             </a>
-                        </div><!-- Col end -->
+                        </div>
 
                         <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
                             <h3 class="widget-title">Hubungi Kami</h3>
@@ -332,8 +309,8 @@
                                     <li><a href="https://id.linkedin.com/company/kopi-loer-group"
                                             aria-label="Linkedin"><i class="fab fa-linkedin"></i></a></li>
                                 </ul>
-                            </div><!-- Footer social end -->
-                        </div><!-- Col end -->
+                            </div>
+                        </div>
 
                         <div class="col-lg-2 col-md-6 mt-5 mt-lg-0 footer-widget">
                             <h3 class="widget-title">Brands</h3>
@@ -342,10 +319,10 @@
                               <p>Rumah Loer</p>
                               <p>KORA Coffee</p>
                             </ul>
-                        </div><!-- Col end -->
-                    </div><!-- Row end -->
-                </div><!-- Container end -->
-            </div><!-- Footer main end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="copyright">
                 <div class="container">
@@ -359,7 +336,7 @@
                                 </span>
                             </div>
                         </div>
-                    </div><!-- Row end -->
+                    </div>
 
                     <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
                         <button class="btn btn-primary" title="Back to Top">
@@ -367,13 +344,10 @@
                         </button>
                     </div>
 
-                </div><!-- Container end -->
-            </div><!-- Copyright end -->
-        </footer><!-- Footer end -->
+                </div>
+            </div>
+        </footer>
 
-
-        <!-- Javascript Files
-  ================================================== -->
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
@@ -398,29 +372,21 @@
                 });
             });
         </script>
-        <!-- initialize jQuery Library -->
+
+        <!-- Javascript Files -->
         <script src="<?php echo base_url() . 'plugins/jQuery/jquery.min.js' ?>"></script>
-        <!-- Bootstrap jQuery -->
         <script src="<?php echo base_url() . 'plugins/bootstrap/bootstrap.min.js' ?>"></script>
-        <!-- Slick Carousel -->
         <script src="<?php echo base_url() . 'plugins/slick/slick.min.js' ?>"></script>
         <script src="<?php echo base_url() . 'plugins/slick/slick-animation.min.js' ?>"></script>
-        <!-- Color box -->
         <script src="<?php echo base_url() . 'plugins/colorbox/jquery.colorbox.js' ?>"></script>
-        <!-- shuffle -->
         <script src="<?php echo base_url() . 'plugins/shuffle/shuffle.min.js' ?>"></script>
-
-
+        <script src="<?php echo base_url() . 'js/script.js' ?>"></script>
         <!-- Google Map API Key-->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"
             defer></script>
         <!-- Google Map Plugin-->
         <script src="<?= base_url('plugins/google-map/map.js'); ?>" defer></script>
-
-        <!-- Template custom -->
-        <script src="<?php echo base_url() . 'js/script.js' ?>"></script>
-
-    </div><!-- Body inner end -->
+    </div>
 </body>
 
 </html>
